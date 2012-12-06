@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<domain-models xmlns="http://apps.axelor.com/xml/ns/domain-models"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://apps.axelor.com/xml/ns/domain-models http://apps.axelor.com/xml/ns/domain-models/domain-models_0.6.xsd">
+
+  <module name="contact" package="com.axelor.contact.db"/>
+
+  <entity name="Contact" sequential="true" lang="groovy">
+    <many-to-one name="title" ref="Title" title="Intitulé"/>
+    <string name="firstName" required="true" title="Prénom"/>
+    <string name="lastName" required="true" title="Nom"/>
+    <string name="fullName" namecolumn="true" search="firstName,lastName" title="Nom complet"><![CDATA[
+    if (firstName == null && lastName == null)
+    	return null
+    if (title == null)
+        return firstName + ' ' + lastName
+    return title.name + ' ' + firstName + ' ' + lastName
+    ]]></string>
+    <string name="email" required="true" unique="true" max="100" title="E-mail"/>
+    <string name="phone" max="20" title="Téléphone"/>
+    <date name="dateOfBirth" title="Date de naissance"/>
+    <one-to-many name="addresses" ref="Address" title="Liste d'adresses" mappedBy="contact"/>
+    <many-to-one name="circle" ref="Circle"/>
+    <string name="notes" multiline="true" title="Notes"/>
+    <binary name="image" title="Photo" help="Max size 4MB."/>
+    <many-to-one name="company" ref="Company" title="Entreprise"/>
+  </entity>
+
+</domain-models>

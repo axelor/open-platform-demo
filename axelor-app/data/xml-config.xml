@@ -1,0 +1,102 @@
+<?xml version="1.0"?>
+<xml-inputs xmlns="http://apps.axelor.com/xml/ns/data-import"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://apps.axelor.com/xml/ns/data-import http://apps.axelor.com/xml/ns/data-import/data-import_0.6.xsd">
+
+  <input file="users.xml" root="users">
+    <bind node="group" type="com.axelor.auth.db.Group">
+      <bind node="code" to="code" />
+      <bind node="name" to="name" />
+    </bind>
+    <bind node="user" type="com.axelor.auth.db.User">
+      <bind to="group" search="self.code = :group" />
+      <bind node="code" to="code" />
+      <bind node="name" to="name" />
+      <bind node="password" to="password" />
+    </bind>
+  </input>
+
+  <input file="contacts.xml" root="address-book">
+    <bind node="title" type="com.axelor.contact.db.Title" search="self.code = :code">
+      <bind node="code" to="code" />
+      <bind node="name" to="name" />
+    </bind>
+    <bind node="country" type="com.axelor.contact.db.Country" search="self.code = :code">
+      <bind node="code" to="code" />
+      <bind node="name" to="name" />
+    </bind>
+    <bind node="company" type="com.axelor.contact.db.Company" search="self.code = :code">
+      <bind node="code" to="code" />
+      <bind node="name" to="name" />
+      <bind to="parent" search="self.code = :parent" />
+    </bind>
+    <bind node="circle" type="com.axelor.contact.db.Circle" search="self.code = :code">
+      <bind node="code" to="code" />
+      <bind node="name" to="name" />
+    </bind>
+    <bind node="contact" type="com.axelor.contact.db.Contact">
+      <bind node="title" to="title" search="self.code = :code" />
+      <bind node="first-name" to="firstName" />
+      <bind node="last-name" to="lastName" />
+      <bind node="email" to="email" />
+      <bind node="addresses/address" to="addresses">
+        <bind node="street1" to="street" />
+        <bind node="street2" to="area" />
+        <bind node="city" to="city" />
+        <bind to="country" search="self.code = :country"/>
+      </bind>
+    </bind>
+  </input>
+
+  <input file="sale-orders.xml" root="sale-orders">
+  
+    <bind node="tax" type="com.axelor.sale.db.Tax">
+      <bind node="code" to="code" />
+      <bind node="name" to="name" />
+      <bind node="_value" to="rate" />
+    </bind>
+    
+    <bind node="product" type="com.axelor.sale.db.Product">
+      <bind node="code" to="code" />
+      <bind node="name" to="name" />
+      <bind node="color" to="color" />
+    </bind>
+  
+    <bind node="sale-order" type="com.axelor.sale.db.Order">
+      <!-- transform boolean value into 'true' or 'false' -->
+      <bind node="confirmed" to="confirmed" eval="confirmed ==~ /^(T|Y|1)$/ ? 'true' : 'false'" />
+
+      <bind node="date" to="orderDate" />
+      <bind node="date" to="createDate" />
+
+      <!-- default value provided with eval expression -->
+      <bind to="confirmDate" eval="new org.joda.time.LocalDate()" />
+
+      <!-- IF email NOT EMPTY -->
+      <bind node="customer" to="customer" search="self.email = :email" if="email">
+        <bind node="firstName" to="firstName" />
+        <bind node="lastName" to="lastName" />
+        <bind node="email" to="email" />
+      </bind>
+      <!-- ELSE -->
+      <bind node="customer" to="customer" if="!email">
+        <bind node="firstName" to="firstName" />
+        <bind node="lastName" to="lastName" />
+        <bind to="email" eval='"${firstName}.${lastName}@gmail.com".toLowerCase()' />
+      </bind>
+      <!-- END IF -->
+
+      <bind node="items/item" to="items">
+        <bind node="quantity" to="quantity" />
+        <bind node="price" to="price" />
+        <bind to="product" search="self.code = :product"/>
+        <bind node="taxes/tax" to="taxes" search="self.code = :code">
+          <bind node="name" to="name" />
+          <bind node="code" to="code" />
+          <bind node="_value" to="rate" />
+        </bind>
+      </bind>
+    </bind>
+  </input>
+
+</xml-inputs>

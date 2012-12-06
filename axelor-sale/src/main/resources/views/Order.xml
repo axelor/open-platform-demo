@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<object-views xmlns="http://apps.axelor.com/xml/ns/object-views"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://apps.axelor.com/xml/ns/object-views http://apps.axelor.com/xml/ns/object-views/object-views_0.6.xsd">
+    
+    <grid name="order-grid" title="Orders">
+        <field name="name"/>
+        <field name="customer"/>
+        <field name="orderDate"/>
+        <field name="totalAmount"/>
+        <field name="confirmed"/>
+    </grid>
+    
+    <form name="order-form" title="Order" cols="4"
+    	onNew="default-order-record"
+    	onLoad="action-sale-order-confirm"
+    	onSave="action-sale-order-validate">
+        <separator title="Order Details" colSpan="4"/>
+        <field name="name"/>
+        <field name="confirmed" onChange="action-sale-order-validate,action-sale-order-confirm,action-sale-order-confirm-attrs"/>
+        <break/>
+        <field name="customer" form-view="contact-form" grid-view="contact-grid" canSelect="true">
+        	<form title="Customer">
+        		<field name="title"/>
+        		<break/>
+        		<field name="firstName"/>
+        		<field name="lastName"/>
+        		<field name="email"/>
+        		<field name="phone"/>
+        	</form>
+        </field>
+        <field name="orderDate"/>
+        <field name="createDate"/>
+        <field name="confirmDate"/>
+        <separator title="Amount Details" colSpan="4"/>
+        <field name="amount"/>
+        <field name="taxAmount"/>
+        <field name="totalAmount"/>
+        <group cols="2" colSpan="2" colWidths="50%,50%">
+        <label title="= (Amount + Tax Amount)"/>
+        <button name="btnCalculate" title="Calculate" onClick="com.axelor.sale.web.SaleOrderController:calculate,save"/>
+        </group>
+        <separator title="Other Details" colSpan="4"/>
+        <notebook colSpan="4">
+            <page title="Items" cols="1">
+                <field name="items">
+                    <grid title="Items">
+                        <field name="product"/>
+                        <field name="price"/>
+                        <field name="quantity"/>
+                    </grid>
+                    <form title="Ordered Item" cols="4">
+                        <field name="product" colSpan="4"/>
+                        <break/>
+                        <field name="price"/>
+                        <field name="quantity"/>
+                        <notebook colSpan="4">
+                            <page title="Taxes" cols="1">
+								<field name="taxes">
+								    <grid title="Taxes">
+								        <field name="name"/>
+								        <field name="rate"/>
+								    </grid>
+								</field>
+                            </page>
+                        </notebook>
+                    </form>
+                </field>
+            </page>
+            <page title="Notes" cols="1">
+                <field name="notes" noLabel="true"/>
+            </page>
+        </notebook>
+    </form>
+    
+    <action-record name="default-order-record" model="com.axelor.sale.db.Order">
+    	<field name="customer" expr="action:default-customer-record" if="!(__ref__ instanceof com.axelor.contact.db.Contact)"/>
+    	<field name="customer" expr="eval: __ref__" if="__ref__ instanceof com.axelor.contact.db.Contact"/>
+    	<field name="orderDate" expr="eval: __date__"/>
+    	<field name="createDate" expr="eval: __date__"/>
+    	<field name="items" expr="action:default-orderline-record"/>
+    </action-record>
+    
+    <action-record name="default-orderline-record" model="com.axelor.sale.db.OrderLine">
+   		<field name="product" expr="action:default-product-record"/>
+   		<field name="price" expr="100.0"/>
+   		<field name="quantity" expr="1"/>
+   		<field name="taxes" expr="action:default-tax-record"/>
+    </action-record>
+    
+    <action-record name="default-product-record"
+    	model="com.axelor.sale.db.Product"
+    	search="('self.code = ?1', 'PC1')">
+   		<field name="code" expr="PC1"/>
+   		<field name="name" expr="Personal Computer"/>
+    </action-record>
+
+	<action-record name="default-tax-record"
+    	model="com.axelor.sale.db.Tax"
+    	search="('self.code LIKE ?1', 'VAT%')">
+    	<field name="code" expr="VAT12"/>
+    	<field name="name" expr="Vat 12%"/>
+    	<field name="rate" expr="0.12"/>
+    </action-record>
+    
+    <action-record name="default-customer-record" model="com.axelor.contact.db.Contact">
+    	<field name="title" expr="action:default-title-record"/>
+    </action-record>
+    
+    <action-record name="default-title-record"
+    	model="com.axelor.contact.db.Title"
+    	search="('self.code = ?1', 'mr')">
+    	<field name="code" expr="mr"/>
+    	<field name="name" expr="Mr."/>
+    </action-record>
+    
+    <action-method name="action-sale-order-confirm">
+    	<call class="com.axelor.sale.web.SaleOrderController" method="onConfirm"/>
+    </action-method>
+    
+    <action-validate name="action-sale-order-validate">
+    	<error message="Create Date is in future." if="confirmed &amp;&amp; createDate &gt; __date__"/>
+    	<error message="Order Date is in future." if="confirmed &amp;&amp; orderDate &gt; __date__"/>
+    	<alert message="No Sale Order Items. Would you like to continue?" if="confirmed &amp;&amp; !items"/>
+    </action-validate>
+    
+    <action-attrs name="action-sale-order-confirm-attrs">
+    	<attribute name="title" for="name" expr="eval: String.format('Order No.')" if="confirmed"/>
+    	<attribute name="title" for="name" expr="Name" if="!confirmed"/>
+    	<attribute name="required" for="createDate" expr="eval: !confirmed"/>
+    </action-attrs>
+
+</object-views>

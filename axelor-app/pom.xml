@@ -1,0 +1,52 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+  <parent>
+    <groupId>com.axelor</groupId>
+    <artifactId>axelor-web-parent</artifactId>
+    <version>0.0.6-SNAPSHOT</version>
+    <relativePath>../axelor-web-parent/pom.xml</relativePath>
+  </parent>
+
+  <modelVersion>4.0.0</modelVersion>
+  <artifactId>axelor-app</artifactId>
+  <packaging>war</packaging>
+
+  <name>Axelor :: App</name>
+
+  <dependencies>
+
+    <dependency>
+      <groupId>com.axelor</groupId>
+      <artifactId>axelor-contact</artifactId>
+      <version>${project.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>com.axelor</groupId>
+      <artifactId>axelor-sale</artifactId>
+      <version>${project.version}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>com.axelor</groupId>
+      <artifactId>axelor-web</artifactId>
+      <version>${project.version}</version>
+      <type>war</type>
+      <scope>runtime</scope>
+    </dependency>
+
+  </dependencies>
+
+  <build>
+    <plugins>
+      <!-- Skip deployment -->
+      <plugin>
+        <artifactId>maven-deploy-plugin</artifactId>
+        <configuration>
+          <skip>true</skip>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+
+</project>

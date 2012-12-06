@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<object-views xmlns="http://apps.axelor.com/xml/ns/object-views"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://apps.axelor.com/xml/ns/object-views http://apps.axelor.com/xml/ns/object-views/object-views_0.6.xsd">
+    
+    <selection name="product.color.selection">
+    	<option value="black">Black</option>
+    	<option value="white">White</option>
+    	<option value="gray">Gray</option>
+    	<option value="red">Red</option>
+    	<option value="green">Green</option>
+    	<option value="blue">Blue</option>
+    	<option value="yellow">Yellow</option>
+    	<option value="chocolate">Chocolate</option>
+    	<option value="orange">Orange</option>
+    	<option value="purple">Purple</option>
+    </selection>
+
+    <grid name="product-grid" title="Products">
+        <field name="name"/>
+        <field name="category"/>
+        <field name="color" selection="product.color.selection"/>
+    </grid>
+
+    <form name="product-form" title="Product" cols="4">
+        <field name="code"/>
+        <field name="name"/>
+        <field name="color" selection="product.color.selection"/>
+        <field name="category"/>
+    </form>
+
+</object-views>

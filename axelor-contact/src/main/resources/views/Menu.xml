@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<object-views xmlns="http://apps.axelor.com/xml/ns/object-views" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://apps.axelor.com/xml/ns/object-views http://apps.axelor.com/xml/ns/object-views/object-views_0.6.xsd">
+
+    <menuitem name="menu-contact-book" priority="100" title="Address Book" icon="img/address-book.png"/>
+
+    <menuitem name="menu-contact-all" parent="menu-contact-book"
+    	title="All Contacts"
+    	action="contact.all"/>
+
+    <action-view name="contact.all" title="Contacts" model="com.axelor.contact.db.Contact">
+		<view type="grid" name="contact-grid"/>
+		<view type="form" name="contact-form"/>
+    </action-view>
+
+    <menuitem name="menu-contact-friends" parent="menu-contact-book"
+        title="My Friends"
+        action="contact.friends"/>
+
+    <action-view name="contact.friends" title="My Friends" model="com.axelor.contact.db.Contact">
+    	<view type="grid" name="contact-grid"/>
+		<view type="form" name="contact-form"/>
+		<domain>self.circle.code = 'friends'</domain>
+    </action-view>
+
+    <menuitem name="menu-contact-family" parent="menu-contact-book"
+        title="Family Members"
+        action="contact.family"/>
+
+    <action-view name="contact.family" title="Family Members" model="com.axelor.contact.db.Contact">
+    	<view type="grid" name="contact-grid"/>
+		<view type="form" name="contact-form"/>
+		<domain>self.circle.code = 'family'</domain>
+    </action-view>
+
+    <menuitem name="menu-contact-business" parent="menu-contact-book"
+        title="Business Contacts"
+        action="contact.business"/>
+
+    <action-view name="contact.business" title="Business Contacts" model="com.axelor.contact.db.Contact">
+    	<view type="grid" name="contact-grid"/>
+		<view type="form" name="contact-form"/>
+		<domain>self.circle.code = 'business'</domain>
+    </action-view>
+
+    <menuitem name="menu-contact-config" parent="menu-contact-book"
+        title="Configuration" icon="img/wrench.png"/>
+
+    <menuitem name="menu-contact-country" parent="menu-contact-config"
+        title="Country"
+        action="contact.country"/>
+
+    <action-view name="contact.country" title="Country" model="com.axelor.contact.db.Country">
+		<view type="grid" name="country-grid"/>
+		<view type="form" name="country-form"/>
+    </action-view>
+
+    <menuitem name="menu-contact-circles" parent="menu-contact-config"
+        title="Circles"
+        action="contact.circles"/>
+
+    <action-view name="contact.circles" title="Circle" model="com.axelor.contact.db.Circle">
+		<view type="grid" name="circle-grid"/>
+		<view type="form" name="circle-form"/>
+    </action-view>
+
+    <menuitem name="menu-contact-titles" parent="menu-contact-config"
+        title="Titles"
+        action="contact.title"/>
+
+    <action-view name="contact.title" title="Title" model="com.axelor.contact.db.Title">
+		<view type="grid" name="title-grid"/>
+		<view type="form" name="title-form"/>
+    </action-view>
+
+    <menuitem name="menu-contact-company-tree" parent="menu-contact-config"
+        title="Companies"
+        action="contact.company"/>
+
+    <action-view name="contact.company" title="Company" model="com.axelor.contact.db.Company">
+		<view type="grid" name="company-grid"/>
+		<view type="form" name="company-form"/>
+    </action-view>
+
+</object-views>

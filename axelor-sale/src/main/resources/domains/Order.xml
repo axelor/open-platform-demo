@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<domain-models xmlns="http://apps.axelor.com/xml/ns/domain-models"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://apps.axelor.com/xml/ns/domain-models http://apps.axelor.com/xml/ns/domain-models/domain-models_0.6.xsd">
+
+  <module name="sale" package="com.axelor.sale.db"/>
+
+  <entity name="Order" sequential="true" lang="groovy">
+    <many-to-one name="customer" ref="com.axelor.contact.db.Contact" required="true"/>
+    <string name="name" search="id,name"><![CDATA[
+    this.id == null ? '== NEW ==' : String.format("SO%05d", this.id)
+    ]]></string>
+    <date name="orderDate" required="true"/>
+    <date name="createDate" required="true"/>
+    <date name="confirmDate" />
+    <boolean name="confirmed" />
+    <decimal name="amount" precision="8" scale="4"/>
+    <decimal name="taxAmount" precision="6" scale="4"/>
+    <decimal name="totalAmount" precision="8" scale="2"/>
+    <string name="notes" multiline="true"/>
+    <one-to-many name="items" ref="OrderLine" mappedBy="order" orderBy="price"/>
+  </entity>
+
+</domain-models>

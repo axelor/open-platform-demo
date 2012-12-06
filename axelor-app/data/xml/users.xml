@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<users xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+  <group code="admins" name="Administrators" />
+  <group code="users" name="Users" />
+
+  <user code="admin" group="admins">
+    <name>Administrator</name>
+    <password>admin</password>
+  </user>
+  <user code="demo" group="users">
+    <name>Demo User</name>
+    <password>demo</password>
+  </user>
+
+</users>

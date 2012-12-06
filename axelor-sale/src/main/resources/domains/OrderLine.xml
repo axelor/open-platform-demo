@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<domain-models xmlns="http://apps.axelor.com/xml/ns/domain-models"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://apps.axelor.com/xml/ns/domain-models http://apps.axelor.com/xml/ns/domain-models/domain-models_0.6.xsd">
+
+  <module name="sale" package="com.axelor.sale.db"/>
+
+  <entity name="OrderLine">
+    <many-to-one name="order" ref="Order" column="sale_order"/>
+    <many-to-one name="product" ref="Product"/>
+    <decimal name="price" precision="10" scale="4" min="0.0"/>
+    <integer name="quantity" min="1"/>
+    <many-to-many name="taxes" ref="Tax"/>
+  </entity>
+
+</domain-models>

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<object-views xmlns="http://apps.axelor.com/xml/ns/object-views" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://apps.axelor.com/xml/ns/object-views http://apps.axelor.com/xml/ns/object-views/object-views_1.0.xsd">
+    <grid name="contact-grid" title="Contacts">
+        <hilite color="#3333FF" background="#CDEB8B" condition="email *= xyz"/>
+        <field name="fullName"/>
+        <field name="email">
+            <hilite color="#FF0000" condition="email $= gmail.com"/>
+        </field>
+        <field name="phone"/>
+        <field name="company"/>
+        <field name="dateOfBirth"/>
+    </grid>
+    <form name="contact-form" title="Contact" cols="2" colWidths="*,200"
+    	onNew="action-contact-toggle-actions-group"
+    	onLoad="action-contact-toggle-actions-group">
+        <group title="Personal Information" colSpan="1" cols="4">
+            <field name="title"/>
+            <break/>
+            <field name="firstName"/>
+            <field name="lastName" onChange="com.axelor.contact.web.HelloController:guessEmail,action-contact-toggle-actions-group,action-contact-address-attrs"/>
+            <field name="email"/>
+            <field name="phone"/>
+            <field name="dateOfBirth"/>
+            <break/>
+            <field name="circle"/>
+            <field name="company"/>
+        </group>
+        <group name="action_buttons" title="Actions" colSpan="1" cols="1" canCollapse="true">
+            <button name="greet" title="Send Greetings..." onClick="com.axelor.contact.web.HelloController:say"/>
+            <button name="showHomePage" title="Home Page..." onClick="com.axelor.contact.web.HelloController:showHomePage"/>
+            <button name="showCompanyList" title="Company List..." help="Demonstrate how to open new view from action." onClick="com.axelor.contact.web.HelloController:showCompanyList"/>
+        </group>
+        <notebook colSpan="1">
+            <page title="Address List" cols="4">
+                <field name="addresses" title="Address List" colSpan="4">
+                    <grid title="Address List">
+                        <field name="street"/>
+                        <field name="area"/>
+                        <field name="city"/>
+                        <field name="zip"/>
+                        <field name="country"/>
+                    </grid>
+                    <form title="Address" cols="4">
+                        <field name="street"/>
+                        <field name="area"/>
+                        <field name="city"/>
+                        <field name="zip"/>
+                        <field name="country"/>
+                        <button name="clickMe" title="Click Me!" onClick="action-contact-address-about"/>
+                    </form>
+                </field>
+            </page>
+            <page title="Notes" cols="1">
+                <field name="notes" noLabel="true"/>
+            </page>
+        </notebook>
+    </form>
+    
+    <action-method name="action-contact-address-about">
+    	<call class="com.axelor.contact.web.HelloController" method="about"/>
+    </action-method>
+    
+    <action-attrs name="action-contact-toggle-actions-group">
+    	<attribute name="collapse" for="action_buttons" expr="eval: lastName == null"/>
+    </action-attrs>
+    
+    <action-attrs name="action-contact-address-attrs">
+    	<attribute name="title" for="addresses.area" expr="Location" if="lastName == null"/>
+    	<attribute name="title" for="addresses.area" expr="Area" if="lastName != null"/>
+    	<attribute name="hidden" for="addresses.zip" expr="lastName == null"/>
+    </action-attrs>
+    
+</object-views>
