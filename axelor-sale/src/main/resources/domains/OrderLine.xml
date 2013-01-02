@@ -6,10 +6,10 @@
   <module name="sale" package="com.axelor.sale.db"/>
 
   <entity name="OrderLine">
-    <many-to-one name="order" ref="Order" column="sale_order"/>
-    <many-to-one name="product" ref="Product"/>
-    <decimal name="price" precision="10" scale="4" min="0.0"/>
-    <integer name="quantity" min="1"/>
+    <many-to-one name="order" ref="Order" column="sale_order" required="true"/>
+    <many-to-one name="product" ref="Product" required="true"/>
+    <decimal name="price" precision="10" scale="4" min="0.0" required="true"/>
+    <integer name="quantity" min="1" required="true"/>
     <many-to-many name="taxes" ref="Tax"/>
   </entity>
 
