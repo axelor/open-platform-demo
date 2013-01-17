@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <object-views xmlns="http://apps.axelor.com/xml/ns/object-views" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://apps.axelor.com/xml/ns/object-views http://apps.axelor.com/xml/ns/object-views/object-views_1.0.xsd">
-    <grid name="contact-grid" title="Contacts">
+    <grid name="contact-grid" title="Contacts" editable="true">
         <hilite color="#3333FF" background="#CDEB8B" condition="email *= xyz"/>
         <field name="fullName"/>
         <field name="email">
@@ -9,6 +9,21 @@
         <field name="phone"/>
         <field name="company"/>
         <field name="dateOfBirth"/>
+        <field name="addresses">
+          <grid title="Address List">
+            <field name="street"/>
+            <field name="area"/>
+            <field name="city"/>
+          </grid>
+          <form cols="4" title="Address">
+            <field name="street"/>
+            <field name="area"/>
+            <field name="city"/>
+            <field name="zip"/>
+            <field name="country"/>
+            <button onClick="action-contact-address-about" title="Click Me!" name="clickMe"/>
+          </form>
+        </field>
     </grid>
     <form name="contact-form" title="Contact" cols="2" colWidths="*,200"
     	onNew="action-contact-toggle-actions-group"
@@ -33,7 +48,7 @@
         <notebook colSpan="1">
             <page title="Address List" cols="4">
                 <field name="addresses" title="Address List" colSpan="4">
-                    <grid title="Address List">
+                    <grid title="Address List" editable="true">
                         <field name="street"/>
                         <field name="area"/>
                         <field name="city"/>

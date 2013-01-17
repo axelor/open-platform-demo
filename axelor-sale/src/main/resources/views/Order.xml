@@ -44,10 +44,11 @@
     <notebook colSpan="4">
       <page title="Items" cols="1">
         <field name="items">
-          <grid title="Items">
+          <grid title="Items" editable="true">
             <field name="product"/>
             <field name="price"/>
             <field name="quantity"/>
+            <field name="taxes"/>
           </grid>
           <form title="Ordered Item" cols="4">
             <field name="product" colSpan="4"/>
