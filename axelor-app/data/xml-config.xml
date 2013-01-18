@@ -4,38 +4,38 @@
   xsi:schemaLocation="http://apps.axelor.com/xml/ns/data-import http://apps.axelor.com/xml/ns/data-import/data-import_0.7.xsd">
 
   <input file="users.xml" root="users">
-    <bind node="group" type="com.axelor.auth.db.Group">
-      <bind node="code" to="code" />
-      <bind node="name" to="name" />
+    <bind node="group" type="com.axelor.auth.db.Group" search="self.code = :code">
+      <bind node="@code" to="code" />
+      <bind node="@name" to="name" />
     </bind>
-    <bind node="user" type="com.axelor.auth.db.User">
-      <bind to="group" search="self.code = :group" />
-      <bind node="code" to="code" />
+    <bind node="user" type="com.axelor.auth.db.User" search="self.code = :code">
+      <bind node="@group" to="group" search="self.code = :group"/>
+      <bind node="@code" to="code" />
       <bind node="name" to="name" />
       <bind node="password" to="password" />
     </bind>
   </input>
-
+  
   <input file="contacts.xml" root="address-book">
     <bind node="title" type="com.axelor.contact.db.Title" search="self.code = :code">
-      <bind node="code" to="code" />
-      <bind node="name" to="name" />
+      <bind node="@code" to="code" />
+      <bind node="@name" to="name" />
     </bind>
     <bind node="country" type="com.axelor.contact.db.Country" search="self.code = :code">
-      <bind node="code" to="code" />
-      <bind node="name" to="name" />
+      <bind node="@code" to="code" />
+      <bind node="@name" to="name" />
     </bind>
     <bind node="company" type="com.axelor.contact.db.Company" search="self.code = :code">
-      <bind node="code" to="code" />
-      <bind node="name" to="name" />
+      <bind node="@code" to="code" />
+      <bind node="@name" to="name" />
       <bind to="parent" search="self.code = :parent" />
     </bind>
     <bind node="circle" type="com.axelor.contact.db.Circle" search="self.code = :code">
-      <bind node="code" to="code" />
-      <bind node="name" to="name" />
+      <bind node="@code" to="code" />
+      <bind node="@name" to="name" />
     </bind>
     <bind node="contact" type="com.axelor.contact.db.Contact">
-      <bind node="title" to="title" search="self.code = :code" />
+      <bind node="@title" to="title" search="self.code = :title" />
       <bind node="first-name" to="firstName" />
       <bind node="last-name" to="lastName" />
       <bind node="email" to="email" />
@@ -43,31 +43,32 @@
         <bind node="street1" to="street" />
         <bind node="street2" to="area" />
         <bind node="city" to="city" />
-        <bind to="country" search="self.code = :country"/>
+        <bind to="country_code" node="country"/>
+        <bind to="country" search="self.code = :country_code"/>
       </bind>
     </bind>
   </input>
-
+  
   <input file="sale-orders.xml" root="sale-orders">
   
     <bind node="tax" type="com.axelor.sale.db.Tax">
-      <bind node="code" to="code" />
-      <bind node="name" to="name" />
-      <bind node="_value" to="rate" />
+      <bind node="@code" to="code" />
+      <bind node="@name" to="name" />
+      <bind to="rate" node="text()"/>
     </bind>
     
     <bind node="product" type="com.axelor.sale.db.Product">
-      <bind node="code" to="code" />
-      <bind node="name" to="name" />
-      <bind node="color" to="color" />
+      <bind node="@code" to="code" />
+      <bind node="@name" to="name" />
+      <bind node="@color" to="color" />
     </bind>
-  
+
     <bind node="sale-order" type="com.axelor.sale.db.Order">
       <!-- transform boolean value into 'true' or 'false' -->
-      <bind node="confirmed" to="confirmed" eval="confirmed ==~ /^(T|Y|1)$/ ? 'true' : 'false'" />
+      <bind node="@confirmed" to="confirmed" adapter="Boolean"/>
 
-      <bind node="date" to="orderDate" />
-      <bind node="date" to="createDate" />
+      <bind node="@date" to="orderDate" adapter="LocalDate"/>
+      <bind node="@date" to="createDate" adapter="LocalDate"/>
 
       <!-- default value provided with eval expression -->
       <bind to="confirmDate" eval="new org.joda.time.LocalDate()" />
@@ -85,15 +86,15 @@
         <bind to="email" eval='"${firstName}.${lastName}@gmail.com".toLowerCase()' />
       </bind>
       <!-- END IF -->
-
+      
       <bind node="items/item" to="items">
-        <bind node="quantity" to="quantity" />
-        <bind node="price" to="price" />
-        <bind to="product" search="self.code = :product"/>
+        <bind node="@quantity" to="quantity" />
+        <bind node="@price" to="price" />
+        <bind node="@product" to="product" search="self.code = :product"/>
         <bind node="taxes/tax" to="taxes" search="self.code = :code">
-          <bind node="name" to="name" />
-          <bind node="code" to="code" />
-          <bind node="_value" to="rate" />
+          <bind node="@name" to="name" />
+          <bind node="@code" to="code" />
+          <bind node="text()" to="rate" />
         </bind>
       </bind>
     </bind>

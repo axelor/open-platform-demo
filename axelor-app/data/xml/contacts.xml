@@ -24,8 +24,7 @@
   <country code="IN" name="India" />
   <country code="BR" name="Brazil" />
   
-  <contact>
-    <title code="mr" />
+  <contact title="mr">
     <first-name>John</first-name>
     <last-name>Smith</last-name>
     <email>john.smith@gmail.com</email>
@@ -44,8 +43,7 @@
       </address>
     </addresses>
   </contact>
-  <contact>
-    <title code="mr" />
+  <contact title="mr">
     <first-name>Tin</first-name>
     <last-name>Tin</last-name>
     <email>tin.tin@gmail.com</email>
@@ -64,8 +62,7 @@
       </address>
     </addresses>
   </contact>
-  <contact>
-    <title code="miss" />
+  <contact title="miss">
     <first-name>Teen</first-name>
     <last-name>Teen</last-name>
     <email>teen.teen@gmail.com</email>
