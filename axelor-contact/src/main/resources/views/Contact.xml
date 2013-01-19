@@ -3,6 +3,8 @@
     <grid name="contact-grid" title="Contacts" editable="true">
         <hilite color="#3333FF" background="#CDEB8B" condition="email *= xyz"/>
         <field name="fullName"/>
+        <field name="firstName"/>
+        <field name="lastName" onChange="com.axelor.contact.web.HelloController:guessEmail"/>
         <field name="email">
             <hilite color="#FF0000" condition="email $= gmail.com"/>
         </field>
