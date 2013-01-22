@@ -4,7 +4,7 @@
   xsi:schemaLocation="http://apps.axelor.com/xml/ns/object-views http://apps.axelor.com/xml/ns/object-views/object-views_0.8.xsd">
 
   <portal title="Welcome!" name="welcome.portal" cols="2">
-    <portlet action="contact.friends"/>
+    <portlet action="contact.all" canSearch="true"/>
     <portlet action="contact.family"/>
     <portlet action="sale.orders" colSpan="2"/>
   </portal>
