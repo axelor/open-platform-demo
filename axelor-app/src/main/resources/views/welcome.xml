@@ -1,19 +1,22 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<object-views xmlns="http://apps.axelor.com/xml/ns/object-views" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://apps.axelor.com/xml/ns/object-views http://apps.axelor.com/xml/ns/object-views/object-views_1.0.xsd">
-    <portal name="welcome-portal" title="Welcome!">
-        <portlet title="All Contact">
-            <resource>com.axelor.contact.db.Contact</resource>
-        </portlet>
-        <portlet title="Business Contacts">
-            <resource>com.axelor.contact.db.Contact</resource>
-            <domain>self.circle.code = 'business'</domain>
-        </portlet>
-        <portlet title="Sale Orders">
-            <resource>com.axelor.sale.db.Order</resource>
-        </portlet>
-        <portlet title="Axelor!">
-            <resource>http://www.axelor.com/</resource>
-            <view-type>html</view-type>
-        </portlet>
-    </portal>
+<?xml version="1.0" encoding="UTF-8"?>
+<object-views xmlns="http://apps.axelor.com/xml/ns/object-views"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://apps.axelor.com/xml/ns/object-views http://apps.axelor.com/xml/ns/object-views/object-views_0.8.xsd">
+
+  <portal title="Welcome!" name="welcome.portal" cols="2">
+    <portlet action="contact.friends"/>
+    <portlet action="contact.family"/>
+    <portlet action="sale.orders" colSpan="2"/>
+  </portal>
+
+  <action-view name="welcome" title="Welcome!">
+    <view type="portal" name="welcome.portal"/>
+  </action-view>
+
+  <menuitem name="menu-dashboards" priority="101"
+    title="Dashboards" icon="img/chart.png"/>
+
+  <menuitem name="menu-welcome" parent="menu-dashboards"
+    title="Welcome!" action="welcome"/>
+
 </object-views>
