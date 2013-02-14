@@ -104,8 +104,13 @@
     <field name="rate" expr="0.12"/>
   </action-record>
 
-  <action-record name="default-customer-record" model="com.axelor.contact.db.Contact">
+  <action-record name="default-customer-record"
+    model="com.axelor.contact.db.Contact"
+    search="self.email = 'john.smith@gmail.com'">
     <field name="title" expr="action:default-title-record"/>
+    <field name="firstName" expr="John"/>
+    <field name="lastName" expr="Smith"/>
+    <field name="email" expr="john.smith@gmail.com"/>
   </action-record>
 
   <action-record name="default-title-record"
