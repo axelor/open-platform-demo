@@ -5,16 +5,16 @@
 
   <module name="contact" package="com.axelor.contact.db"/>
 
-  <entity name="Contact" sequential="true" lang="groovy">
+  <entity name="Contact" sequential="true">
     <many-to-one name="title" ref="Title" title="Intitulé"/>
     <string name="firstName" required="true" title="Prénom"/>
     <string name="lastName" required="true" title="Nom"/>
     <string name="fullName" namecolumn="true" search="firstName,lastName" title="Nom complet"><![CDATA[
     if (firstName == null && lastName == null)
-    	return null
+    	return null;
     if (title == null)
-        return firstName + ' ' + lastName
-    return title.name + ' ' + firstName + ' ' + lastName
+        return firstName + " " + lastName;
+    return title.getName() + " " + firstName + " " + lastName;
     ]]></string>
     <string name="email" required="true" unique="true" max="100" title="E-mail"/>
     <string name="phone" max="20" title="Téléphone"/>
