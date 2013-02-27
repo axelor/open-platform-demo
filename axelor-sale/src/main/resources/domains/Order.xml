@@ -15,7 +15,7 @@
     <date name="confirmDate" />
     <boolean name="confirmed" />
     <decimal name="amount" precision="8" scale="4"/>
-    <decimal name="taxAmount" precision="6" scale="4"/>
+    <decimal name="taxAmount" precision="8" scale="4"/>
     <decimal name="totalAmount" precision="8" scale="2"/>
     <string name="notes" multiline="true"/>
     <one-to-many name="items" ref="OrderLine" mappedBy="order" orderBy="price"/>
