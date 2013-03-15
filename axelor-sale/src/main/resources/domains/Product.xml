@@ -5,7 +5,7 @@
 
   <module name="sale" package="com.axelor.sale.db"/>
 
-  <entity name="Product">
+  <entity name="Product" cachable="true">
     <string name="code" required="true" unique="true" min="2"/>
     <string name="name" required="true" unique="true" min="2"/>
     <string name="color"/>
