@@ -4,6 +4,7 @@
   xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd">
   <persistence-unit name="persistenceUnit" transaction-type="RESOURCE_LOCAL">
     <provider>org.hibernate.ejb.HibernatePersistence</provider>
+    <shared-cache-mode>ENABLE_SELECTIVE</shared-cache-mode>
     <properties>
       <!--
       <property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQLDialect" />
@@ -22,10 +23,7 @@
            value="create-drop" means the same as "create" but also drops tables when Hibernate closes; 
            value="validate" makes no changes to the database -->
       <property name="hibernate.hbm2ddl.auto" value="update" />
-      <property name="hibernate.ejb.naming_strategy" value="org.hibernate.cfg.ImprovedNamingStrategy" />
-      <property name="hibernate.connection.charSet" value="UTF-8" />
-      <property name="hibernate.max_fetch_depth" value="3" />
-      <property name="hibernate.id.new_generator_mappings" value="true" />
+
     </properties>
   </persistence-unit>
 </persistence>
