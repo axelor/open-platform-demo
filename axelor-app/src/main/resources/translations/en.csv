@@ -1,0 +1,133 @@
+"key","translation","domain"
+"code","Code","com.axelor.sale.db.Tax"
+"name","Name","com.axelor.sale.db.Tax"
+"rate","Rate","com.axelor.sale.db.Tax"
+"customer","Customer","com.axelor.sale.db.Order"
+"name","Name","com.axelor.sale.db.Order"
+"orderDate","Order Date","com.axelor.sale.db.Order"
+"createDate","Create Date","com.axelor.sale.db.Order"
+"confirmDate","Confirm Date","com.axelor.sale.db.Order"
+"confirmed","Confirmed","com.axelor.sale.db.Order"
+"amount","Amout","com.axelor.sale.db.Order"
+"taxAmount","Tax Amount","com.axelor.sale.db.Order"
+"totalAmount","TotalAmount","com.axelor.sale.db.Order"
+"notes","Notes","com.axelor.sale.db.Order"
+"items","Items","com.axelor.sale.db.Order"
+"code","Code","com.axelor.sale.db.ProductCategory"
+"name","Name","com.axelor.sale.db.ProductCategory"
+"parent","Parent","com.axelor.sale.db.ProductCategory"
+"code","Code","com.axelor.sale.db.Product"
+"name","Name","com.axelor.sale.db.Product"
+"color","Color","com.axelor.sale.db.Product"
+"category","Category","com.axelor.sale.db.Product"
+"order","Order","com.axelor.sale.db.OrderLine"
+"product","Product","com.axelor.sale.db.OrderLine"
+"price","Price","com.axelor.sale.db.OrderLine"
+"quantity","Quantity","com.axelor.sale.db.OrderLine"
+"taxes","Taxes","com.axelor.sale.db.OrderLine"
+"code","Country Code","com.axelor.contact.db.Country"
+"name","Country Name","com.axelor.contact.db.Country"
+"code","Title Code","com.axelor.contact.db.Title"
+"name","Title Name","com.axelor.contact.db.Title"
+"code","Company Code","com.axelor.contact.db.Company"
+"name","Company Name","com.axelor.contact.db.Company"
+"parent","Main Company","com.axelor.contact.db.Company"
+"employees","Employees","com.axelor.contact.db.Company"
+"circles","Circles","com.axelor.contact.db.Company"
+"notes","Notes","com.axelor.contact.db.Company"
+"contact","Contact","com.axelor.contact.db.Address"
+"street","Street","com.axelor.contact.db.Address"
+"area","Area","com.axelor.contact.db.Address"
+"city","City","com.axelor.contact.db.Address"
+"zip","ZIP","com.axelor.contact.db.Address"
+"country","Country","com.axelor.contact.db.Address"
+"code","Circle Code","com.axelor.contact.db.Circle"
+"name","Circle Name","com.axelor.contact.db.Circle"
+"title","Title","com.axelor.contact.db.Contact"
+"firstName","First Name","com.axelor.contact.db.Contact"
+"lastName","Last Name","com.axelor.contact.db.Contact"
+"fullName","Full Name","com.axelor.contact.db.Contact"
+"email","E-mail","com.axelor.contact.db.Contact"
+"phone","Phone Number","com.axelor.contact.db.Contact"
+"dateOfBirth","Date of Birth","com.axelor.contact.db.Contact"
+"addresses","Addresses","com.axelor.contact.db.Contact"
+"circle","Circle","com.axelor.contact.db.Contact"
+"notes","Notes","com.axelor.contact.db.Contact"
+"image","Images","com.axelor.contact.db.Contact"
+"company","Company","com.axelor.contact.db.Contact"
+"Sales Management","Sales Management",
+"Sale Orders","Sale Orders",
+"Products","Products",
+"Sales Search...","Sales Search..",
+"Configuration","Configuration",
+"Product Categories","Product Categories",
+"All Taxes","All Taxes",
+"Taxes","Taxes",
+"Orders","Orders",
+"Order","Order",
+"Order Details","Order Details",
+"Amount Details","Amount Details",
+": (Amount + Tax Amount)",": (Amount + Tax Amount)",
+"Calculate","Calculate",
+"Other Details","Other Details",
+"Items","Items",
+"Ordered Item","Ordered Item",
+"Customer","Customer",
+"Notes","Notes",
+"Create Date is in future.","Create Date is in future.",
+"Order Date is in future.","Order Date is in future.",
+"No Sale Order Items. Would you like to continue?","No Sale Order Items. Would you like to continue?",
+"Order creation date is in the future.","Order creation date is in the future.",
+"Ordered Items","Ordered Items",
+"Black","Black",
+"White","White",
+"Gray","Gray",
+"Red","Red",
+"Green","Green",
+"Blue","Blue",
+"Yellow","Yellow",
+"Chocolate","Chocolate",
+"Orange","Orange",
+"Purple","Purple",
+"Product","Product",
+"Product Category","Product Category",
+"Tax","Tax",
+"Sales Search","Sales Search",
+"partner","Partner",
+"product","Product",
+"date","Date",
+"value","Value",
+"customer","Customer",
+"company","Company",
+"Category 1","Category 1",
+"Category 2","Category 2",
+"Sub Category 11","Sub Category 11",
+"Sub Category 12","Sub Category 12",
+"Sub Category 13","Sub Category 13",
+"Sub Category 21","Sub Category 21",
+"Sub Category 22","Sub Category 22",
+"Create Partner...","Create Partner...",
+"Create Sale Order...","Create Sale Order...",
+"Create Partner... (12)","Create Partner... (12)",
+"Create Sale Order... (13)","Create Sale Order... (13)",
+"Create Partner... (13)","Create Partner... (13)",
+"Create Sale Order... (21)","Create Sale Order... (21)",
+"Create Partner... (22)","Create Partner... (22)",
+"Welcome!","Welcome!",
+"Dashboards","Dashboards",
+"Address Book","Address Book",
+"All Contacts","All Contacts",
+"Contacts","Contacts",
+"My Friends","My Friends",
+"Family Members","Family Members",
+"Business Contacts","Business Contacts",
+"Country","Country",
+"Circles","Circles",
+"Circle","Circle",
+"Titles","Titles",
+"Title","Title",
+"Companies","Companies",
+"Company","Company",
+"Send Greetings...","Send Greetings...",
+"Home Page...","Home Page...",
+"Company List...","Company List...",
