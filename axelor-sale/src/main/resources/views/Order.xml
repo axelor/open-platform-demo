@@ -13,7 +13,7 @@
 
   <form name="order-form" title="Order" cols="4"
     onNew="default-order-record"
-    onLoad="action-sale-order-confirm"
+    onLoad="action-sale-order-confirm,action-sale-order-confirm-attrs"
     onSave="check-order-values,action-sale-order-validate">
     <separator title="Order Details" colSpan="4"/>
     <field name="name"/>
@@ -32,18 +32,9 @@
     <field name="orderDate"/>
     <field name="createDate"/>
     <field name="confirmDate"/>
-    <separator title="Amount Details" colSpan="4"/>
-    <field name="amount"/>
-    <field name="taxAmount"/>
-    <field name="totalAmount"/>
-    <group cols="2" colSpan="2" colWidths="50%,50%">
-      <label title=": (Amount + Tax Amount)"/>
-      <button name="btnCalculate" title="Calculate" onClick="check-order-dates,com.axelor.sale.web.SaleOrderController:calculate,save"/>
-    </group>
-    <separator title="Other Details" colSpan="4"/>
-    <notebook colSpan="4">
+    <notebook colSpan="4" name="nbDetails">
       <page title="Items" cols="1">
-        <field name="items">
+        <field name="items" onChange="com.axelor.sale.web.SaleOrderController:calculate">
           <grid title="Items" editable="true">
             <field name="product"/>
             <field name="price"/>
@@ -72,6 +63,15 @@
         <field name="notes" noLabel="true"/>
       </page>
     </notebook>
+    <group colSpan="4" cols="3" colWidths="50px,*,220px">
+      <button name="btnCalculate" title="Calculate" onClick="check-order-dates,com.axelor.sale.web.SaleOrderController:calculate,save"/>
+      <spacer colSpan="1" />
+      <group colSpan="1" cols="2" colWidths="50%,50%" readonly="true" css="subtotal">
+        <field name="amount" />
+        <field name="taxAmount" />
+        <field name="totalAmount" css="subtotal-total" />
+      </group>
+    </group>
   </form>
 
   <action-record name="default-order-record" model="com.axelor.sale.db.Order">
@@ -134,6 +134,8 @@
     <attribute name="title" for="name" expr="eval: String.format('Order No.')" if="confirmed"/>
     <attribute name="title" for="name" expr="Name" if="!confirmed"/>
     <attribute name="required" for="createDate" expr="eval: !confirmed"/>
+    <attribute name="readonly" for="nbDetails" expr="eval: confirmed"/>
+    <attribute name="readonly" for="customer" expr="eval: confirmed"/>
   </action-attrs>
 
   <action-condition name="check-order-dates">
