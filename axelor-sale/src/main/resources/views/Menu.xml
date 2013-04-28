@@ -11,6 +11,7 @@
     <action-view name="sale.orders" model="com.axelor.sale.db.Order" title="Sale Orders">
     	<view type="grid"/>
     	<view type="form"/>
+        <view type="calendar" name="sales-timeline"/>
     </action-view>
 
     <menuitem name="menu-sales-product" parent="menu-sales"

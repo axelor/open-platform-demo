@@ -73,6 +73,14 @@
       </group>
     </group>
   </form>
+  
+  <calendar name="sales-timeline" title="Sales Timeline" model="com.axelor.sale.db.Order" editable="false"
+    eventStart="createDate"
+    eventStop="confirmDate"
+    eventLength="8"
+    colorBy="customer">
+    <field name="name"/>
+  </calendar>
 
   <action-record name="default-order-record" model="com.axelor.sale.db.Order">
     <field name="customer" expr="action:default-customer-record" if="!(__ref__ instanceof com.axelor.contact.db.Contact)"/>
