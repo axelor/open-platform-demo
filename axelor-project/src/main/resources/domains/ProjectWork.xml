@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<domain-models xmlns="http://apps.axelor.com/xml/ns/domain-models"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://apps.axelor.com/xml/ns/domain-models http://apps.axelor.com/xml/ns/domain-models/domain-models_0.9.xsd">
+
+  <module name="project" package="com.axelor.project.db" />
+
+  <entity name="ProjectWork" table="PROJECT_WORK" cachable="true">
+    <string name="name" required="true" />
+    <date name="date" required="true" />
+    <time name="hours" title="Time Spent" />
+    <many-to-one name="task" ref="ProjectTask" required="true" />
+    <many-to-one name="user" column="user_id" ref="com.axelor.auth.db.User" />
+  </entity>
+
+</domain-models>

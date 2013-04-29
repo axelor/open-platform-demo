@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<object-views xmlns="http://apps.axelor.com/xml/ns/object-views"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://apps.axelor.com/xml/ns/object-views http://apps.axelor.com/xml/ns/object-views/object-views_0.9.xsd">
+  
+  <grid name="project-grid" title="Projects">
+    <field name="name" />
+    <field name="parent" />
+    <field name="priority" />
+  </grid>
+  
+  <form name="project-form" title="Project">
+    <field name="name" />
+    <field name="priority" />
+    <field name="description" />
+    <field name="parent"/>
+    <notebook colSpan="4">
+      <page title="Members" cols="1">
+        <field name="members" noLabel="true"/>
+      </page>
+      <page title="Tasks" cols="1">
+        <field name="tasks" noLabel="true"/>
+      </page>
+      <page title="Notes" cols="1">
+        <field name="notes" noLabel="true"/>
+      </page>
+    </notebook>
+  </form>
+
+</object-views>

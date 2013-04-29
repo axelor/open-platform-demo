@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<object-views xmlns="http://apps.axelor.com/xml/ns/object-views"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://apps.axelor.com/xml/ns/object-views http://apps.axelor.com/xml/ns/object-views/object-views_0.9.xsd">
+  
+  <grid name="project-work-grid" title="Project Work" editable="true">
+    <field name="name" />
+    <field name="date" />
+    <field name="task" />
+    <field name="hours" />
+  </grid>
+  
+  <form name="project-task-form" title="Project Task">
+    <field name="name" />
+    <field name="task" />
+    <field name="date" />
+    <field name="hours" />
+  </form>
+
+</object-views>

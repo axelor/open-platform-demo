@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<object-views xmlns="http://apps.axelor.com/xml/ns/object-views"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://apps.axelor.com/xml/ns/object-views http://apps.axelor.com/xml/ns/object-views/object-views_0.8.xsd">
+
+  <menuitem name="menu-project" priority="80" title="Project Management" icon="img/wheel.png"/>
+
+  <menuitem name="menu-project-all" parent="menu-project"
+    title="All Projects"
+    action="project.all"
+    icon="img/calendar.png"/>
+
+  <action-view name="project.all" title="Projects" model="com.axelor.project.db.Project">
+    <view type="grid" name="project-grid"/>
+    <view type="form" name="project-form"/>
+  </action-view>
+
+  <menuitem name="menu-project-tasks" parent="menu-project"
+    title="All Tasks"
+    action="project.task.all"
+    icon="img/calendar-task.png"/>
+    
+  <menuitem name="menu-project-tasks-my" parent="menu-project"
+    title="My Tasks"
+    action="project.task.my"
+    icon="img/calendar-task.png"/>
+
+  <action-view name="project.task.all" title="All Tasks" model="com.axelor.project.db.ProjectTask">
+    <view type="grid" name="project-task-grid"/>
+    <view type="form" name="project-task-form"/>
+    <view type="calendar" name="project-task-calendar" />
+  </action-view>
+  
+  <action-view name="project.task.my" title="My Tasks" model="com.axelor.project.db.ProjectTask">
+    <view type="grid" name="project-task-grid"/>
+    <view type="form" name="project-task-form"/>
+    <view type="calendar" name="project-task-calendar-my" />
+  </action-view>
+
+</object-views>
