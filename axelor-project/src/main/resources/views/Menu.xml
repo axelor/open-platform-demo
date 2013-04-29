@@ -35,6 +35,8 @@
     <view type="grid" name="project-task-grid"/>
     <view type="form" name="project-task-form"/>
     <view type="calendar" name="project-task-calendar-my" />
+    <domain>self.user = :currentUser</domain>
+    <context name="currentUser" expr="eval: __user__"/>
   </action-view>
 
 </object-views>

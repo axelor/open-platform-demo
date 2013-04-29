@@ -10,7 +10,7 @@
     <field name="hours" />
   </grid>
   
-  <form name="project-task-form" title="Project Task">
+  <form name="project-work-form" title="Project Work">
     <field name="name" />
     <field name="task" />
     <field name="date" />
