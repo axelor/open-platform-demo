@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<object-views xmlns="http://apps.axelor.com/xml/ns/object-views"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://apps.axelor.com/xml/ns/object-views http://apps.axelor.com/xml/ns/object-views/object-views_0.9.xsd">
+
+  <chart name="chart.sales.per.month" title="Sales per month" categoryKey="month" categoryType="month">
+    <query native="false">
+    <![CDATA[
+    SELECT
+        SUM(self.totalAmount) AS amount,
+        MONTH(self.orderDate) AS month,
+        _customer.fullName AS customer
+    FROM
+        Order self
+    LEFT JOIN
+        self.customer AS _customer
+    WHERE
+        YEAR(self.orderDate) = YEAR(current_date)
+    GROUP BY
+        _customer,
+        self.orderDate
+    ORDER BY
+        month
+    ]]>
+    </query>
+    <series key="customer" expr="amount" type="bar"/>
+  </chart>
+  
+  <chart name="chart.sales.per.month.pie" title="Sales per customer" categoryKey="customer">
+    <query native="false">
+    <![CDATA[
+    SELECT
+        SUM(self.totalAmount) AS amount,
+        _customer.fullName AS customer
+    FROM
+        Order self
+    LEFT JOIN
+        self.customer AS _customer
+    WHERE
+        YEAR(self.orderDate) = YEAR(current_date)
+    GROUP BY
+        _customer
+    ]]>
+    </query>
+    <series key="amount" type="pie"/>
+  </chart>
+  
+  <chart name="chart.sales.by.customer" title="Sales by customer" categoryKey="month" categoryType="month">
+    <query native="true">
+    <![CDATA[
+    SELECT
+        SUM(o.total_amount) AS amount,
+        EXTRACT(month from o.order_date) AS month,
+        c.full_name AS customer
+    FROM
+        sale_order o
+    LEFT JOIN
+        contact_contact c ON o.customer = c.id
+    WHERE
+        EXTRACT(year from o.order_date) = EXTRACT(year from current_date) AND c.id = :id
+    GROUP BY
+        c.full_name,
+        month
+    ORDER BY
+        month
+    ]]>
+    </query>
+    <series key="customer" expr="amount" type="bar"/>
+  </chart>
+  
+</object-views>
