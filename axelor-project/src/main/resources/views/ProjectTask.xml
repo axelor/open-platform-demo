@@ -13,7 +13,7 @@
     <field name="priority" />
   </grid>
   
-  <form name="project-task-form" title="Project Task">
+  <form name="project-task-form" title="Project Task" onNew="project.task.on.new">
     <field name="name" />
     <field name="priority" />
     <field name="createDate"/>
@@ -44,6 +44,11 @@
     </notebook>
   </form>
   
+  <action-record name="project.task.on.new" model="com.axelor.project.db.ProjectTask">
+    <field name="createDate" expr="eval: startDate ? startDate : __time__"/>
+    <field name="user" expr="eval: __user__"/>
+  </action-record>
+
   <calendar name="project-task-calendar" title="Project Tasks" colorBy="user"
     eventStart="startDate"
     eventStop="endDate"
