@@ -1,20 +1,25 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<object-views xmlns="http://apps.axelor.com/xml/ns/object-views" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://apps.axelor.com/xml/ns/object-views http://apps.axelor.com/xml/ns/object-views/object-views_1.0.xsd">
-    <grid name="address-grid" title="Address List">
-        <field name="contact"/>
-        <field name="street"/>
-        <field name="area"/>
-        <field name="city"/>
-        <field name="zip"/>
-        <field name="country"/>
-    </grid>
-    <form name="address-form" title="Address" cols="2">
-        <field name="contact"/>
-        <break/>
-        <field name="street"/>
-        <field name="area"/>
-        <field name="city"/>
-        <field name="zip"/>
-        <field name="country"/>
-    </form>
+<object-views xmlns="http://apps.axelor.com/xml/ns/object-views"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://apps.axelor.com/xml/ns/object-views http://apps.axelor.com/xml/ns/object-views/object-views_0.9.xsd">
+
+  <grid name="address-grid" title="Address List">
+    <field name="contact" />
+    <field name="street" />
+    <field name="area" />
+    <field name="city" />
+    <field name="zip" />
+    <field name="country" />
+  </grid>
+
+  <form name="address-form" title="Address" cols="2">
+    <field name="contact" />
+    <break />
+    <field name="street" />
+    <field name="area" />
+    <field name="city" />
+    <field name="zip" />
+    <field name="country" />
+  </form>
+
 </object-views>

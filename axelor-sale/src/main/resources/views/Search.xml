@@ -1,68 +1,68 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <object-views xmlns="http://apps.axelor.com/xml/ns/object-views"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://apps.axelor.com/xml/ns/object-views http://apps.axelor.com/xml/ns/object-views/object-views_0.8.xsd">
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://apps.axelor.com/xml/ns/object-views http://apps.axelor.com/xml/ns/object-views/object-views_0.9.xsd">
 
-    <search name="sale-order-search" title="Sales Search" limit="100">
+  <search name="sale-order-search" title="Sales Search" limit="100">
 
-    	<search-fields>
-    	    <field name="partner" type="reference" target="com.axelor.contact.db.Contact"/>
-    	    <field name="product" type="reference" target="com.axelor.sale.db.Product" widget="SuggestBox"/>
-    		<field name="customer" type="string" />
-    		<field name="date" type="date"/>
-    		<field name="value" type="decimal" />
-    	</search-fields>
+    <search-fields>
+      <field name="partner" type="reference" target="com.axelor.contact.db.Contact"/>
+      <field name="product" type="reference" target="com.axelor.sale.db.Product" widget="SuggestBox"/>
+      <field name="customer" type="string" />
+      <field name="date" type="date"/>
+      <field name="value" type="decimal" />
+    </search-fields>
 
-    	<result-fields>
-    		<field name="customer" type="string"/>
-	        <field name="company" type="string"/>
-	        <field name="product" type="string"/>
-	        <field name="date" type="date"/>
-	        <field name="value" type="decimal"/>
-    	</result-fields>
+    <result-fields>
+      <field name="customer" type="string"/>
+      <field name="company" type="string"/>
+      <field name="product" type="string"/>
+      <field name="date" type="date"/>
+      <field name="value" type="decimal"/>
+    </result-fields>
 
-    	<select model="com.axelor.contact.db.Contact" orderBy="customer">
-    		<field name="fullName" as="customer"/>
-    		<field name="company.name" as="company"/>
-    		<field name="dateOfBirth" as="date"/>
-    		<where match="any">
-                <input name="customer" field="fullName" matchStyle="contains"/>
-                <input name="partner.fullName" field="fullName"/>
-                <input name="date" field="dateOfBirth"/>
-            </where>
-    	</select>
+    <select model="com.axelor.contact.db.Contact" orderBy="customer">
+      <field name="fullName" as="customer"/>
+      <field name="company.name" as="company"/>
+      <field name="dateOfBirth" as="date"/>
+      <where match="any">
+        <input name="customer" field="fullName" matchStyle="contains"/>
+        <input name="partner.fullName" field="fullName"/>
+        <input name="date" field="dateOfBirth"/>
+      </where>
+    </select>
 
-    	<select model="com.axelor.sale.db.Order" title="Sale Order" orderBy="date,-value">
-    		<field name="customer.fullName" as="customer"/>
-    		<field name="items[].product.name" as="product"/>
-    		<field name="createDate" as="date"/>
-    		<field name="amount" as="value"/>
-    		<where match="any">
-                <input name="customer" field="customer.fullName" matchStyle="contains"/>
-                <input name="partner" field="customer"/>
-                <input name="date" field="createDate"/>
-                <input name="value" field="amount"/>
-                <input name="product" field="items[].product"/>
-            </where>
-    	</select>
+    <select model="com.axelor.sale.db.Order" title="Sale Order" orderBy="date,-value">
+      <field name="customer.fullName" as="customer"/>
+      <field name="items[].product.name" as="product"/>
+      <field name="createDate" as="date"/>
+      <field name="amount" as="value"/>
+      <where match="any">
+        <input name="customer" field="customer.fullName" matchStyle="contains"/>
+        <input name="partner" field="customer"/>
+        <input name="date" field="createDate"/>
+        <input name="value" field="amount"/>
+        <input name="product" field="items[].product"/>
+      </where>
+    </select>
 
-    </search>
-    
-    <!-- Action Menu -->
-    <action-menu name="category-1" title="Category 1"/>
-    <action-menu name="category-2" title="Category 2"/>
-    <action-menu name="sub-category-11" parent="category-1" title="Sub Category 11"/>
-    <action-menu name="sub-category-12" parent="category-1" title="Sub Category 12"/>
-    <action-menu name="sub-category-13" parent="category-1" title="Sub Category 13"/>
-    <action-menu name="sub-category-21" parent="category-2" title="Sub Category 21"/>
-    <action-menu name="sub-category-22" parent="category-2" title="Sub Category 22"/>
+  </search>
 
-    <action-menu name="create-partner" parent="sub-category-11" title="Create Partner..." action="contact.all"/>
-    <action-menu name="create-sale-order" parent="sub-category-11" title="Create Sale Order..." action="sale.orders"/>
-    <action-menu name="create-partner-12" parent="sub-category-12" title="Create Partner... (12)" action="contact.all"/>
-    <action-menu name="create-sale-order-13" parent="sub-category-13" title="Create Sale Order... (13)" action="sale.orders"/>
-    <action-menu name="create-partner-13" parent="sub-category-13" title="Create Partner... (13)" action="contact.all"/>
-    <action-menu name="create-sale-order-21" parent="sub-category-21" title="Create Sale Order... (21)" action="sale.orders"/>
-    <action-menu name="create-partner-22" parent="sub-category-22" title="Create Partner... (22)" action="contact.all"/>
+  <!-- Action Menu -->
+  <action-menu name="category-1" title="Category 1"/>
+  <action-menu name="category-2" title="Category 2"/>
+  <action-menu name="sub-category-11" parent="category-1" title="Sub Category 11"/>
+  <action-menu name="sub-category-12" parent="category-1" title="Sub Category 12"/>
+  <action-menu name="sub-category-13" parent="category-1" title="Sub Category 13"/>
+  <action-menu name="sub-category-21" parent="category-2" title="Sub Category 21"/>
+  <action-menu name="sub-category-22" parent="category-2" title="Sub Category 22"/>
+
+  <action-menu name="create-partner" parent="sub-category-11" title="Create Partner..." action="contact.all"/>
+  <action-menu name="create-sale-order" parent="sub-category-11" title="Create Sale Order..." action="sale.orders"/>
+  <action-menu name="create-partner-12" parent="sub-category-12" title="Create Partner... (12)" action="contact.all"/>
+  <action-menu name="create-sale-order-13" parent="sub-category-13" title="Create Sale Order... (13)" action="sale.orders"/>
+  <action-menu name="create-partner-13" parent="sub-category-13" title="Create Partner... (13)" action="contact.all"/>
+  <action-menu name="create-sale-order-21" parent="sub-category-21" title="Create Sale Order... (21)" action="sale.orders"/>
+  <action-menu name="create-partner-22" parent="sub-category-22" title="Create Partner... (22)" action="contact.all"/>
 
 </object-views>

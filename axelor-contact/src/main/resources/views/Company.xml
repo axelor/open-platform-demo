@@ -1,38 +1,44 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<object-views xmlns="http://apps.axelor.com/xml/ns/object-views" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://apps.axelor.com/xml/ns/object-views http://apps.axelor.com/xml/ns/object-views/object-views_1.0.xsd">
-    <grid name="company-grid" title="Companies">
-        <field name="name"/>
-        <field name="code"/>
-        <field name="parent"/>
-    </grid>
-    <tree name="company-tree" title="Companies">
-        <field name="name"/>
-    </tree>
-    <form name="company-form" title="Company" cols="4">
-        <field name="name"/>
-        <field name="code"/>
-        <field name="parent" domain="self.code != :code"/>
-        <notebook colSpan="4">
-            <page title="Employees" cols="1">
-                <field name="employees">
-                    <grid title="Employees">
-                        <field name="fullName"/>
-                        <field name="email"/>
-                        <field name="phone"/>
-                        <field name="dateOfBirth"/>
-                    </grid>
-                </field>
-            </page>
-            <page title="Groups" cols="1">
-                <field name="circles" title="Circles" widget="TransferBox">
-                    <grid title="Circles">
-                        <field name="name"/>
-                    </grid>
-                </field>
-            </page>
-            <page title="Notes" cols="1">
-                <field name="notes" noLabel="true"/>
-            </page>
-        </notebook>
-    </form>
+<object-views xmlns="http://apps.axelor.com/xml/ns/object-views"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://apps.axelor.com/xml/ns/object-views http://apps.axelor.com/xml/ns/object-views/object-views_0.9.xsd">
+
+  <grid name="company-grid" title="Companies">
+    <field name="name"/>
+    <field name="code"/>
+    <field name="parent"/>
+  </grid>
+
+  <tree name="company-tree" title="Companies">
+    <field name="name"/>
+  </tree>
+
+  <form name="company-form" title="Company" cols="4">
+    <field name="name"/>
+    <field name="code"/>
+    <field name="parent" domain="self.code != :code"/>
+    <notebook colSpan="4">
+      <page title="Employees" cols="1">
+        <field name="employees">
+          <grid title="Employees">
+            <field name="fullName"/>
+            <field name="email"/>
+            <field name="phone"/>
+            <field name="dateOfBirth"/>
+          </grid>
+        </field>
+      </page>
+      <page title="Groups" cols="1">
+        <field name="circles" title="Circles" widget="TransferBox">
+          <grid title="Circles">
+            <field name="name"/>
+          </grid>
+        </field>
+      </page>
+      <page title="Notes" cols="1">
+        <field name="notes" noLabel="true"/>
+      </page>
+    </notebook>
+  </form>
+
 </object-views>

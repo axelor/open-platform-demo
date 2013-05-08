@@ -1,54 +1,54 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<object-views xmlns="http://apps.axelor.com/xml/ns/object-views" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://apps.axelor.com/xml/ns/object-views http://apps.axelor.com/xml/ns/object-views/object-views_0.8.xsd">
+<object-views xmlns="http://apps.axelor.com/xml/ns/object-views" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://apps.axelor.com/xml/ns/object-views http://apps.axelor.com/xml/ns/object-views/object-views_0.9.xsd">
 
-    <menuitem name="menu-sales" priority="90"
-        title="Sales Management" icon="img/baggage-cart-box.png"/>
+  <menuitem name="menu-sales" priority="90"
+    title="Sales Management" icon="img/baggage-cart-box.png"/>
 
-    <menuitem name="menu-sales-order" parent="menu-sales"
-        title="Sale Orders"
-        action="sale.orders"/>
+  <menuitem name="menu-sales-order" parent="menu-sales"
+    title="Sale Orders"
+    action="sale.orders"/>
 
-    <action-view name="sale.orders" model="com.axelor.sale.db.Order" title="Sale Orders">
-    	<view type="grid"/>
-    	<view type="form"/>
-        <view type="calendar" name="sales-timeline"/>
-    </action-view>
+  <action-view name="sale.orders" model="com.axelor.sale.db.Order" title="Sale Orders">
+    <view type="grid"/>
+    <view type="form"/>
+    <view type="calendar" name="sales-timeline"/>
+  </action-view>
 
-    <menuitem name="menu-sales-product" parent="menu-sales"
-        title="Products"
-        action="sale.products"/>
+  <menuitem name="menu-sales-product" parent="menu-sales"
+    title="Products"
+    action="sale.products"/>
 
-    <action-view name="sale.products" model="com.axelor.sale.db.Product" title="Products">
-    	<view type="grid"/>
-    	<view type="form"/>
-    </action-view>
+  <action-view name="sale.products" model="com.axelor.sale.db.Product" title="Products">
+    <view type="grid"/>
+    <view type="form"/>
+  </action-view>
 
-    <menuitem name="menu-sales-search" parent="menu-sales"
-        title="Sales Search..."
-        action="sale.search"/>
+  <menuitem name="menu-sales-search" parent="menu-sales"
+    title="Sales Search..."
+    action="sale.search"/>
 
-    <action-view name="sale.search" model="com.axelor.sale.db.Order" title="Sales Search...">
-    	<view type="search" name="sale-order-search"/>
-    </action-view>
+  <action-view name="sale.search" model="com.axelor.sale.db.Order" title="Sales Search...">
+    <view type="search" name="sale-order-search"/>
+  </action-view>
 
-    <menuitem name="menu-sales-config" parent="menu-sales" title="Configuration" icon="img/wrench.png"/>
+  <menuitem name="menu-sales-config" parent="menu-sales" title="Configuration" icon="img/wrench.png"/>
 
-    <menuitem name="menu-sales-product-category" parent="menu-sales-config"
-        title="Product Categories"
-        action="sale.product.categories"/>
+  <menuitem name="menu-sales-product-category" parent="menu-sales-config"
+    title="Product Categories"
+    action="sale.product.categories"/>
 
-    <action-view name="sale.product.categories" model="com.axelor.sale.db.ProductCategory" title="Product Categories">
-    	<view type="grid"/>
-    	<view type="form"/>
-    </action-view>
+  <action-view name="sale.product.categories" model="com.axelor.sale.db.ProductCategory" title="Product Categories">
+    <view type="grid"/>
+    <view type="form"/>
+  </action-view>
 
-    <menuitem name="menu-sales-taxes" parent="menu-sales-config"
-        title="All Taxes"
-        action="sale.taxes"/>
+  <menuitem name="menu-sales-taxes" parent="menu-sales-config"
+    title="All Taxes"
+    action="sale.taxes"/>
 
-    <action-view name="sale.taxes" model="com.axelor.sale.db.Tax" title="Taxes">
-    	<view type="grid"/>
-    	<view type="form"/>
-    </action-view>
+  <action-view name="sale.taxes" model="com.axelor.sale.db.Tax" title="Taxes">
+    <view type="grid"/>
+    <view type="form"/>
+  </action-view>
 
 </object-views>

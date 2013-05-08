@@ -6,24 +6,24 @@
   <module name="contact" package="com.axelor.contact.db"/>
 
   <entity name="Contact" sequential="true" cachable="true">
-    <many-to-one name="title" ref="Title" title="Intitulé"/>
-    <string name="firstName" required="true" title="Prénom"/>
-    <string name="lastName" required="true" title="Nom"/>
-    <string name="fullName" namecolumn="true" search="firstName,lastName" title="Nom complet"><![CDATA[
+    <many-to-one name="title" ref="Title"/>
+    <string name="firstName" required="true"/>
+    <string name="lastName" required="true"/>
+    <string name="fullName" namecolumn="true" search="firstName,lastName"><![CDATA[
     if (firstName == null && lastName == null)
     	return null;
     if (title == null)
         return firstName + " " + lastName;
     return title.getName() + " " + firstName + " " + lastName;
     ]]></string>
-    <string name="email" required="true" unique="true" max="100" title="E-mail"/>
-    <string name="phone" max="20" title="Téléphone"/>
-    <date name="dateOfBirth" title="Date de naissance"/>
-    <one-to-many name="addresses" ref="Address" title="Liste d'adresses" mappedBy="contact"/>
+    <string name="email" required="true" unique="true" max="100"/>
+    <string name="phone" max="20"/>
+    <date name="dateOfBirth"/>
+    <one-to-many name="addresses" ref="Address" mappedBy="contact"/>
     <many-to-one name="circle" ref="Circle"/>
-    <string name="notes" multiline="true" title="Notes"/>
+    <string name="notes" multiline="true"/>
     <binary name="image" title="Photo" help="Max size 4MB." image="true"/>
-    <many-to-one name="company" ref="Company" title="Entreprise"/>
+    <many-to-one name="company" ref="Company"/>
   </entity>
 
 </domain-models>

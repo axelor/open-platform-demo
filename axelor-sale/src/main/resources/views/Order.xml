@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <object-views xmlns="http://apps.axelor.com/xml/ns/object-views"
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://apps.axelor.com/xml/ns/object-views http://apps.axelor.com/xml/ns/object-views/object-views_0.8.xsd">
+  xsi:schemaLocation="http://apps.axelor.com/xml/ns/object-views http://apps.axelor.com/xml/ns/object-views/object-views_0.9.xsd">
 
   <grid name="order-grid" title="Orders">
     <field name="name"/>
@@ -11,15 +11,14 @@
     <field name="confirmed"/>
   </grid>
 
-  <form name="order-form" title="Order" cols="4"
+  <form cols="4" name="order-form" title="Order"
     onNew="default-order-record"
-    onLoad="action-sale-order-confirm,action-sale-order-confirm-attrs"
     onSave="check-order-values,action-sale-order-validate">
     <separator title="Order Details" colSpan="4"/>
     <field name="name"/>
-    <field name="confirmed" onChange="action-sale-order-validate,action-sale-order-confirm,action-sale-order-confirm-attrs"/>
+    <field name="confirmed"/>
     <break/>
-    <field name="customer" form-view="contact-form" grid-view="contact-grid" canSelect="true">
+    <field name="customer" canSelect="true" form-view="contact-form" grid-view="contact-grid" readonlyIf="confirmed">
       <form title="Customer">
         <field name="title"/>
         <break/>
@@ -29,10 +28,10 @@
         <field name="phone"/>
       </form>
     </field>
-    <field name="orderDate"/>
-    <field name="createDate"/>
-    <field name="confirmDate"/>
-    <notebook colSpan="4" name="nbDetails">
+    <field name="orderDate" readonlyIf="confirmed"/>
+    <field name="createDate" readonlyIf="confirmed"/>
+    <field name="confirmDate" requiredIf="confirmed" validIf="confimDate == null || $moment(confirmDate) &gt; $moment(createDate)"/>
+    <notebook name="nbDetails" colSpan="4" readonlyIf="confirmed">
       <page title="Items" cols="1">
         <field name="items" onChange="com.axelor.sale.web.SaleOrderController:calculate">
           <grid title="Items" editable="true">
@@ -41,7 +40,7 @@
             <field name="quantity"/>
             <field name="taxes"/>
           </grid>
-          <form title="Ordered Item" cols="4">
+          <form cols="4" title="Ordered Item">
             <field name="product" colSpan="4"/>
             <break/>
             <field name="price"/>
@@ -65,15 +64,15 @@
     </notebook>
     <group colSpan="4" cols="3" colWidths="50px,*,220px">
       <button name="btnCalculate" title="Calculate" onClick="check-order-dates,com.axelor.sale.web.SaleOrderController:calculate,save"/>
-      <spacer colSpan="1" />
-      <group colSpan="1" cols="2" colWidths="50%,50%" readonly="true" css="subtotal">
-        <field name="amount" />
-        <field name="taxAmount" />
-        <field name="totalAmount" css="subtotal-total" />
+      <spacer colSpan="1"/>
+      <group readonly="true" colSpan="1" css="subtotal" cols="2" colWidths="50%,50%">
+        <field name="amount"/>
+        <field name="taxAmount"/>
+        <field name="totalAmount" css="subtotal-total"/>
       </group>
     </group>
   </form>
-  
+
   <calendar name="sales-timeline" title="Sales Timeline" model="com.axelor.sale.db.Order" editable="false"
     eventStart="createDate"
     eventStop="confirmDate"
@@ -128,23 +127,11 @@
     <field name="name" expr="Mr."/>
   </action-record>
 
-  <action-method name="action-sale-order-confirm">
-    <call class="com.axelor.sale.web.SaleOrderController" method="onConfirm"/>
-  </action-method>
-
   <action-validate name="action-sale-order-validate">
     <error message="Create Date is in future." if="confirmed &amp;&amp; createDate &gt; __date__"/>
     <error message="Order Date is in future." if="confirmed &amp;&amp; orderDate &gt; __date__"/>
     <alert message="No Sale Order Items. Would you like to continue?" if="confirmed &amp;&amp; !items"/>
   </action-validate>
-
-  <action-attrs name="action-sale-order-confirm-attrs">
-    <attribute name="title" for="name" expr="eval: String.format('Order No.')" if="confirmed"/>
-    <attribute name="title" for="name" expr="Name" if="!confirmed"/>
-    <attribute name="required" for="createDate" expr="eval: !confirmed"/>
-    <attribute name="readonly" for="nbDetails" expr="eval: confirmed"/>
-    <attribute name="readonly" for="customer" expr="eval: confirmed"/>
-  </action-attrs>
 
   <action-condition name="check-order-dates">
     <check field="orderDate"/>
