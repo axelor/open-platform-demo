@@ -63,7 +63,7 @@
       </page>
     </notebook>
     <group colSpan="4" cols="3" colWidths="50px,*,220px">
-      <button name="btnCalculate" title="Calculate" onClick="check-order-dates,com.axelor.sale.web.SaleOrderController:calculate,save"/>
+      <button name="btnCalculate" title="Calculate" hiddenIf="confirmed" onClick="check-order-dates,com.axelor.sale.web.SaleOrderController:calculate,save"/>
       <spacer colSpan="1"/>
       <group readonly="true" colSpan="1" css="subtotal" cols="2" colWidths="50%,50%">
         <field name="amount"/>
