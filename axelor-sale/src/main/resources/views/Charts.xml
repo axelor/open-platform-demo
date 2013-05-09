@@ -3,8 +3,8 @@
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://apps.axelor.com/xml/ns/object-views http://apps.axelor.com/xml/ns/object-views/object-views_0.9.xsd">
 
-  <chart name="chart.sales.per.month" title="Sales per month" categoryKey="month" categoryType="month">
-    <query native="false">
+  <chart name="chart.sales.per.month" title="Sales per month">
+    <dataset type="jpql">
     <![CDATA[
     SELECT
         SUM(self.totalAmount) AS amount,
@@ -22,12 +22,13 @@
     ORDER BY
         month
     ]]>
-    </query>
-    <series key="customer" expr="amount" type="bar"/>
+    </dataset>
+    <category key="month" type="month"/>
+    <series key="amount" groupBy="customer" type="bar"/>
   </chart>
   
-  <chart name="chart.sales.per.month.pie" title="Sales per customer" categoryKey="customer">
-    <query native="false">
+  <chart name="chart.sales.per.month.pie" title="Sales per customer">
+    <dataset type="jpql">
     <![CDATA[
     SELECT
         SUM(self.totalAmount) AS amount,
@@ -41,12 +42,13 @@
     GROUP BY
         _customer
     ]]>
-    </query>
+    </dataset>
+    <category key="customer"/>
     <series key="amount" type="pie"/>
   </chart>
   
-  <chart name="chart.sales.by.customer" title="Sales by customer" categoryKey="month" categoryType="month">
-    <query native="true">
+  <chart name="chart.sales.by.customer" title="Sales by customer">
+    <dataset type="sql">
     <![CDATA[
     SELECT
         SUM(o.total_amount) AS amount,
@@ -64,8 +66,9 @@
     ORDER BY
         month
     ]]>
-    </query>
-    <series key="customer" expr="amount" type="bar"/>
+    </dataset>
+    <category key="month" type="month"/>
+    <series key="amount" groupBy="customer" type="bar"/>
   </chart>
   
 </object-views>
