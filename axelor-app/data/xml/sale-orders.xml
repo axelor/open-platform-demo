@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <sale-orders xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  
+
   <tax code="vat0.4" name="Vat 4%">0.04</tax>
   <tax code="sal0.12" name="Sale Tax 12%">0.12</tax>
-  
+
   <product code="PC1" name="Personal Computer" />
   <product code="LAPTOP1" name="Laptop" />
-  
-  <sale-order confirmed="T" date="11/08/2012">
+
+  <sale-order confirmed="T">
     <some>Thing</some>
     <customer>
       <firstName>John</firstName>
@@ -16,17 +16,52 @@
       <email>john.smith@gmail.com</email>
     </customer>
     <items>
-      <item product="PC1" price="200.12" quantity="1">
+      <item product="PC1" price="560.12" quantity="1">
         <taxes>
-          <tax code="vat0.4"/>
-          <tax code="sal0.12"/>
+          <tax code="vat0.4" />
+          <tax code="sal0.12" />
         </taxes>
       </item>
-      <item product="LAPTOP1" price="250.50" quantity="1">
+      <item product="LAPTOP1" price="705.50" quantity="2">
         <taxes>
-          <tax code="vat0.4"/>
+          <tax code="vat0.4" />
         </taxes>
       </item>
     </items>
   </sale-order>
+  
+  <sale-order confirmed="T">
+    <customer>
+      <firstName>My</firstName>
+      <lastName>Name</lastName>
+      <email>my.name@gmail.com</email>
+    </customer>
+    <items>
+      <item product="LAPTOP1" price="1150.50" quantity="1">
+        <taxes>
+          <tax code="vat0.4" />
+        </taxes>
+      </item>
+    </items>
+  </sale-order>
+
+  <sale-order confirmed="T">
+    <customer>
+      <email>teen.teen@gmail.com</email>
+    </customer>
+    <items>
+      <item product="PC1" price="566.12" quantity="1">
+        <taxes>
+          <tax code="vat0.4" />
+          <tax code="sal0.12" />
+        </taxes>
+      </item>
+      <item product="LAPTOP1" price="715.50" quantity="1">
+        <taxes>
+          <tax code="vat0.4" />
+        </taxes>
+      </item>
+    </items>
+  </sale-order>
+
 </sale-orders>

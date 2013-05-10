@@ -34,7 +34,7 @@
       <bind node="@code" to="code" />
       <bind node="@name" to="name" />
     </bind>
-    <bind node="contact" type="com.axelor.contact.db.Contact">
+    <bind node="contact" type="com.axelor.contact.db.Contact" search="self.email = :email">
       <bind node="@title" to="title" search="self.code = :title" />
       <bind node="first-name" to="firstName" />
       <bind node="last-name" to="lastName" />
@@ -51,27 +51,34 @@
   
   <input file="sale-orders.xml" root="sale-orders">
   
-    <bind node="tax" type="com.axelor.sale.db.Tax">
+    <bind node="tax" type="com.axelor.sale.db.Tax" search="self.code = :code">
       <bind node="@code" to="code" />
       <bind node="@name" to="name" />
       <bind to="rate" node="text()"/>
     </bind>
     
-    <bind node="product" type="com.axelor.sale.db.Product">
+    <bind node="product" type="com.axelor.sale.db.Product" search="self.code = :code">
       <bind node="@code" to="code" />
       <bind node="@name" to="name" />
       <bind node="@color" to="color" />
     </bind>
 
-    <bind node="sale-order" type="com.axelor.sale.db.Order">
+    <bind node="sale-order" type="com.axelor.sale.db.Order" search="self.customer.email = :email" update="false" call="com.axelor.app.Validators:validateSaleOrder">
       <!-- transform boolean value into 'true' or 'false' -->
       <bind node="@confirmed" to="confirmed" adapter="Boolean"/>
 
-      <bind node="@date" to="orderDate" adapter="LocalDate"/>
-      <bind node="@date" to="createDate" adapter="LocalDate"/>
+      <!-- dummy binding -->
+      <bind node="@date" to="_date" adapter="LocalDate"/>
 
       <!-- default value provided with eval expression -->
-      <bind to="confirmDate" eval="new org.joda.time.LocalDate()" />
+      <bind to="_date" eval="new org.joda.time.LocalDate()" if="!_date" />
+
+      <bind to="orderDate" eval="_date" />
+      <bind to="createDate" eval="_date" />
+      <bind to="confirmDate" eval="_date" />
+
+      <!-- put email in the context -->
+      <bind node="customer/email" to="email"/>
 
       <!-- IF email NOT EMPTY -->
       <bind node="customer" to="customer" search="self.email = :email" if="email">
