@@ -4,8 +4,8 @@
   xsi:schemaLocation="http://apps.axelor.com/xml/ns/object-views http://apps.axelor.com/xml/ns/object-views/object-views_0.9.xsd">
 
   <portal title="Welcome!" name="welcome.portal" cols="2">
-    <portlet action="chart:chart.sales.per.month"/>
-    <portlet action="chart:chart.sales.per.month.pie"/>
+    <portlet action="chart:chart.sales.per.month" height="350"/>
+    <portlet action="chart:chart.sales.per.month.pie" height="350"/>
     <portlet action="sale.orders" colSpan="2"/>
   </portal>
 
