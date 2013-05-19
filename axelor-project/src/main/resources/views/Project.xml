@@ -14,10 +14,8 @@
     <field name="priority" />
     <field name="description" />
     <field name="parent"/>
+    <field name="members" widget="TagSelect[create=code,name,password]"/>
     <notebook colSpan="4">
-      <page title="Members" cols="1">
-        <field name="members" noLabel="true"/>
-      </page>
       <page title="Tasks" cols="1">
         <field name="tasks" noLabel="true"/>
       </page>
