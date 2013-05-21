@@ -41,7 +41,7 @@
         <break/>
         <field name="firstName"/>
         <field name="lastName" onChange="com.axelor.contact.web.HelloController:guessEmail,action-contact-address-attrs"/>
-        <field name="email"/>
+        <field name="email" widget="Email"/>
         <field name="phone"/>
         <field name="dateOfBirth"/>
         <break/>
@@ -49,7 +49,7 @@
         <field name="company"/>
       </group>
     </group>
-    <group name="action_buttons" title="Actions" colSpan="1" cols="1" collapseIf="!lastName">
+    <group name="action_buttons" title="Actions" colSpan="1" cols="1" collapseIf="!lastName" hideIf="$popup()">
       <button name="greet" title="Send Greetings..." onClick="com.axelor.contact.web.HelloController:say"/>
       <button name="showHomePage" title="Home Page..." onClick="com.axelor.contact.web.HelloController:showHomePage"/>
       <button name="showCompanyList" title="Company List..." help="Demonstrate how to open new view from action." onClick="com.axelor.contact.web.HelloController:showCompanyList"/>
