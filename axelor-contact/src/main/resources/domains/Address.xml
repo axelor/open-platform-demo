@@ -6,12 +6,12 @@
   <module name="contact" package="com.axelor.contact.db" />
 
   <entity name="Address" cachable="true">
-    <many-to-one name="contact" ref="Contact" required="true" />
-    <string name="street" required="true" max="255" />
-    <string name="area" max="255" />
-    <string name="city" required="true" />
-    <string name="zip" />
-    <many-to-one name="country" ref="Country" required="true" />
+    <many-to-one name="contact" ref="Contact" required="true" initParam="true"/>
+    <string name="street" required="true" max="255" initParam="true"/>
+    <string name="area" max="255" initParam="true"/>
+    <string name="city" required="true" initParam="true"/>
+    <string name="zip" initParam="true"/>
+    <many-to-one name="country" ref="Country" required="true" initParam="true"/>
   </entity>
 
 </domain-models>

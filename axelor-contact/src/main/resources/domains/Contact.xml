@@ -7,8 +7,8 @@
 
   <entity name="Contact" sequential="true" cachable="true">
     <many-to-one name="title" ref="Title"/>
-    <string name="firstName" required="true"/>
-    <string name="lastName" required="true"/>
+    <string name="firstName" required="true" initParam="true"/>
+    <string name="lastName" required="true" initParam="true"/>
     <string name="fullName" namecolumn="true" search="firstName,lastName"><![CDATA[
     if (firstName == null && lastName == null)
     	return null;
@@ -16,7 +16,7 @@
         return firstName + " " + lastName;
     return title.getName() + " " + firstName + " " + lastName;
     ]]></string>
-    <string name="email" required="true" unique="true" max="100"/>
+    <string name="email" required="true" unique="true" max="100" initParam="true"/>
     <string name="phone" max="20"/>
     <date name="dateOfBirth"/>
     <one-to-many name="addresses" ref="Address" mappedBy="contact"/>
@@ -24,6 +24,8 @@
     <string name="notes" multiline="true"/>
     <binary name="image" title="Photo" help="Max size 4MB." image="true"/>
     <many-to-one name="company" ref="Company"/>
+    <finder-method name="findByName" using="fullName" />
+    <finder-method name="findByEmail" using="email" />
   </entity>
 
 </domain-models>
