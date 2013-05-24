@@ -11,6 +11,7 @@
     <field name="user" />
     <field name="project" />
     <field name="priority" />
+    <field name="progress" widget="Progress"/>
   </grid>
   
   <form name="project-task-form" title="Project Task" onNew="project.task.on.new">
@@ -22,6 +23,7 @@
     <field name="endDate" />
     <field name="user"/>
     <field name="project"/>
+    <field name="progress" widget="Progress"/>
     <notebook colSpan="4">
       <page title="Work Items" cols="1">
         <field name="workItems" noLabel="true">

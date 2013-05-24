@@ -13,6 +13,25 @@
     <datetime name="startDate"/>
     <datetime name="endDate"/>
     <date name="deadlineDate"/>
+    <integer name="progress">
+    <![CDATA[
+      double result = 0.0, duration = 0.0;
+		if (workItems == null || startDate == null || endDate == null) {
+			return 0;
+		}
+		for(ProjectWork work : workItems) {
+		  org.joda.time.LocalTime time = work.getHours();
+		  result += time.getHourOfDay();
+		  result += time.getMinuteOfHour() / 60.0;
+		}
+		org.joda.time.Period period = new org.joda.time.Period(startDate, endDate);
+		duration = period.getHours();
+		duration += period.getMinutes() / 60.0;
+
+		result = Math.min(100.0, ((result / duration) * 100));
+		return (int) Math.round(result);
+    ]]>
+    </integer>
     <many-to-one name="project" ref="Project" />
     <many-to-one name="user" column="user_id" ref="com.axelor.auth.db.User" required="true" />
     <one-to-many name="workItems" ref="ProjectWork" mappedBy="task" />
