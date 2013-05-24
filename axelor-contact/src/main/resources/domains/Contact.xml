@@ -21,7 +21,7 @@
     <date name="dateOfBirth"/>
     <one-to-many name="addresses" ref="Address" mappedBy="contact"/>
     <many-to-one name="circle" ref="Circle"/>
-    <string name="notes" multiline="true"/>
+    <string name="notes" large="true"/>
     <binary name="image" title="Photo" help="Max size 4MB." image="true"/>
     <many-to-one name="company" ref="Company"/>
     <finder-method name="findByName" using="fullName" />

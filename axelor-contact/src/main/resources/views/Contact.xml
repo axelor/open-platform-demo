@@ -75,7 +75,7 @@
         </field>
       </page>
       <page title="Notes" cols="1">
-        <field name="notes" noLabel="true"/>
+        <field name="notes" widget="Html"/>
       </page>
     </notebook>
   </form>
