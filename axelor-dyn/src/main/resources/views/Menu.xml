@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<object-views xmlns="http://apps.axelor.com/xml/ns/object-views"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://apps.axelor.com/xml/ns/object-views http://apps.axelor.com/xml/ns/object-views/object-views_0.9.xsd">
+
+  <menuitem name="menu-dyn" title="My Menu"/>
+  <menuitem name="menu-dyn-product" title="All Products" parent="menu-dyn" action="dyn.products"/>
+
+  <action-view name="dyn.products" title="Products" model="com.axelor.sale.db.Product">
+    <view type="grid"/>
+    <view type="form"/>
+  </action-view>
+  
+  <menuitem name="menu-dyn-messages" title="All Messages" parent="menu-dyn"/>
+  <menuitem name="menu-dyn-inbox" title="Inbox" parent="menu-dyn-messages" action="dyn.messages.in" />
+  <menuitem name="menu-dyn-archive" title="Archive" parent="menu-dyn-messages" action="dyn.messages.all" />
+
+  <action-view name="dyn.messages.in" title="Inbox" model="com.axelor.dyn.db.DynMessage">
+    <view type="trail"/>
+    <view type="form" name="dyn-message-form2" />
+    <view-param name="trail-width" value="650"/>
+    <view-param name="trail-edit-form" value="dyn-message-form3"/>
+    <view-param name="trail-order" value="-createdOn"/>
+    <domain>self.parent is null</domain>
+  </action-view>
+
+  <action-view name="dyn.messages.all" title="All Messages" model="com.axelor.dyn.db.DynMessage">
+    <view type="grid" name="message-grid" />
+    <view type="form" name="message-form" />
+    <domain>self.parent is null</domain>
+  </action-view>
+  
+
+</object-views>

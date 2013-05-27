@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<domain-models xmlns="http://apps.axelor.com/xml/ns/domain-models"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://apps.axelor.com/xml/ns/domain-models http://apps.axelor.com/xml/ns/domain-models/domain-models_0.9.xsd">
+
+  <module name="dyn" package="com.axelor.dyn.db" />
+
+  <entity name="DynMessage" table="DYN_MESSAGE">
+    <many-to-one name="author" ref="com.axelor.auth.db.User" />
+    <many-to-many name="recipients" ref="com.axelor.contact.db.Contact" />
+    <many-to-one name="parent" ref="DynMessage" />
+    <one-to-many name="replies" ref="DynMessage" mappedBy="parent" />
+    <string name="subject" required="true" />
+    <datetime name="date" required="true" default="now" />
+    <string name="body" large="true" />
+    <boolean name="unread" default="true" />
+    <boolean name="starred" />
+  </entity>
+
+</domain-models>

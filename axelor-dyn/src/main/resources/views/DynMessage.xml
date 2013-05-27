@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<object-views xmlns="http://apps.axelor.com/xml/ns/object-views"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://apps.axelor.com/xml/ns/object-views http://apps.axelor.com/xml/ns/object-views/object-views_0.9.xsd">
+
+  <grid name="dyn-message-grid" title="Messages">
+    <field name="subject" />
+    <field name="date" />
+  </grid>
+
+  <form cols="2" name="dyn-message-form" title="Message">
+    <field name="subject" />
+    <field name="recipients" widget="TagSelect" />
+    <notebook colSpan="2">
+      <page title="Body" cols="1">
+        <field name="body" widget="html" />
+      </page>
+      <page title="Replies" cols="1">
+        <field name="replies">
+          <form cols="2" title="Reply">
+            <field name="subject" />
+            <field name="body" noLabel="true" colSpan="2" widget="html[lite=true]" />
+          </form>
+        </field>
+      </page>
+    </notebook>
+  </form>
+
+  <form cols="1" name="dyn-message-form2" title="Message">
+    <group cols="1" readonly="true">
+      <field name="subject" showIf="!parent" />
+      <field name="recipients" widget="TagSelect" showIf="!parent" />
+      <field name="body" widget="html" />
+      <field name="replies" form-view="dyn-message-form" hideIf="!replies || replies.length == 0">
+        <grid title="Replies">
+          <field name="body"></field>
+          <field name="date"></field>
+        </grid>
+      </field>
+    </group>
+    <group cols="4" colWidths="100,100,100,*">
+      <field name="reply" widget="Text" colSpan="4" noLabel="true" showIf="canReply" />
+      <button name="btnReply" title="Reply" showIf="!canReply"
+        onClick="com.axelor.dyn.web.DynController:showReply"></button>
+      <button name="btnSend" title="Send" showIf="canReply"
+        onClick="com.axelor.dyn.web.DynController:sendReply"></button>
+      <button name="btnCancel" title="Cancel" showIf="canReply"
+        onClick="com.axelor.dyn.web.DynController:showReply" />
+      <spacer colSpan="2" />
+    </group>
+  </form>
+
+  <form cols="1" name="dyn-message-form3" title="Message">
+    <group cols="1" colWidths="100,*" colSpan="2">
+      <field name="subject" />
+      <field name="recipients" widget="TagSelect" />
+    </group>
+    <group cols="4" colWidths="100,*">
+      <field name="reply" widget="Text" colSpan="4" noLabel="true" />
+      <button name="btnSend" title="Send"
+        onClick="com.axelor.dyn.web.DynController:sendReply"></button>
+      <spacer colSpan="3" />
+    </group>
+  </form>
+  
+</object-views>
