@@ -31,7 +31,14 @@
       <artifactId>axelor-project</artifactId>
       <version>${project.version}</version>
     </dependency>
-
+    
+    <!-- business modules -->
+    <dependency>
+      <groupId>com.axelor</groupId>
+      <artifactId>axelor-dyn</artifactId>
+      <version>${project.version}</version>
+    </dependency>
+    
     <dependency>
       <groupId>com.axelor</groupId>
       <artifactId>axelor-web</artifactId>
