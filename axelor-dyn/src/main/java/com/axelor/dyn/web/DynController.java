@@ -16,7 +16,6 @@ public final class DynController {
 	public void showReply(ActionRequest request, ActionResponse response) {
 		
 		Context ctx = request.getContext();
-		System.err.println("XXXX: " + ctx);
 		boolean canReply = "btnReply".equals(ctx.get("_signal"));
 		
 		response.setValues(ImmutableMap.of("canReply", canReply));
@@ -30,11 +29,7 @@ public final class DynController {
 		reply.setSubject(ctx.getSubject());
 		reply.setBody((String) request.getContext().get("reply"));
 		
-		try {
-			service.sendMessage(ctx, reply);
-			response.setReload(true);
-		} catch (Exception e) {
-			response.setException(e);
-		}
+		service.sendMessage(ctx, reply);
+		response.setReload(true);
 	}
 }
