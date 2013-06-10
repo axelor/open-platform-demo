@@ -19,6 +19,8 @@
     <view type="trail"/>
     <view type="form" name="dyn-message-form2" />
     <view-param name="trail-width" value="650"/>
+    <view-param name="trail-parent-field" value="parent"/>
+    <view-param name="trail-children-field" value="replies"/>
     <view-param name="trail-edit-form" value="dyn-message-form3"/>
     <view-param name="trail-order" value="-createdOn"/>
     <domain>self.parent is null</domain>

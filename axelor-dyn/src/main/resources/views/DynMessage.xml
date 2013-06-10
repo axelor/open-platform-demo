@@ -27,26 +27,33 @@
   </form>
 
   <form cols="1" name="dyn-message-form2" title="Message">
-    <group cols="1" readonly="true">
-      <field name="subject" showIf="!parent" />
-      <field name="recipients" widget="TagSelect" showIf="!parent" />
-      <field name="body" widget="html" />
-      <field name="replies" form-view="dyn-message-form" hideIf="!replies || replies.length == 0">
-        <grid title="Replies">
-          <field name="body"></field>
-          <field name="date"></field>
-        </grid>
-      </field>
+    <group readonly="true" cols="3" colWidths="42,*,60">
+      <field name="dummy1" noLabel="true" widget="Image[width=48|height=48]" css="trail-avatar"/>
+      <group cols="1">
+        <field name="subject" showIf="!parent"/>
+        <field name="body" widget="html"/>
+      </group>
+      <group cols="3" colWidths="20,20,20">
+        <button name="btnStar" icon="icon-star-empty" iconHover="icon-star" link=""/>
+        <button name="btnReply" icon="icon-reply" link="" onClick="com.axelor.dyn.web.DynController:showReply"/>
+        <button name="btnDone" icon="icon-ok" link=""/>
+      </group>
     </group>
-    <group cols="4" colWidths="100,100,100,*">
-      <field name="reply" widget="Text" colSpan="4" noLabel="true" showIf="canReply" />
-      <button name="btnReply" title="Reply" showIf="!canReply"
-        onClick="com.axelor.dyn.web.DynController:showReply"></button>
-      <button name="btnSend" title="Send" showIf="canReply"
-        onClick="com.axelor.dyn.web.DynController:sendReply"></button>
-      <button name="btnCancel" title="Cancel" showIf="canReply"
-        onClick="com.axelor.dyn.web.DynController:showReply" />
-      <spacer colSpan="2" />
+    <group readonly="true" css="trail-form-footer" cols="2" colWidths="*,20">
+      <group cols="5" css="pull-left">
+        <field name="author" noLabel="true"/>
+        <label title="to"/>
+        <field name="recipients" noLabel="true" widget="TagSelect[max=3]"/>
+        <label title=" &amp;nbsp;•"></label>
+        <field name="createdOn" widget="RelativeTime" noLabel="true"/>
+      </group>
+      <button name="btnExpand" icon="icon-double-angle-down" link="" onClick="com.axelor.dyn.web.DynController:showReplies" showIf="__expandable"/>
+    </group>
+    <group cols="3" colWidths="100,100,*" showIf="canReply">
+      <field name="reply" noLabel="true" colSpan="3" widget="Text"/>
+      <button name="btnSend" title="Send" onClick="com.axelor.dyn.web.DynController:sendReply"/>
+      <button name="btnCancel" title="Cancel" onClick="com.axelor.dyn.web.DynController:showReply"/>
+      <spacer colSpan="2"/>
     </group>
   </form>
 
@@ -62,5 +69,5 @@
       <spacer colSpan="3" />
     </group>
   </form>
-  
+
 </object-views>
