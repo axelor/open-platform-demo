@@ -35,7 +35,8 @@
       </group>
       <group cols="3" colWidths="20,20,20">
         <button name="btnStar" icon="icon-star-empty" iconHover="icon-star" link=""/>
-        <button name="btnReply" icon="icon-reply" link="" onClick="com.axelor.dyn.web.DynController:showReply"/>
+        <button name="btnReply" icon="icon-reply" link=""
+          onClick="com.axelor.dyn.web.DynController:showReply"/>
         <button name="btnDone" icon="icon-ok" link=""/>
       </group>
     </group>
@@ -47,26 +48,27 @@
         <label title=" &amp;nbsp;•"></label>
         <field name="createdOn" widget="RelativeTime" noLabel="true"/>
       </group>
-      <button name="btnExpand" icon="icon-double-angle-down" link="" onClick="com.axelor.dyn.web.DynController:showReplies" showIf="__expandable"/>
+      <button name="btnExpand" icon="icon-double-angle-down" link=""
+        onClick="com.axelor.dyn.web.DynController:showReplies" showIf="__expandable"/>
     </group>
     <group cols="3" colWidths="100,100,*" showIf="canReply">
-      <field name="reply" noLabel="true" colSpan="3" widget="Text"/>
-      <button name="btnSend" title="Send" onClick="com.axelor.dyn.web.DynController:sendReply"/>
-      <button name="btnCancel" title="Cancel" onClick="com.axelor.dyn.web.DynController:showReply"/>
+      <field name="reply" noLabel="true" colSpan="3" widget="Text" required="true"/>
+      <button name="btnSend" title="Send" readonlyIf="$invalid()"
+        onClick="com.axelor.dyn.web.DynController:sendReply"/>
+      <button name="btnCancel" title="Cancel"
+        onClick="com.axelor.dyn.web.DynController:showReply"/>
       <spacer colSpan="2"/>
     </group>
   </form>
 
   <form cols="1" name="dyn-message-form3" title="Message">
-    <group cols="1" colWidths="100,*" colSpan="2">
-      <field name="subject" />
-      <field name="recipients" widget="TagSelect" />
-    </group>
-    <group cols="4" colWidths="100,*">
-      <field name="reply" widget="Text" colSpan="4" noLabel="true" />
-      <button name="btnSend" title="Send"
+    <field name="subject" required="true"/>
+    <field name="recipients" required="true" widget="TagSelect" />
+    <field name="reply" widget="Text" required="true" />
+    <group cols="2" colWidths="100,*">
+      <button name="btnSend" title="Send" readonlyIf="$invalid()"
         onClick="com.axelor.dyn.web.DynController:sendReply"></button>
-      <spacer colSpan="3" />
+      <spacer/>
     </group>
   </form>
 
