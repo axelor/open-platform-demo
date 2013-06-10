@@ -27,8 +27,8 @@
   </action-view>
 
   <action-view name="dyn.messages.all" title="All Messages" model="com.axelor.dyn.db.DynMessage">
-    <view type="grid" name="message-grid" />
-    <view type="form" name="message-form" />
+    <view type="grid" name="dyn-message-grid" />
+    <view type="form" name="dyn-message-form" />
     <domain>self.parent is null</domain>
   </action-view>
   
