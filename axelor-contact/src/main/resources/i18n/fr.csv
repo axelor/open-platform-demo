@@ -1,84 +1,82 @@
-"domain","name","type","title","title_t"
-"menu-contact-all","All Contacts","menu","All Contacts","Les contacts"
-"menu-contact-book","Address Book","menu","Address Book","Carnet D'adresses"
-"menu-contact-business","Business Contacts","menu","Business Contacts","Contact Professionnel"
-"menu-contact-circles","Circles","menu","Circles","Cercles"
-"menu-contact-company-tree","Companies","menu","Companies","Sociétés"
-"menu-contact-config","Configuration","menu","Configuration","Configuration"
-"menu-contact-country","Country","menu","Country","Pays"
-"menu-contact-family","Family Members","menu","Family Members","Contact Personnel"
-"menu-contact-friends","My Friends","menu","My Friends","Mes Amis"
-"menu-contact-titles","Titles","menu","Titles","Intitulés"
-"com.axelor.contact.db.Address","contact","field","","Contact"
-"com.axelor.contact.db.Address","street","field","","Rue"
-"com.axelor.contact.db.Address","area","field","","Aire"
-"com.axelor.contact.db.Address","city","field","","Ville"
-"com.axelor.contact.db.Address","zip","field","","Code postal"
-"com.axelor.contact.db.Address","country","field","","Pays"
-"com.axelor.contact.db.Circle","code","field","","Code"
-"com.axelor.contact.db.Circle","name","field","","Nom"
-"com.axelor.contact.db.Company","code","field","","Code"
-"com.axelor.contact.db.Company","name","field","","Nom"
-"com.axelor.contact.db.Company","parent","field","","Parent"
-"com.axelor.contact.db.Company","employees","field","","Employés"
-"com.axelor.contact.db.Company","circles","field","","Cercles"
-"com.axelor.contact.db.Company","notes","field","","notes"
-"com.axelor.contact.db.Contact","title","field","","Intitulé"
-"com.axelor.contact.db.Contact","firstName","field","","Prénom"
-"com.axelor.contact.db.Contact","lastName","field","","Nom de famille"
-"com.axelor.contact.db.Contact","fullName","field","","Nom complet"
-"com.axelor.contact.db.Contact","email","field","","Email"
-"com.axelor.contact.db.Contact","phone","field","","Téléphone"
-"com.axelor.contact.db.Contact","dateOfBirth","field","","Date d'anniverssaire"
-"com.axelor.contact.db.Contact","addresses","field","","Adresses"
-"com.axelor.contact.db.Contact","circle","field","","Cercle"
-"com.axelor.contact.db.Contact","notes","field","","Notes"
-"com.axelor.contact.db.Contact","image","field","Photo","Photo"
-"com.axelor.contact.db.Contact","image","help","Max size 4MB.","Taille maximun : 4MB"
-"com.axelor.contact.db.Contact","company","field","","Société"
-"com.axelor.contact.db.Country","code","field","","Code"
-"com.axelor.contact.db.Country","name","field","","Nom"
-"com.axelor.contact.db.Title","code","field","","Code"
-"com.axelor.contact.db.Title","name","field","","Nom"
-"com.axelor.contact.db.Address","address-form","form","Address","Adre"
-"com.axelor.contact.db.Address","address-grid","grid","Address List","Les Adresses"
-"com.axelor.contact.db.Circle","circle-form","form","Circle","Cercle"
-"com.axelor.contact.db.Circle","circle-grid","grid","Circles","Cercles"
-"com.axelor.contact.db.Company","company-form","form","Company","Société"
-"company-form","","page","Employees","Employés"
-"com.axelor.contact.db.Contact","","grid","Employees","Employés"
-"company-form","","page","Groups","Groupes"
-"com.axelor.contact.db.Company","Circles","field","Circles","Cercles"
-"com.axelor.contact.db.Circle","","grid","Circles","Cercles"
-"company-form","","page","Notes","Notes"
-"com.axelor.contact.db.Company","company-grid","grid","Companies","Sociétés"
-"com.axelor.contact.db.Company","company-tree","tree","Companies","Sociétés"
-"com.axelor.contact.db.Contact","contact-form","form","Contact","Contact"
-"contact-form","","group","Personal Information","Information Personnel"
-"contact-form","action_buttons","group","Actions","Actions"
-"contact-form","greet","button","Send Greetings...","Envoyer Salutations"
-"contact-form","showHomePage","button","Home Page...","Page D'acceuil"
-"contact-form","showCompanyList","button","Company List...","Liste sociétés"
-"contact-form","showCompanyList","button","Demonstrate how to open new view from action.","Montre comment ouvrir un vue formulaire depuis une action"
-"contact-form","","page","Address List","Les Adresses"
-"com.axelor.contact.db.Contact","Address List","field","Address List","Listes d'adresses"
-"com.axelor.contact.db.Address","","grid","Address List","Les Adresses"
-"com.axelor.contact.db.Address","","form","Address","Adre"
-"","clickMe","button","Click Me!","Cliquer ici!"
-"contact-form","","page","Notes","Notes"
-"com.axelor.contact.db.Contact","contact-grid","grid","Contacts","Contacts"
-"com.axelor.contact.db.Address","","grid","Address List","Les Adresses"
-"com.axelor.contact.db.Address","","form","Address","Adre"
-"","clickMe","button","Click Me!","Cliquer ici!"
-"com.axelor.contact.db.Country","country-form","form","Country","Pays"
-"com.axelor.contact.db.Country","country-grid","grid","Countries","Les Pays"
-"com.axelor.contact.db.Title","title-form","form","Title","Intitulé"
-"com.axelor.contact.db.Title","title-grid","grid","Titles","Intitulés"
-"contact.all","contact.all","action","Contacts","Contacts"
-"contact.business","contact.business","action","Business Contacts","Contact Professionnel"
-"contact.circles","contact.circles","action","Circle","Cercle"
-"contact.company","contact.company","action","Company","Société"
-"contact.country","contact.country","action","Country","Pays"
-"contact.family","contact.family","action","Family Members","Contact Personnel"
-"contact.friends","contact.friends","action","My Friends","Mes Amis"
-"contact.title","contact.title","action","Title","Intitulé"
+"domain","name","type","title","title_t","help","help_t"
+"menu-contact-all","All Contacts","menu","All Contacts","Les contacts",,
+"menu-contact-book","Address Book","menu","Address Book","Carnet D'adresses",,
+"menu-contact-business","Business Contacts","menu","Business Contacts","Contact Professionnel",,
+"menu-contact-circles","Circles","menu","Circles","Cercles",,
+"menu-contact-company-tree","Companies","menu","Companies","Sociétés",,
+"menu-contact-config","Configuration","menu","Configuration","Configuration",,
+"menu-contact-country","Country","menu","Country","Pays",,
+"menu-contact-family","Family Members","menu","Family Members","Contact Personnel",,
+"menu-contact-friends","My Friends","menu","My Friends","Mes Amis",,
+"menu-contact-titles","Titles","menu","Titles","Intitulés",,
+"com.axelor.contact.db.Address","contact","field",,"Contact",,
+"com.axelor.contact.db.Address","street","field",,"Rue",,
+"com.axelor.contact.db.Address","area","field",,"Aire",,
+"com.axelor.contact.db.Address","city","field",,"Ville",,
+"com.axelor.contact.db.Address","zip","field",,"Code postal",,
+"com.axelor.contact.db.Address","country","field",,"Pays",,
+"com.axelor.contact.db.Circle","code","field",,"Code",,
+"com.axelor.contact.db.Circle","name","field",,"Nom",,
+"com.axelor.contact.db.Company","code","field",,"Code",,
+"com.axelor.contact.db.Company","name","field",,"Nom",,
+"com.axelor.contact.db.Company","parent","field",,"Parent",,
+"com.axelor.contact.db.Company","employees","field",,"Employés",,
+"com.axelor.contact.db.Company","circles","field",,"Cercles",,
+"com.axelor.contact.db.Company","notes","field",,"notes",,
+"com.axelor.contact.db.Contact","title","field",,"Intitulé",,
+"com.axelor.contact.db.Contact","firstName","field",,"Prénom",,
+"com.axelor.contact.db.Contact","lastName","field",,"Nom de famille",,
+"com.axelor.contact.db.Contact","fullName","field",,"Nom complet",,
+"com.axelor.contact.db.Contact","email","field",,"Email",,
+"com.axelor.contact.db.Contact","phone","field",,"Téléphone",,
+"com.axelor.contact.db.Contact","dateOfBirth","field",,"Date d'anniverssaire",,
+"com.axelor.contact.db.Contact","addresses","field",,"Adresses",,
+"com.axelor.contact.db.Contact","circle","field",,"Cercle",,
+"com.axelor.contact.db.Contact","notes","field",,"Notes",,
+"com.axelor.contact.db.Contact","image","field","Photo","Photo","Max size 4MB.","Taile max : 4MB"
+"com.axelor.contact.db.Contact","company","field",,"Société",,
+"com.axelor.contact.db.Country","code","field",,"Code",,
+"com.axelor.contact.db.Country","name","field",,"Nom",,
+"com.axelor.contact.db.Title","code","field",,"Code",,
+"com.axelor.contact.db.Title","name","field",,"Nom",,
+"com.axelor.contact.db.Address","address-form","form","Address","Adre",,
+"com.axelor.contact.db.Address","address-grid","grid","Address List","Les Adresses",,
+"com.axelor.contact.db.Circle","circle-form","form","Circle","Cercle",,
+"com.axelor.contact.db.Circle","circle-grid","grid","Circles","Cercles",,
+"com.axelor.contact.db.Company","company-form","form","Company","Société",,
+"company-form",,"page","Employees","Employés",,
+"com.axelor.contact.db.Contact",,"grid","Employees","Employés",,
+"company-form",,"page","Groups","Groupes",,
+"com.axelor.contact.db.Company","Circles","viewField","Circles","Cercles",,
+"com.axelor.contact.db.Circle",,"grid","Circles","Cercles",,
+"company-form",,"page","Notes","Notes",,
+"com.axelor.contact.db.Company","company-grid","grid","Companies","Sociétés",,
+"com.axelor.contact.db.Contact","contact-form","form","Contact","Contact",,
+"contact-form",,"group","Personal Information","Information Personnel",,
+"contact-form","action_buttons","group","Actions","Actions",,
+"contact-form","greet","button","Send Greetings...","Envoyer Salutations",,
+"contact-form","showHomePage","button","Home Page...","Page D'acceuil",,
+"contact-form","showCompanyList","button","Company List...","Liste sociétés",,
+"contact-form","showCompanyList","button","Demonstrate how to open new view from action.","Montre comment ouvrir un vue formulaire depuis une action",,
+"contact-form",,"page","Address List","Les Adresses",,
+"com.axelor.contact.db.Contact","Address List","viewField","Address List","Listes d'adresses",,
+"com.axelor.contact.db.Address",,"grid","Address List","Les Adresses",,
+"com.axelor.contact.db.Address",,"form","Address","Adre",,
+,"clickMe","button","Click Me!","Cliquer ici!",,
+"contact-form",,"page","Notes","Notes",,
+"com.axelor.contact.db.Contact","contact-grid","grid","Contacts","Contacts",,
+"com.axelor.contact.db.Address",,"grid","Address List","Les Adresses",,
+"com.axelor.contact.db.Address",,"form","Address","Adre",,
+,"clickMe","button","Click Me!","Cliquer ici!",,
+"com.axelor.contact.db.Country","country-form","form","Country","Pays",,
+"com.axelor.contact.db.Country","country-grid","grid","Countries","Les Pays",,
+"com.axelor.contact.db.Title","title-form","form","Title","Intitulé",,
+"com.axelor.contact.db.Title","title-grid","grid","Titles","Intitulés",,
+"contact.all","contact.all","action","Contacts","Contacts",,
+"contact.business","contact.business","action","Business Contacts","Contact Professionnel",,
+"contact.circles","contact.circles","action","Circle","Cercle",,
+"contact.company","contact.company","action","Company","Société",,
+"contact.country","contact.country","action","Country","Pays",,
+"contact.family","contact.family","action","Family Members","Contact Personnel",,
+"contact.friends","contact.friends","action","My Friends","Mes Amis",,
+"contact.title","contact.title","action","Title","Intitulé",,
