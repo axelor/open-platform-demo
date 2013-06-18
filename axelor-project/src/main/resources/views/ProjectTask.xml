@@ -26,7 +26,7 @@
     <field name="progress" widget="Progress"/>
     <notebook colSpan="4">
       <page title="Work Items" cols="1">
-        <field name="workItems" noLabel="true">
+        <field name="workItems" showTitle="false">
           <grid title="Work Item" editable="true">
             <field name="name" />
             <field name="date" />
@@ -41,7 +41,7 @@
         </field>
       </page>
       <page title="Notes" cols="1">
-        <field name="notes" noLabel="true"/>
+        <field name="notes" showTitle="false"/>
       </page>
     </notebook>
   </form>

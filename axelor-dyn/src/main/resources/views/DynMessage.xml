@@ -19,7 +19,7 @@
         <field name="replies">
           <form cols="2" title="Reply">
             <field name="subject" />
-            <field name="body" noLabel="true" colSpan="2" widget="html[lite=true]" />
+            <field name="body" showTitle="false" colSpan="2" widget="html[lite=true]" />
           </form>
         </field>
       </page>
@@ -28,7 +28,7 @@
 
   <form cols="1" name="dyn-message-form2" title="Message">
     <group readonly="true" cols="3" colWidths="42,*,60">
-      <field name="dummy1" noLabel="true" widget="Image[width=48|height=48]" css="trail-avatar"/>
+      <field name="dummy1" showTitle="false" widget="Image[width=48|height=48]" css="trail-avatar"/>
       <group cols="1">
         <field name="subject" showIf="!parent"/>
         <field name="body" widget="html"/>
@@ -42,17 +42,17 @@
     </group>
     <group readonly="true" css="trail-form-footer" cols="2" colWidths="*,20">
       <group cols="5" css="pull-left">
-        <field name="author" noLabel="true"/>
+        <field name="author" showTitle="false"/>
         <label title="to"/>
-        <field name="recipients" noLabel="true" widget="TagSelect[max=3]"/>
+        <field name="recipients" showTitle="false" widget="TagSelect[max=3]"/>
         <label title=" &amp;nbsp;•"></label>
-        <field name="createdOn" widget="RelativeTime" noLabel="true"/>
+        <field name="createdOn" widget="RelativeTime" showTitle="false"/>
       </group>
       <button name="btnExpand" icon="icon-double-angle-down" link=""
         onClick="com.axelor.dyn.web.DynController:showReplies" showIf="__expandable"/>
     </group>
     <group cols="3" colWidths="100,100,*" showIf="canReply">
-      <field name="reply" noLabel="true" colSpan="3" widget="Text" required="true"/>
+      <field name="reply" showTitle="false" colSpan="3" widget="Text" required="true"/>
       <button name="btnSend" title="Send" readonlyIf="$invalid()"
         onClick="com.axelor.dyn.web.DynController:sendReply"/>
       <button name="btnCancel" title="Cancel"

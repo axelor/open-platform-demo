@@ -17,10 +17,10 @@
     <field name="members" widget="TagSelect[create=code,name,password]"/>
     <notebook colSpan="4">
       <page title="Tasks" cols="1">
-        <field name="tasks" noLabel="true"/>
+        <field name="tasks" showTitle="false"/>
       </page>
       <page title="Notes" cols="1">
-        <field name="notes" noLabel="true"/>
+        <field name="notes" showTitle="false"/>
       </page>
     </notebook>
   </form>

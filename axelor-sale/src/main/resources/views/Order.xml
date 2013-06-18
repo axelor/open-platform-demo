@@ -59,7 +59,7 @@
         </field>
       </page>
       <page title="Notes" cols="1">
-        <field name="notes" noLabel="true"/>
+        <field name="notes" showTitle="false"/>
       </page>
     </notebook>
     <group colSpan="4" cols="3" colWidths="50px,*,220px">
