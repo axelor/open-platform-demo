@@ -45,11 +45,35 @@
       </page>
     </notebook>
   </form>
+
+  <tree name="project-task-tree" title="Project Tasks">
+  
+    <!-- define tree columns -->
+    <column name="title" type="string" />
+    <column name="progress" type="integer" />
+  
+    <!-- define 1st level node -->
+    <node model="com.axelor.project.db.Project">
+      <field name="name" as="title" />
+    </node>
+
+    <!-- define 2nd level node -->
+    <node model="com.axelor.project.db.ProjectTask" parent="project" draggable="true" onClick="project.task.add">
+      <field name="name" as="title" />
+      <field name="progress" as="progress" />
+    </node>
+    
+  </tree>
   
   <action-record name="project.task.on.new" model="com.axelor.project.db.ProjectTask">
     <field name="createDate" expr="eval: startDate ? startDate : __time__"/>
     <field name="user" expr="eval: __user__"/>
   </action-record>
+  
+  <action-attrs name="project.task.add">
+    <attribute for="tasks" name="value:add" expr="eval: id"/>
+    <attribute for="name" name="value"      expr="eval: __self__?.project?.name"/>
+  </action-attrs>
 
   <calendar name="project-task-calendar" title="Project Tasks" colorBy="user"
     eventStart="startDate"
