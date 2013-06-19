@@ -55,8 +55,8 @@
       <button name="showCompanyList" title="Company List..." help="Demonstrate how to open new view from action." onClick="com.axelor.contact.web.HelloController:showCompanyList"/>
     </group>
     <notebook colSpan="1">
-      <page title="Address List" cols="4">
-        <field name="addresses" title="Address List" colSpan="4">
+      <page title="Address List" cols="1">
+        <field name="addresses" title="Address List">
           <grid title="Address List" editable="true">
             <field name="street"/>
             <field name="area"/>
