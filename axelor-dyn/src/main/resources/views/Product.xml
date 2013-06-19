@@ -10,11 +10,13 @@
   </selection>
   
   <form name="product-form" title="Product" cols="4">
-    <field name="code"/>
-    <field name="name"/>
-    <field name="color" selection="product.color.selection"/>
-    <field name="category"/>
+    <include view="product-form" from="axelor-sale"/>
     <field name="color" selection="product.color.selection" widget="NavSelect" colSpan="4"/>
+    <group colSpan="4" showIf="color">
+      <group title="Page 1" showIf="color == 'black'"></group>
+      <group title="Page 2" showIf="color == 'white'"></group>
+      <group title="Page 3" showIf="color == 'gray'"></group>
+    </group>
   </form>
   
 </object-views>
