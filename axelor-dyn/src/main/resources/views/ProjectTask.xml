@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<object-views xmlns="http://apps.axelor.com/xml/ns/object-views"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://apps.axelor.com/xml/ns/object-views http://apps.axelor.com/xml/ns/object-views/object-views_0.9.xsd">
+
+  <grid name="project-task-grid" title="Project Tasks" groupBy="project">
+    <field name="name" />
+    <field name="createDate" />
+    <field name="startDate" />
+    <field name="endDate" />
+    <field name="user" />
+    <field name="project" />
+    <field name="priority" />
+    <field name="progress" widget="Progress" aggregate="sum"/>
+  </grid>
+
+</object-views>
