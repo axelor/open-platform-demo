@@ -71,4 +71,24 @@
     <series key="amount" groupBy="customer" type="bar"/>
   </chart>
   
+  <chart name="chart.sales.gauge" title="Sales Gauge (this month)">
+    <dataset type="jpql">
+    <![CDATA[
+    SELECT
+        COUNT(self.id) AS total,
+        MONTH(self.orderDate) AS month
+    FROM
+        Order self
+    WHERE
+        MONTH(self.orderDate) = MONTH(current_date)
+    GROUP BY
+        MONTH(self.orderDate)
+    ]]>
+    </dataset>
+    <category key="month" type="month"/>
+    <series key="total" type="gauge"/>
+    <config name="min" value="0"/>
+    <config name="max" value="10"/>
+  </chart>
+  
 </object-views>
