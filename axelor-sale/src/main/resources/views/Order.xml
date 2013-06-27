@@ -80,7 +80,19 @@
     colorBy="customer">
     <field name="name"/>
   </calendar>
-
+  
+  <search-filters name="filter-sales" model="com.axelor.sale.db.Order" title="Filter Sale Orders">
+    <filter title="Confirmed">
+      <domain>self.confirmed = true</domain>
+    </filter>
+    <filter title="Not Confirmed">
+      <domain>self.confirmed = false OR self.confirmed is null</domain>
+    </filter>
+    <filter title="High Value (>= 1000)">
+      <domain>self.totalAmount &gt;= 1000</domain>
+    </filter>
+  </search-filters>
+  
   <action-record name="default-order-record" model="com.axelor.sale.db.Order">
     <field name="customer" expr="action:default-customer-record" if="!(__ref__ instanceof com.axelor.contact.db.Contact)"/>
     <field name="customer" expr="eval: __ref__" if="__ref__ instanceof com.axelor.contact.db.Contact"/>

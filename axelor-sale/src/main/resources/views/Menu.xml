@@ -12,6 +12,7 @@
     <view type="grid"/>
     <view type="form"/>
     <view type="calendar" name="sales-timeline"/>
+    <view-param name="search-filters" value="filter-sales"/>
   </action-view>
 
   <menuitem name="menu-sales-product" parent="menu-sales"
