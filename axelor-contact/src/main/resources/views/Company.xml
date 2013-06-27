@@ -9,10 +9,6 @@
     <field name="parent"/>
   </grid>
 
-  <tree name="company-tree" title="Companies">
-    <field name="name"/>
-  </tree>
-
   <form name="company-form" title="Company" cols="4">
     <field name="name"/>
     <field name="code"/>
