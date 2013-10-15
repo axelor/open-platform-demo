@@ -1,93 +1,136 @@
 "domain","name","type","title","title_t","help","help_t"
-"menu-sales","Sales Management","menu","Sales Management","Ventes","",""
-"menu-sales-config","Configuration","menu","Configuration","Configuration","",""
-"menu-sales-order","Sale Orders","menu","Sale Orders","Commande","",""
-"menu-sales-product","Products","menu","Products","Produits","",""
-"menu-sales-product-category","Product Categories","menu","Product Categories","Catégories de produits","",""
-"menu-sales-search","Sales Search...","menu","Sales Search...","Recherche commande...","",""
-"menu-sales-taxes","All Taxes","menu","All Taxes","Les Taxes","",""
-"category-1","category-1","actionMenu","Category 1","Catégorie 1","",""
-"category-2","category-2","actionMenu","Category 2","Catégorie 2","",""
-"create-partner","create-partner","actionMenu","Create Partner...","Créer Contact...","",""
-"create-partner-12","create-partner-12","actionMenu","Create Partner... (12)","Créer Contact... (12)","",""
-"create-partner-13","create-partner-13","actionMenu","Create Partner... (13)","Créer Contact... (13)","",""
-"create-partner-22","create-partner-22","actionMenu","Create Partner... (22)","Créer Contact... (22)","",""
-"create-sale-order","create-sale-order","actionMenu","Create Sale Order...","Créer Commande...","",""
-"create-sale-order-13","create-sale-order-13","actionMenu","Create Sale Order... (13)","Créer Commande... (13)","",""
-"create-sale-order-21","create-sale-order-21","actionMenu","Create Sale Order... (21)","Créer Commande... (21)","",""
-"sub-category-11","sub-category-11","actionMenu","Sub Category 11","Sous-catégorie 11","",""
-"sub-category-12","sub-category-12","actionMenu","Sub Category 12","Sous-catégorie 12","",""
-"sub-category-13","sub-category-13","actionMenu","Sub Category 13","Sous-catégorie 13","",""
-"sub-category-21","sub-category-21","actionMenu","Sub Category 21","Sous-catégorie 21","",""
-"sub-category-22","sub-category-22","actionMenu","Sub Category 22","Sous-catégorie 22","",""
-"com.axelor.sale.db.Order","customer","field","","Client","",""
-"com.axelor.sale.db.Order","name","field","","Nom","",""
-"com.axelor.sale.db.Order","orderDate","field","","Date de commande","",""
-"com.axelor.sale.db.Order","createDate","field","","Date de création","",""
-"com.axelor.sale.db.Order","confirmDate","field","","Date de confirmation","",""
-"com.axelor.sale.db.Order","confirmed","field","","Confirmé ?","",""
-"com.axelor.sale.db.Order","amount","field","","Montant","",""
-"com.axelor.sale.db.Order","taxAmount","field","","Total Taxes","",""
-"com.axelor.sale.db.Order","totalAmount","field","","Montant Total","",""
-"com.axelor.sale.db.Order","notes","field","","Notes","",""
-"com.axelor.sale.db.Order","items","field","","Articles","",""
-"com.axelor.sale.db.OrderLine","order","field","","Commande","",""
-"com.axelor.sale.db.OrderLine","product","field","","Produit","",""
-"com.axelor.sale.db.OrderLine","price","field","","Prix","",""
-"com.axelor.sale.db.OrderLine","quantity","field","","Quantité","",""
-"com.axelor.sale.db.OrderLine","taxes","field","","Taxes","",""
-"com.axelor.sale.db.Product","code","field","","Code","",""
-"com.axelor.sale.db.Product","name","field","","Nom","",""
-"com.axelor.sale.db.Product","color","field","","Couleur","",""
-"com.axelor.sale.db.Product","category","field","","Catégorie","",""
-"com.axelor.sale.db.ProductCategory","code","field","","Code","",""
-"com.axelor.sale.db.ProductCategory","name","field","","Nom","",""
-"com.axelor.sale.db.ProductCategory","parent","field","","Parent","",""
-"com.axelor.sale.db.Tax","code","field","","Code","",""
-"com.axelor.sale.db.Tax","name","field","","Nom","",""
-"com.axelor.sale.db.Tax","rate","field","","Taux","",""
-"product.color.selection","black","select","Black","Noir","",""
-"product.color.selection","white","select","White","Blanc","",""
-"product.color.selection","gray","select","Gray","Gris","",""
-"product.color.selection","red","select","Red","Rouge","",""
-"product.color.selection","green","select","Green","Vert","",""
-"product.color.selection","blue","select","Blue","Bleu","",""
-"product.color.selection","yellow","select","Yellow","Jaune","",""
-"product.color.selection","chocolate","select","Chocolate","Chocolat","",""
-"product.color.selection","orange","select","Orange","Orange","",""
-"product.color.selection","purple","select","Purple","Violet","",""
-"chart.sales.by.customer","chart.sales.by.customer","chart","Sales by customer","Chiffre d'affaires par client","",""
-"chart.sales.per.month","chart.sales.per.month","chart","Sales per month","Chiffre d'affaires par mois","",""
-"chart.sales.per.month.pie","chart.sales.per.month.pie","chart","Sales per customer","Chiffre d'affaires par client","",""
-"com.axelor.sale.db.Order","order-form","form","Order","Commande","",""
-"order-form","","separator","Order Details","Détails","",""
-"com.axelor.contact.db.Contact","","form","Customer","Client","",""
-"order-form","","page","Items","Articles","",""
-"com.axelor.sale.db.OrderLine","","grid","Items","Articles","",""
-"com.axelor.sale.db.OrderLine","","form","Ordered Item","Articles","",""
-"","","page","Taxes","Les Taxes","",""
-"com.axelor.sale.db.Tax","","grid","Taxes","Les Taxes","",""
-"order-form","","page","Notes","Notes","",""
-"order-form","btnCalculate","button","Calculate","Calculer","",""
-"com.axelor.sale.db.Order","order-grid","grid","Orders","Les Commandes","",""
-"com.axelor.sale.db.OrderLine","order-line-form","form","Ordered Item","Articles","",""
-"order-line-form","","page","Taxes","Les Taxes","",""
-"com.axelor.sale.db.Tax","","grid","Taxes","Les Taxes","",""
-"com.axelor.sale.db.OrderLine","order-line-grid","grid","Ordered Items","Articles","",""
-"com.axelor.sale.db.ProductCategory","product-category-form","form","Product Category","Catégorie de produit","",""
-"com.axelor.sale.db.ProductCategory","product-category-grid","grid","Product Categories","Catégories de produits","",""
-"com.axelor.sale.db.Product","product-form","form","Product","Produit","",""
-"com.axelor.sale.db.Product","product-grid","grid","Products","Produits","",""
-"","sale-order-search","search","Sales Search","Recherche commande...","",""
-"com.axelor.sale.db.Order","sales-timeline","calendar","Sales Timeline","Calendrier des ventes","",""
-"com.axelor.sale.db.Tax","tax-form","form","Tax","Taxe","",""
-"com.axelor.sale.db.Tax","tax-grid","grid","Taxes","Les Taxes","",""
-"action-sale-order-validate","action-sale-order-validate","action","Create Date is in future.","Date de création supérieur à la date du jour","",""
-"action-sale-order-validate","action-sale-order-validate","action","Order Date is in future.","Date de commande supérieur à la date du jour","",""
-"action-sale-order-validate","action-sale-order-validate","action","No Sale Order Items. Would you like to continue?","Aucun articles n'a été saisie, Voulez-vous contitnuer ?","",""
-"check-order-dates","check-order-dates","action","Order creation date is in the future.","Date de commande supérieur à la date de création","",""
-"sale.orders","sale.orders","action","Sale Orders","Commande","",""
-"sale.product.categories","sale.product.categories","action","Product Categories","Catégories de produits","",""
-"sale.products","sale.products","action","Products","Produits","",""
-"sale.search","sale.search","action","Sales Search...","Recherche commande...","",""
-"sale.taxes","sale.taxes","action","Taxes","Les Taxes","",""
+,,"menu","Sales Management","Ventes",,
+,,"menu","Configuration","Configuration",,
+,,"menu","Sale Orders","Commande",,
+,,"menu","Products","Produits",,
+,,"menu","Product Categories","Catégories de produits",,
+,,"menu","Sales Search...","Recherche commande...",,
+,,"menu","All Taxes","Les Taxes",,
+,,"actionMenu","Category 1","Catégorie 1",,
+,,"actionMenu","Category 2","Catégorie 2",,
+,,"actionMenu","Create Partner...","Créer Contact...",,
+,,"actionMenu","Create Partner... (12)","Créer Contact... (12)",,
+,,"actionMenu","Create Partner... (13)","Créer Contact... (13)",,
+,,"actionMenu","Create Partner... (22)","Créer Contact... (22)",,
+,,"actionMenu","Create Sale Order...","Créer Commande...",,
+,,"actionMenu","Create Sale Order... (13)","Créer Commande... (13)",,
+,,"actionMenu","Create Sale Order... (21)","Créer Commande... (21)",,
+,,"actionMenu","Sub Category 11","Sous-catégorie 11",,
+,,"actionMenu","Sub Category 12","Sous-catégorie 12",,
+,,"actionMenu","Sub Category 13","Sous-catégorie 13",,
+,,"actionMenu","Sub Category 21","Sous-catégorie 21",,
+,,"actionMenu","Sub Category 22","Sous-catégorie 22",,
+"com.axelor.sale.db.Order","customer","field",,"Client",,
+"com.axelor.sale.db.Order","name","field",,"Nom",,
+"com.axelor.sale.db.Order","orderDate","field",,"Date de commande",,
+"com.axelor.sale.db.Order","createDate","field",,"Date de création",,
+"com.axelor.sale.db.Order","confirmDate","field",,"Date de confirmation",,
+"com.axelor.sale.db.Order","confirmed","field",,"Confirmé ?",,
+"com.axelor.sale.db.Order","amount","field",,"Montant",,
+"com.axelor.sale.db.Order","taxAmount","field",,"Total Taxes",,
+"com.axelor.sale.db.Order","totalAmount","field",,"Montant Total",,
+"com.axelor.sale.db.Order","notes","field",,"Notes",,
+"com.axelor.sale.db.Order","items","field",,"Articles",,
+"com.axelor.sale.db.OrderLine","order","field",,"Commande",,
+"com.axelor.sale.db.OrderLine","product","field",,"Produit",,
+"com.axelor.sale.db.OrderLine","price","field",,"Prix",,
+"com.axelor.sale.db.OrderLine","quantity","field",,"Quantité",,
+"com.axelor.sale.db.OrderLine","taxes","field",,"Taxes",,
+"com.axelor.sale.db.Product","code","field",,"Code",,
+"com.axelor.sale.db.Product","name","field",,"Nom",,
+"com.axelor.sale.db.Product","color","field",,"Couleur",,
+"com.axelor.sale.db.Product","category","field",,"Catégorie",,
+"com.axelor.sale.db.ProductCategory","code","field",,"Code",,
+"com.axelor.sale.db.ProductCategory","name","field",,"Nom",,
+"com.axelor.sale.db.ProductCategory","parent","field",,"Parent",,
+"com.axelor.sale.db.Tax","code","field",,"Code",,
+"com.axelor.sale.db.Tax","name","field",,"Nom",,
+"com.axelor.sale.db.Tax","rate","field",,"Taux",,
+,,"select","Black","Noir",,
+,,"select","White","Blanc",,
+,,"select","Gray","Gris",,
+,,"select","Red","Rouge",,
+,,"select","Green","Vert",,
+,,"select","Blue","Bleu",,
+,,"select","Yellow","Jaune",,
+,,"select","Chocolate","Chocolat",,
+,,"select","Orange","Orange",,
+,,"select","Purple","Violet",,
+,,"chart","Sales by customer","Chiffre d'affaires par client",,
+,,"chart","Sales Gauge (this month)","Jauge de vente (ce mois-ci)",,
+,,"chart","Sales per month","Chiffre d'affaires par mois",,
+,,"chart","Sales per customer","Chiffre d'affaires par client",,
+"com.axelor.sale.db.Order",,"view","Filter Sale Orders","Filtres Commandes",,
+"com.axelor.sale.db.Order",,"filter","Confirmed","Confirmé",,
+"com.axelor.sale.db.Order",,"filter","Not Confirmed","Non confirmé",,
+"com.axelor.sale.db.Order",,"filter","High Value (>= 1000)","Grande valeur (>= 1000)",,
+"com.axelor.sale.db.Order",,"view","Order","Commande",,
+"com.axelor.sale.db.Order",,"separator","Order Details","Détails",,
+"com.axelor.contact.db.Contact",,"view","Customer","Client",,
+"com.axelor.sale.db.Order",,"page","Items","Articles",,
+"com.axelor.sale.db.OrderLine",,"view","Items","Articles",,
+"com.axelor.sale.db.OrderLine",,"view","Ordered Item","Articles",,
+"com.axelor.sale.db.OrderLine",,"page","Taxes","Les Taxes",,
+"com.axelor.sale.db.Tax",,"view","Taxes","Les Taxes",,
+"com.axelor.sale.db.Order",,"page","Notes","Notes",,
+"com.axelor.sale.db.Order",,"button","Calculate","Calculer",,
+"com.axelor.sale.db.Order",,"view","Orders","Les Commandes",,
+"com.axelor.sale.db.OrderLine",,"view","Ordered Item","Articles",,
+"com.axelor.sale.db.OrderLine",,"page","Taxes","Les Taxes",,
+"com.axelor.sale.db.Tax",,"view","Taxes","Les Taxes",,
+"com.axelor.sale.db.OrderLine",,"view","Ordered Items","Articles",,
+"com.axelor.sale.db.ProductCategory",,"view","Product Category","Catégorie de produit",,
+"com.axelor.sale.db.ProductCategory",,"view","Product Categories","Catégories de produits",,
+"com.axelor.sale.db.Product",,"view","Product","Produit",,
+"com.axelor.sale.db.Product",,"view","Products","Produits",,
+,,"view","Sales Search","Recherche commande...",,
+,,"search","Contact","Contact",,
+,,"search","Sale Order","Commande",,
+,,"search","partner","Tier",,
+,,"search","product","Produit",,
+,,"search","customer","Client",,
+,,"search","date","Date",,
+,,"search","value","Valeur",,
+,,"search","customer","Client",,
+,,"search","company","Société",,
+,,"search","product","Produit",,
+,,"search","date","Date",,
+,,"search","value","Valeur",,
+"com.axelor.sale.db.Order",,"view","Sales Timeline","Calendrier des ventes",,
+"com.axelor.sale.db.Tax",,"view","Tax","Taxe",,
+"com.axelor.sale.db.Tax",,"view","Taxes","Les Taxes",,
+,,"action","Create Date is in future.","Date de création supérieur à la date du jour",,
+,,"action","Order Date is in future.","Date de commande supérieur à la date du jour",,
+,,"action","No Sale Order Items. Would you like to continue?","Aucun articles n'a été saisie, Voulez-vous contitnuer ?",,
+,,"action","Order creation date is in the future.","Date de commande supérieur à la date de création",,
+,,"action","Sale Orders","Commande",,
+,,"action","Product Categories","Catégories de produits",,
+,,"action","Products","Produits",,
+,,"action","Sales Search...","Recherche commande...",,
+,,"action","Taxes","Les Taxes",,
+,"product","documentation",,,,
+,"price","documentation",,,,
+,"quantity","documentation",,,,
+,"taxes","documentation",,,,
+"product-form","code","documentation",,,,
+"product-form","name","documentation",,,,
+"product-form","color","documentation",,,,
+"product-form","category","documentation",,,,
+"product-category-form","code","documentation",,,,
+"product-category-form","name","documentation",,,,
+"product-category-form","parent","documentation",,,,
+"tax-form","code","documentation",,,,
+"tax-form","name","documentation",,,,
+"tax-form","rate","documentation",,,,
+"order-form","name","documentation",,,,
+"order-form","confirmed","documentation",,,,
+"order-form","customer","documentation",,,,
+"order-form","orderDate","documentation",,,,
+"order-form","createDate","documentation",,,,
+"order-form","confirmDate","documentation",,,,
+"order-form","items","documentation",,,,
+"order-form","notes","documentation",,,,
+"order-form","btnCalculate","documentation",,,,
+"order-form","amount","documentation",,,,
+"order-form","taxAmount","documentation",,,,
+"order-form","totalAmount","documentation",,,,

@@ -1,5 +1,5 @@
 "domain","name","type","title","title_t","help","help_t"
-"menu-dashboards","Dashboards","menu","Dashboards","Tableau de Bord",,
-"menu-welcome","Welcome!","menu","Welcome!","Bienvenue",,
-,"welcome.portal","portal","Welcome!","Bienvenue",,
-"welcome","welcome","action","Welcome!","Bienvenue",,
+"","","menu","Dashboards","Tableau de Bord","",""
+"","","menu","Welcome!","Bienvenue","",""
+"","","view","Welcome!","Bienvenue","",""
+"","","action","Welcome!","Bienvenue","",""
