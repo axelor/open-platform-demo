@@ -2,18 +2,20 @@
 <object-views xmlns="http://apps.axelor.com/xml/ns/object-views"
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://apps.axelor.com/xml/ns/object-views http://apps.axelor.com/xml/ns/object-views/object-views_0.9.xsd">
-  
+
   <grid name="contact-grid" title="Contacts" editable="true">
-    <hilite color="#3333FF" background="#CDEB8B" condition="email *= xyz"/>
+    <hilite background="warning" if="$contains(email, 'gmeil.com')"/>
     <field name="fullName"/>
     <field name="firstName"/>
     <field name="lastName" onChange="com.axelor.contact.web.HelloController:guessEmail"/>
     <field name="email">
-      <hilite color="#FF0000" condition="email $= gmail.com"/>
+      <hilite strong="true" if="$contains(email, 'gmeil.com')"/>
     </field>
     <field name="phone"/>
     <field name="company"/>
-    <field name="dateOfBirth"/>
+    <field name="dateOfBirth">
+      <hilite color="danger" strong="true" if="$moment().diff(dateOfBirth, 'years') &lt; 18"/>
+    </field>
     <field name="addresses">
       <grid title="Address List">
         <field name="street"/>
@@ -43,7 +45,9 @@
         <field name="lastName" onChange="com.axelor.contact.web.HelloController:guessEmail,action-contact-address-attrs"/>
         <field name="email" widget="Email"/>
         <field name="phone"/>
-        <field name="dateOfBirth"/>
+        <field name="dateOfBirth">
+          <hilite color="danger" strong="true" if="$moment().diff(dateOfBirth, 'years') &lt; 18"/>
+        </field>
         <break/>
         <field name="circle"/>
         <field name="company"/>
