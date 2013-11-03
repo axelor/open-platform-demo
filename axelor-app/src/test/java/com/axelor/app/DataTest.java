@@ -34,6 +34,7 @@ import java.io.IOException;
 
 import org.junit.Test;
 
+import com.axelor.auth.AuthModule;
 import com.axelor.data.Importer;
 import com.axelor.data.Launcher;
 import com.axelor.data.xml.XMLImporter;
@@ -47,6 +48,7 @@ public class DataTest {
 		@Override
 		protected void configure() {
 			install(new JpaModule("persistenceUnit", true, true));
+			install(new AuthModule.Simple());
 			bind(Importer.class).to(XMLImporter.class);
 		}
 	}
