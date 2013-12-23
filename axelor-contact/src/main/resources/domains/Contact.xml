@@ -17,13 +17,13 @@
     return title.getName() + " " + firstName + " " + lastName;
     ]]></string>
     <string name="email" required="true" unique="true" max="100" initParam="true"/>
-    <string name="phone" max="20" bulkUpdate="true"/>
-    <date name="dateOfBirth"/>
+    <string name="phone" max="20" massUpdate="true"/>
+    <date name="dateOfBirth" massUpdate="true"/>
     <one-to-many name="addresses" ref="Address" mappedBy="contact"/>
-    <many-to-one name="circle" ref="Circle" bulkUpdate="true"/>
+    <many-to-one name="circle" ref="Circle" massUpdate="true"/>
     <string name="notes" large="true"/>
     <binary name="image" title="Photo" help="Max size 4MB." image="true"/>
-    <many-to-one name="company" ref="Company" bulkUpdate="true"/>
+    <many-to-one name="company" ref="Company" massUpdate="true"/>
     <finder-method name="findByName" using="fullName" />
     <finder-method name="findByEmail" using="email" />
   </entity>
