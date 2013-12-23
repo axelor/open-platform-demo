@@ -18,7 +18,7 @@
     ]]></string>
     <string name="email" required="true" unique="true" max="100" initParam="true"/>
     <string name="phone" max="20" massUpdate="true"/>
-    <date name="dateOfBirth" massUpdate="true"/>
+    <date name="dateOfBirth"/>
     <one-to-many name="addresses" ref="Address" mappedBy="contact"/>
     <many-to-one name="circle" ref="Circle" massUpdate="true"/>
     <string name="notes" large="true"/>
