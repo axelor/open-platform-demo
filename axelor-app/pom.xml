@@ -13,6 +13,11 @@
   <packaging>war</packaging>
 
   <name>Axelor :: App</name>
+  
+  <properties>
+  	<!-- The application war name -->
+  	<war.name>axelor-demo</war.name>
+  </properties>
 
   <dependencies>
 
@@ -56,6 +61,14 @@
         <configuration>
           <skip>true</skip>
         </configuration>
+      </plugin>
+      <!-- The war package name -->
+      <plugin>
+      	<artifactId>maven-war-plugin</artifactId>
+      	<configuration>
+      		<warName>${war.name}</warName>
+      		<webappDirectory>${project.build.directory}/${war.name}</webappDirectory>
+      	</configuration>
       </plugin>
     </plugins>
   </build>
