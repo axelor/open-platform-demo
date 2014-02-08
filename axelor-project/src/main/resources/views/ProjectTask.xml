@@ -3,7 +3,7 @@
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://apps.axelor.com/xml/ns/object-views http://apps.axelor.com/xml/ns/object-views/object-views_2.0.xsd">
   
-  <grid name="project-task-grid" title="Project Tasks">
+  <grid name="project-task-grid" title="Project Tasks" model="ProjectTask">
     <field name="name" />
     <field name="createDate" />
     <field name="startDate" />
@@ -14,7 +14,7 @@
     <field name="progress" widget="Progress"/>
   </grid>
   
-  <form name="project-task-form" title="Project Task" onNew="project.task.on.new">
+  <form name="project-task-form" title="Project Task" model="ProjectTask" onNew="project.task.on.new">
     <field name="name" />
     <field name="priority" />
     <field name="createDate"/>
@@ -75,14 +75,16 @@
     <attribute for="name" name="value"      expr="eval: __self__?.project?.name"/>
   </action-attrs>
 
-  <calendar name="project-task-calendar" title="Project Tasks" colorBy="user"
+  <calendar name="project-task-calendar" title="Project Tasks" model="ProjectTask"
+    colorBy="user"
     eventStart="startDate"
     eventStop="endDate"
     eventLength="1">
     <field name="name" />
   </calendar>
 
-  <calendar name="project-task-calendar-my" title="My Tasks" colorBy="project"
+  <calendar name="project-task-calendar-my" title="My Tasks" model="ProjectTask"
+    colorBy="project"
     eventStart="startDate"
     eventStop="endDate"
     eventLength="1">

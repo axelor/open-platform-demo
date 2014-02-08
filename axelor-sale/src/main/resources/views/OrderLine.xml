@@ -1,23 +1,26 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<object-views xmlns="http://apps.axelor.com/xml/ns/object-views" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://apps.axelor.com/xml/ns/object-views http://apps.axelor.com/xml/ns/object-views/object-views_2.0.xsd">
-  <grid name="order-line-grid" title="Ordered Items">
-    <field name="order"/>
-    <field name="product"/>
-    <field name="price"/>
-    <field name="quantity"/>
+<object-views xmlns="http://apps.axelor.com/xml/ns/object-views" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://apps.axelor.com/xml/ns/object-views http://apps.axelor.com/xml/ns/object-views/object-views_2.0.xsd">
+
+  <grid name="order-line-grid" title="Ordered Items" model="OrderLine">
+    <field name="order" />
+    <field name="product" />
+    <field name="price" />
+    <field name="quantity" />
   </grid>
-  <form name="order-line-form" title="Ordered Item" cols="2">
-    <field name="order"/>
-    <field name="product"/>
-    <field name="price"/>
-    <field name="quantity"/>
-    <break/>
+
+  <form name="order-line-form" title="Ordered Item" model="OrderLine" cols="2">
+    <field name="order" />
+    <field name="product" />
+    <field name="price" />
+    <field name="quantity" />
+    <break />
     <notebook colSpan="4">
       <page title="Taxes" cols="1">
         <field name="taxes">
           <grid title="Taxes">
-            <field name="name"/>
-            <field name="rate"/>
+            <field name="name" />
+            <field name="rate" />
           </grid>
         </field>
       </page>

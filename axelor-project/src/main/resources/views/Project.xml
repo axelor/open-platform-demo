@@ -1,26 +1,25 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<object-views xmlns="http://apps.axelor.com/xml/ns/object-views"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<object-views xmlns="http://apps.axelor.com/xml/ns/object-views" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://apps.axelor.com/xml/ns/object-views http://apps.axelor.com/xml/ns/object-views/object-views_2.0.xsd">
-  
-  <grid name="project-grid" title="Projects">
+
+  <grid name="project-grid" title="Projects" model="Project">
     <field name="name" />
     <field name="parent" />
     <field name="priority" />
   </grid>
-  
-  <form name="project-form" title="Project">
+
+  <form name="project-form" title="Project" model="Project">
     <field name="name" />
     <field name="priority" />
     <field name="description" />
-    <field name="parent"/>
-    <field name="members" widget="TagSelect[create=code,name,password]"/>
+    <field name="parent" />
+    <field name="members" widget="TagSelect[create=code,name,password]" />
     <notebook colSpan="4">
       <page title="Tasks" cols="1">
-        <field name="tasks" showTitle="false"/>
+        <field name="tasks" showTitle="false" />
       </page>
       <page title="Notes" cols="1">
-        <field name="notes" showTitle="false"/>
+        <field name="notes" showTitle="false" />
       </page>
     </notebook>
   </form>
