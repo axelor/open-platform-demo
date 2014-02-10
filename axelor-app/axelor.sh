@@ -30,4 +30,6 @@
 # Copyright (c) 2012-2014 Axelor. All Rights Reserved.
 #
 
-exec mvn clean test
+args=`echo "$@"`
+exec mvn -q exec:java -Dexec.mainClass="com.axelor.cli.Main" -Dexec.args="$args"
+

@@ -95,7 +95,7 @@
       <bind node="@color" to="color" />
     </bind>
 
-    <bind node="sale-order" type="com.axelor.sale.db.Order" search="self.customer.email = :email" update="false" call="com.axelor.app.Validators:validateSaleOrder">
+    <bind node="sale-order" type="com.axelor.sale.db.Order" search="self.customer.email = :email" update="false" call="com.axelor.demo.Validators:validateSaleOrder">
       <!-- transform boolean value into 'true' or 'false' -->
       <bind node="@confirmed" to="confirmed" adapter="Boolean"/>
 

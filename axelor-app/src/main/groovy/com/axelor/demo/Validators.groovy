@@ -28,7 +28,7 @@
  * All portions of the code written by Axelor are
  * Copyright (c) 2012-2014 Axelor. All Rights Reserved.
  */
-package com.axelor.app
+package com.axelor.demo
 
 import com.axelor.sale.db.Order
 import com.axelor.sale.service.SaleOrderService
