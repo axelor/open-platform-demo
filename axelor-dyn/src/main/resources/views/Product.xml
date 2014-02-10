@@ -8,7 +8,7 @@
     <option value="gray">Gray</option>
   </selection>
 
-  <form name="product-form" title="Product" model="Product" cols="4">
+  <form name="product-form" title="Product" model="com.axelor.sale.db.Product" cols="4">
     <include view="product-form" from="axelor-sale" />
     <field name="color" selection="product.color.selection" widget="NavSelect" colSpan="4" />
     <group colSpan="4" showIf="color">

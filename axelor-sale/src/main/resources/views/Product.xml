@@ -15,13 +15,13 @@
     <option value="purple">Purple</option>
   </selection>
 
-  <grid name="product-grid" title="Products" model="Product">
+  <grid name="product-grid" title="Products" model="com.axelor.sale.db.Product">
     <field name="name" />
     <field name="category" />
     <field name="color" selection="product.color.selection" />
   </grid>
 
-  <form name="product-form" title="Product" model="Product" cols="4">
+  <form name="product-form" title="Product" model="com.axelor.sale.db.Product" cols="4">
     <field name="code" />
     <field name="name" />
     <field name="color" selection="product.color.selection" />

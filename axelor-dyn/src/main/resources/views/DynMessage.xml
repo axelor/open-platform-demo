@@ -3,12 +3,12 @@
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://apps.axelor.com/xml/ns/object-views http://apps.axelor.com/xml/ns/object-views/object-views_2.0.xsd">
 
-  <grid name="dyn-message-grid" title="Messages" model="DynMessage">
+  <grid name="dyn-message-grid" title="Messages" model="com.axelor.dyn.db.DynMessage">
     <field name="subject" />
     <field name="date" />
   </grid>
 
-  <form name="dyn-message-form" title="Message" model="DynMessage" cols="2">
+  <form name="dyn-message-form" title="Message" model="com.axelor.dyn.db.DynMessage" cols="2">
     <field name="subject" />
     <field name="recipients" widget="TagSelect" />
     <notebook colSpan="2">
@@ -26,7 +26,7 @@
     </notebook>
   </form>
 
-  <form name="dyn-message-form2" title="Message" model="DynMessage" cols="1">
+  <form name="dyn-message-form2" title="Message" model="com.axelor.dyn.db.DynMessage" cols="1">
     <group readonly="true" cols="3" colWidths="42,*,60">
       <field name="dummy1" showTitle="false" widget="Image[width=48|height=48]" css="trail-avatar"/>
       <group cols="1">
@@ -61,7 +61,7 @@
     </group>
   </form>
 
-  <form name="dyn-message-form3" title="Message" model="DynMessage" cols="1">
+  <form name="dyn-message-form3" title="Message" model="com.axelor.dyn.db.DynMessage" cols="1">
     <field name="subject" required="true"/>
     <field name="recipients" required="true" widget="TagSelect" />
     <field name="reply" widget="Text" required="true" />

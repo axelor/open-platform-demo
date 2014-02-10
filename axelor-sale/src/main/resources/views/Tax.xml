@@ -2,12 +2,12 @@
 <object-views xmlns="http://apps.axelor.com/xml/ns/object-views" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://apps.axelor.com/xml/ns/object-views http://apps.axelor.com/xml/ns/object-views/object-views_2.0.xsd">
 
-  <grid name="tax-grid" title="Taxes" model="Tax">
+  <grid name="tax-grid" title="Taxes" model="com.axelor.sale.db.Tax">
     <field name="name" />
     <field name="rate" />
   </grid>
 
-  <form name="tax-form" title="Tax" model="Tax" cols="4">
+  <form name="tax-form" title="Tax" model="com.axelor.sale.db.Tax" cols="4">
     <field name="code" />
     <field name="name" />
     <field name="rate" />
