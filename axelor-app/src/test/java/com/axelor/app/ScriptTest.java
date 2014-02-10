@@ -44,6 +44,6 @@ public class ScriptTest {
 			"-i", "-d"
 		};
 
-		Main.main(args);
+		Main.process(args);
 	}
 }
