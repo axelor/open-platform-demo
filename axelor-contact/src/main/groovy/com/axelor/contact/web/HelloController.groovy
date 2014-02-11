@@ -32,12 +32,13 @@ package com.axelor.contact.web
 
 import groovy.util.logging.Slf4j
 
-import java.util.List
+import javax.inject.Inject
 
 import com.axelor.contact.db.Address
 import com.axelor.contact.db.Company
 import com.axelor.contact.db.Contact
 import com.axelor.contact.db.Country
+import com.axelor.contact.service.HelloService
 import com.axelor.db.JPA
 import com.axelor.rpc.ActionRequest
 import com.axelor.rpc.ActionResponse
@@ -45,10 +46,13 @@ import com.axelor.rpc.ActionResponse
 @Slf4j
 class HelloController {
 	
+	@Inject
+	private HelloService service
+	
 	void say(ActionRequest request, ActionResponse response) {
 
 		def contact = request.context as Contact
-		def message = "Welcome '${contact.fullName}!'"
+		def message = service.say(contact)
 		
 		if (contact.addresses != null) {
 			def total = contact.addresses.size()
