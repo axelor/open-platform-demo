@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<scheduled-jobs xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+  <scheduled-job name="hello.job" active="true"
+    description="fire on every 5 seconds."
+    job="com.axelor.contact.jobs.HelloJob"
+    cron="0/5 * * * * ?"/>
+
+  <scheduled-job name="hello.job.with.params" active="true"
+    description="fire on every 10 seconds."
+    job="com.axelor.contact.jobs.HelloJob"
+    cron="0/10 * * * * ?">
+    <param name="say">Hello!!!</param>
+    <param name="again">Hello World!!!</param>
+  </scheduled-job>
+
+</scheduled-jobs>
