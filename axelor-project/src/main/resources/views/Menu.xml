@@ -38,5 +38,14 @@
     <domain>self.user = :currentUser</domain>
     <context name="currentUser" expr="eval: __user__"/>
   </action-view>
+  
+  <menuitem name="menu-project-tasks-tree" parent="menu-project"
+    title="All Tasks (tree)"
+    action="project.tasks.tree"
+    icon="img/calendar.png"/>
+
+  <action-view name="project.tasks.tree" title="Projects">
+    <view type="tree" name="project-task-tree"/>
+  </action-view>
 
 </object-views>

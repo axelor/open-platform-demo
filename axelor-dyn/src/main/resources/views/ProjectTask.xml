@@ -12,5 +12,23 @@
     <field name="priority" />
     <field name="progress" widget="Progress" aggregate="sum" />
   </grid>
+  
+  <form id="project-form.dyn" name="project-form" title="Project" model="com.axelor.project.db.Project">
+    <field name="name" />
+    <field name="priority" />
+    <field name="description" />
+    <field name="parent" />
+    <field name="members" widget="TagSelect[create=code,name,password]" />
+    <break/>
+    <portlet action="project.tasks.tree" colSpan="2"/>
+    <notebook colSpan="2">
+      <page title="Tasks" cols="1">
+        <field name="tasks" showTitle="false" />
+      </page>
+      <page title="Notes" cols="1">
+        <field name="notes" showTitle="false" />
+      </page>
+    </notebook>
+  </form>
 
 </object-views>
