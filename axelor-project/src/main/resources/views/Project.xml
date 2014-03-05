@@ -13,7 +13,7 @@
     <field name="priority" />
     <field name="description" />
     <field name="parent" />
-    <field name="members" widget="TagSelect[create=code,name,password]" />
+    <field name="members" widget="TagSelect" x-create="code,name,password" />
     <notebook colSpan="4">
       <page title="Tasks" cols="1">
         <field name="tasks" showTitle="false" />

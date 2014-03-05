@@ -18,7 +18,7 @@
     <field name="priority" />
     <field name="description" />
     <field name="parent" />
-    <field name="members" widget="TagSelect[create=code,name,password]" />
+    <field name="members" widget="TagSelect" x-create="code,name,password" />
     <break/>
     <portlet action="project.tasks.tree" colSpan="2"/>
     <notebook colSpan="2">

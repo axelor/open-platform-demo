@@ -16,7 +16,7 @@
   <form name="dyn-message-form" title="Message" model="com.axelor.dyn.db.DynMessage" cols="2">
     <field name="subject" />
     <field name="recipients" widget="TagSelect" />
-    <field name="referenceModel" widget="RefSelect[related=referenceId]" title="Reference"/>
+    <field name="referenceModel" widget="RefSelect" x-related="referenceId" title="Reference"/>
     <notebook colSpan="2">
       <page title="Body" cols="1">
         <field name="body" widget="html" />
@@ -25,7 +25,7 @@
         <field name="replies">
           <form cols="2" title="Reply">
             <field name="subject" />
-            <field name="body" showTitle="false" colSpan="2" widget="html[lite=true]" />
+            <field name="body" showTitle="false" colSpan="2" widget="html" x-lite="true" />
           </form>
         </field>
       </page>
@@ -34,7 +34,7 @@
 
   <form name="dyn-message-form2" title="Message" model="com.axelor.dyn.db.DynMessage" cols="1">
     <group readonly="true" cols="3" colWidths="42,*,60">
-      <field name="dummy1" showTitle="false" widget="Image[width=48|height=48]" css="trail-avatar"/>
+      <field name="dummy1" showTitle="false" widget="Image" x-width="48" x-height="48" css="trail-avatar"/>
       <group cols="1">
         <field name="subject" showIf="!parent"/>
         <field name="body" widget="html"/>
@@ -50,7 +50,7 @@
       <group cols="5" css="pull-left">
         <field name="author" showTitle="false"/>
         <label title="to"/>
-        <field name="recipients" showTitle="false" widget="TagSelect[max=3]"/>
+        <field name="recipients" showTitle="false" widget="TagSelect" x-max="3"/>
         <label title=" &amp;nbsp;•"></label>
         <field name="createdOn" widget="RelativeTime" showTitle="false"/>
       </group>
