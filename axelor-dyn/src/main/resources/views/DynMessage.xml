@@ -39,11 +39,11 @@
         <field name="subject" showIf="!parent"/>
         <field name="body" widget="html"/>
       </group>
-      <group cols="3" colWidths="20,20,20">
-        <button name="btnStar" icon="icon-star-empty" iconHover="icon-star" link=""/>
-        <button name="btnReply" icon="icon-reply" link=""
+      <group cols="3" colWidths="20,20,20" readonly="false">
+        <button name="btnStar" icon="fa-star-o" iconHover="fa-star" link=""/>
+        <button name="btnReply" icon="fa-reply" link=""
           onClick="com.axelor.dyn.web.DynController:showReply"/>
-        <button name="btnDone" icon="icon-ok" link=""/>
+        <button name="btnDone" icon="fa-check" link=""/>
       </group>
     </group>
     <group readonly="true" css="trail-form-footer" cols="2" colWidths="*,20">
@@ -54,7 +54,7 @@
         <label title=" &amp;nbsp;•"></label>
         <field name="createdOn" widget="RelativeTime" showTitle="false"/>
       </group>
-      <button name="btnExpand" icon="icon-double-angle-down" link=""
+      <button name="btnExpand" icon="fa-angle-double-down" link="" readonly="false"
         onClick="com.axelor.dyn.web.DynController:showReplies" showIf="__expandable"/>
     </group>
     <group cols="3" colWidths="100,100,*" showIf="canReply">
