@@ -18,10 +18,6 @@
     <decimal name="taxAmount" precision="8" scale="4"/>
     <decimal name="totalAmount" precision="8" scale="2"/>
     <string name="notes" multiline="true"/>
-    
-    <integer name="refId"/>
-    <string name="refName" selection="ref.select"/>
-    
     <one-to-many name="items" ref="OrderLine" mappedBy="order" orderBy="price"/>
     <finder-method name="findByCustomer" using="long:id" filter="self.customer.id = :id" all="true"/>
     <finder-method name="findByCustomer" using="String:email" filter="self.customer.email = :email" all="true"/>
