@@ -62,8 +62,9 @@
         <field name="notes" showTitle="false"/>
       </page>
     </notebook>
-    <group colSpan="4" cols="3" colWidths="50px,*,220px">
+    <group colSpan="4" cols="4" colWidths="50px,50px,*,220px">
       <button name="btnCalculate" title="Calculate" hideIf="confirmed" onClick="check-order-dates,com.axelor.sale.web.SaleOrderController:calculate,save"/>
+      <button name="btnExport" title="Export" showIf="id" onClick="export.sale.order"/>
       <spacer colSpan="1"/>
       <group readonly="true" colSpan="1" css="subtotal" cols="2" colWidths="50%,50%">
         <field name="amount"/>
@@ -156,5 +157,9 @@
     <check field="taxAmount" if="confirmed &amp;&amp; !taxAmount"/>
     <check field="totalAmount" if="confirmed &amp;&amp; !totalAmount"/>
   </action-condition>
+
+  <action-export name="export.sale.order" output="${name}/${date}${time}">
+    <export name="${name}.xml" template="data-export/export-sale-order.tmpl"/>
+  </action-export>
 
 </object-views>
