@@ -159,7 +159,7 @@
   </action-condition>
 
   <action-export name="export.sale.order" output="${name}/${date}${time}" download="true">
-    <export name="${name}.xml" template="data-export/export-sale-order.tmpl"/>
+    <export name="${name}.xml" template="data-export/export-sale-order.st"/>
   </action-export>
 
 </object-views>
