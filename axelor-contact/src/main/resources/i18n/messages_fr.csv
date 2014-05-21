@@ -1,0 +1,83 @@
+"key","message","comment","context"
+"Actions","Actions",,"resources/views/Contact.xml:56"
+"Address","Adresses",,"resources/views/Contact.xml:71
+resources/views/Contact.xml:25
+resources/views/Address.xml:15"
+"Address Book","Carnet D'adresses",,"resources/views/Menu.xml:6"
+"Address List","Les Adresses",,"resources/views/Contact.xml:20
+resources/views/Contact.xml:63
+resources/views/Address.xml:6
+resources/views/Contact.xml:62
+resources/views/Contact.xml:64"
+"Addresses","Adresses",,"resources/domains/Contact.xml:22"
+"All Contacts","Les contacts",,"resources/views/Menu.xml:10"
+"Area","Aire",,"resources/domains/Address.xml:11"
+"Business Contacts","Contact Professionnel",,"resources/views/Menu.xml:41
+resources/views/Menu.xml:43"
+"Circle","Cercle",,"resources/views/Circle.xml:11
+resources/views/Menu.xml:66
+resources/domains/Contact.xml:23"
+"Circles","Cercles",,"resources/views/Company.xml:28
+resources/domains/Company.xml:13
+resources/views/Company.xml:29
+resources/views/Menu.xml:64
+resources/views/Circle.xml:6"
+"City","Ville",,"resources/domains/Address.xml:12"
+"Click Me!","Cliquer ici!",,"resources/views/Contact.xml:31
+resources/views/Contact.xml:77"
+"Code","Code",,"resources/domains/Country.xml:9
+resources/domains/Circle.xml:9
+resources/domains/Title.xml:9
+resources/domains/Company.xml:9"
+"Companies","Sociétés",,"resources/views/Company.xml:6
+resources/views/Menu.xml:82"
+"Company","Société",,"resources/domains/Contact.xml:26
+resources/views/Menu.xml:84
+resources/views/Company.xml:12"
+"Company List...","Liste sociétés",,"resources/views/Contact.xml:59"
+"Configuration","Configuration",,"resources/views/Menu.xml:51"
+"Contact","Contact",,"resources/domains/Address.xml:9
+resources/views/Contact.xml:36"
+"Contacts","Contacts",,"resources/views/Contact.xml:6
+resources/views/Menu.xml:12"
+"Countries","Les Pays",,"resources/views/Country.xml:6"
+"Country","Pays",,"resources/views/Menu.xml:55
+resources/views/Country.xml:11
+resources/domains/Address.xml:14
+resources/views/Menu.xml:57"
+"Date of birth","Date d'anniverssaire",,"resources/domains/Contact.xml:21"
+"Demonstrate how to open new view from action.","Montre comment ouvrir un vue formulaire depuis une action",,"resources/views/Contact.xml:59"
+"Email","Email",,"resources/domains/Contact.xml:19"
+"Employees","Employés",,"resources/views/Company.xml:19
+resources/domains/Company.xml:12
+resources/views/Company.xml:17"
+"Family Members","Contact Personnel",,"resources/views/Menu.xml:32
+resources/views/Menu.xml:30"
+"First name","Prénom",,"resources/domains/Contact.xml:10"
+"Full name","Nom complet",,"resources/domains/Contact.xml:12"
+"Groups","Groupes",,"resources/views/Company.xml:27"
+"Home Page...","Page D'acceuil",,"resources/views/Contact.xml:58"
+"Last name","Nom de famille",,"resources/domains/Contact.xml:11"
+"Max size 4MB.","Taile max : 4MB",,"resources/domains/Contact.xml:25"
+"My Friends","Mes Amis",,"resources/views/Menu.xml:19
+resources/views/Menu.xml:21"
+"Name","Nom",,"resources/domains/Country.xml:10
+resources/domains/Title.xml:10
+resources/domains/Circle.xml:10
+resources/domains/Company.xml:10"
+"Notes","Notes",,"resources/domains/Company.xml:14
+resources/views/Company.xml:34
+resources/views/Contact.xml:81
+resources/domains/Contact.xml:24"
+"Parent","Parent",,"resources/domains/Company.xml:11"
+"Personal Information","Information Personnel",,"resources/views/Contact.xml:37"
+"Phone","Téléphone",,"resources/domains/Contact.xml:20"
+"Photo","Photo",,"resources/domains/Contact.xml:25"
+"Send Greetings...","Envoyer Salutations",,"resources/views/Contact.xml:57"
+"Street","Rue",,"resources/domains/Address.xml:10"
+"Title","Intitulé",,"resources/domains/Contact.xml:9
+resources/views/Menu.xml:75
+resources/views/Title.xml:10"
+"Titles","Intitulés",,"resources/views/Menu.xml:73
+resources/views/Title.xml:5"
+"Zip","Code postal",,"resources/domains/Address.xml:13"

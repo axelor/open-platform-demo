@@ -1,0 +1,83 @@
+"key","message","comment","context"
+"Actions","","","resources/views/Contact.xml:56"
+"Address","","","resources/views/Contact.xml:71
+resources/views/Contact.xml:25
+resources/views/Address.xml:15"
+"Address Book","","","resources/views/Menu.xml:6"
+"Address List","","","resources/views/Contact.xml:20
+resources/views/Contact.xml:63
+resources/views/Address.xml:6
+resources/views/Contact.xml:62
+resources/views/Contact.xml:64"
+"Addresses","","","resources/domains/Contact.xml:22"
+"All Contacts","","","resources/views/Menu.xml:10"
+"Area","","","resources/domains/Address.xml:11"
+"Business Contacts","","","resources/views/Menu.xml:41
+resources/views/Menu.xml:43"
+"Circle","","","resources/views/Circle.xml:11
+resources/views/Menu.xml:66
+resources/domains/Contact.xml:23"
+"Circles","","","resources/views/Company.xml:28
+resources/domains/Company.xml:13
+resources/views/Company.xml:29
+resources/views/Menu.xml:64
+resources/views/Circle.xml:6"
+"City","","","resources/domains/Address.xml:12"
+"Click Me!","","","resources/views/Contact.xml:31
+resources/views/Contact.xml:77"
+"Code","","","resources/domains/Country.xml:9
+resources/domains/Circle.xml:9
+resources/domains/Title.xml:9
+resources/domains/Company.xml:9"
+"Companies","","","resources/views/Company.xml:6
+resources/views/Menu.xml:82"
+"Company","","","resources/domains/Contact.xml:26
+resources/views/Menu.xml:84
+resources/views/Company.xml:12"
+"Company List...","","","resources/views/Contact.xml:59"
+"Configuration","","","resources/views/Menu.xml:51"
+"Contact","","","resources/domains/Address.xml:9
+resources/views/Contact.xml:36"
+"Contacts","","","resources/views/Contact.xml:6
+resources/views/Menu.xml:12"
+"Countries","","","resources/views/Country.xml:6"
+"Country","","","resources/views/Menu.xml:55
+resources/views/Country.xml:11
+resources/domains/Address.xml:14
+resources/views/Menu.xml:57"
+"Date of birth","","","resources/domains/Contact.xml:21"
+"Demonstrate how to open new view from action.","","","resources/views/Contact.xml:59"
+"Email","","","resources/domains/Contact.xml:19"
+"Employees","","","resources/views/Company.xml:19
+resources/domains/Company.xml:12
+resources/views/Company.xml:17"
+"Family Members","","","resources/views/Menu.xml:32
+resources/views/Menu.xml:30"
+"First name","","","resources/domains/Contact.xml:10"
+"Full name","","","resources/domains/Contact.xml:12"
+"Groups","","","resources/views/Company.xml:27"
+"Home Page...","","","resources/views/Contact.xml:58"
+"Last name","","","resources/domains/Contact.xml:11"
+"Max size 4MB.","","","resources/domains/Contact.xml:25"
+"My Friends","","","resources/views/Menu.xml:19
+resources/views/Menu.xml:21"
+"Name","","","resources/domains/Country.xml:10
+resources/domains/Title.xml:10
+resources/domains/Circle.xml:10
+resources/domains/Company.xml:10"
+"Notes","","","resources/domains/Company.xml:14
+resources/views/Company.xml:34
+resources/views/Contact.xml:81
+resources/domains/Contact.xml:24"
+"Parent","","","resources/domains/Company.xml:11"
+"Personal Information","","","resources/views/Contact.xml:37"
+"Phone","","","resources/domains/Contact.xml:20"
+"Photo","","","resources/domains/Contact.xml:25"
+"Send Greetings...","","","resources/views/Contact.xml:57"
+"Street","","","resources/domains/Address.xml:10"
+"Title","","","resources/domains/Contact.xml:9
+resources/views/Menu.xml:75
+resources/views/Title.xml:10"
+"Titles","","","resources/views/Menu.xml:73
+resources/views/Title.xml:5"
+"Zip","","","resources/domains/Address.xml:13"

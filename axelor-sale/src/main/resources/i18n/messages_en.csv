@@ -1,0 +1,96 @@
+"key","message","comment","context"
+"All Taxes","","","resources/views/Menu.xml:48"
+"Amount","","","resources/domains/Order.xml:17"
+"Black","","","resources/views/Product.xml:6"
+"Blue","","","resources/views/Product.xml:11"
+"Calculate","","","resources/views/Order.xml:66"
+"Category","","","resources/domains/Product.xml:12"
+"Category 1","","","resources/views/Search.xml:52"
+"Category 2","","","resources/views/Search.xml:53"
+"Chocolate","","","resources/views/Product.xml:13"
+"Code","","","resources/domains/Product.xml:9
+resources/domains/ProductCategory.xml:9
+resources/domains/Tax.xml:9"
+"Color","","","resources/domains/Product.xml:11"
+"Configuration","","","resources/views/Menu.xml:35"
+"Confirm date","","","resources/domains/Order.xml:15"
+"Confirmed","","","resources/domains/Order.xml:16
+resources/views/Order.xml:86"
+"Create Partner...","","","resources/views/Search.xml:60"
+"Create Partner... (12)","","","resources/views/Search.xml:62"
+"Create Partner... (13)","","","resources/views/Search.xml:64"
+"Create Partner... (22)","","","resources/views/Search.xml:66"
+"Create Sale Order...","","","resources/views/Search.xml:61"
+"Create Sale Order... (13)","","","resources/views/Search.xml:63"
+"Create Sale Order... (21)","","","resources/views/Search.xml:65"
+"Create date","","","resources/domains/Order.xml:14"
+"Customer","","","resources/domains/Order.xml:9
+resources/views/Order.xml:22"
+"Export","","","resources/views/Order.xml:67"
+"Filter Sale Orders","","","resources/views/Order.xml:85"
+"Gray","","","resources/views/Product.xml:8"
+"Green","","","resources/views/Product.xml:10"
+"High Value (>= 1000)","","","resources/views/Order.xml:92"
+"Items","","","resources/domains/Order.xml:21
+resources/views/Order.xml:37
+resources/views/Order.xml:35"
+"Name","","","resources/domains/Product.xml:10
+resources/domains/ProductCategory.xml:10
+resources/domains/Tax.xml:10
+resources/domains/Order.xml:10"
+"Not Confirmed","","","resources/views/Order.xml:89"
+"Notes","","","resources/views/Order.xml:61
+resources/domains/Order.xml:20"
+"Orange","","","resources/views/Product.xml:14"
+"Order","","","resources/domains/OrderLine.xml:9
+resources/views/Order.xml:16"
+"Order Details","","","resources/views/Order.xml:17"
+"Order date","","","resources/domains/Order.xml:13"
+"Ordered Item","","","resources/views/Order.xml:43
+resources/views/OrderLine.xml:12"
+"Ordered Items","","","resources/views/OrderLine.xml:5"
+"Orders","","","resources/views/Order.xml:6"
+"Parent","","","resources/domains/ProductCategory.xml:11"
+"Price","","","resources/domains/OrderLine.xml:11"
+"Product","","","resources/domains/OrderLine.xml:10
+resources/views/Product.xml:24"
+"Product Categories","","","resources/views/ProductCategory.xml:5
+resources/views/Menu.xml:41
+resources/views/Menu.xml:39"
+"Product Category","","","resources/views/ProductCategory.xml:11"
+"Products","","","resources/views/Menu.xml:20
+resources/views/Product.xml:18
+resources/views/Menu.xml:22"
+"Purple","","","resources/views/Product.xml:15"
+"Quantity","","","resources/domains/OrderLine.xml:12"
+"Rate","","","resources/domains/Tax.xml:11"
+"Red","","","resources/views/Product.xml:9"
+"Sale Order","","","resources/views/Search.xml:35"
+"Sale Orders","","","resources/views/Menu.xml:11
+resources/views/Menu.xml:9"
+"Sales Gauge (this month)","","","resources/views/Charts.xml:74"
+"Sales Management","","","resources/views/Menu.xml:5"
+"Sales Search","","","resources/views/Search.xml:6"
+"Sales Search...","","","resources/views/Menu.xml:29
+resources/views/Menu.xml:31"
+"Sales Timeline","","","resources/views/Order.xml:81"
+"Sales by customer","","","resources/views/Charts.xml:50"
+"Sales per customer","","","resources/views/Charts.xml:30"
+"Sales per month","","","resources/views/Charts.xml:6"
+"Sub Category 11","","","resources/views/Search.xml:54"
+"Sub Category 12","","","resources/views/Search.xml:55"
+"Sub Category 13","","","resources/views/Search.xml:56"
+"Sub Category 21","","","resources/views/Search.xml:57"
+"Sub Category 22","","","resources/views/Search.xml:58"
+"Tax","","","resources/views/Tax.xml:10"
+"Tax amount","","","resources/domains/Order.xml:18"
+"Taxes","","","resources/views/Tax.xml:5
+resources/domains/OrderLine.xml:13
+resources/views/Order.xml:49
+resources/views/OrderLine.xml:21
+resources/views/Order.xml:51
+resources/views/Menu.xml:50
+resources/views/OrderLine.xml:19"
+"Total amount","","","resources/domains/Order.xml:19"
+"White","","","resources/views/Product.xml:7"
+"Yellow","","","resources/views/Product.xml:12"

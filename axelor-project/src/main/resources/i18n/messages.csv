@@ -1,0 +1,48 @@
+"key","message","comment","context"
+"All Projects","","","resources/views/Menu.xml:11"
+"All Tasks","","","resources/views/Menu.xml:28
+resources/views/Menu.xml:21"
+"All Tasks (tree)","","","resources/views/Menu.xml:45"
+"Create date","","","resources/domains/ProjectTask.xml:12"
+"Date","","","resources/domains/ProjectWork.xml:10"
+"Deadline date","","","resources/domains/ProjectTask.xml:15"
+"Description","","","resources/domains/Project.xml:10"
+"End date","","","resources/domains/ProjectTask.xml:14"
+"Members","","","resources/domains/Project.xml:14"
+"My Tasks","","","resources/views/Menu.xml:34
+resources/views/Menu.xml:26
+resources/views/ProjectTask.xml:90"
+"Name","","","resources/domains/Project.xml:9
+resources/domains/ProjectWork.xml:9"
+"Notes","","","resources/domains/Project.xml:11
+resources/views/Project.xml:21
+resources/domains/ProjectTask.xml:10
+resources/views/ProjectTask.xml:43"
+"Parent","","","resources/domains/Project.xml:13"
+"Priority","","","resources/domains/Project.xml:12
+resources/domains/ProjectTask.xml:11"
+"Progress","","","resources/domains/ProjectTask.xml:16"
+"Project","","","resources/domains/ProjectTask.xml:35
+resources/views/Project.xml:11"
+"Project Management","","","resources/views/Menu.xml:6"
+"Project Task","","","resources/views/ProjectTask.xml:17"
+"Project Tasks","","","resources/views/ProjectTask.xml:6
+resources/views/ProjectTask.xml:82
+resources/views/ProjectTask.xml:49"
+"Project Work","","","resources/views/ProjectWork.xml:12
+resources/views/ProjectWork.xml:5"
+"Projects","","","resources/views/Project.xml:5
+resources/views/Menu.xml:47
+resources/views/Menu.xml:13"
+"Start date","","","resources/domains/ProjectTask.xml:13"
+"Task","","","resources/domains/ProjectWork.xml:12"
+"Task Summary","","","resources/domains/ProjectTask.xml:9"
+"Tasks","","","resources/domains/Project.xml:15
+resources/views/Project.xml:18"
+"Time Spent","","","resources/domains/ProjectWork.xml:11"
+"User","","","resources/domains/ProjectTask.xml:36
+resources/domains/ProjectWork.xml:13"
+"Work Item","","","resources/views/ProjectTask.xml:35
+resources/views/ProjectTask.xml:30"
+"Work Items","","","resources/views/ProjectTask.xml:28"
+"Work items","","","resources/domains/ProjectTask.xml:37"
