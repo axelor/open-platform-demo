@@ -16,6 +16,7 @@ resources/domains/Tax.xml:9"
 "Confirm date","","","resources/domains/Order.xml:15"
 "Confirmed","","","resources/domains/Order.xml:16
 resources/views/Order.xml:86"
+"Create Date is in future.","","","resources/views/Order.xml:144"
 "Create Partner...","","","resources/views/Search.xml:60"
 "Create Partner... (12)","","","resources/views/Search.xml:62"
 "Create Partner... (13)","","","resources/views/Search.xml:64"
@@ -38,12 +39,14 @@ resources/views/Order.xml:35"
 resources/domains/ProductCategory.xml:10
 resources/domains/Tax.xml:10
 resources/domains/Order.xml:10"
+"No Sale Order Items. Would you like to continue?","","","resources/views/Order.xml:146"
 "Not Confirmed","","","resources/views/Order.xml:89"
 "Notes","","","resources/views/Order.xml:61
 resources/domains/Order.xml:20"
 "Orange","","","resources/views/Product.xml:14"
 "Order","","","resources/domains/OrderLine.xml:9
 resources/views/Order.xml:16"
+"Order Date is in future.","","","resources/views/Order.xml:145"
 "Order Details","","","resources/views/Order.xml:17"
 "Order date","","","resources/domains/Order.xml:13"
 "Ordered Item","","","resources/views/Order.xml:43

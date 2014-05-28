@@ -1,96 +1,99 @@
 "key","message","comment","context"
-"All Taxes","Les Taxes",,"resources/views/Menu.xml:48"
-"Amount","Montant",,"resources/domains/Order.xml:17"
-"Black","Noir",,"resources/views/Product.xml:6"
-"Blue","Bleu",,"resources/views/Product.xml:11"
-"Calculate","Calculer",,"resources/views/Order.xml:66"
-"Category","Catégorie",,"resources/domains/Product.xml:12"
-"Category 1","Catégorie 1",,"resources/views/Search.xml:52"
-"Category 2","Catégorie 2",,"resources/views/Search.xml:53"
-"Chocolate","Chocolat",,"resources/views/Product.xml:13"
-"Code","Code",,"resources/domains/Product.xml:9
+"All Taxes","Les Taxes","","resources/views/Menu.xml:48"
+"Amount","Montant","","resources/domains/Order.xml:17"
+"Black","Noir","","resources/views/Product.xml:6"
+"Blue","Bleu","","resources/views/Product.xml:11"
+"Calculate","Calculer","","resources/views/Order.xml:66"
+"Category","Catégorie","","resources/domains/Product.xml:12"
+"Category 1","Catégorie 1","","resources/views/Search.xml:52"
+"Category 2","Catégorie 2","","resources/views/Search.xml:53"
+"Chocolate","Chocolat","","resources/views/Product.xml:13"
+"Code","Code","","resources/domains/Product.xml:9
 resources/domains/ProductCategory.xml:9
 resources/domains/Tax.xml:9"
-"Color","Couleur",,"resources/domains/Product.xml:11"
-"Configuration","Configuration",,"resources/views/Menu.xml:35"
-"Confirm date","Date de confirmation",,"resources/domains/Order.xml:15"
-"Confirmed","Confirmé",,"resources/domains/Order.xml:16
+"Color","Couleur","","resources/domains/Product.xml:11"
+"Configuration","Configuration","","resources/views/Menu.xml:35"
+"Confirm date","Date de confirmation","","resources/domains/Order.xml:15"
+"Confirmed","Confirmé","","resources/domains/Order.xml:16
 resources/views/Order.xml:86"
-"Create Partner...","Créer Contact...",,"resources/views/Search.xml:60"
-"Create Partner... (12)","Créer Contact... (12)",,"resources/views/Search.xml:62"
-"Create Partner... (13)","Créer Contact... (13)",,"resources/views/Search.xml:64"
-"Create Partner... (22)","Créer Contact... (22)",,"resources/views/Search.xml:66"
-"Create Sale Order...","Créer Commande...",,"resources/views/Search.xml:61"
-"Create Sale Order... (13)","Créer Commande... (13)",,"resources/views/Search.xml:63"
-"Create Sale Order... (21)","Créer Commande... (21)",,"resources/views/Search.xml:65"
-"Create date","Date de création",,"resources/domains/Order.xml:14"
-"Customer","Client",,"resources/domains/Order.xml:9
+"Create Date is in future.","","","resources/views/Order.xml:144"
+"Create Partner...","Créer Contact...","","resources/views/Search.xml:60"
+"Create Partner... (12)","Créer Contact... (12)","","resources/views/Search.xml:62"
+"Create Partner... (13)","Créer Contact... (13)","","resources/views/Search.xml:64"
+"Create Partner... (22)","Créer Contact... (22)","","resources/views/Search.xml:66"
+"Create Sale Order...","Créer Commande...","","resources/views/Search.xml:61"
+"Create Sale Order... (13)","Créer Commande... (13)","","resources/views/Search.xml:63"
+"Create Sale Order... (21)","Créer Commande... (21)","","resources/views/Search.xml:65"
+"Create date","Date de création","","resources/domains/Order.xml:14"
+"Customer","Client","","resources/domains/Order.xml:9
 resources/views/Order.xml:22"
 "Export","","","resources/views/Order.xml:67"
-"Filter Sale Orders","Filtres Commandes",,"resources/views/Order.xml:85"
-"Gray","Gris",,"resources/views/Product.xml:8"
-"Green","Vert",,"resources/views/Product.xml:10"
-"High Value (>= 1000)","Grande valeur (>= 1000)",,"resources/views/Order.xml:92"
-"Items","Articles",,"resources/domains/Order.xml:21
+"Filter Sale Orders","Filtres Commandes","","resources/views/Order.xml:85"
+"Gray","Gris","","resources/views/Product.xml:8"
+"Green","Vert","","resources/views/Product.xml:10"
+"High Value (>= 1000)","Grande valeur (>= 1000)","","resources/views/Order.xml:92"
+"Items","Articles","","resources/domains/Order.xml:21
 resources/views/Order.xml:37
 resources/views/Order.xml:35"
-"Name","Nom",,"resources/domains/Product.xml:10
+"Name","Nom","","resources/domains/Product.xml:10
 resources/domains/ProductCategory.xml:10
 resources/domains/Tax.xml:10
 resources/domains/Order.xml:10"
-"Not Confirmed","Non confirmé",,"resources/views/Order.xml:89"
-"Notes","Notes",,"resources/views/Order.xml:61
+"No Sale Order Items. Would you like to continue?","","","resources/views/Order.xml:146"
+"Not Confirmed","Non confirmé","","resources/views/Order.xml:89"
+"Notes","Notes","","resources/views/Order.xml:61
 resources/domains/Order.xml:20"
-"Orange","Orange",,"resources/views/Product.xml:14"
-"Order","Commande",,"resources/domains/OrderLine.xml:9
+"Orange","Orange","","resources/views/Product.xml:14"
+"Order","Commande","","resources/domains/OrderLine.xml:9
 resources/views/Order.xml:16"
-"Order Details","Détails",,"resources/views/Order.xml:17"
-"Order date","Date de commande",,"resources/domains/Order.xml:13"
-"Ordered Item","Articles",,"resources/views/Order.xml:43
+"Order Date is in future.","","","resources/views/Order.xml:145"
+"Order Details","Détails","","resources/views/Order.xml:17"
+"Order date","Date de commande","","resources/domains/Order.xml:13"
+"Ordered Item","Articles","","resources/views/Order.xml:43
 resources/views/OrderLine.xml:12"
-"Ordered Items","Articles",,"resources/views/OrderLine.xml:5"
-"Orders","Les Commandes",,"resources/views/Order.xml:6"
-"Parent","Parent",,"resources/domains/ProductCategory.xml:11"
-"Price","Prix",,"resources/domains/OrderLine.xml:11"
-"Product","Produit",,"resources/domains/OrderLine.xml:10
+"Ordered Items","Articles","","resources/views/OrderLine.xml:5"
+"Orders","Les Commandes","","resources/views/Order.xml:6"
+"Parent","Parent","","resources/domains/ProductCategory.xml:11"
+"Price","Prix","","resources/domains/OrderLine.xml:11"
+"Product","Produit","","resources/domains/OrderLine.xml:10
 resources/views/Product.xml:24"
-"Product Categories","Catégories de produits",,"resources/views/ProductCategory.xml:5
+"Product Categories","Catégories de produits","","resources/views/ProductCategory.xml:5
 resources/views/Menu.xml:41
 resources/views/Menu.xml:39"
-"Product Category","Catégorie de produit",,"resources/views/ProductCategory.xml:11"
-"Products","Produits",,"resources/views/Menu.xml:20
+"Product Category","Catégorie de produit","","resources/views/ProductCategory.xml:11"
+"Products","Produits","","resources/views/Menu.xml:20
 resources/views/Product.xml:18
 resources/views/Menu.xml:22"
-"Purple","Violet",,"resources/views/Product.xml:15"
-"Quantity","Quantité",,"resources/domains/OrderLine.xml:12"
-"Rate","Taux",,"resources/domains/Tax.xml:11"
-"Red","Rouge",,"resources/views/Product.xml:9"
-"Sale Order","Commande",,"resources/views/Search.xml:35"
-"Sale Orders","Commande",,"resources/views/Menu.xml:11
+"Purple","Violet","","resources/views/Product.xml:15"
+"Quantity","Quantité","","resources/domains/OrderLine.xml:12"
+"Rate","Taux","","resources/domains/Tax.xml:11"
+"Red","Rouge","","resources/views/Product.xml:9"
+"Sale Order","Commande","","resources/views/Search.xml:35"
+"Sale Orders","Commande","","resources/views/Menu.xml:11
 resources/views/Menu.xml:9"
-"Sales Gauge (this month)","Jauge de vente (ce mois-ci)",,"resources/views/Charts.xml:74"
-"Sales Management","Ventes",,"resources/views/Menu.xml:5"
-"Sales Search","Recherche commande...",,"resources/views/Search.xml:6"
-"Sales Search...","Recherche commande...",,"resources/views/Menu.xml:29
+"Sales Gauge (this month)","Jauge de vente (ce mois-ci)","","resources/views/Charts.xml:74"
+"Sales Management","Ventes","","resources/views/Menu.xml:5"
+"Sales Search","Recherche commande...","","resources/views/Search.xml:6"
+"Sales Search...","Recherche commande...","","resources/views/Menu.xml:29
 resources/views/Menu.xml:31"
-"Sales Timeline","Calendrier des ventes",,"resources/views/Order.xml:81"
-"Sales by customer","Chiffre d'affaires par client",,"resources/views/Charts.xml:50"
-"Sales per customer","Chiffre d'affaires par client",,"resources/views/Charts.xml:30"
-"Sales per month","Chiffre d'affaires par mois",,"resources/views/Charts.xml:6"
-"Sub Category 11","Sous-catégorie 11",,"resources/views/Search.xml:54"
-"Sub Category 12","Sous-catégorie 12",,"resources/views/Search.xml:55"
-"Sub Category 13","Sous-catégorie 13",,"resources/views/Search.xml:56"
-"Sub Category 21","Sous-catégorie 21",,"resources/views/Search.xml:57"
-"Sub Category 22","Sous-catégorie 22",,"resources/views/Search.xml:58"
-"Tax","Taxe",,"resources/views/Tax.xml:10"
-"Tax amount","Total Taxes",,"resources/domains/Order.xml:18"
-"Taxes","Les Taxes",,"resources/views/Tax.xml:5
+"Sales Timeline","Calendrier des ventes","","resources/views/Order.xml:81"
+"Sales by customer","Chiffre d'affaires par client","","resources/views/Charts.xml:50"
+"Sales per customer","Chiffre d'affaires par client","","resources/views/Charts.xml:30"
+"Sales per month","Chiffre d'affaires par mois","","resources/views/Charts.xml:6"
+"Sub Category 11","Sous-catégorie 11","","resources/views/Search.xml:54"
+"Sub Category 12","Sous-catégorie 12","","resources/views/Search.xml:55"
+"Sub Category 13","Sous-catégorie 13","","resources/views/Search.xml:56"
+"Sub Category 21","Sous-catégorie 21","","resources/views/Search.xml:57"
+"Sub Category 22","Sous-catégorie 22","","resources/views/Search.xml:58"
+"Tax","Taxe","","resources/views/Tax.xml:10"
+"Tax amount","Total Taxes","","resources/domains/Order.xml:18"
+"Taxes","Les Taxes","","resources/views/Tax.xml:5
 resources/domains/OrderLine.xml:13
 resources/views/Order.xml:49
 resources/views/OrderLine.xml:21
 resources/views/Order.xml:51
 resources/views/Menu.xml:50
 resources/views/OrderLine.xml:19"
-"Total amount","Montant Total",,"resources/domains/Order.xml:19"
-"White","Blanc",,"resources/views/Product.xml:7"
-"Yellow","Jaune",,"resources/views/Product.xml:12"
+"Total amount","Montant Total","","resources/domains/Order.xml:19"
+"White","Blanc","","resources/views/Product.xml:7"
+"Yellow","Jaune","","resources/views/Product.xml:12"
