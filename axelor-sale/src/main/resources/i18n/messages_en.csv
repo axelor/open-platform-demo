@@ -48,6 +48,7 @@ resources/domains/Order.xml:20"
 resources/views/Order.xml:16"
 "Order Date is in future.","","","resources/views/Order.xml:145"
 "Order Details","","","resources/views/Order.xml:17"
+"Order creation date is in the future.","","","resources/views/Order.xml:152"
 "Order date","","","resources/domains/Order.xml:13"
 "Ordered Item","","","resources/views/Order.xml:43
 resources/views/OrderLine.xml:12"
