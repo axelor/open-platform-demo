@@ -23,7 +23,7 @@
   </repositories>
 
   <modules>
-    <module>axelor-app</module>
+    <module>axelor-demo-web</module>
     <module>axelor-contact</module>
     <module>axelor-sale</module>
     <module>axelor-project</module>

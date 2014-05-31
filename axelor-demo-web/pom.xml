@@ -9,10 +9,10 @@
   </parent>
 
   <modelVersion>4.0.0</modelVersion>
-  <artifactId>axelor-app</artifactId>
+  <artifactId>axelor-demo-web</artifactId>
   <packaging>war</packaging>
 
-  <name>Axelor :: App</name>
+  <name>Axelor :: Demo Application</name>
   
   <properties>
   	<!-- The application war name -->
