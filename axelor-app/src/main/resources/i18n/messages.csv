@@ -1,5 +1,14 @@
 "key","message","comment","context"
+"About","","","webapp/login.jsp:25"
+"Contact","","","webapp/login.jsp:26"
+"DEMO","","","webapp/login.jsp:35"
 "Dashboards","","","resources/views/welcome.xml:17"
+"Home","","","webapp/login.jsp:24"
+"Login","","","webapp/login.jsp:30"
+"Password","","","webapp/login.jsp:33"
+"Please sign in","","","webapp/login.jsp:28"
+"Remember me","","","webapp/login.jsp:29"
+"User name","","","webapp/login.jsp:32"
 "Welcome!","","","resources/views/welcome.xml:12
 resources/views/welcome.xml:20
 resources/views/welcome.xml:6"
