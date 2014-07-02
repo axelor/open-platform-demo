@@ -1,0 +1,19 @@
+apply plugin: 'axelor-app'
+
+application {
+
+	name "hello-demo"
+	title "Axelor :: Demo Application"
+	
+	version "2.0"
+
+	module "modules:axelor-contact"
+	module "modules:axelor-project"
+	module "modules:axelor-sale"
+	module "modules:axelor-dyn"
+}
+
+tomcat {
+	httpPort = 8082
+	stopPort = 9451
+}

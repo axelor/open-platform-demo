@@ -1,0 +1,2 @@
+include 'core:axelor-gradle'
+project(':core:axelor-gradle').projectDir = new File(rootDir, "../core/axelor-gradle")

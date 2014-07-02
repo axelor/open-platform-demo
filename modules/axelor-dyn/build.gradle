@@ -1,0 +1,19 @@
+apply plugin: 'axelor-module'
+apply plugin: 'groovy'
+
+module {
+	name "axelor-dyn"
+	title "Axelor :: Dyn"
+
+	description """\
+Dynamic module demo.
+
+This is a demo module to provide quick demonstration of some new features.
+	"""
+
+	removable true
+
+	module "modules:axelor-contact"
+	module "modules:axelor-sale"
+}
+
