@@ -14,6 +14,6 @@ application {
 }
 
 tomcat {
-	httpPort = 8082
+	httpPort = 8080
 	stopPort = 9451
 }
