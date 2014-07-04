@@ -1,14 +1,7 @@
 apply plugin: 'java'
 
-repositories {
-	jcenter()
-	mavenCentral()
-	mavenLocal()
-	maven {
-		name "axelor-nexus"
-		url	"http://repository.axelor.com/nexus/content/groups/public/"
-	}
-}
+apply from: '../core/libs.gradle'
+apply from: '../core/repo.gradle'
 
 dependencies {
 	compile project(":core:axelor-gradle")
