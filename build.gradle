@@ -17,7 +17,3 @@ tomcat {
 	httpPort = 8080
 	stopPort = 9451
 }
-
-task wrapper(type: Wrapper) {
-    gradleVersion = '2.0'
-}
