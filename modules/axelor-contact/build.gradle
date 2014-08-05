@@ -3,7 +3,5 @@ apply plugin: 'axelor-module'
 module {
 	name "axelor-contact"
 	title "Axelor :: Contact"
-
-	module "core:axelor-core"
 }
 

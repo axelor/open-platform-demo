@@ -161,4 +161,34 @@ function splitJvmOpts() {
 eval splitJvmOpts $DEFAULT_JVM_OPTS $JAVA_OPTS $GRADLE_OPTS
 JVM_OPTS[${#JVM_OPTS[*]}]="-Dorg.gradle.appname=$APP_BASE_NAME"
 
-exec "$JAVACMD" "${JVM_OPTS[@]}" -classpath "$CLASSPATH" org.gradle.wrapper.GradleWrapperMain "$@"
+
+if [ -n "$AXELOR_HOME" ] ; then
+    if [ ! -x "$AXELOR_HOME/bin/axelor" ] ; then
+        die "ERROR: AXELOR_HOME is set to an invalid directory: $AXELOR_HOME
+
+Please set the AXELOR_HOME variable in your environment to match the
+location of your Axelor Platform installation."
+    fi
+else
+	AXELOR_CMD=`which axelor 2>&1`
+	if [ -x "$AXELOR_CMD" ] ; then
+		AXELOR_HOME=$(dirname $(dirname `readlink -f $AXELOR_CMD`))
+	fi
+fi
+
+if [ ! -d "$AXELOR_HOME" ] ; then
+	die "Please set the AXELOR_HOME variable in your environment to match the
+location of your Axelor Platform installation."
+fi
+
+INIT_SCRIPTS=""
+for f in `ls $AXELOR_HOME/init.d/*.gradle` ; do
+	INIT_SCRIPTS="$INIT_SCRIPTS -I $f"
+done
+
+if [ "$1" == "shell" ] ; then
+	shift 1
+	exec "$AXELOR_HOME/bin/axelor" "$@"
+else
+	exec "$JAVACMD" "${JVM_OPTS[@]}" -classpath "$CLASSPATH" org.gradle.wrapper.GradleWrapperMain $INIT_SCRIPTS "$@"
+fi

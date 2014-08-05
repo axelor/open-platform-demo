@@ -1,12 +1,4 @@
-
-// Include core modules
-include 'core:axelor-common'
-include 'core:axelor-test'
-include 'core:axelor-core'
-include 'core:axelor-web'
-include 'core:axelor-wkf'
-
-// Include app modules
+// Include modules
 include 'modules:axelor-contact'
 include 'modules:axelor-project'
 include 'modules:axelor-sale'

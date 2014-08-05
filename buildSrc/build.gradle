@@ -1,8 +1,0 @@
-apply plugin: 'java'
-
-apply from: '../core/libs.gradle'
-apply from: '../core/repo.gradle'
-
-dependencies {
-	compile project(":core:axelor-gradle")
-}
