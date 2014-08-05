@@ -17,3 +17,6 @@ tomcat {
 	httpPort = project.properties.get("http.port", 8080) as Integer
 	stopPort = 9451
 }
+
+// Link core projects, easy to develop along with core
+ext.linkCoreInEclipse = true
