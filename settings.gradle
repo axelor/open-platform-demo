@@ -1,5 +1,12 @@
-// Include modules
-include 'modules:axelor-contact'
-include 'modules:axelor-project'
-include 'modules:axelor-sale'
-include 'modules:axelor-dyn'
+rootProject.name = 'axelor-demo'
+
+// include all modules
+def modules = new File('modules').listFiles().findAll { dir ->
+	new File(dir, 'build.gradle').exists()
+}
+
+modules.each { dir ->
+	include "modules:$dir.name"
+	project(":modules:$dir.name").projectDir = dir
+}
+

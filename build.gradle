@@ -1,5 +1,10 @@
 apply plugin: 'axelor-app'
 
+// find all modules
+def modules = new File('modules').listFiles().findAll { dir ->
+	new File(dir, 'build.gradle').exists()
+}
+
 application {
 
 	name "axelor-demo"
@@ -7,10 +12,10 @@ application {
 	
 	version "2.1.0"
 
-	module "modules:axelor-contact"
-	module "modules:axelor-project"
-	module "modules:axelor-sale"
-	module "modules:axelor-dyn"
+	// depends on all modules
+	modules.each { dir ->
+		module "modules:$dir.name"
+	}
 }
 
 tomcat {
