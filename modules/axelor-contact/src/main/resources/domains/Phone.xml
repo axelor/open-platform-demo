@@ -5,14 +5,11 @@
 
   <module name="contact" package="com.axelor.contact.db" />
 
-  <entity name="Address" cachable="true">
+  <entity name="Phone" cachable="true">
     <many-to-one name="contact" ref="Contact" required="true" />
-    <string name="street" required="true" max="255" />
-    <string name="area" max="255" />
-    <string name="city" />
-    <string name="zip" />
-    <string name="state" />
-    <many-to-one name="country" ref="Country" />
+    <string name="phone" required="true" namecolumn="true" />
+    <string name="phoneType" title="Type" />
+    <boolean name="primary" column="is_primary" />
   </entity>
 
 </domain-models>

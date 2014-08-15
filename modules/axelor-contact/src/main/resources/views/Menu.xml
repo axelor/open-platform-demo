@@ -21,7 +21,7 @@
   <action-view name="contact.friends" title="My Friends" model="com.axelor.contact.db.Contact">
     <view type="grid" name="contact-grid"/>
     <view type="form" name="contact-form"/>
-    <domain>self.circle.code = :circle_code</domain>
+    <domain>self.circles[].code = :circle_code</domain>
     <context name="circle_code" expr="friends"/>
   </action-view>
 
@@ -32,7 +32,7 @@
   <action-view name="contact.family" title="Family Members" model="com.axelor.contact.db.Contact">
     <view type="grid" name="contact-grid"/>
     <view type="form" name="contact-form"/>
-    <domain>self.circle.code = :circle_code</domain>
+    <domain>self.circles[].code = :circle_code</domain>
     <context name="circle_code" expr="family"/>
   </action-view>
 
@@ -43,7 +43,7 @@
   <action-view name="contact.business" title="Business Contacts" model="com.axelor.contact.db.Contact">
     <view type="grid" name="contact-grid"/>
     <view type="form" name="contact-form"/>
-    <domain>self.circle.code = :circle_code</domain>
+    <domain>self.circles[].code = :circle_code</domain>
     <context name="circle_code" expr="business"/>
   </action-view>
 

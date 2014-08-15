@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <object-views xmlns="http://apps.axelor.com/xml/ns/object-views"
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://apps.axelor.com/xml/ns/object-views http://apps.axelor.com/xml/ns/object-views/object-views_2.0.xsd">
+  xsi:schemaLocation="http://apps.axelor.com/xml/ns/object-views http://apps.axelor.com/xml/ns/object-views/object-views_2.1.xsd">
 
   <grid name="contact-grid" title="Contacts" model="com.axelor.contact.db.Contact" editable="true">
     <hilite background="warning" if="$contains(email, 'gmeil.com')"/>
@@ -33,55 +33,74 @@
     </field>
   </grid>
 
-  <form name="contact-form" title="Contact" model="com.axelor.contact.db.Contact" cols="2" colWidths="*,200">
-    <group title="Personal Information" colSpan="1" cols="2" colWidths="140,*">
-      <group cols="1">
-        <field name="image"/>
-      </group>
-      <group cols="4">
-        <field name="title"/>
-        <break/>
-        <field name="firstName"/>
-        <field name="lastName" onChange="com.axelor.contact.web.HelloController:guessEmail,action-contact-address-attrs"/>
-        <field name="email" widget="Email"/>
-        <field name="phone"/>
-        <field name="dateOfBirth">
-          <hilite color="danger" strong="true" if="$moment().diff(dateOfBirth, 'years') &lt; 18"/>
-        </field>
-        <break/>
-        <field name="circle"/>
-        <field name="company"/>
-      </group>
-    </group>
-    <group name="action_buttons" title="Actions" colSpan="1" cols="1" collapseIf="!lastName" hideIf="$popup()">
-      <button name="greet" title="Send Greetings..." onClick="com.axelor.contact.web.HelloController:say"/>
-      <button name="showHomePage" title="Home Page..." onClick="com.axelor.contact.web.HelloController:showHomePage"/>
-      <button name="showCompanyList" title="Company List..." help="Demonstrate how to open new view from action." onClick="com.axelor.contact.web.HelloController:showCompanyList"/>
-    </group>
-    <notebook colSpan="1">
-      <page title="Address List" cols="1">
-        <field name="addresses" title="Address List">
-          <grid title="Address List" editable="true">
-            <field name="street"/>
-            <field name="area"/>
-            <field name="city"/>
-            <field name="zip"/>
-            <field name="country"/>
-          </grid>
-          <form title="Address" cols="4">
-            <field name="street"/>
-            <field name="area"/>
-            <field name="city"/>
-            <field name="zip"/>
-            <field name="country"/>
-            <button name="clickMe" title="Click Me!" onClick="action-contact-address-about"/>
-          </form>
-        </field>
-      </page>
-      <page title="Notes" cols="1">
-        <field name="notes" widget="Html"/>
-      </page>
-    </notebook>
+  <selection name="phone.type.selection">
+    <option value="Mobile">Mobile</option>
+    <option value="Office">Office</option>
+    <option value="Home">Home</option>
+    <option value="Other">Other</option>
+  </selection>
+  
+  <form name="contact-form" title="Contact" model="com.axelor.contact.db.Contact">
+    <panel title="Personal">
+      <field name="fullName" title="Name" readonly="false">
+        <editor>
+          <field name="title" x-span="2" widget="SuggestBox"/>
+          <field name="firstName" x-span="5"/>
+          <field name="lastName" x-span="5"/>
+        </editor>
+      </field>
+      <field name="dateOfBirth"/>
+      <field name="emails">
+        <viewer><![CDATA[
+        <a href="mailto:{{record.email}}">{{record.email}}</a>
+        ]]></viewer>
+        <editor x-layout="table">
+          <field name="email" />
+          <field name="primary" widget="toggle" x-icon="fa-star-o" x-icon-active="fa-star" x-exclusive="true" />
+          <field name="optOut" widget="toggle" x-icon="fa-ban" />
+          <field name="invalid" widget="toggle" x-icon="fa-exclamation-circle" />
+        </editor>
+      </field>
+      <field name="phones">
+        <viewer><![CDATA[
+        <a href="tel:{{record.phone}}">{{record.phone}}</a> <span class="muted" ng-if="record.phoneType">({{record.phoneType}})</span>
+        ]]></viewer>
+        <editor x-layout="table">
+          <field name="phoneType" x-width="100px" selection="phone.type.selection" />
+          <field name="phone" css="border-left-none"/>
+          <field name="primary" widget="toggle" x-icon="fa-star-o" x-icon-active="fa-star" x-exclusive="true"/>
+        </editor>
+      </field>
+      <field name="addresses" x-span="12" css="address-list">
+        <viewer><![CDATA[
+        <address>
+        {{record.street}} {{record.area}}<br>
+        {{record.city}}, {{record.state}} {{record.zip}}<br>
+        {{record.country.name}}
+        </address>
+        ]]>
+        </viewer>
+        <editor>
+          <field name="street" x-span="12"/>
+          <field name="area" x-span="12"/>
+          <field name="city" x-span="4"/>
+          <field name="state" x-span="4"/>
+          <field name="zip" x-span="4"/>
+          <field name="country" widget="SuggestBox" x-span="12"/>
+        </editor>
+      </field>
+    </panel>
+    <panel title="Notes">
+      <field name="notes" showTitle="false" x-span="12"/>
+    </panel>
+    <panel-side>
+      <field name="createdOn"/>
+      <field name="updatedOn"/>
+    </panel-side>
+    <panel-side title="Extra">
+      <field name="company"/>
+      <field name="circles" widget="TagSelect"/>
+    </panel-side>
   </form>
 
   <action-method name="action-contact-address-about">

@@ -34,11 +34,14 @@
       <bind node="@code" to="code" />
       <bind node="@name" to="name" />
     </bind>
-    <bind node="contact" type="com.axelor.contact.db.Contact" search="self.email = :email">
+    <bind node="contact" type="com.axelor.contact.db.Contact" search="self.emails[].email = :_email">
       <bind node="@title" to="title" search="self.code = :title" />
       <bind node="first-name" to="firstName" />
       <bind node="last-name" to="lastName" />
-      <bind node="email" to="email" />
+      <bind node="email" to="_email" /> <!-- context variable -->
+      <bind node="email" to="emails">
+        <bind node="text()" to="email" />
+      </bind>
       <bind node="addresses/address" to="addresses">
         <bind node="street1" to="street" />
         <bind node="street2" to="area" />
@@ -63,7 +66,7 @@
       <bind node="@color" to="color" />
     </bind>
 
-    <bind node="sale-order" type="com.axelor.sale.db.Order" search="self.customer.email = :email" update="false" call="com.axelor.demo.Validators:validateSaleOrder">
+    <bind node="sale-order" type="com.axelor.sale.db.Order" search="self.customer.emails[].email = :_email" update="false" call="com.axelor.demo.Validators:validateSaleOrder">
       <!-- transform boolean value into 'true' or 'false' -->
       <bind node="@confirmed" to="confirmed" adapter="Boolean"/>
 
@@ -78,19 +81,23 @@
       <bind to="confirmDate" eval="_date" />
 
       <!-- put email in the context -->
-      <bind node="customer/email" to="email"/>
+      <bind node="customer/email" to="_email"/>
 
       <!-- IF email NOT EMPTY -->
-      <bind node="customer" to="customer" search="self.email = :email" if="email">
+      <bind node="customer" to="customer" search="self.emails[].email = :_email" if="_email" update="false">
         <bind node="firstName" to="firstName" />
         <bind node="lastName" to="lastName" />
-        <bind node="email" to="email" />
+        <bind node="email" to="emails">
+          <bind node="text()" to="email" />
+        </bind>
       </bind>
       <!-- ELSE -->
-      <bind node="customer" to="customer" if="!email">
+      <bind node="customer" to="customer" if="!_email">
         <bind node="firstName" to="firstName" />
         <bind node="lastName" to="lastName" />
-        <bind to="email" eval='"${firstName}.${lastName}@gmail.com".toLowerCase()' />
+        <bind to="emails">
+          <bind to="email" eval='"${firstName}.${lastName}@gmail.com".toLowerCase()' />
+        </bind>
       </bind>
       <!-- END IF -->
       

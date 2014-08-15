@@ -16,16 +16,31 @@
         return firstName + " " + lastName;
     return title.getName() + " " + firstName + " " + lastName;
     ]]></string>
-    <string name="email" required="true" unique="true" max="100" initParam="true"/>
-    <string name="phone" max="20" massUpdate="true"/>
     <date name="dateOfBirth"/>
-    <one-to-many name="addresses" ref="Address" mappedBy="contact"/>
-    <many-to-one name="circle" ref="Circle" massUpdate="true"/>
-    <string name="notes" large="true"/>
     <binary name="image" title="Photo" help="Max size 4MB." image="true"/>
+    <string name="notes" large="true"/>
+    
+    <string name="email"><![CDATA[
+    if (emails == null || emails.isEmpty()) return null;
+    for (Email email : emails) if (email.getPrimary() == Boolean.TRUE) return email.getEmail();
+    return emails.get(0).getEmail();
+    ]]></string>
+    
+    <string name="phone"><![CDATA[
+    if (phones == null || phones.isEmpty()) return null;
+    for (Phone phone : phones) if (phone.getPrimary() == Boolean.TRUE) return phone.getPhone();
+    return phones.get(0).getPhone();
+    ]]></string>
+
+    <one-to-many name="emails" ref="Email" mappedBy="contact" />
+    <one-to-many name="phones" ref="Phone" mappedBy="contact" />
+
+    <one-to-many name="addresses" ref="Address" mappedBy="contact"/>
+    <many-to-many name="circles" ref="Circle" />
     <many-to-one name="company" ref="Company" massUpdate="true"/>
+
     <finder-method name="findByName" using="fullName" />
-    <finder-method name="findByEmail" using="email" />
+    <finder-method name="findByEmail" using="String:email" filter="self.emails[].email = :email" />
   </entity>
 
 </domain-models>

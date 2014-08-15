@@ -24,13 +24,6 @@
           </grid>
         </field>
       </page>
-      <page title="Groups" cols="1">
-        <field name="circles" title="Circles" widget="TransferBox">
-          <grid title="Circles">
-            <field name="name"/>
-          </grid>
-        </field>
-      </page>
       <page title="Notes" cols="1">
         <field name="notes" showTitle="false"/>
       </page>

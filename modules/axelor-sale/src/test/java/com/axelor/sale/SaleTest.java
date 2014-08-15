@@ -28,6 +28,7 @@ import com.axelor.contact.db.Address;
 import com.axelor.contact.db.Circle;
 import com.axelor.contact.db.Contact;
 import com.axelor.contact.db.Country;
+import com.axelor.contact.db.Email;
 import com.axelor.contact.db.Title;
 import com.axelor.db.JPA;
 import com.axelor.sale.db.Order;
@@ -59,13 +60,16 @@ public class SaleTest {
 		Country country = new Country();
 		country.setCode("country_" + next);
 		country.setName("country_" + next);
-
+		
+		Email email = new Email();
+		email.setEmail(String.format("first.last.%s@gmail.com", next));
+		
 		Contact contact = new Contact();
 		contact.setTitle(title);
 		contact.setFirstName("FirstName_" + next);
 		contact.setLastName("LastName_" + next);
-		contact.setEmail(String.format("first.last.%s@gmail.com", next));
-		contact.setCircle(circle);
+		contact.addEmail(email);
+		contact.addCircle(circle);
 
 		Address addr1 = new Address();
 		addr1.setStreet("My");

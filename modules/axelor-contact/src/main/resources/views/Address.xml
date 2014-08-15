@@ -9,6 +9,7 @@
     <field name="area" />
     <field name="city" />
     <field name="zip" />
+    <field name="state" />
     <field name="country" />
   </grid>
 
@@ -19,6 +20,7 @@
     <field name="area" />
     <field name="city" />
     <field name="zip" />
+    <field name="state" />
     <field name="country" />
   </form>
 

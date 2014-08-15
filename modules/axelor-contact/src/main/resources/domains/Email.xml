@@ -5,14 +5,12 @@
 
   <module name="contact" package="com.axelor.contact.db" />
 
-  <entity name="Address" cachable="true">
+  <entity name="Email" cachable="true">
     <many-to-one name="contact" ref="Contact" required="true" />
-    <string name="street" required="true" max="255" />
-    <string name="area" max="255" />
-    <string name="city" />
-    <string name="zip" />
-    <string name="state" />
-    <many-to-one name="country" ref="Country" />
+    <string name="email" required="true" unique="true" namecolumn="true" />
+    <boolean name="primary" column="is_primary" />
+    <boolean name="optOut" title="Opted out" />
+    <boolean name="invalid" />
   </entity>
 
 </domain-models>
