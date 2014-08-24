@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <object-views xmlns="http://apps.axelor.com/xml/ns/object-views"
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://apps.axelor.com/xml/ns/object-views http://apps.axelor.com/xml/ns/object-views/object-views_2.0.xsd">
+  xsi:schemaLocation="http://apps.axelor.com/xml/ns/object-views http://apps.axelor.com/xml/ns/object-views/object-views_2.1.xsd">
 
   <grid name="order-grid" title="Orders" model="com.axelor.sale.db.Order">
     <field name="name"/>
@@ -14,64 +14,45 @@
   <form name="order-form" title="Order" model="com.axelor.sale.db.Order" cols="4"
     onNew="default-order-record"
     onSave="check-order-values,action-sale-order-validate">
-    <separator title="Order Details" colSpan="4"/>
-    <field name="name"/>
-    <field name="confirmed"/>
-    <break/>
-    <field name="customer" canSelect="true" form-view="contact-form" grid-view="contact-grid" readonlyIf="confirmed">
-      <form title="Customer">
-        <field name="title"/>
-        <break/>
-        <field name="firstName"/>
-        <field name="lastName"/>
-        <field name="email"/>
-        <field name="phone"/>
-      </form>
-    </field>
-    <field name="orderDate" readonlyIf="confirmed"/>
-    <field name="createDate" readonlyIf="confirmed"/>
-    <field name="confirmDate" requiredIf="confirmed" validIf="confimDate == null || $moment(confirmDate) &gt; $moment(createDate)"/>
-    <notebook name="nbDetails" colSpan="4" readonlyIf="confirmed">
-      <page title="Items" cols="1">
-        <field name="items" onChange="com.axelor.sale.web.SaleOrderController:calculate">
-          <grid title="Items" editable="true">
-            <field name="product"/>
-            <field name="price"/>
-            <field name="quantity"/>
-            <field name="taxes"/>
-          </grid>
-          <form cols="4" title="Ordered Item">
-            <field name="product" colSpan="4"/>
-            <break/>
-            <field name="price"/>
-            <field name="quantity"/>
-            <notebook colSpan="4">
-              <page title="Taxes" cols="1">
-                <field name="taxes">
-                  <grid title="Taxes">
-                    <field name="name"/>
-                    <field name="rate"/>
-                  </grid>
-                </field>
-              </page>
-            </notebook>
-          </form>
+    <panel title="Order Details">
+      <field name="name"/>
+      <field name="confirmed"/>
+      <field name="customer" readonlyIf="confirmed" form-view="contact-form" grid-view="contact-grid"/>
+      <field name="orderDate" readonlyIf="confirmed"/>
+      <field name="createDate" readonlyIf="confirmed"/>
+      <field name="confirmDate" requiredIf="confirmed" validIf="confimDate == null || $moment(confirmDate) > $moment(createDate)"/>
+    </panel>
+    <panel-tabs>
+      <panel-related field="items" editable="true" onChange="com.axelor.sale.web.SaleOrderController:calculate">
+        <field name="product"/>
+        <field name="price"/>
+        <field name="quantity"/>
+        <field name="taxes"/>
+      </panel-related>
+      <panel title="Notes">
+        <field name="notes" showTitle="false" x-span="12"/>
+      </panel>
+    </panel-tabs>
+    <panel>
+      <button-group>
+        <button name="btnCalculate" title="Calculate" hideIf="confirmed" onClick="check-order-dates,com.axelor.sale.web.SaleOrderController:calculate,save"/>
+        <button name="btnExport" title="Export" showIf="id" onClick="export.sale.order"/>
+      </button-group>
+      <panel css="order-subtotal" readonly="true">
+        <field name="totalAmount" showTitle="false" x-span="12">
+          <viewer><![CDATA[
+          <dl class="dl-horizontal">
+            <dt>Amount</dt>
+            <dd>{{record.amount}}</dd>
+            <dt>Tax amount</dt>
+            <dd>{{record.taxAmount}}</dd>
+            <dt class="order-subtotal-total">Total amount</dt>
+            <dd class="order-subtotal-total">{{record.totalAmount}}</dd>
+          </dl>
+          ]]></viewer>
         </field>
-      </page>
-      <page title="Notes" cols="1">
-        <field name="notes" showTitle="false"/>
-      </page>
-    </notebook>
-    <group colSpan="4" cols="4" colWidths="50px,50px,*,220px">
-      <button name="btnCalculate" title="Calculate" hideIf="confirmed" onClick="check-order-dates,com.axelor.sale.web.SaleOrderController:calculate,save"/>
-      <button name="btnExport" title="Export" showIf="id" onClick="export.sale.order"/>
-      <spacer colSpan="1"/>
-      <group readonly="true" colSpan="1" css="subtotal" cols="2" colWidths="50%,50%">
-        <field name="amount"/>
-        <field name="taxAmount"/>
-        <field name="totalAmount" css="subtotal-total"/>
-      </group>
-    </group>
+      </panel>
+    </panel>
   </form>
 
   <calendar name="sales-timeline" title="Sales Timeline" model="com.axelor.sale.db.Order" editable="false"

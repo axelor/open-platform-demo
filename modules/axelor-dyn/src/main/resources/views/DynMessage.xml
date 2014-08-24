@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <object-views xmlns="http://apps.axelor.com/xml/ns/object-views"
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://apps.axelor.com/xml/ns/object-views http://apps.axelor.com/xml/ns/object-views/object-views_2.0.xsd">
+  xsi:schemaLocation="http://apps.axelor.com/xml/ns/object-views http://apps.axelor.com/xml/ns/object-views/object-views_2.1.xsd">
 
   <selection name="dyn.reference.select">
     <option value="com.axelor.contact.db.Contact" data-domain="self.email LIKE '%gmail%'">Contact</option>
@@ -14,22 +14,19 @@
   </grid>
 
   <form name="dyn-message-form" title="Message" model="com.axelor.dyn.db.DynMessage" cols="2">
-    <field name="subject" />
-    <field name="recipients" widget="TagSelect" />
-    <field name="referenceModel" widget="RefSelect" x-related="referenceId" title="Reference"/>
-    <notebook colSpan="2">
-      <page title="Body" cols="1">
-        <field name="body" widget="html" />
-      </page>
-      <page title="Replies" cols="1">
-        <field name="replies">
-          <form cols="2" title="Reply">
-            <field name="subject" />
-            <field name="body" showTitle="false" colSpan="2" widget="html" x-lite="true" />
-          </form>
-        </field>
-      </page>
-    </notebook>
+    <panel title="Overview" x-item-span="12">
+      <field name="subject"/>
+      <field name="recipients" widget="TagSelect"/>
+      <field name="referenceModel" title="Reference" widget="RefSelect" x-related="referenceId"/>
+    </panel>
+    <panel-tabs>
+      <panel title="Message">
+        <field name="body" widget="html" showTitle="false" x-span="12"/>
+      </panel>
+      <panel-related field="replies">
+        <field name="subject"/>
+      </panel-related>
+    </panel-tabs>
   </form>
 
   <form name="dyn-message-form2" title="Message" model="com.axelor.dyn.db.DynMessage" cols="1">

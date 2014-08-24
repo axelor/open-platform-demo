@@ -1,16 +1,18 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <object-views xmlns="http://apps.axelor.com/xml/ns/object-views"
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://apps.axelor.com/xml/ns/object-views http://apps.axelor.com/xml/ns/object-views/object-views_2.0.xsd">
-  
+  xsi:schemaLocation="http://apps.axelor.com/xml/ns/object-views http://apps.axelor.com/xml/ns/object-views/object-views_2.1.xsd">
+
   <grid name="country-grid" title="Countries" model="com.axelor.contact.db.Country">
     <field name="name" />
     <field name="code" />
   </grid>
-  
-  <form name="country-form" title="Country" model="com.axelor.contact.db.Country" cols="2">
-    <field name="name" />
-    <field name="code" />
+
+  <form name="country-form" title="Country" model="com.axelor.contact.db.Country" width="mini">
+    <panel title="Overview" x-item-span="12">
+      <field name="name" />
+      <field name="code" />
+    </panel>
   </form>
 
 </object-views>

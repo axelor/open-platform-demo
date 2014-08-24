@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<object-views xmlns="http://apps.axelor.com/xml/ns/object-views" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://apps.axelor.com/xml/ns/object-views http://apps.axelor.com/xml/ns/object-views/object-views_2.0.xsd">
+<object-views xmlns="http://apps.axelor.com/xml/ns/object-views"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://apps.axelor.com/xml/ns/object-views http://apps.axelor.com/xml/ns/object-views/object-views_2.1.xsd">
 
   <grid name="order-line-grid" title="Ordered Items" model="com.axelor.sale.db.OrderLine">
     <field name="order" />
@@ -9,21 +10,16 @@
     <field name="quantity" />
   </grid>
 
-  <form name="order-line-form" title="Ordered Item" model="com.axelor.sale.db.OrderLine" cols="2">
-    <field name="order" />
-    <field name="product" />
-    <field name="price" />
-    <field name="quantity" />
-    <break />
-    <notebook colSpan="4">
-      <page title="Taxes" cols="1">
-        <field name="taxes">
-          <grid title="Taxes">
-            <field name="name" />
-            <field name="rate" />
-          </grid>
-        </field>
-      </page>
-    </notebook>
+  <form name="order-line-form" title="Ordered Item" model="com.axelor.sale.db.OrderLine">
+    <panel title="Overview">
+      <field name="product" x-span="12" />
+      <field name="price" />
+      <field name="quantity" />
+    </panel>
+    <panel-related field="taxes" editable="true">
+      <field name="name" />
+      <field name="rate" />
+    </panel-related>
   </form>
+
 </object-views>

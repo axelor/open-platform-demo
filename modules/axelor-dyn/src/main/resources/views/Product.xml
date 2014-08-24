@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <object-views xmlns="http://apps.axelor.com/xml/ns/object-views" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://apps.axelor.com/xml/ns/object-views http://apps.axelor.com/xml/ns/object-views/object-views_2.0.xsd">
+  xsi:schemaLocation="http://apps.axelor.com/xml/ns/object-views http://apps.axelor.com/xml/ns/object-views/object-views_2.1.xsd">
 
   <selection id="product.color.selection.dyn" name="product.color.selection">
     <option value="black">Black</option>
@@ -8,14 +8,16 @@
     <option value="gray">Gray</option>
   </selection>
 
-  <form id="product-form.dyn" name="product-form" title="Product" model="com.axelor.sale.db.Product" cols="4">
-    <include view="product-form" from="axelor-sale" />
-    <field name="color" selection="product.color.selection" widget="NavSelect" colSpan="4" />
-    <group colSpan="4" showIf="color">
-      <group title="Page 1" showIf="color == 'black'"></group>
-      <group title="Page 2" showIf="color == 'white'"></group>
-      <group title="Page 3" showIf="color == 'gray'"></group>
-    </group>
+  <form id="product-form.dyn" name="product-form" title="Product" model="com.axelor.sale.db.Product">
+    <panel-include view="product-form" from="axelor-sale"/>
+    <panel>
+      <field name="color" widget="NavSelect" selection="product.color.selection"/>
+    </panel>
+    <panel-stack showIf="color" x-item-span="12">
+      <panel title="Page 1" showIf="color == 'black'"/>
+      <panel title="Page 2" showIf="color == 'white'"/>
+      <panel title="Page 3" showIf="color == 'gray'"/>
+    </panel-stack>
   </form>
 
 </object-views>

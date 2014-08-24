@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <object-views xmlns="http://apps.axelor.com/xml/ns/object-views"
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://apps.axelor.com/xml/ns/object-views http://apps.axelor.com/xml/ns/object-views/object-views_2.0.xsd">
+  xsi:schemaLocation="http://apps.axelor.com/xml/ns/object-views http://apps.axelor.com/xml/ns/object-views/object-views_2.1.xsd">
 
   <grid name="company-grid" title="Companies" model="com.axelor.contact.db.Company">
     <field name="name"/>
@@ -9,25 +9,21 @@
     <field name="parent"/>
   </grid>
 
-  <form name="company-form" title="Company" model="com.axelor.contact.db.Company" cols="4">
-    <field name="name"/>
-    <field name="code"/>
-    <field name="parent" domain="self.code != :code"/>
-    <notebook colSpan="4">
-      <page title="Employees" cols="1">
-        <field name="employees">
-          <grid title="Employees">
-            <field name="fullName"/>
-            <field name="email"/>
-            <field name="phone"/>
-            <field name="dateOfBirth"/>
-          </grid>
-        </field>
-      </page>
-      <page title="Notes" cols="1">
-        <field name="notes" showTitle="false"/>
-      </page>
-    </notebook>
+  <form name="company-form" title="Company" model="com.axelor.contact.db.Company">
+    <panel title="Overview">
+      <field name="name"/>
+      <field name="code"/>
+      <field name="parent" domain="self.code != :code"/>
+    </panel>
+    <panel title="Notes">
+      <field name="notes" showTitle="false" x-span="12"/>
+    </panel>
+    <panel-related field="employees">
+      <field name="fullName"/>
+      <field name="email"/>
+      <field name="phone"/>
+      <field name="dateOfBirth"/>
+    </panel-related>
   </form>
 
 </object-views>

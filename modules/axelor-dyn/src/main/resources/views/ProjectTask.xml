@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <object-views xmlns="http://apps.axelor.com/xml/ns/object-views" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://apps.axelor.com/xml/ns/object-views http://apps.axelor.com/xml/ns/object-views/object-views_2.0.xsd">
+  xsi:schemaLocation="http://apps.axelor.com/xml/ns/object-views http://apps.axelor.com/xml/ns/object-views/object-views_2.1.xsd">
 
   <grid id="project-task-grid.dyn" name="project-task-grid" title="Project Tasks" model="com.axelor.project.db.ProjectTask" groupBy="project">
     <field name="name" />
@@ -14,21 +14,27 @@
   </grid>
   
   <form id="project-form.dyn" name="project-form" title="Project" model="com.axelor.project.db.Project">
-    <field name="name" />
-    <field name="priority" />
-    <field name="description" />
-    <field name="parent" />
-    <field name="members" widget="TagSelect" x-create="code,name,password" />
-    <break/>
-    <portlet action="project.tasks.tree" colSpan="2"/>
-    <notebook colSpan="2">
-      <page title="Tasks" cols="1">
-        <field name="tasks" showTitle="false" />
-      </page>
-      <page title="Notes" cols="1">
-        <field name="notes" showTitle="false" />
-      </page>
-    </notebook>
+    <panel title="Overview">
+      <field name="name"/>
+      <field name="priority"/>
+      <field name="description"/>
+      <field name="parent"/>
+      <field name="members" widget="TagSelect" x-create="code,name,password"/>
+    </panel>
+    <panel-dashlet action="project.tasks.tree"/>
+    <panel-tabs>
+      <panel-related field="tasks" editable="true">
+        <field name="name" />
+        <field name="createDate" />
+        <field name="startDate" />
+        <field name="endDate" />
+        <field name="user" />
+        <field name="priority" />
+      </panel-related>
+      <panel title="Notes">
+        <field name="notes" showTitle="false" x-span="12"/>
+      </panel>
+    </panel-tabs>
   </form>
 
 </object-views>

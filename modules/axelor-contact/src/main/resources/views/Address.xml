@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <object-views xmlns="http://apps.axelor.com/xml/ns/object-views"
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://apps.axelor.com/xml/ns/object-views http://apps.axelor.com/xml/ns/object-views/object-views_2.0.xsd">
+  xsi:schemaLocation="http://apps.axelor.com/xml/ns/object-views http://apps.axelor.com/xml/ns/object-views/object-views_2.1.xsd">
 
   <grid name="address-grid" title="Address List" model="com.axelor.contact.db.Address">
     <field name="contact" />
@@ -14,14 +14,15 @@
   </grid>
 
   <form name="address-form" title="Address" cols="2" model="com.axelor.contact.db.Address">
-    <field name="contact" />
-    <break />
-    <field name="street" />
-    <field name="area" />
-    <field name="city" />
-    <field name="zip" />
-    <field name="state" />
-    <field name="country" />
+    <panel title="Overview">
+      <field name="contact" x-span="12"/>
+      <field name="street" />
+      <field name="area" />
+      <field name="city" />
+      <field name="zip" />
+      <field name="state" />
+      <field name="country" />
+    </panel>
   </form>
 
 </object-views>

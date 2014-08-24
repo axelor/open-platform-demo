@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <object-views xmlns="http://apps.axelor.com/xml/ns/object-views" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://apps.axelor.com/xml/ns/object-views http://apps.axelor.com/xml/ns/object-views/object-views_2.0.xsd">
+  xsi:schemaLocation="http://apps.axelor.com/xml/ns/object-views http://apps.axelor.com/xml/ns/object-views/object-views_2.1.xsd">
 
   <selection name="product.color.selection">
     <option value="black">Black</option>
@@ -21,11 +21,13 @@
     <field name="color" selection="product.color.selection" />
   </grid>
 
-  <form name="product-form" title="Product" model="com.axelor.sale.db.Product" cols="4">
-    <field name="code" />
-    <field name="name" />
-    <field name="color" selection="product.color.selection" />
-    <field name="category" />
+  <form name="product-form" title="Product" model="com.axelor.sale.db.Product">
+    <panel title="Overview">
+      <field name="code" />
+      <field name="name" />
+      <field name="color" selection="product.color.selection" />
+      <field name="category" />
+    </panel>
   </form>
 
 </object-views>

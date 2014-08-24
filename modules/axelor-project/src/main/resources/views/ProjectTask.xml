@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <object-views xmlns="http://apps.axelor.com/xml/ns/object-views"
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://apps.axelor.com/xml/ns/object-views http://apps.axelor.com/xml/ns/object-views/object-views_2.0.xsd">
+  xsi:schemaLocation="http://apps.axelor.com/xml/ns/object-views http://apps.axelor.com/xml/ns/object-views/object-views_2.1.xsd">
   
   <grid name="project-task-grid" title="Project Tasks" model="com.axelor.project.db.ProjectTask">
     <field name="name" />
@@ -15,35 +15,27 @@
   </grid>
   
   <form name="project-task-form" title="Project Task" model="com.axelor.project.db.ProjectTask" onNew="project.task.on.new">
-    <field name="name" />
-    <field name="priority" />
-    <field name="createDate"/>
-    <field name="deadlineDate"/>
-    <field name="startDate"/>
-    <field name="endDate" />
-    <field name="user"/>
-    <field name="project"/>
-    <field name="progress" widget="Progress"/>
-    <notebook colSpan="4">
-      <page title="Work Items" cols="1">
-        <field name="workItems" showTitle="false">
-          <grid title="Work Item" editable="true">
-            <field name="name" />
-            <field name="date" />
-            <field name="hours" />
-          </grid>
-          <form title="Work Item">
-            <field name="name" />
-            <break/>
-            <field name="date" />
-            <field name="hours" />
-          </form>
-        </field>
-      </page>
-      <page title="Notes" cols="1">
-        <field name="notes" showTitle="false"/>
-      </page>
-    </notebook>
+    <panel title="Overview">
+      <field name="name"/>
+      <field name="priority"/>
+      <field name="createDate"/>
+      <field name="deadlineDate"/>
+      <field name="startDate"/>
+      <field name="endDate"/>
+      <field name="user"/>
+      <field name="project"/>
+      <field name="progress" widget="Progress"/>
+    </panel>
+    <panel-tabs>
+      <panel-related field="workItems" editable="true">
+        <field name="name"/>
+        <field name="date"/>
+        <field name="hours"/>
+      </panel-related>
+      <panel title="Notes">
+        <field name="notes" showTitle="false" x-span="12"/>
+      </panel>
+    </panel-tabs>
   </form>
 
   <tree name="project-task-tree" title="Project Tasks">
