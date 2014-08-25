@@ -42,14 +42,21 @@
   
   <form name="contact-form" title="Contact" model="com.axelor.contact.db.Contact">
     <panel title="Personal">
-      <field name="fullName" title="Name" readonly="false">
-        <editor>
-          <field name="title" x-span="2" widget="SuggestBox"/>
-          <field name="firstName" x-span="5"/>
-          <field name="lastName" x-span="5"/>
-        </editor>
-      </field>
-      <field name="dateOfBirth"/>
+      <panel x-span="4">
+        <field name="image" showTitle="false" x-span="12"/>
+      </panel>
+      <panel x-span="8">
+        <field name="fullName" title="Name" readonly="false" x-span="12">
+          <editor>
+            <field name="title" widget="SuggestBox" x-span="2"/>
+            <field name="firstName" x-span="5"/>
+            <field name="lastName" x-span="5"/>
+          </editor>
+        </field>
+      <field name="dateOfBirth" x-span="7"/>
+      </panel>
+    </panel>
+    <panel title="Contacts">
       <field name="emails">
         <viewer><![CDATA[
         <a href="mailto:{{record.email}}">{{record.email}}</a>
