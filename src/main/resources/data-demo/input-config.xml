@@ -40,7 +40,13 @@
       <bind node="last-name" to="lastName" />
       <bind node="email" to="_email" /> <!-- context variable -->
       <bind node="email" to="emails">
+        <bind to="primary" eval="true" />
         <bind node="text()" to="email" />
+      </bind>
+      <bind node="phone" to="phones">
+        <bind to="primary" eval="true" />
+        <bind to="phoneType" eval="'Mobile'" />
+        <bind node="text()" to="phone" />
       </bind>
       <bind node="addresses/address" to="addresses">
         <bind node="street1" to="street" />
@@ -89,6 +95,11 @@
         <bind node="lastName" to="lastName" />
         <bind node="email" to="emails">
           <bind node="text()" to="email" />
+        </bind>
+        <bind node="phone" to="phones">
+          <bind to="primary" eval="true" />
+          <bind to="phoneType" eval="'Mobile'" />
+          <bind node="text()" to="phone" />
         </bind>
       </bind>
       <!-- ELSE -->

@@ -35,6 +35,7 @@
       <firstName>My</firstName>
       <lastName>Name</lastName>
       <email>my.name@gmail.com</email>
+      <phone>+33 0183211333</phone>
     </customer>
     <items>
       <item product="LAPTOP1" price="1150.50" quantity="1">
