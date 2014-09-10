@@ -20,6 +20,7 @@ package com.axelor.dyn.web;
 import java.util.List;
 
 import com.axelor.dyn.db.DynMessage;
+import com.axelor.dyn.db.repo.DynMessageRepository;
 import com.axelor.dyn.service.DynService;
 import com.axelor.rpc.ActionRequest;
 import com.axelor.rpc.ActionResponse;
@@ -32,6 +33,9 @@ public final class DynController {
 	@Inject
 	private DynService service;
 	
+	@Inject
+	private DynMessageRepository messages;
+
 	public void showReply(ActionRequest request, ActionResponse response) {
 		
 		Context ctx = request.getContext();
@@ -68,7 +72,7 @@ public final class DynController {
 	}
 
 	public void findAll(ActionRequest request, ActionResponse response) {
-		List<?> all = DynMessage.all().order("createdOn").fetch();
+		List<?> all = messages.all().order("createdOn").fetch();
 		
 		response.setData(all);
 		

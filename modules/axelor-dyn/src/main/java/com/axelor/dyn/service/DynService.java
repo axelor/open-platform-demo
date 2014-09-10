@@ -17,11 +17,17 @@
  */
 package com.axelor.dyn.service;
 
+import javax.inject.Inject;
+
 import com.axelor.auth.AuthUtils;
 import com.axelor.dyn.db.DynMessage;
+import com.axelor.dyn.db.repo.DynMessageRepository;
 import com.google.inject.persist.Transactional;
 
 public class DynService {
+
+	@Inject
+	private DynMessageRepository messages;
 
 	@Transactional
 	public DynMessage sendMessage(DynMessage context, DynMessage reply) {
@@ -37,7 +43,7 @@ public class DynService {
 		}
 
 		if (context.getId() != null) {
-			DynMessage parent = DynMessage.find(context.getId());
+			DynMessage parent = messages.find(context.getId());
 			if (parent.getParent() != null) {
 				parent = parent.getParent();
 			}
@@ -45,6 +51,6 @@ public class DynService {
 				reply.setParent(parent);
 			}
 		}
-		return reply.save();
+		return messages.save(reply);
 	}
 }

@@ -31,6 +31,8 @@ import com.axelor.contact.db.Country;
 import com.axelor.contact.db.Email;
 import com.axelor.contact.db.Title;
 import com.axelor.db.JPA;
+import com.axelor.db.Model;
+import com.axelor.db.Query;
 import com.axelor.sale.db.Order;
 import com.axelor.sale.db.OrderLine;
 import com.axelor.sale.db.Product;
@@ -123,27 +125,31 @@ public class SaleTest {
 		}
 	}
 
+	private <T extends Model> Query<T> all(Class<T> klass) {
+		return Query.of(klass);
+	}
+
 	@Transactional
 	void dropData() {
-		OrderLine.all().delete();
-		Order.all().delete();
-		Product.all().delete();
-		Address.all().delete();
-		Contact.all().delete();
-		Country.all().delete();
-		Circle.all().delete();
-		Title.all().delete();
+		all(OrderLine.class).delete();
+		all(Order.class).delete();
+		all(Product.class).delete();
+		all(Address.class).delete();
+		all(Contact.class).delete();
+		all(Country.class).delete();
+		all(Circle.class).delete();
+		all(Title.class).delete();
 	}
 
 	void listData() {
-		System.err.println("Title: " + Title.all().count());
-		System.err.println("Circle: " + Circle.all().count());
-		System.err.println("Country: " + Country.all().count());
-		System.err.println("Contact: " + Contact.all().count());
-		System.err.println("Address: " + Address.all().count());
-		System.err.println("Product: " + Product.all().count());
-		System.err.println("Order: " + Order.all().count());
-		System.err.println("OrderLine: " + OrderLine.all().count());
+		System.err.println("Title: " + all(Title.class).count());
+		System.err.println("Circle: " + all(Circle.class).count());
+		System.err.println("Country: " + all(Country.class).count());
+		System.err.println("Contact: " + all(Contact.class).count());
+		System.err.println("Address: " + all(Address.class).count());
+		System.err.println("Product: " + all(Product.class).count());
+		System.err.println("Order: " + all(Order.class).count());
+		System.err.println("OrderLine: " + all(OrderLine.class).count());
 	}
 
 	@Test
