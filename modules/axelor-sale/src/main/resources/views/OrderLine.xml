@@ -12,7 +12,7 @@
 
   <form name="order-line-form" title="Ordered Item" model="com.axelor.sale.db.OrderLine">
     <panel title="Overview">
-      <field name="product" x-span="12" />
+      <field name="product" colSpan="12" />
       <field name="price" />
       <field name="quantity" />
     </panel>

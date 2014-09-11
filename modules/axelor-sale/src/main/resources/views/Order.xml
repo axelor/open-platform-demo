@@ -30,7 +30,7 @@
         <field name="taxes"/>
       </panel-related>
       <panel title="Notes">
-        <field name="notes" showTitle="false" x-span="12"/>
+        <field name="notes" showTitle="false" colSpan="12"/>
       </panel>
     </panel-tabs>
     <panel>
@@ -39,7 +39,7 @@
         <button name="btnExport" title="Export" showIf="id" onClick="export.sale.order"/>
       </button-group>
       <panel css="order-subtotal" readonly="true">
-        <field name="totalAmount" showTitle="false" x-span="12">
+        <field name="totalAmount" showTitle="false" colSpan="12">
           <viewer><![CDATA[
           <dl class="dl-horizontal">
             <dt>Amount</dt>

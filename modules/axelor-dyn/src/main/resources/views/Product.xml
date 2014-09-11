@@ -13,7 +13,7 @@
     <panel>
       <field name="color" widget="NavSelect" selection="product.color.selection"/>
     </panel>
-    <panel-stack showIf="color" x-item-span="12">
+    <panel-stack showIf="color" itemSpan="12">
       <panel title="Page 1" showIf="color == 'black'"/>
       <panel title="Page 2" showIf="color == 'white'"/>
       <panel title="Page 3" showIf="color == 'gray'"/>

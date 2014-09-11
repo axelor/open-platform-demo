@@ -15,7 +15,7 @@
 
   <form name="address-form" title="Address" cols="2" model="com.axelor.contact.db.Address">
     <panel title="Overview">
-      <field name="contact" x-span="12"/>
+      <field name="contact" colSpan="12"/>
       <field name="street" />
       <field name="area" />
       <field name="city" />

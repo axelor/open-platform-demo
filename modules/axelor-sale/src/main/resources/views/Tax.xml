@@ -8,7 +8,7 @@
   </grid>
 
   <form name="tax-form" title="Tax" model="com.axelor.sale.db.Tax" width="mini">
-    <panel title="Overview" x-item-span="12">
+    <panel title="Overview" itemSpan="12">
       <field name="code" />
       <field name="name" />
       <field name="rate" />

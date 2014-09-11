@@ -8,7 +8,7 @@
   </grid>
 
   <form name="title-form" title="Title" model="com.axelor.contact.db.Title" width="mini">
-    <panel title="Overview" x-item-span="12">
+    <panel title="Overview" itemSpan="12">
       <field name="name" />
       <field name="code" />
     </panel>

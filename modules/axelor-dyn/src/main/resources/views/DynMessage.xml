@@ -14,14 +14,14 @@
   </grid>
 
   <form name="dyn-message-form" title="Message" model="com.axelor.dyn.db.DynMessage" cols="2">
-    <panel title="Overview" x-item-span="12">
+    <panel title="Overview" itemSpan="12">
       <field name="subject"/>
       <field name="recipients" widget="TagSelect"/>
       <field name="referenceModel" title="Reference" widget="RefSelect" x-related="referenceId"/>
     </panel>
     <panel-tabs>
       <panel title="Message">
-        <field name="body" widget="html" showTitle="false" x-span="12"/>
+        <field name="body" widget="html" showTitle="false" colSpan="12"/>
       </panel>
       <panel-related field="replies">
         <field name="subject"/>
@@ -31,7 +31,7 @@
 
   <form name="dyn-message-form2" title="Message" model="com.axelor.dyn.db.DynMessage" cols="1">
     <group readonly="true" cols="3" colWidths="42,*,60">
-      <field name="dummy1" showTitle="false" widget="Image" x-width="48" x-height="48" css="trail-avatar"/>
+      <field name="dummy1" showTitle="false" widget="Image" width="48" height="48" css="trail-avatar"/>
       <group cols="1">
         <field name="subject" showIf="!parent"/>
         <field name="body" widget="html"/>
