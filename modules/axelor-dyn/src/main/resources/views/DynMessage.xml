@@ -47,7 +47,7 @@
       <group cols="5" css="pull-left">
         <field name="author" showTitle="false"/>
         <label title="to"/>
-        <field name="recipients" showTitle="false" widget="TagSelect" x-max="3"/>
+        <field name="recipients" showTitle="false" widget="TagSelect" max="3"/>
         <label title=" &amp;nbsp;•"></label>
         <field name="createdOn" widget="RelativeTime" showTitle="false"/>
       </group>

@@ -61,7 +61,7 @@
         <viewer><![CDATA[
         <a href="mailto:{{record.email}}">{{record.email}}</a>
         ]]></viewer>
-        <editor x-layout="table">
+        <editor layout="table">
           <field name="email" />
           <field name="primary" widget="toggle" x-icon="fa-star-o" x-icon-active="fa-star" x-exclusive="true" />
           <field name="optOut" widget="toggle" x-icon="fa-ban" />
@@ -72,7 +72,7 @@
         <viewer><![CDATA[
         <a href="tel:{{record.phone}}">{{record.phone}}</a> <span class="muted" ng-if="record.phoneType">({{record.phoneType}})</span>
         ]]></viewer>
-        <editor x-layout="table">
+        <editor layout="table">
           <field name="phoneType" width="100px" selection="phone.type.selection" />
           <field name="phone" css="border-left-none"/>
           <field name="primary" widget="toggle" x-icon="fa-star-o" x-icon-active="fa-star" x-exclusive="true"/>
