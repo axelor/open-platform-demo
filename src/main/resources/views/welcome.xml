@@ -3,14 +3,14 @@
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://apps.axelor.com/xml/ns/object-views http://apps.axelor.com/xml/ns/object-views/object-views_2.0.xsd">
 
-  <portal title="Welcome!" name="welcome.portal" cols="2">
-    <portlet action="chart:chart.sales.per.month" height="350"/>
-    <portlet action="chart:chart.sales.per.month.pie" height="350"/>
-    <portlet action="sale.orders" colSpan="2"/>
-  </portal>
+  <dashboard name="welcome.dashboard" title="Welcome!">
+    <dashlet action="chart:chart.sales.per.month"/>
+    <dashlet action="chart:chart.sales.per.month.pie"/>
+    <dashlet colSpan="12" action="sale.orders"/>
+  </dashboard>
 
   <action-view name="welcome" title="Welcome!">
-    <view type="portal" name="welcome.portal"/>
+    <view type="dashboard" name="welcome.dashboard"/>
   </action-view>
 
   <menuitem name="menu-dashboards" priority="101"
