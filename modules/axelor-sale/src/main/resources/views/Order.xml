@@ -11,7 +11,7 @@
     <field name="confirmed"/>
   </grid>
 
-  <form name="order-form" title="Order" model="com.axelor.sale.db.Order" cols="4"
+  <form name="order-form" title="Order" model="com.axelor.sale.db.Order"
     onNew="default-order-record"
     onSave="check-order-values,action-sale-order-validate">
     <panel title="Order Details">
@@ -23,7 +23,7 @@
       <field name="confirmDate" requiredIf="confirmed" validIf="confimDate == null || $moment(confirmDate) > $moment(createDate)"/>
     </panel>
     <panel-tabs>
-      <panel-related field="items" editable="true" onChange="com.axelor.sale.web.SaleOrderController:calculate">
+      <panel-related field="items" editable="true" readonlyIf="confirmed" onChange="com.axelor.sale.web.SaleOrderController:calculate">
         <field name="product"/>
         <field name="price"/>
         <field name="quantity"/>
@@ -76,8 +76,8 @@
   </search-filters>
   
   <action-record name="default-order-record" model="com.axelor.sale.db.Order">
-    <field name="customer" expr="action:default-customer-record" if="!(__ref__ instanceof com.axelor.contact.db.Contact)"/>
-    <field name="customer" expr="eval: __ref__" if="__ref__ instanceof com.axelor.contact.db.Contact"/>
+    <field name="customer" expr="action:default-customer-record" if="!(__ref__ instanceof Contact)"/>
+    <field name="customer" expr="eval: __ref__" if="__ref__ instanceof Contact"/>
     <field name="orderDate" expr="eval: __date__"/>
     <field name="createDate" expr="eval: __date__"/>
     <field name="items" expr="action:default-orderline-record"/>
@@ -107,11 +107,12 @@
 
   <action-record name="default-customer-record"
     model="com.axelor.contact.db.Contact"
-    search="self.email = 'john.smith@gmail.com'">
+    search="self.emails[].email = 'john.smith@gmail.com'">
     <field name="title" expr="action:default-title-record"/>
     <field name="firstName" expr="John"/>
     <field name="lastName" expr="Smith"/>
-    <field name="email" expr="john.smith@gmail.com"/>
+    <field name="emails" expr="eval: [__repo__.of(Email).create([email: 'john.smith@gmail.com'])]"/>
+    <field name="phones" expr="eval: [__repo__.of(Phone).create([phone: '+330183610313'])]"/>
   </action-record>
 
   <action-record name="default-title-record"
