@@ -100,14 +100,14 @@
     <panel title="Notes">
       <field name="notes" showTitle="false" colSpan="12"/>
     </panel>
-    <panel-side>
+    <panel sidebar="true">
       <field name="createdOn"/>
       <field name="updatedOn"/>
-    </panel-side>
-    <panel-side title="Extra">
+    </panel>
+    <panel sidebar="true" title="Extra">
       <field name="company"/>
       <field name="circles" widget="TagSelect"/>
-    </panel-side>
+    </panel>
   </form>
 
   <action-method name="action-contact-address-about">
