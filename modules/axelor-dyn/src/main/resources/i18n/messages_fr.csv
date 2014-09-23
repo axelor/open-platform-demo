@@ -1,46 +1,45 @@
 "key","message","comment","context"
-"&nbsp;•","","","resources/views/DynMessage.xml:54"
-"All Messages","","","resources/views/Menu.xml:14
+"&nbsp;•",,,"resources/views/DynMessage.xml:51"
+"All Messages","Les messages",,"resources/views/Menu.xml:14
 resources/views/Menu.xml:29"
-"All Products","","","resources/views/Menu.xml:7"
-"Archive","","","resources/views/Menu.xml:16"
-"Author","","","resources/domains/DynMessage.xml:9"
-"Black","Noir","","resources/views/Product.xml:6"
-"Body","","","resources/domains/DynMessage.xml:15
-resources/views/DynMessage.xml:21"
-"Cancel","","","resources/views/DynMessage.xml:65"
-"Contact","","","resources/views/DynMessage.xml:7"
-"Date","","","resources/domains/DynMessage.xml:14"
-"Gray","Gris","","resources/views/Product.xml:8"
-"Inbox","","","resources/views/Menu.xml:18
+"All Products","Les produits",,"resources/views/Menu.xml:7"
+"Archive","Archive",,"resources/views/Menu.xml:16"
+"Author","Auteur",,"resources/domains/DynMessage.xml:9"
+"Black","Noir",,"resources/views/Product.xml:6"
+"Body","Contenu",,"resources/domains/DynMessage.xml:15"
+"Cancel","Annuler",,"resources/views/DynMessage.xml:62"
+"Contact","Contact",,"resources/views/DynMessage.xml:7"
+"Date","Date",,"resources/domains/DynMessage.xml:14"
+"Gray","Gris",,"resources/views/Product.xml:8"
+"Inbox","Boîte de réception",,"resources/views/Menu.xml:18
 resources/views/Menu.xml:15"
-"Message","","","resources/views/DynMessage.xml:70
-resources/views/DynMessage.xml:35
+"Message","Message",,"resources/views/DynMessage.xml:32
+resources/views/DynMessage.xml:23
+resources/views/DynMessage.xml:67
 resources/views/DynMessage.xml:16"
-"Messages","","","resources/views/DynMessage.xml:11"
-"My Menu","","","resources/views/Menu.xml:6"
-"Notes","","","resources/views/ProjectTask.xml:28"
-"Page 1","","","resources/views/Product.xml:15"
-"Page 2","","","resources/views/Product.xml:16"
-"Page 3","","","resources/views/Product.xml:17"
-"Parent","","","resources/domains/DynMessage.xml:11"
-"Product","Produit","","resources/views/Product.xml:11"
-"Products","Produits","","resources/views/Menu.xml:9"
-"Project","","","resources/views/ProjectTask.xml:16"
-"Project Tasks","","","resources/views/ProjectTask.xml:5"
-"Recipients","","","resources/domains/DynMessage.xml:10"
-"Reference","","","resources/views/DynMessage.xml:19
+"Messages","Messages",,"resources/views/DynMessage.xml:11"
+"My Menu","Mon Menu",,"resources/views/Menu.xml:6"
+"Notes","Notes",,"resources/views/ProjectTask.xml:34"
+"Overview","Général",,"resources/views/DynMessage.xml:17
+resources/views/ProjectTask.xml:17"
+"Page 1","Page 1",,"resources/views/Product.xml:17"
+"Page 2","Page 2",,"resources/views/Product.xml:18"
+"Page 3","Page 3",,"resources/views/Product.xml:19"
+"Parent","Parent",,"resources/domains/DynMessage.xml:11"
+"Product","Produit",,"resources/views/Product.xml:11"
+"Products","Produits",,"resources/views/Menu.xml:9"
+"Project","Project",,"resources/views/ProjectTask.xml:16"
+"Project Tasks","Taches",,"resources/views/ProjectTask.xml:5"
+"Recipients","Destinataires",,"resources/domains/DynMessage.xml:10"
+"Reference","Référence",,"resources/views/DynMessage.xml:20
 resources/domains/DynMessage.xml:18"
-"Reference model","","","resources/domains/DynMessage.xml:19"
-"Replies","","","resources/domains/DynMessage.xml:12
-resources/views/DynMessage.xml:24"
-"Reply","","","resources/views/DynMessage.xml:26"
-"SaleOrder","","","resources/views/DynMessage.xml:8"
-"Send","","","resources/views/DynMessage.xml:76
-resources/views/DynMessage.xml:63"
-"Starred","","","resources/domains/DynMessage.xml:17"
-"Subject","","","resources/domains/DynMessage.xml:13"
-"Tasks","","","resources/views/ProjectTask.xml:25"
-"Unread","","","resources/domains/DynMessage.xml:16"
-"White","Blanc","","resources/views/Product.xml:7"
-"to","","","resources/views/DynMessage.xml:52"
+"Reference model","Model de référence",,"resources/domains/DynMessage.xml:19"
+"Replies","Réponses",,"resources/domains/DynMessage.xml:12"
+"SaleOrder","Bon de commande",,"resources/views/DynMessage.xml:8"
+"Send","Envoyer",,"resources/views/DynMessage.xml:73
+resources/views/DynMessage.xml:60"
+"Starred","Favoris",,"resources/domains/DynMessage.xml:17"
+"Subject","Sujet",,"resources/domains/DynMessage.xml:13"
+"Unread","Non lue",,"resources/domains/DynMessage.xml:16"
+"White","Blanc",,"resources/views/Product.xml:7"
+"to","a",,"resources/views/DynMessage.xml:49"

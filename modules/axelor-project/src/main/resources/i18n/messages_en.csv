@@ -11,13 +11,16 @@ resources/views/Menu.xml:21"
 "Members","","","resources/domains/Project.xml:14"
 "My Tasks","","","resources/views/Menu.xml:34
 resources/views/Menu.xml:26
-resources/views/ProjectTask.xml:90"
+resources/views/ProjectTask.xml:82"
 "Name","","","resources/domains/Project.xml:9
 resources/domains/ProjectWork.xml:9"
 "Notes","","","resources/domains/Project.xml:11
-resources/views/Project.xml:21
 resources/domains/ProjectTask.xml:10
-resources/views/ProjectTask.xml:43"
+resources/views/Project.xml:28
+resources/views/ProjectTask.xml:35"
+"Overview","","","resources/views/Project.xml:12
+resources/views/ProjectWork.xml:13
+resources/views/ProjectTask.xml:18"
 "Parent","","","resources/domains/Project.xml:13"
 "Priority","","","resources/domains/Project.xml:12
 resources/domains/ProjectTask.xml:11"
@@ -26,23 +29,19 @@ resources/domains/ProjectTask.xml:11"
 resources/views/Project.xml:11"
 "Project Management","","","resources/views/Menu.xml:6"
 "Project Task","","","resources/views/ProjectTask.xml:17"
-"Project Tasks","","","resources/views/ProjectTask.xml:6
-resources/views/ProjectTask.xml:82
-resources/views/ProjectTask.xml:49"
-"Project Work","","","resources/views/ProjectWork.xml:12
-resources/views/ProjectWork.xml:5"
+"Project Tasks","","","resources/views/ProjectTask.xml:41
+resources/views/ProjectTask.xml:6
+resources/views/ProjectTask.xml:74"
+"Project Work","","","resources/views/ProjectWork.xml:6
+resources/views/ProjectWork.xml:12"
 "Projects","","","resources/views/Project.xml:5
 resources/views/Menu.xml:47
 resources/views/Menu.xml:13"
 "Start date","","","resources/domains/ProjectTask.xml:13"
 "Task","","","resources/domains/ProjectWork.xml:12"
 "Task Summary","","","resources/domains/ProjectTask.xml:9"
-"Tasks","","","resources/domains/Project.xml:15
-resources/views/Project.xml:18"
+"Tasks","","","resources/domains/Project.xml:15"
 "Time Spent","","","resources/domains/ProjectWork.xml:11"
 "User","","","resources/domains/ProjectTask.xml:36
 resources/domains/ProjectWork.xml:13"
-"Work Item","","","resources/views/ProjectTask.xml:35
-resources/views/ProjectTask.xml:30"
-"Work Items","","","resources/views/ProjectTask.xml:28"
 "Work items","","","resources/domains/ProjectTask.xml:37"

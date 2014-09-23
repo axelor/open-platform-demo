@@ -1,14 +1,10 @@
 "key","message","comment","context"
-"About","","","webapp/login.jsp:25"
-"Contact","","","webapp/login.jsp:26"
-"DEMO","","","webapp/login.jsp:35"
-"Dashboards","Tableau de Bord","","resources/views/welcome.xml:17"
-"Home","","","webapp/login.jsp:24"
-"Login","","","webapp/login.jsp:30"
-"Password","","","webapp/login.jsp:33"
-"Please sign in","","","webapp/login.jsp:28"
-"Remember me","","","webapp/login.jsp:29"
-"User name","","","webapp/login.jsp:32"
-"Welcome!","Bienvenue","","resources/views/welcome.xml:12
+"About","A propos",,"webapp/login-header.jsp:24"
+"Administrator","Administrateur",,"webapp/login-header.jsp:26"
+"Contact","Contact",,"webapp/login-header.jsp:25"
+"Dashboards","Tableau de bord",,"resources/views/welcome.xml:17"
+"Demo User","Demo",,"webapp/login-header.jsp:27"
+"Log in","Se connecter",,"webapp/login-header.jsp:28"
+"Welcome!","Bienvenue",,"resources/views/welcome.xml:12
 resources/views/welcome.xml:20
 resources/views/welcome.xml:6"
