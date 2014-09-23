@@ -21,12 +21,12 @@ import com.axelor.sale.db.Order
 import com.axelor.sale.service.SaleOrderService
 import javax.inject.Inject
 
-class Validators {
+public class Validators {
 
 	@Inject
 	private SaleOrderService service
 
-	Object validateSaleOrder(Object bean, Map context) {
+	public Object validateSaleOrder(Object bean, Map context) {
 		assert bean instanceof Order
 		Order so = (Order) bean
 
