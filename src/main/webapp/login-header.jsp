@@ -25,7 +25,7 @@ String labelAbout = I18n.get("About");
 String labelContact = I18n.get("Contact");
 String labelAdmin = I18n.get("Administrator");
 String labelDemo = I18n.get("Demo User");
-String labelLogin = I18n.get("Login");
+String labelLogin = I18n.get("Log in");
 %>
 
 <header>
