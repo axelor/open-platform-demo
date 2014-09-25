@@ -21,6 +21,7 @@ import java.math.BigDecimal;
 import java.util.Random;
 
 import org.joda.time.LocalDate;
+import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
@@ -38,12 +39,13 @@ import com.axelor.sale.db.OrderLine;
 import com.axelor.sale.db.Product;
 import com.axelor.test.GuiceModules;
 import com.axelor.test.GuiceRunner;
-import com.google.common.collect.Lists;
 import com.google.inject.persist.Transactional;
 
 @RunWith(GuiceRunner.class)
 @GuiceModules({ TestModule.class })
 public class SaleTest {
+
+	static final long MAX_COUNT = 100L;
 
 	Order createSaleOrder() {
 
@@ -85,7 +87,8 @@ public class SaleTest {
 		addr2.setCity("Paris");
 		addr2.setCountry(country);
 
-		contact.setAddresses(Lists.newArrayList(addr1, addr2));
+		contact.addAddress(addr1);
+		contact.addAddress(addr2);
 
 		Product p1 = new Product();
 		p1.setCode("pc_" + next);
@@ -112,7 +115,8 @@ public class SaleTest {
 		item2.setPrice(new BigDecimal("934.33"));
 		item2.setQuantity(random.nextInt(20) + 1);
 		
-		order.setItems(Lists.newArrayList(item1, item2));
+		order.addItem(item1);
+		order.addItem(item2);
 
 		return order;
 	}
@@ -120,7 +124,7 @@ public class SaleTest {
 	@Transactional
 	void createData() {
 		int i = 0;
-		while (i++ < 1000) {
+		while (i++ < MAX_COUNT) {
 			JPA.manage(createSaleOrder());
 		}
 	}
@@ -135,30 +139,19 @@ public class SaleTest {
 		all(Order.class).delete();
 		all(Product.class).delete();
 		all(Address.class).delete();
+		all(Email.class).delete();
 		all(Contact.class).delete();
 		all(Country.class).delete();
 		all(Circle.class).delete();
 		all(Title.class).delete();
 	}
 
-	void listData() {
-		System.err.println("Title: " + all(Title.class).count());
-		System.err.println("Circle: " + all(Circle.class).count());
-		System.err.println("Country: " + all(Country.class).count());
-		System.err.println("Contact: " + all(Contact.class).count());
-		System.err.println("Address: " + all(Address.class).count());
-		System.err.println("Product: " + all(Product.class).count());
-		System.err.println("Order: " + all(Order.class).count());
-		System.err.println("OrderLine: " + all(OrderLine.class).count());
-	}
-
 	@Test
 	public void test() {
-		System.err.println("=======|| Create Random Records ||======");
 		createData();
-		listData();
-		System.err.println("=======|| Delete Random Records ||======");
+		Assert.assertEquals(MAX_COUNT, all(Order.class).count());
+
 		dropData();
-		listData();
+		Assert.assertEquals(0L, all(Order.class).count());
 	}
 }
