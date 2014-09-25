@@ -2,7 +2,7 @@ apply plugin: 'axelor-app'
 
 // find all modules
 def modules = new File('modules').listFiles().findAll { dir ->
-	new File(dir, 'build.gradle').exists()
+	new File(dir, 'build.gradle').exists() && !dir.name.endsWith('-tests')
 }
 
 application {
