@@ -15,13 +15,13 @@
  * You should have received a copy of the GNU Affero General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package com.axelor.dyn;
+package com.axelor.custom;
 
 import com.axelor.app.AxelorModule;
 import com.axelor.app.AxelorModuleInfo;
 
-@AxelorModuleInfo(name = "axelor-dyn")
-public class DynModule extends AxelorModule {
+@AxelorModuleInfo(name = "axelor-custom")
+public class CustomModule extends AxelorModule {
 
 	@Override
 	protected void configure() {
