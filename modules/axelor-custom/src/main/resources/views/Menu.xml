@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<object-views xmlns="http://apps.axelor.com/xml/ns/object-views"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://apps.axelor.com/xml/ns/object-views http://apps.axelor.com/xml/ns/object-views/object-views_3.0.xsd">
+
+  <menuitem name="menu-custom" title="Custom Menu"/>
+  <menuitem name="menu-custom-product" title="All Products" parent="menu-custom" action="custom.products"/>
+
+  <action-view name="custom.products" title="Products" model="com.axelor.sale.db.Product">
+    <view type="grid"/>
+    <view type="form"/>
+  </action-view>
+
+</object-views>

@@ -2,7 +2,7 @@
 <object-views xmlns="http://apps.axelor.com/xml/ns/object-views" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://apps.axelor.com/xml/ns/object-views http://apps.axelor.com/xml/ns/object-views/object-views_3.0.xsd">
 
-  <grid id="project-task-grid.dyn" name="project-task-grid" title="Project Tasks" model="com.axelor.project.db.ProjectTask" groupBy="project">
+  <grid id="project-task-grid.custom" name="project-task-grid" title="Project Tasks" model="com.axelor.project.db.ProjectTask" groupBy="project">
     <field name="name" />
     <field name="createDate" />
     <field name="startDate" />
@@ -12,8 +12,8 @@
     <field name="priority" />
     <field name="progress" widget="Progress" aggregate="sum" />
   </grid>
-  
-  <form id="project-form.dyn" name="project-form" title="Project" model="com.axelor.project.db.Project">
+
+  <form id="project-form.custom" name="project-form" title="Project" model="com.axelor.project.db.Project">
     <panel title="Overview">
       <field name="name"/>
       <field name="priority"/>

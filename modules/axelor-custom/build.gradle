@@ -1,13 +1,13 @@
 apply plugin: 'axelor-module'
 
 module {
-	name "axelor-dyn"
-	title "Axelor :: Dyn"
+	name "axelor-custom"
+	title "Axelor :: Custom"
 
 	description """\
 Dynamic module demo.
 
-This is a demo module to provide quick demonstration of some new features.
+This is a demo module to provide quick demonstration of removable modules.
 	"""
 
 	removable true
@@ -15,4 +15,3 @@ This is a demo module to provide quick demonstration of some new features.
 	module "modules:axelor-contact"
 	module "modules:axelor-sale"
 }
-
