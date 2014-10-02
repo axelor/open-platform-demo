@@ -1,7 +1,7 @@
 Axelor Demo
 ================================
 
-Axelor Demo is a simple application showing [Axelor SDK](https://github.com/axelor/axelor-platform) features. Axelor Demo is built on top of **Axelor SDK**. Before continuing, you should install [Axelor SDK](https://github.com/axelor/axelor-platform).
+Axelor Demo is a simple application showing [Axelor SDK](https://github.com/axelor/axelor-sdk) features. Axelor Demo is built on top of **Axelor SDK**. Before continuing, you should install [Axelor SDK](https://github.com/axelor/axelor-sdk).
 
 Installation
 -----------------------------------------
