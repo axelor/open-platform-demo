@@ -42,11 +42,11 @@
         <field name="totalAmount" showTitle="false" colSpan="12">
           <viewer><![CDATA[
           <dl class="dl-horizontal">
-            <dt>Amount</dt>
+            <dt x-translate>Amount</dt>
             <dd>{{record.amount}}</dd>
-            <dt>Tax amount</dt>
+            <dt x-translate>Tax amount</dt>
             <dd>{{record.taxAmount}}</dd>
-            <dt class="order-subtotal-total">Total amount</dt>
+            <dt class="order-subtotal-total" x-translate>Total amount</dt>
             <dd class="order-subtotal-total">{{record.totalAmount}}</dd>
           </dl>
           ]]></viewer>
