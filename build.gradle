@@ -10,7 +10,7 @@ application {
 	name "axelor-demo"
 	title "Axelor :: Demo Application"
 	
-	version "3.0.1"
+	version "3.0.2"
 
 	// depends on all modules
 	modules.each { dir ->
