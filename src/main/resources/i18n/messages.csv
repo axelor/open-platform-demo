@@ -1,10 +1,10 @@
 "key","message","comment","context"
-"About","","","webapp/login-header.jsp:24"
-"Administrator","","","webapp/login-header.jsp:26"
-"Contact","","","webapp/login-header.jsp:25"
-"Dashboards","","","resources/views/welcome.xml:17"
-"Demo User","","","webapp/login-header.jsp:27"
-"Log in","","","webapp/login-header.jsp:28"
-"Welcome!","","","resources/views/welcome.xml:12
+"About",,,"webapp/login-header.jsp:24"
+"Administrator",,,"webapp/login-header.jsp:26"
+"Contact",,,"webapp/login-header.jsp:25"
+"Dashboards",,,"resources/views/welcome.xml:17"
+"Demo User",,,"webapp/login-header.jsp:27"
+"Log in",,,"webapp/login-header.jsp:28"
+"Welcome!",,,"resources/views/welcome.xml:12
 resources/views/welcome.xml:20
 resources/views/welcome.xml:6"

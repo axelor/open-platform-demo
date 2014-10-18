@@ -1,99 +1,99 @@
 "key","message","comment","context"
-"All Taxes","","","resources/views/Menu.xml:50"
-"Amount","","","resources/domains/Order.xml:17
+"All Taxes",,,"resources/views/Menu.xml:50"
+"Amount",,,"resources/domains/Order.xml:17
 resources/views/Order.xml:45"
-"Black","","","resources/views/Product.xml:6"
-"Blue","","","resources/views/Product.xml:11"
-"Calculate","","","resources/views/Order.xml:38"
-"Category","","","resources/domains/Product.xml:12"
-"Category 1","","","resources/views/Search.xml:52"
-"Category 2","","","resources/views/Search.xml:53"
-"Chocolate","","","resources/views/Product.xml:13"
-"Code","","","resources/domains/Product.xml:9
+"Black",,,"resources/views/Product.xml:6"
+"Blue",,,"resources/views/Product.xml:11"
+"Calculate",,,"resources/views/Order.xml:38"
+"Category",,,"resources/domains/Product.xml:12"
+"Category 1",,,"resources/views/Search.xml:52"
+"Category 2",,,"resources/views/Search.xml:53"
+"Chocolate",,,"resources/views/Product.xml:13"
+"Code",,,"resources/domains/Product.xml:9
 resources/domains/ProductCategory.xml:9
 resources/domains/Tax.xml:9"
-"Color","","","resources/domains/Product.xml:11"
-"Configuration","","","resources/views/Menu.xml:37"
-"Confirm date","","","resources/domains/Order.xml:15"
-"Confirmed","","","resources/domains/Order.xml:16
+"Color",,,"resources/domains/Product.xml:11"
+"Configuration",,,"resources/views/Menu.xml:37"
+"Confirm date",,,"resources/domains/Order.xml:15"
+"Confirmed",,,"resources/domains/Order.xml:16
 resources/views/Order.xml:67"
-"Create Date is in future.","","","resources/views/Order.xml:126"
-"Create Partner...","","","resources/views/Search.xml:60"
-"Create Partner... (12)","","","resources/views/Search.xml:62"
-"Create Partner... (13)","","","resources/views/Search.xml:64"
-"Create Partner... (22)","","","resources/views/Search.xml:66"
-"Create Sale Order...","","","resources/views/Search.xml:61"
-"Create Sale Order... (13)","","","resources/views/Search.xml:63"
-"Create Sale Order... (21)","","","resources/views/Search.xml:65"
-"Create date","","","resources/domains/Order.xml:14"
-"Customer","","","resources/domains/Order.xml:9"
-"Export","","","resources/views/Order.xml:39"
-"Filter Sale Orders","","","resources/views/Order.xml:66"
-"Gray","","","resources/views/Product.xml:8"
-"Green","","","resources/views/Product.xml:10"
-"High Value (>= 1000)","","","resources/views/Order.xml:73"
-"Items","","","resources/domains/Order.xml:21"
-"Name","","","resources/domains/Product.xml:10
+"Create Date is in future.",,,"resources/views/Order.xml:126"
+"Create Partner...",,,"resources/views/Search.xml:60"
+"Create Partner... (12)",,,"resources/views/Search.xml:62"
+"Create Partner... (13)",,,"resources/views/Search.xml:64"
+"Create Partner... (22)",,,"resources/views/Search.xml:66"
+"Create Sale Order...",,,"resources/views/Search.xml:61"
+"Create Sale Order... (13)",,,"resources/views/Search.xml:63"
+"Create Sale Order... (21)",,,"resources/views/Search.xml:65"
+"Create date",,,"resources/domains/Order.xml:14"
+"Customer",,,"resources/domains/Order.xml:9"
+"Export",,,"resources/views/Order.xml:39"
+"Filter Sale Orders",,,"resources/views/Order.xml:66"
+"Gray",,,"resources/views/Product.xml:8"
+"Green",,,"resources/views/Product.xml:10"
+"High Value (>= 1000)",,,"resources/views/Order.xml:73"
+"Items",,,"resources/domains/Order.xml:21"
+"Name",,,"resources/domains/Order.xml:10
+resources/domains/Product.xml:10
 resources/domains/ProductCategory.xml:10
-resources/domains/Tax.xml:10
-resources/domains/Order.xml:10"
-"No Sale Order Items. Would you like to continue?","","","resources/views/Order.xml:128"
-"Not Confirmed","","","resources/views/Order.xml:70"
-"Notes","","","resources/views/Order.xml:32
-resources/domains/Order.xml:20"
-"Orange","","","resources/views/Product.xml:14"
-"Order","","","resources/domains/OrderLine.xml:9
+resources/domains/Tax.xml:10"
+"No Sale Order Items. Would you like to continue?",,,"resources/views/Order.xml:128"
+"Not Confirmed",,,"resources/views/Order.xml:70"
+"Notes",,,"resources/domains/Order.xml:20
+resources/views/Order.xml:32"
+"Orange",,,"resources/views/Product.xml:14"
+"Order",,,"resources/domains/OrderLine.xml:9
 resources/views/Order.xml:16"
-"Order Date is in future.","","","resources/views/Order.xml:127"
-"Order Details","","","resources/views/Order.xml:17"
-"Order creation date is in the future.","","","resources/views/Order.xml:134"
-"Order date","","","resources/domains/Order.xml:13"
-"Ordered Item","","","resources/views/OrderLine.xml:13"
-"Ordered Items","","","resources/views/OrderLine.xml:6"
-"Orders","","","resources/views/Order.xml:6"
-"Overview","","","resources/views/Product.xml:25
+"Order Date is in future.",,,"resources/views/Order.xml:127"
+"Order Details",,,"resources/views/Order.xml:17"
+"Order creation date is in the future.",,,"resources/views/Order.xml:134"
+"Order date",,,"resources/domains/Order.xml:13"
+"Ordered Item",,,"resources/views/OrderLine.xml:13"
+"Ordered Items",,,"resources/views/OrderLine.xml:6"
+"Orders",,,"resources/views/Order.xml:6"
+"Overview",,,"resources/views/OrderLine.xml:14
+resources/views/Product.xml:25
 resources/views/ProductCategory.xml:12
-resources/views/Tax.xml:11
-resources/views/OrderLine.xml:14"
-"Parent","","","resources/domains/ProductCategory.xml:11"
-"Price","","","resources/domains/OrderLine.xml:11"
-"Product","","","resources/domains/OrderLine.xml:10
+resources/views/Tax.xml:11"
+"Parent",,,"resources/domains/ProductCategory.xml:11"
+"Price",,,"resources/domains/OrderLine.xml:11"
+"Product",,,"resources/domains/OrderLine.xml:10
 resources/views/Product.xml:24"
-"Product Categories","","","resources/views/ProductCategory.xml:5
-resources/views/Menu.xml:41
-resources/views/Menu.xml:43"
-"Product Category","","","resources/views/ProductCategory.xml:11"
-"Products","","","resources/views/Menu.xml:24
-resources/views/Product.xml:18
-resources/views/Menu.xml:22"
-"Purple","","","resources/views/Product.xml:15"
-"Quantity","","","resources/domains/OrderLine.xml:12"
-"Rate","","","resources/domains/Tax.xml:11"
-"Red","","","resources/views/Product.xml:9"
-"Sale Order","","","resources/views/Search.xml:35"
-"Sale Orders","","","resources/views/Menu.xml:11
+"Product Categories",,,"resources/views/Menu.xml:41
+resources/views/Menu.xml:43
+resources/views/ProductCategory.xml:5"
+"Product Category",,,"resources/views/ProductCategory.xml:11"
+"Products",,,"resources/views/Menu.xml:22
+resources/views/Menu.xml:24
+resources/views/Product.xml:18"
+"Purple",,,"resources/views/Product.xml:15"
+"Quantity",,,"resources/domains/OrderLine.xml:12"
+"Rate",,,"resources/domains/Tax.xml:11"
+"Red",,,"resources/views/Product.xml:9"
+"Sale Order",,,"resources/views/Search.xml:35"
+"Sale Orders",,,"resources/views/Menu.xml:11
 resources/views/Menu.xml:13"
-"Sales Gauge (this month)","","","resources/views/Charts.xml:74"
-"Sales Management","","","resources/views/Menu.xml:7"
-"Sales Search","","","resources/views/Search.xml:6"
-"Sales Search...","","","resources/views/Menu.xml:33
-resources/views/Menu.xml:31"
-"Sales Timeline","","","resources/views/Order.xml:62"
-"Sales by customer","","","resources/views/Charts.xml:50"
-"Sales per customer","","","resources/views/Charts.xml:30"
-"Sales per month","","","resources/views/Charts.xml:6"
-"Sub Category 11","","","resources/views/Search.xml:54"
-"Sub Category 12","","","resources/views/Search.xml:55"
-"Sub Category 13","","","resources/views/Search.xml:56"
-"Sub Category 21","","","resources/views/Search.xml:57"
-"Sub Category 22","","","resources/views/Search.xml:58"
-"Tax","","","resources/views/Tax.xml:10"
-"Tax amount","","","resources/views/Order.xml:47
-resources/domains/Order.xml:18"
-"Taxes","","","resources/views/Tax.xml:5
-resources/domains/OrderLine.xml:13
-resources/views/Menu.xml:52"
-"Total amount","","","resources/domains/Order.xml:19
+"Sales Gauge (this month)",,,"resources/views/Charts.xml:74"
+"Sales Management",,,"resources/views/Menu.xml:7"
+"Sales Search",,,"resources/views/Search.xml:6"
+"Sales Search...",,,"resources/views/Menu.xml:31
+resources/views/Menu.xml:33"
+"Sales Timeline",,,"resources/views/Order.xml:62"
+"Sales by customer",,,"resources/views/Charts.xml:50"
+"Sales per customer",,,"resources/views/Charts.xml:30"
+"Sales per month",,,"resources/views/Charts.xml:6"
+"Sub Category 11",,,"resources/views/Search.xml:54"
+"Sub Category 12",,,"resources/views/Search.xml:55"
+"Sub Category 13",,,"resources/views/Search.xml:56"
+"Sub Category 21",,,"resources/views/Search.xml:57"
+"Sub Category 22",,,"resources/views/Search.xml:58"
+"Tax",,,"resources/views/Tax.xml:10"
+"Tax amount",,,"resources/domains/Order.xml:18
+resources/views/Order.xml:47"
+"Taxes",,,"resources/domains/OrderLine.xml:13
+resources/views/Menu.xml:52
+resources/views/Tax.xml:5"
+"Total amount",,,"resources/domains/Order.xml:19
 resources/views/Order.xml:49"
-"White","","","resources/views/Product.xml:7"
-"Yellow","","","resources/views/Product.xml:12"
+"White",,,"resources/views/Product.xml:7"
+"Yellow",,,"resources/views/Product.xml:12"
