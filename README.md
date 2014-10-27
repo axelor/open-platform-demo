@@ -1,7 +1,7 @@
 Axelor Demo
 ================================
 
-Axelor Demo is a simple application showing [Axelor SDK](https://github.com/axelor/axelor-sdk) features. Axelor Demo is built on top of **Axelor SDK**. Before continuing, you should install [Axelor SDK](https://github.com/axelor/axelor-sdk).
+Axelor Demo is a simple application showing [Axelor Development Kit](https://github.com/axelor/axelor-development-kit) features. Axelor Demo is built on top of **Axelor Development Kit**. Before continuing, you should install [Axelor Development Kit](https://github.com/axelor/axelor-development-kit).
 
 Installation
 -----------------------------------------
@@ -39,6 +39,6 @@ This will generate eclipse project files for the application project and all itâ
 
 From the eclipse, import the projects using `File -> Import... -> General -> Existing Projects into Workspace` menu. In the import project wizard check the Search for nested projects so that all the submodules are also imported.
 
-Same steps should be done for Axelor SDK in order to link SDK sources with Demo application.
+Same steps should be done for Axelor Development Kit in order to link ADK sources with Demo application.
 
 You can also run the application inside eclipse using eclipse WTP tools. Create a tomcat7 server add the axelor-demo module and run the server.
