@@ -66,13 +66,21 @@
       <bind to="rate" node="text()"/>
     </bind>
     
+    <bind node="category" type="com.axelor.sale.db.ProductCategory" search="self.code = :code">
+      <bind node="@code" to="code" />
+      <bind node="@name" to="name" />
+    </bind>
+    
     <bind node="product" type="com.axelor.sale.db.Product" search="self.code = :code">
       <bind node="@code" to="code" />
       <bind node="@name" to="name" />
       <bind node="@color" to="color" />
+      <bind node="@category" to="category" search="self.code = :category"/>
     </bind>
 
     <bind node="sale-order" type="com.axelor.sale.db.Order" search="self.customer.emails[].email = :_email" update="false" call="com.axelor.demo.Validators:validateSaleOrder">
+   	  <bind node="some" to="notes"/>
+    
       <!-- transform boolean value into 'true' or 'false' -->
       <bind node="@confirmed" to="confirmed" adapter="Boolean"/>
 
@@ -84,7 +92,7 @@
 
       <bind to="orderDate" eval="_date" />
       <bind to="createDate" eval="_date" />
-      <bind to="confirmDate" eval="_date" />
+      <bind to="confirmDate" eval="_date" if="confirmed"/>
 
       <!-- put email in the context -->
       <bind node="customer/email" to="_email"/>
