@@ -24,9 +24,7 @@
 		  result += time.getHourOfDay();
 		  result += time.getMinuteOfHour() / 60.0;
 		}
-		org.joda.time.Period period = new org.joda.time.Period(startDate, endDate);
-		duration = period.getHours();
-		duration += period.getMinutes() / 60.0;
+		duration = (double) org.joda.time.Hours.hoursBetween(startDate, endDate).getHours();
 
 		result = Math.min(100.0, ((result / duration) * 100));
 		return (int) Math.round(result);
