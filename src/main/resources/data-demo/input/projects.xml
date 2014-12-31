@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<projects xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+  <project name="Project 1" priority="10">
+    <description>New Web Application</description>
+    <members>
+    	<member>admin</member>
+    	<member>demo</member>
+    </members>
+    <tasks>
+      <task name="Analysis" priority="10" user="admin" createDate="31/12/2014 00:00" startDate="01/01/2015 00:00" endDate="31/01/2015 00:00"/>
+      <task name="Presale analysis" priority="9" user="admin" createDate="31/12/2014 00:00" startDate="15/01/2015 00:00" endDate="13/02/2015 00:00"/>
+      <task name="UI Design" priority="8" user="demo" createDate="31/12/2014 00:00" startDate="01/02/2015 00:00" endDate="28/02/2015 00:00"/>
+      <task name="Test" priority="7" user="demo" createDate="31/12/2014 00:00" startDate="01/03/2015 00:00" endDate="15/03/2015 00:00"/>
+    </tasks>
+  </project>
+  
+   <project name="Project 2" priority="50">
+    <description>New Server Application</description>
+    <members>
+    	<member>admin</member>
+    	<member>demo</member>
+    </members>
+    <tasks>
+      <task name="Research" priority="100" user="admin" createDate="28/10/2014 00:00" startDate="28/10/2014 00:00" endDate="05/11/2014 00:00">
+      	<works>
+      		<work date="30/10/2014" hours="07:00">Examine the feasibility of the project</work>
+      		<work date="05/11/2014" hours="07:00">Writes a proposal</work>
+      		<work date="06/11/2014" hours="14:00">Writes a proposal</work>
+      		<work date="07/11/2014" hours="14:00">Writes a proposal</work>
+      		<work date="08/11/2014" hours="23:00">Writes a proposal</work>
+      	</works>
+      </task>
+      <task name="Definition" priority="80" user="admin" createDate="28/10/2014 00:00" startDate="01/11/2014 00:00" endDate="04/11/2014 00:00">
+      	<works>
+      		<work date="01/11/2014" hours="07:00">Preconditions</work>
+      		<work date="02/11/2014" hours="07:00">Functional requirements</work>
+      		<work date="03/11/2014" hours="07:00">Operational requirements</work>
+      		<work date="10/11/2014" hours="4:00">Design limitations</work>
+      	</works>
+      </task>
+      <task name="Design" priority="50" user="demo" createDate="28/10/2014 00:00" startDate="13/11/2014 00:00" endDate="28/01/2015 00:00">
+      	<works>
+      		<work date="13/11/2014" hours="09:00">Reviewed</work>
+      		<work date="15/12/2014" hours="08:00">Site trees</work>
+      		<work date="16/12/2014" hours="09:00">HTML screen designs</work>
+      		<work date="21/12/2014" hours="09:00">UML schemas</work>
+      		<work date="29/12/2014" hours="09:00">Prototypes</work>
+      	</works>
+      </task>
+      <task name="Development" priority="40" user="demo" createDate="28/10/2014 00:00" startDate="13/11/2014 00:00" endDate="01/01/2015 00:00"/>
+      <task name="Implementation" priority="20" user="demo" createDate="28/10/2014 00:00" startDate="13/11/2014 00:00" endDate="01/02/2015 00:00"/>
+      <task name="Follow-up" priority="5" user="admin" createDate="28/12/2014 00:00" startDate="01/02/2015 00:00"/>
+    </tasks>
+  </project>
+  
+</projects>

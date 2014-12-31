@@ -138,5 +138,29 @@
       </bind>
     </bind>
   </input>
+  
+  <input file="projects.xml" root="projects">
+  	<bind node="project" type="com.axelor.project.db.Project">
+  		<bind node="@name" to="name"/>
+  		<bind node="@priority" to="priority"/>
+  		<bind node="description" to="description"/>
+  		<bind node="members/member" to="members" search="self.code = :code">
+  			<bind node="text()" to="code"/>
+  		</bind>
+  		<bind node="tasks/task" to="tasks">
+  			<bind node="@name" to="name"/>
+	        <bind node="@priority" to="priority"/>
+	        <bind node="@user" to="user" search="self.code = :user" update="true"/>
+	        <bind node="@createDate" to="createDate" adapter="LocalDateTime"/>
+	        <bind node="@startDate" to="startDate" adapter="LocalDateTime"/>
+	        <bind node="@endDate" to="endDate" adapter="LocalDateTime"/>
+	        <bind node="works/work" to="workItems">
+	        	<bind node="@date" to="date" adapter="LocalDate"/>
+	        	<bind node="@hours" to="hours" adapter="LocalTime"/>
+	        	<bind node="text()" to="name"/>
+	        </bind>
+  		</bind>
+  	</bind>
+  </input>
 
 </xml-inputs>
