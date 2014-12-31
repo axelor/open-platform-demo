@@ -45,12 +45,12 @@
     <column name="progress" type="integer" />
   
     <!-- define 1st level node -->
-    <node model="com.axelor.project.db.Project">
+    <node model="com.axelor.project.db.Project" onClick="projects.task.open.project">
       <field name="name" as="title" />
     </node>
 
     <!-- define 2nd level node -->
-    <node model="com.axelor.project.db.ProjectTask" parent="project" draggable="true" onClick="project.task.add">
+    <node model="com.axelor.project.db.ProjectTask" parent="project" draggable="true" onClick="projects.task.open.task">
       <field name="name" as="title" />
       <field name="progress" as="progress" />
     </node>
@@ -62,10 +62,21 @@
     <field name="user" expr="eval: __user__"/>
   </action-record>
   
-  <action-attrs name="project.task.add">
-    <attribute for="tasks" name="value:add" expr="eval: id"/>
-    <attribute for="name" name="value"      expr="eval: __self__?.project?.name"/>
-  </action-attrs>
+  <action-view name="projects.task.open.project" title="Project" model="com.axelor.project.db.Project">
+    <view type="grid" name="project-grid"/>
+    <view type="form" name="project-form"/>
+    <domain>self.id = :project_id</domain>
+    <context name="project_id" expr="eval: id"/>
+    <context name="_showSingle" expr="true"/>
+  </action-view>
+  
+  <action-view name="projects.task.open.task" title="Task" model="com.axelor.project.db.ProjectTask">
+    <view type="grid" name="project-task-grid"/>
+    <view type="form" name="project-task-form"/>
+    <domain>self.id = :task_id</domain>
+    <context name="task_id" expr="eval: id"/>
+    <context name="_showSingle" expr="true"/>
+  </action-view>
 
   <calendar name="project-task-calendar" title="Project Tasks" model="com.axelor.project.db.ProjectTask"
     colorBy="user"

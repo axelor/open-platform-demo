@@ -21,7 +21,7 @@
       <field name="parent"/>
       <field name="members" widget="TagSelect" x-create="code,name,password"/>
     </panel>
-    <panel-dashlet action="project.tasks.tree"/>
+    <panel-dashlet action="project.tasks.tree.custom"/>
     <panel-tabs>
       <panel-related field="tasks" editable="true">
         <field name="name" />
@@ -36,5 +36,27 @@
       </panel>
     </panel-tabs>
   </form>
+  
+  <action-view name="project.tasks.tree.custom" title="Projects">
+    <view type="tree" name="project-task-tree-custom"/>
+  </action-view>
+  
+  <tree name="project-task-tree-custom" title="Project Tasks">
+    <column name="title" type="string" />
+    <column name="progress" type="integer" />
+    
+    <node model="com.axelor.project.db.Project">
+      <field name="name" as="title" />
+    </node>
+    
+    <node model="com.axelor.project.db.ProjectTask" parent="project" draggable="true" onClick="project.task.add">
+      <field name="name" as="title" />
+      <field name="progress" as="progress" />
+    </node>
+  </tree>
+  
+  <action-attrs name="project.task.add">
+    <attribute for="tasks" name="value:add" expr="eval: id"/>
+  </action-attrs>
 
 </object-views>
