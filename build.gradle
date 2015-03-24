@@ -26,5 +26,21 @@ tomcat {
 	stopPort = 9451
 }
 
+def isProduction = {
+	File configFile = rootProject.file("src/main/resources/application.properties");
+	String mode = "dev"
+	if (configFile.isFile()) {
+		configFile.withReader { reader ->
+			Properties config = new Properties()
+			config.load(reader)
+			mode = config.getProperty("application.mode");
+		}
+	}
+	return mode == "prod"
+}
+
+tasks.build.dependsOn "grunt"
+tasks.grunt.onlyIf isProduction
+
 // Link core projects, easy to develop along with core
 ext.linkCoreInEclipse = true
