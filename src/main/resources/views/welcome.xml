@@ -13,7 +13,7 @@
     <view type="dashboard" name="welcome.dashboard"/>
   </action-view>
 
-  <menuitem name="menu-dashboards" priority="101"
+  <menuitem name="menu-dashboards" order="-101"
     title="Dashboards" icon="img/chart.png"/>
 
   <menuitem name="menu-welcome" parent="menu-dashboards"
