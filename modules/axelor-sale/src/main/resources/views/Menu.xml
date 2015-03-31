@@ -3,7 +3,7 @@
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://axelor.com/xml/ns/object-views http://axelor.com/xml/ns/object-views/object-views_3.1.xsd">
 
-  <menuitem name="menu-sales" priority="90"
+  <menuitem name="menu-sales" order="-90"
     title="Sales Management" icon="img/baggage-cart-box.png"/>
 
   <menuitem name="menu-sales-order" parent="menu-sales"
