@@ -41,6 +41,7 @@ def isProduction = {
 
 tasks.build.dependsOn "grunt"
 tasks.grunt.onlyIf isProduction
+tasks.npm.onlyIf isProduction
 
 // Link core projects, easy to develop along with core
 ext.linkCoreInEclipse = true
