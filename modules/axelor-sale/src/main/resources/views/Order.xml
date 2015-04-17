@@ -53,6 +53,10 @@
         </field>
       </panel>
     </panel>
+    <panel-mail>
+      <mail-messages />
+      <mail-followers />
+    </panel-mail>
   </form>
 
   <calendar name="sales-timeline" title="Sales Timeline" model="com.axelor.sale.db.Order" editable="false"
