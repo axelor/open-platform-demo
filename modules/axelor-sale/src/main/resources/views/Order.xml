@@ -54,7 +54,7 @@
       </panel>
     </panel>
     <panel-mail>
-      <mail-messages />
+      <mail-messages limit="4" />
       <mail-followers />
     </panel-mail>
   </form>
