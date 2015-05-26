@@ -18,9 +18,7 @@
 package com.axelor.custom;
 
 import com.axelor.app.AxelorModule;
-import com.axelor.app.AxelorModuleInfo;
 
-@AxelorModuleInfo(name = "axelor-custom")
 public class CustomModule extends AxelorModule {
 
 	@Override
