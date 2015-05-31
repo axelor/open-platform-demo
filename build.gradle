@@ -27,6 +27,7 @@ tomcat {
 }
 
 def isProduction = {
+	if (project.properties.get("application.mode", null) == "prod") return true;
 	File configFile = rootProject.file("src/main/resources/application.properties");
 	String mode = "dev"
 	if (configFile.isFile()) {
