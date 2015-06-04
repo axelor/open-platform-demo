@@ -6,8 +6,8 @@
   <module name="project" package="com.axelor.project.db" />
 
   <entity name="Project" cachable="true">
-    <string name="name" required="true" unique="true" />
-    <string name="description" />
+    <string name="name" required="true" unique="true" translatable="true" />
+    <string name="description" translatable="true" />
     <string name="notes" multiline="true" />
     <integer name="priority" />
     <many-to-one name="parent" ref="Project"/>
