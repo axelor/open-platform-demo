@@ -3,12 +3,11 @@
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://axelor.com/xml/ns/object-views http://axelor.com/xml/ns/object-views/object-views_4.0.xsd">
 
-  <menuitem name="menu-project" order="-80" title="Project Management" icon="img/wheel.png"/>
+  <menuitem name="menu-project" order="-80" title="Project Management" icon="fa-tasks"/>
 
   <menuitem name="menu-project-all" parent="menu-project"
     title="All Projects"
-    action="project.all"
-    icon="img/calendar.png"/>
+    action="project.all"/>
 
   <action-view name="project.all" title="Projects" model="com.axelor.project.db.Project">
     <view type="grid" name="project-grid"/>
@@ -17,13 +16,11 @@
 
   <menuitem name="menu-project-tasks" parent="menu-project"
     title="All Tasks"
-    action="project.task.all"
-    icon="img/calendar-task.png"/>
+    action="project.task.all"/>
     
   <menuitem name="menu-project-tasks-my" parent="menu-project"
     title="My Tasks"
-    action="project.task.my"
-    icon="img/calendar-task.png"/>
+    action="project.task.my"/>
 
   <action-view name="project.task.all" title="All Tasks" model="com.axelor.project.db.ProjectTask">
     <view type="grid" name="project-task-grid"/>
@@ -41,8 +38,7 @@
   
   <menuitem name="menu-project-tasks-tree" parent="menu-project"
     title="All Tasks (tree)"
-    action="project.tasks.tree"
-    icon="img/calendar.png"/>
+    action="project.tasks.tree"/>
 
   <action-view name="project.tasks.tree" title="Projects">
     <view type="tree" name="project-task-tree"/>
