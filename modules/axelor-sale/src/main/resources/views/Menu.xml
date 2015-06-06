@@ -4,7 +4,7 @@
   xsi:schemaLocation="http://axelor.com/xml/ns/object-views http://axelor.com/xml/ns/object-views/object-views_4.0.xsd">
 
   <menuitem name="menu-sales" order="-90"
-    title="Sales Management" icon="fa-shapping-cart"/>
+    title="Sales Management" icon="fa-shopping-cart"/>
 
   <menuitem name="menu-sales-order" parent="menu-sales"
     title="Sale Orders"
