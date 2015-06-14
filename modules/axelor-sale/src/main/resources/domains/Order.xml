@@ -5,10 +5,10 @@
 
   <module name="sale" package="com.axelor.sale.db"/>
 
-  <entity name="Order" sequential="true" lang="groovy">
+  <entity name="Order" sequential="true">
     <many-to-one name="customer" ref="com.axelor.contact.db.Contact" required="true"/>
     <string name="name" search="id,name"><![CDATA[
-    this.id == null ? '== NEW ==' : String.format("SO%05d", this.id)
+    return getId() == null ? "== NEW ==" : String.format("SO%05d", getId());
     ]]></string>
     <date name="orderDate" required="true"/>
     <date name="createDate" required="true"/>
@@ -29,10 +29,11 @@
       <field name="confirmed" on="UPDATE" />
       <field name="confirmDate" on="UPDATE" if="confirmed" />
       <field name="totalAmount" />
-      <message if="true" on="CREATE">Order created.</message>
-      <message if="confirmed" on="UPDATE">Order confirmed.</message>
+      <message if="true" on="CREATE">Order created</message>
+      <message if="confirmed" on="UPDATE">Order confirmed</message>
       <message if="!confirmed" tag="important">Draft</message>
       <message if="confirmed" tag="success">Confirmed</message>
+      <message if="confirmed &amp;&amp; totalAmount &gt;= 1000" tag="important" fields="confirmed">Important</message>
     </track>
 
   </entity>
