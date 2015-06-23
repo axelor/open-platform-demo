@@ -47,7 +47,7 @@
       </panel>
       <panel colSpan="8">
         <field name="fullName" title="Name" readonly="false" colSpan="12">
-          <editor>
+          <editor x-show-titles="false">
             <field name="title" widget="SuggestBox" colSpan="2"/>
             <field name="firstName" colSpan="5"/>
             <field name="lastName" colSpan="5"/>
@@ -61,7 +61,7 @@
         <viewer><![CDATA[
         <a href="mailto:{{record.email}}">{{record.email}}</a>
         ]]></viewer>
-        <editor layout="table">
+        <editor layout="table" x-show-titles="false">
           <field name="email" />
           <field name="primary" widget="toggle" x-icon="fa-star-o" x-icon-active="fa-star" x-exclusive="true" />
           <field name="optOut" widget="toggle" x-icon="fa-ban" />
@@ -72,7 +72,7 @@
         <viewer><![CDATA[
         <a href="tel:{{record.phone}}">{{record.phone}}</a> <span class="muted" ng-if="record.phoneType">({{record.phoneType}})</span>
         ]]></viewer>
-        <editor layout="table">
+        <editor layout="table" x-show-titles="false">
           <field name="phoneType" width="100px" selection="phone.type.selection" />
           <field name="phone" css="border-left-none"/>
           <field name="primary" widget="toggle" x-icon="fa-star-o" x-icon-active="fa-star" x-exclusive="true"/>
@@ -87,7 +87,7 @@
         </address>
         ]]>
         </viewer>
-        <editor>
+        <editor x-show-titles="false">
           <field name="street" colSpan="12"/>
           <field name="area" colSpan="12"/>
           <field name="city" colSpan="4"/>
