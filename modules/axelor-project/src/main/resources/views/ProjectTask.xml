@@ -2,7 +2,13 @@
 <object-views xmlns="http://axelor.com/xml/ns/object-views"
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://axelor.com/xml/ns/object-views http://axelor.com/xml/ns/object-views/object-views_4.0.xsd">
-  
+
+  <selection name="project.task.state.selection">
+    <option value="todo">To-do</option>
+    <option value="progress">In progress</option>
+    <option value="complete">Completed</option>
+  </selection>
+
   <grid name="project-task-grid" title="Project Tasks" model="com.axelor.project.db.ProjectTask">
     <field name="name" />
     <field name="createDate" />
@@ -11,6 +17,7 @@
     <field name="user" />
     <field name="project" />
     <field name="priority" />
+    <field name="state" />
     <field name="progress" widget="Progress"/>
   </grid>
   
@@ -24,6 +31,7 @@
       <field name="endDate"/>
       <field name="user"/>
       <field name="project"/>
+      <field name="state" />
       <field name="progress" widget="Progress"/>
     </panel>
     <panel-tabs>
@@ -57,6 +65,37 @@
     
   </tree>
   
+  <kanban name="project-task-kanban" title="Project Tasks" model="com.axelor.project.db.ProjectTask"
+    columnBy="state" orderBy="priority" onNew="project.task.kanban.on.new" limit="10">
+    <field name="name"/>
+    <field name="notes" />
+    <field name="progress"/>
+    <field name="startDate"/>
+    <field name="endDate"/>
+    <field name="user"/>
+    <hilite color="danger" if="progress == 0" />
+    <hilite color="success" if="progress == 100" />
+    <hilite color="info" if="progress >= 50" />
+    <hilite color="warning" if="progress > 0" />
+    <template><![CDATA[
+    <h4>{{name}}</h4>
+    <img ng-if="user" src="{{$image('user', 'image')}}">
+    <div class="card-body">{{notes}}</div>
+    <div class="card-footer">
+      <i class='fa fa-clock-o'></i> <span>{{startDate|date:'yyyy-MM-dd HH:mm:ss'}}</span>
+    </div>
+    ]]></template>
+  </kanban>
+
+  <action-record name="project.task.kanban.on.new" model="com.axelor.project.db.ProjectTask">
+    <field name="name" expr="#{_value}"/>
+    <field name="user" expr="#{__user__}"/>
+    <field name="createDate" expr="#{__time__}"/>
+    <field name="startDate" expr="#{__time__}"/>
+    <field name="endDate" expr="#{__time__.plusHours(1)}"/>
+    <field name="priority" expr="0" />
+  </action-record>
+
   <action-record name="project.task.on.new" model="com.axelor.project.db.ProjectTask">
     <field name="createDate" expr="eval: startDate ? startDate : __time__"/>
     <field name="user" expr="eval: __user__"/>
