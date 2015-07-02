@@ -158,6 +158,7 @@
   		<bind node="tasks/task" to="tasks">
   			<bind node="@name" to="name"/>
 	        <bind node="@priority" to="priority"/>
+            <bind node="@state" to="state"/>
 	        <bind node="@user" to="user" search="self.code = :user" update="true"/>
 	        <bind node="@createDate" to="createDate" adapter="LocalDateTime"/>
 	        <bind node="@startDate" to="startDate" adapter="LocalDateTime"/>
