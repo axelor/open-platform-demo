@@ -5,7 +5,7 @@
 
   <module name="contact" package="com.axelor.contact.db"/>
 
-  <entity name="Contact" sequential="true" cachable="true">
+  <entity name="Contact" sequential="true" cachable="true" repository="abstract">
     <many-to-one name="title" ref="Title"/>
     <string name="firstName" required="true" initParam="true"/>
     <string name="lastName" required="true" initParam="true"/>

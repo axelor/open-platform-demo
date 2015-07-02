@@ -10,8 +10,9 @@
     action="contact.all"/>
 
   <action-view name="contact.all" title="Contacts" model="com.axelor.contact.db.Contact">
-    <view type="grid" name="contact-grid"/>
+    <view type="cards" name="contact-cards"/>
     <view type="form" name="contact-form"/>
+    <context name="json-enhance" expr="true"/>
   </action-view>
 
   <menuitem name="menu-contact-friends" parent="menu-contact-book"

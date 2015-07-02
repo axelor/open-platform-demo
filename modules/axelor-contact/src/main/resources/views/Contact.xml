@@ -82,7 +82,7 @@
         <viewer><![CDATA[
         <address>
         {{record.street}} {{record.area}}<br>
-        {{record.city}}, {{record.state}} {{record.zip}}<br>
+        {{record.city}}, {{record.state}} - {{record.zip}}<br>
         {{record.country.name}}
         </address>
         ]]>
@@ -109,6 +109,30 @@
       <field name="circles" widget="TagSelect"/>
     </panel>
   </form>
+
+  <cards name="contact-cards" title="Contacts" model="com.axelor.contact.db.Contact" orderBy="fullName">
+    <field name="fullName" />
+    <field name="phone" />
+    <field name="email" />
+    <field name="address" />
+    <field name="hasImage" />
+    <template><![CDATA[
+      <div class="span4 card-image">
+        <img ng-if="hasImage" ng-src="{{$image(null, 'image')}}">
+        <img ng-if="!hasImage" src="img/user.png">
+        <strong>{{fullName}}</strong>
+      </div>
+      <div class="span8">
+        <address>
+          <strong>{{address.street}} {{address.area}}</strong><br>
+          {{address.city}}<span ng-if="address.state">, {{address.state}}</span><span ng-if="address.zip"> - {{address.zip}}</span><br>
+          {{address.country.name}}<br>
+          <abbr ng-if="phone" title="Phone">P:</abbr> {{phone}}<br>
+          <abbr ng-if="email" title="Email">E:</abbr> {{email}}<br>
+        </address>
+      </div>
+    ]]></template>
+  </cards>
 
   <action-method name="action-contact-address-about">
     <call class="com.axelor.contact.web.HelloController" method="about"/>
