@@ -66,7 +66,7 @@
   </tree>
   
   <kanban name="project-task-kanban" title="Project Tasks" model="com.axelor.project.db.ProjectTask"
-    columnBy="state" orderBy="priority" onNew="project.task.kanban.on.new" limit="10">
+    columnBy="state" sequenceBy="priority" onNew="project.task.kanban.on.new" limit="10">
     <field name="name"/>
     <field name="notes" />
     <field name="progress"/>
