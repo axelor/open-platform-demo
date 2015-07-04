@@ -79,7 +79,7 @@
     <hilite color="warning" if="progress > 0" />
     <template><![CDATA[
     <h4>{{name}}</h4>
-    <img ng-if="user" src="{{$image('user', 'image')}}">
+    <img ng-if="user" ng-src="{{$image('user', 'image')}}">
     <div class="card-body">{{notes}}</div>
     <div class="card-footer">
       <i class='fa fa-clock-o'></i> <span>{{startDate|date:'yyyy-MM-dd HH:mm:ss'}}</span>
