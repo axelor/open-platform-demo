@@ -43,5 +43,13 @@
   <action-view name="project.tasks.tree" title="Projects">
     <view type="tree" name="project-task-tree"/>
   </action-view>
+  
+ <menuitem name="menu-project-tasks-gantt" parent="menu-project"
+    title="Task planning"
+    action="project.tasks.gantt"/>
+
+  <action-view name="project.tasks.gantt" title="Task planning" model="com.axelor.project.db.ProjectTask">
+    <view type="gantt" name="project-task-gantt"/>
+  </action-view>
 
 </object-views>

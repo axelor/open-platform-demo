@@ -163,11 +163,20 @@
 	        <bind node="@createDate" to="createDate" adapter="LocalDateTime"/>
 	        <bind node="@startDate" to="startDate" adapter="LocalDateTime"/>
 	        <bind node="@endDate" to="endDate" adapter="LocalDateTime"/>
+            <bind node="@plannedStartDate" to="plannedStartDate" adapter="LocalDateTime"/>
+            <bind node="@plannedDuration" to="plannedDuration"/>
+            <bind node="@parentTask" to="parentTask" search="self.name = :parentTask" update="true"/>
 	        <bind node="works/work" to="workItems">
 	        	<bind node="@date" to="date" adapter="LocalDate"/>
 	        	<bind node="@hours" to="hours" adapter="LocalTime"/>
 	        	<bind node="text()" to="name"/>
 	        </bind>
+           <bind node="finishToStartTaskSet/task" to="finishToStartTaskSet" search="self.name = :name" update="true">
+              <bind node="text()" to="name"/>
+           </bind>
+           <bind node="startToStartTaskSet/task" to="startToStartTaskSet" search="self.name = :name" update="true">
+              <bind node="text()" to="name"/>
+           </bind>
   		</bind>
   	</bind>
   </input>

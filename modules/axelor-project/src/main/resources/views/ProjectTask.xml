@@ -29,8 +29,10 @@
       <field name="deadlineDate"/>
       <field name="startDate"/>
       <field name="endDate"/>
-      <field name="user"/>
       <field name="project"/>
+      <field name="user"/>
+      <field name="parentTask"/>
+      <field name="sequence"/>
       <field name="state" />
       <field name="progress" widget="Progress"/>
     </panel>
@@ -42,6 +44,18 @@
       </panel-related>
       <panel title="Notes">
         <field name="notes" showTitle="false" colSpan="12"/>
+      </panel>
+      <panel title="Planning">
+        <field name="plannedStartDate"/>
+        <field name="plannedDuration"/>
+        <field name="plannedProgress"/>
+        <spacer/>
+        <panel title="Linked project tasks" colSpan="12">
+          <field name="finishToStartTaskSet" widget="TagSelect" />
+          <field name="startToStartTaskSet" widget="TagSelect" />
+          <field name="finishToFinishTaskSet" widget="TagSelect" />
+          <field name="startToStartTaskSet" widget="TagSelect" />
+        </panel>
       </panel>
     </panel-tabs>
   </form>
@@ -132,5 +146,20 @@
     eventLength="1">
     <field name="name" />
   </calendar>
+  
+  <gantt name="project-task-gantt" title="Task Planning" model="com.axelor.project.db.ProjectTask" 
+    taskStart="plannedStartDate"
+    taskDuration="plannedDuration"
+    taskParent="parentTask"
+    taskSequence="sequence"
+    taskProgress="plannedProgress"
+    x-finish-to-start="finishToStartTaskSet"
+    x-start-to-start="startToStartTaskSet"
+    x-finish-to-finish="finishToFinishTaskSet"
+    x-start-to-finish="startToFinishaskSet">
+    <field name="name" />
+    <field name="project" />
+    <field name="user" />
+  </gantt>
 
 </object-views>
