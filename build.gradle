@@ -10,7 +10,7 @@ application {
 	name "axelor-demo"
 	title "Axelor :: Demo Application"
 	
-	version "3.0.11"
+	version "3.0.12"
 
 	// ADK version required
 	adkVersion "~3.0.0"
