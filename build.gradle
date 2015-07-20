@@ -21,6 +21,11 @@ application {
 	}
 }
 
+allprojects {
+	sourceCompatibility = 1.7
+	targetCompatibility = 1.7
+}
+
 tomcat {
 	httpPort = project.properties.get("http.port", 8080) as Integer
 	stopPort = 9451
