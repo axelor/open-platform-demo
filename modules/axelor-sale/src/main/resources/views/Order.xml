@@ -23,7 +23,9 @@
       <field name="confirmDate" requiredIf="confirmed" validIf="confimDate == null || $moment(confirmDate) > $moment(createDate)"/>
     </panel>
     <panel-tabs>
-      <panel-related field="items" editable="true" readonlyIf="confirmed" onChange="com.axelor.sale.web.SaleOrderController:calculate">
+      <panel-related field="items" editable="true" readonlyIf="confirmed"
+        orderBy="sequence" canMove="true"
+        onChange="com.axelor.sale.web.SaleOrderController:calculate">
         <field name="product"/>
         <field name="price"/>
         <field name="quantity"/>

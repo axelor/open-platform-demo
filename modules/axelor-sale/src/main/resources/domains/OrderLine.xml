@@ -10,6 +10,7 @@
     <many-to-one name="product" ref="Product" required="true"/>
     <decimal name="price" precision="20" scale="4" min="0.0" required="true"/>
     <integer name="quantity" min="1" required="true"/>
+    <integer name="sequence" />
     <many-to-many name="taxes" ref="Tax"/>
   </entity>
 
