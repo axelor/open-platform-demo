@@ -1,15 +1,22 @@
-apply plugin: 'axelor-app'
+buildscript {
+	apply from: "gradle/adk.gradle"
+	dependencies {
+		classpath adkPlugins()
+	}
+}
 
 // find all modules
 def modules = new File('modules').listFiles().findAll { dir ->
 	new File(dir, 'build.gradle').exists() && !dir.name.endsWith('-tests')
 }
 
+apply plugin: "axelor-app"
+
 application {
 
 	name "axelor-demo"
-	title "Axelor :: Demo Application"
-	
+	title "Axelor :: DEMO"
+
 	version "4.0.0"
 
 	// ADK version required
@@ -19,6 +26,11 @@ application {
 	modules.each { dir ->
 		module "modules:$dir.name"
 	}
+}
+
+allprojects {
+	sourceCompatibility = 1.7
+	targetCompatibility = 1.7
 }
 
 tomcat {
