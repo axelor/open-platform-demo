@@ -57,5 +57,7 @@ tasks.build.dependsOn "grunt"
 tasks.grunt.onlyIf isProduction
 tasks.npm.onlyIf isProduction
 
-// Link core projects, easy to develop along with core
-ext.linkCoreInEclipse = true
+eclipse {
+	// easy to develop along with adk core
+	adkEclipseLinks()
+}
