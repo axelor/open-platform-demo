@@ -11,6 +11,7 @@ def modules = new File('modules').listFiles().findAll { dir ->
 }
 
 apply plugin: "axelor-app"
+apply plugin: "groovy"
 
 application {
 
