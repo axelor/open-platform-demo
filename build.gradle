@@ -57,7 +57,9 @@ tasks.build.dependsOn "grunt"
 tasks.grunt.onlyIf isProduction
 tasks.npm.onlyIf isProduction
 
-eclipse {
-	// easy to develop along with adk core
-	adkEclipseLinks()
+// link adk projects in eclipse
+allprojects {
+	eclipse {
+		adkLinks()
+	}
 }
