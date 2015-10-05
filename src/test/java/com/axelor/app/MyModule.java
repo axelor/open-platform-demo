@@ -26,7 +26,7 @@ public class MyModule extends AbstractModule {
 	@Override
 	protected void configure() {
 		install(new JpaModule("testUnit"));
-		install(new AuthModule.Simple());
+		install(new AuthModule());
 		install(new AppModule());
 	}
 }
