@@ -39,24 +39,6 @@ tomcat {
 	stopPort = 9451
 }
 
-def isProduction = {
-	if (project.properties.get("application.mode", null) == "prod") return true;
-	File configFile = rootProject.file("src/main/resources/application.properties");
-	String mode = "dev"
-	if (configFile.isFile()) {
-		configFile.withReader { reader ->
-			Properties config = new Properties()
-			config.load(reader)
-			mode = config.getProperty("application.mode");
-		}
-	}
-	return mode == "prod"
-}
-
-tasks.build.dependsOn "grunt"
-tasks.grunt.onlyIf isProduction
-tasks.npm.onlyIf isProduction
-
 // link adk projects in eclipse
 allprojects {
 	eclipse {
