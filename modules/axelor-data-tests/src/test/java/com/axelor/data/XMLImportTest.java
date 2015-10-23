@@ -1,7 +1,7 @@
 /**
  * Axelor Business Solutions
  *
- * Copyright (C) 2012-2014 Axelor (<http://axelor.com>).
+ * Copyright (C) 2005-2015 Axelor (<http://axelor.com>).
  *
  * This program is free software: you can redistribute it and/or  modify
  * it under the terms of the GNU Affero General Public License, version 3,
@@ -21,37 +21,26 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.nio.charset.Charset;
+import java.util.HashMap;
 import java.util.Map;
 
-import javax.inject.Inject;
-
 import org.junit.Test;
-import org.junit.runner.RunWith;
 
 import com.axelor.data.xml.XMLImporter;
-import com.axelor.test.GuiceModules;
-import com.axelor.test.GuiceRunner;
-import com.google.common.collect.Maps;
-import com.google.inject.Injector;
 
-@RunWith(GuiceRunner.class)
-@GuiceModules(DataModule.class)
-public class XMLImportTest {
-
-	@Inject
-	private Injector injector;
+public class XMLImportTest extends AbstractTest {
 
 	@Test
 	public void test() throws FileNotFoundException {
-		XMLImporter importer = new XMLImporter(injector, "data/xml-config.xml");
-		Map<String, Object> context = Maps.newHashMap();
+		XMLImporter importer = new XMLImporter("data/xml-config.xml");
+		Map<String, Object> context = new HashMap<>();
 
 		context.put("LOCATION", "FR");
 		context.put("DATE_FORMAT", "dd/MM/yyyy");
 
 		importer.setContext(context);
 
-		importer.runTask(new ImportTask(){
+		importer.run(new ImportTask(){
 
 			@Override
 			public void configure() throws IOException {

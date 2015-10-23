@@ -1,7 +1,7 @@
 /**
  * Axelor Business Solutions
  *
- * Copyright (C) 2012-2014 Axelor (<http://axelor.com>).
+ * Copyright (C) 2005-2015 Axelor (<http://axelor.com>).
  *
  * This program is free software: you can redistribute it and/or  modify
  * it under the terms of the GNU Affero General Public License, version 3,
@@ -19,39 +19,24 @@ package com.axelor.data;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import javax.inject.Inject;
-
 import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import com.axelor.data.csv.CSVImporter;
 import com.axelor.db.Model;
-import com.axelor.test.GuiceModules;
-import com.axelor.test.GuiceRunner;
-import com.google.common.collect.Lists;
-import com.google.common.collect.Maps;
-import com.google.inject.Injector;
 
-@RunWith(GuiceRunner.class)
-@GuiceModules(DataModule.class)
-public class CSVImportTest {
-
-	protected final transient Logger log = LoggerFactory.getLogger(CSVImportTest.class);
-
-	@Inject
-	Injector injector;
+public class CSVImportTest extends AbstractTest {
 
 	@Test
 	public void test() throws ClassNotFoundException {
-		final List<Model> records = Lists.newArrayList();
-		CSVImporter importer = new CSVImporter(injector, "data/csv-multi-config.xml");
+		final List<Model> records = new ArrayList<>();
+		CSVImporter importer = new CSVImporter("data/csv-multi-config.xml");
 
-		Map<String, Object> context = Maps.newHashMap();
+		Map<String, Object> context = new HashMap<>();
 
 		context.put("CUSTOMER_PHONE", "+3326253225");
 
@@ -78,7 +63,7 @@ public class CSVImportTest {
 			}
 		});
 
-		importer.runTask(new ImportTask(){
+		importer.run(new ImportTask(){
 
 			@Override
 			public void configure() throws IOException {
@@ -99,8 +84,5 @@ public class CSVImportTest {
 			}
 
 		});
-
-
 	}
-
 }

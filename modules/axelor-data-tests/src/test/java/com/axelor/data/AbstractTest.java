@@ -17,27 +17,17 @@
  */
 package com.axelor.data;
 
-import net.sf.ehcache.CacheManager;
+import org.junit.runner.RunWith;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
-import com.axelor.db.JpaModule;
-import com.google.inject.AbstractModule;
+import com.axelor.db.EntityHelper;
+import com.axelor.test.GuiceModules;
+import com.axelor.test.GuiceRunner;
 
-public class DataModule extends AbstractModule {
+@RunWith(GuiceRunner.class)
+@GuiceModules(DataModule.class)
+public abstract class AbstractTest {
 
-	@Override
-	protected void configure() {
-
-		// shutdown the cache manager if running
-		if (CacheManager.ALL_CACHE_MANAGERS.size() > 0) {
-			CacheManager.getInstance().shutdown();
-		}
-
-		install(new JpaModule("testUnit", true, true));
-
-		configureImport();
-	}
-
-	protected void configureImport() {
-
-	}
+	protected final Logger log = LoggerFactory.getLogger(EntityHelper.getEntityClass(this));
 }

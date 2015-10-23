@@ -1,7 +1,7 @@
 /**
  * Axelor Business Solutions
  *
- * Copyright (C) 2012-2014 Axelor (<http://axelor.com>).
+ * Copyright (C) 2005-2015 Axelor (<http://axelor.com>).
  *
  * This program is free software: you can redistribute it and/or  modify
  * it under the terms of the GNU Affero General Public License, version 3,
@@ -22,36 +22,18 @@ import java.io.IOException;
 import org.junit.Test;
 
 import com.axelor.data.xml.XMLImporter;
-import com.google.inject.AbstractModule;
 
-public class XMLDataTest {
-
-	static class Module extends DataModule {
-
-		@Override
-		protected void configureImport() {
-			bind(Importer.class).to(XMLImporter.class);
-		}
-	}
-
-	static class MyLauncher extends Launcher {
-
-		@Override
-		protected AbstractModule createModule() {
-
-			return new Module();
-		}
-	}
+public class XMLDataTest extends AbstractTest {
 
 	@Test
 	public void testTypes() throws IOException {
-		MyLauncher launcher = new MyLauncher();
-		launcher.run("-c", "data/xml-config-types.xml", "-d", "data/xml");
+		Importer importer = new XMLImporter("data/xml-config-types.xml", "data/xml");
+		importer.run();
 	}
 
 	@Test
 	public void testDefault() throws IOException {
-		MyLauncher launcher = new MyLauncher();
-		launcher.run("-c", "data/xml-config.xml", "-d", "data/xml");
+		Importer importer = new XMLImporter("data/xml-config.xml", "data/xml");
+		importer.run();
 	}
 }

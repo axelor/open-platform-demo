@@ -1,7 +1,7 @@
 /**
  * Axelor Business Solutions
  *
- * Copyright (C) 2012-2014 Axelor (<http://axelor.com>).
+ * Copyright (C) 2005-2015 Axelor (<http://axelor.com>).
  *
  * This program is free software: you can redistribute it and/or  modify
  * it under the terms of the GNU Affero General Public License, version 3,
@@ -17,39 +17,36 @@
  */
 package com.axelor.data;
 
-
+import java.io.File;
 import java.io.IOException;
 
 import org.junit.Test;
 
-import com.google.inject.AbstractModule;
+import com.axelor.data.csv.CSVImporter;
 
-public class CSVDataTest {
-
-	static class MyLauncher extends Launcher {
-
-		@Override
-		protected AbstractModule createModule() {
-
-			return new DataModule();
-		}
-	}
+public class CSVDataTest extends AbstractTest {
 
 	@Test
 	public void testDefault() throws IOException {
-		MyLauncher launcher = new MyLauncher();
-		launcher.run("-c", "data/csv-config.xml", "-d", "data/csv");
+		Importer importer = new CSVImporter("data/csv-config.xml", "data/csv");
+		importer.run();
 	}
 
 	@Test
 	public void testMulti() throws IOException {
-		MyLauncher launcher = new MyLauncher();
-		launcher.run("-c", "data/csv-multi-config.xml", "-d", "data/csv-multi", "-Dsale.order=so1.csv,so2.csv");
+		Importer importer = new CSVImporter("data/csv-multi-config.xml");
+		importer.run(new ImportTask() {
+			@Override
+			public void configure() throws IOException {
+				input("[sale.order]", new File("data/csv-multi/so1.csv"));
+				input("[sale.order]", new File("data/csv-multi/so2.csv"));
+			}
+		});
 	}
 
 	@Test
 	public void testData() throws IOException {
-		MyLauncher launcher = new MyLauncher();
-		launcher.run("-c", "data/csv-config-types.xml", "-d", "data/csv");
+		Importer importer = new CSVImporter("data/csv-config-types.xml", "data/csv");
+		importer.run();
 	}
 }
