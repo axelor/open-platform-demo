@@ -36,11 +36,11 @@
       </panel>
     </panel-tabs>
     <panel>
-      <button-group>
-        <button name="btnCalculate" title="Calculate" hideIf="confirmed" onClick="check-order-dates,com.axelor.sale.web.SaleOrderController:calculate,save"/>
+      <panel colSpan="4" itemSpan="12">
+        <button name="totalAmount" onClick="check-order-dates,com.axelor.sale.web.SaleOrderController:calculate,save" title="Total amount" icon="fa-bar-chart" widget="info-button" css="btn-success"/>
         <button name="btnExport" title="Export" showIf="id" onClick="export.sale.order"/>
-      </button-group>
-      <panel css="order-subtotal" readonly="true">
+      </panel>
+      <panel colSpan="8" css="order-subtotal" readonly="true">
         <field name="totalAmount" showTitle="false" colSpan="12">
           <viewer><![CDATA[
           <dl class="dl-horizontal">
