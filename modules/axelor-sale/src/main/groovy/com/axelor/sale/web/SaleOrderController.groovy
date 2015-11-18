@@ -21,13 +21,14 @@ import javax.inject.Inject
 
 import org.joda.time.LocalDate
 
+import com.axelor.db.JpaSupport
 import com.axelor.rpc.ActionRequest
 import com.axelor.rpc.ActionResponse
 import com.axelor.sale.db.Order
 import com.axelor.sale.service.SaleOrderService
 
-class SaleOrderController {
-	
+class SaleOrderController extends JpaSupport {
+
 	@Inject
 	SaleOrderService service
 
@@ -58,5 +59,57 @@ class SaleOrderController {
 			taxAmount : order.taxAmount,
 			totalAmount : order.totalAmount
 		])
+	}
+
+	void reportToday(ActionRequest request, ActionResponse response) {
+		def em = getEntityManager()
+		def q1 = em.createQuery(
+			"SELECT SUM(self.totalAmount) FROM Order AS self " +
+			"WHERE YEAR(self.orderDate) = YEAR(current_date) AND " +
+			"MONTH(self.orderDate) = MONTH(current_date) AND " +
+			"DAY(self.orderDate) = DAY(current_date) - 1")
+
+		def q2 = em.createQuery(
+			"SELECT SUM(self.totalAmount) FROM Order AS self " +
+			"WHERE YEAR(self.orderDate) = YEAR(current_date) AND " +
+			"MONTH(self.orderDate) = MONTH(current_date) AND " +
+			"DAY(self.orderDate) = DAY(current_date)")
+
+		def last = q1.getResultList().last() ?: 0
+		def total = q2.getResultList().last() ?: 0
+
+		def percent = 0
+		if (total > 0) {
+			percent = ((total - last) * 100) / total
+		}
+
+		response.data = [
+			[total: total, percent: percent, down: total < last]
+		]
+	}
+
+	void reportMonthly(ActionRequest request, ActionResponse response) {
+		def em = getEntityManager()
+		def q1 = em.createQuery(
+			"SELECT SUM(self.totalAmount) FROM Order AS self " +
+			"WHERE YEAR(self.orderDate) = YEAR(current_date) AND " +
+			"MONTH(self.orderDate) = MONTH(current_date) - 1")
+
+		def q2 = em.createQuery(
+			"SELECT SUM(self.totalAmount) FROM Order AS self " +
+			"WHERE YEAR(self.orderDate) = YEAR(current_date) AND " +
+			"MONTH(self.orderDate) = MONTH(current_date)")
+
+		def last = q1.getResultList().last() ?: 0
+		def total = q2.getResultList().last() ?: 0
+
+		def percent = 0
+		if (total > 0) {
+			percent = ((total - last) * 100) / total
+		}
+
+		response.data = [
+			[total: total, percent: percent, down: total < last]
+		]
 	}
 }

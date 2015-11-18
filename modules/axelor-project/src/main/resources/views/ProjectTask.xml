@@ -101,6 +101,25 @@
     ]]></template>
   </kanban>
 
+  <!-- dashboard box with custom template -->
+  <custom name="report-tasks-today" title="My Tasks" css="report-box">
+    <dataset type="jpql">
+    <![CDATA[
+    select count(self.id) as total from ProjectTask self WHERE self.state != 'complete' AND self.user = :__user__
+    ]]>
+    </dataset>
+    <template>
+    <![CDATA[
+    <div class="report-data">
+      <h1>{{first.total}}</h1>
+      <small>Pending tasks</small>
+      <div class="report-percent font-bold text-error pull-right">20% <i class="fa fa-level-down"></i></div>
+      <div class="report-tags"><span class="label label-success">Today</span></div>
+    </div>
+    ]]>
+    </template>
+  </custom>
+
   <action-record name="project.task.kanban.on.new" model="com.axelor.project.db.ProjectTask">
     <field name="name" expr="#{_value}"/>
     <field name="user" expr="#{__user__}"/>
