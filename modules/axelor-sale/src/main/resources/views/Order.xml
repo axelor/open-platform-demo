@@ -14,6 +14,9 @@
   <form name="order-form" title="Order" model="com.axelor.sale.db.Order"
     onNew="default-order-record"
     onSave="check-order-values,action-sale-order-validate">
+    <toolbar>
+      <button name="btnPrint" showIf="id" onClick="print.sale.order" icon="fa-print" />
+    </toolbar>
     <panel title="Order Details">
       <field name="name"/>
       <field name="confirmed"/>
@@ -197,5 +200,12 @@
   <action-export name="export.sale.order" output="${name}/${date}${time}" download="true">
     <export name="${name}.xml" template="data-export/export-sale-order.st"/>
   </action-export>
+
+  <action-report name="print.sale.order"
+    design="Order.rptdesign"
+    output="so-${date}${time}"
+    format="pdf">
+    <param name="orderId" expr="eval: id"/>
+  </action-report>
 
 </object-views>
