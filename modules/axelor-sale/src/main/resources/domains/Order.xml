@@ -5,11 +5,11 @@
 
   <module name="sale" package="com.axelor.sale.db"/>
 
+  <sequence name="sale.order.seq" initial="1" increment="1" padding="5" prefix="SO"/>
+
   <entity name="Order" sequential="true">
     <many-to-one name="customer" ref="com.axelor.contact.db.Contact" required="true"/>
-    <string name="name" search="id,name"><![CDATA[
-    return getId() == null ? "== NEW ==" : String.format("SO%05d", getId());
-    ]]></string>
+    <string name="name" sequence="sale.order.seq" />
     <date name="orderDate" required="true"/>
     <date name="createDate" required="true"/>
     <date name="confirmDate" />
