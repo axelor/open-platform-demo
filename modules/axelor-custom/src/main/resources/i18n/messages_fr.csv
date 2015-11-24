@@ -1,15 +1,16 @@
 "key","message","comment","context"
-"All Products","Les produits",,"resources/views/Menu.xml:7"
-"Black","Noir",,"resources/views/Product.xml:6"
-"Custom Menu",,,"resources/views/Menu.xml:6"
-"Gray","Gris",,"resources/views/Product.xml:8"
-"Notes","Notes",,"resources/views/ProjectTask.xml:34"
-"Overview","Général",,"resources/views/ProjectTask.xml:17"
-"Page 1","Page 1",,"resources/views/Product.xml:17"
-"Page 2","Page 2",,"resources/views/Product.xml:18"
-"Page 3","Page 3",,"resources/views/Product.xml:19"
-"Product","Produit",,"resources/views/Product.xml:11"
-"Products","Produits",,"resources/views/Menu.xml:9"
-"Project","Project",,"resources/views/ProjectTask.xml:16"
-"Project Tasks","Taches",,"resources/views/ProjectTask.xml:5"
-"White","Blanc",,"resources/views/Product.xml:7"
+"All Products","Les produits",,
+"Black","Noir",,
+"Custom Menu",,,
+"Gray","Gris",,
+"Notes","Notes",,
+"Overview","Général",,
+"Page 1","Page 1",,
+"Page 2","Page 2",,
+"Page 3","Page 3",,
+"Product","Produit",,
+"Products","Produits",,
+"Project","Project",,
+"Project Tasks","Taches",,
+"Projects",,,
+"White","Blanc",,

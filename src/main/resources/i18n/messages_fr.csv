@@ -1,10 +1,3 @@
 "key","message","comment","context"
-"About","A propos",,"webapp/login-header.jsp:24"
-"Administrator","Administrateur",,"webapp/login-header.jsp:26"
-"Contact","Contact",,"webapp/login-header.jsp:25"
-"Dashboards","Tableau de bord",,"resources/views/welcome.xml:17"
-"Demo User","Demo",,"webapp/login-header.jsp:27"
-"Log in","Se connecter",,"webapp/login-header.jsp:28"
-"Welcome!","Bienvenue",,"resources/views/welcome.xml:12
-resources/views/welcome.xml:20
-resources/views/welcome.xml:6"
+"Dashboards","Tableau de bord",,
+"Welcome!","Bienvenue",,

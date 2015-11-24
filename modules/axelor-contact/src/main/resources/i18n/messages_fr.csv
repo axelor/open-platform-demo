@@ -1,91 +1,52 @@
 "key","message","comment","context"
-"Address","Adresses",,"resources/views/Address.xml:16
-resources/views/Contact.xml:25"
-"Address Book","Carnet D'adresses",,"resources/views/Menu.xml:6"
-"Address List","Les Adresses",,"resources/views/Address.xml:6
-resources/views/Contact.xml:20"
-"Addresses","Adresses",,"resources/domains/Contact.xml:38"
-"All Contacts","Les contacts",,"resources/views/Menu.xml:10"
-"Area","Aire",,"resources/domains/Address.xml:11"
-"Business Contacts","Contact Professionnel",,"resources/views/Menu.xml:41
-resources/views/Menu.xml:43"
-"Circle","Cercle",,"resources/views/Circle.xml:11
-resources/views/Menu.xml:66"
-"Circles","Cercles",,"resources/domains/Contact.xml:39
-resources/views/Circle.xml:6
-resources/views/Menu.xml:64"
-"City","Ville",,"resources/domains/Address.xml:12"
-"Click Me!","Cliquer ici!",,"resources/views/Contact.xml:31"
-"Code","Code",,"resources/domains/Circle.xml:9
-resources/domains/Company.xml:9
-resources/domains/Country.xml:9
-resources/domains/Title.xml:9"
-"Companies","Sociétés",,"resources/views/Company.xml:6
-resources/views/Menu.xml:82"
-"Company","Société",,"resources/domains/Contact.xml:40
-resources/views/Company.xml:12
-resources/views/Menu.xml:84"
-"Configuration","Configuration",,"resources/views/Menu.xml:51"
-"Contact","Contact",,"resources/domains/Address.xml:9
-resources/domains/Email.xml:9
-resources/domains/Phone.xml:9
-resources/views/Contact.xml:43"
-"Contacts","Contacts",,"resources/views/Contact.xml:59
-resources/views/Contact.xml:6
-resources/views/Menu.xml:12"
-"Countries","Les Pays",,"resources/views/Country.xml:6"
-"Country","Pays",,"resources/domains/Address.xml:15
-resources/views/Country.xml:11
-resources/views/Menu.xml:55
-resources/views/Menu.xml:57"
-"Date of birth","Date d'anniverssaire",,"resources/domains/Contact.xml:19"
-"Email","Email",,"resources/domains/Contact.xml:23
-resources/domains/Email.xml:10"
-"Emails","Emails",,"resources/domains/Contact.xml:35"
-"Employees","Employés",,"resources/domains/Company.xml:12"
-"Extra","Supplément",,"resources/views/Contact.xml:107"
-"Family Members","Contact Personnel",,"resources/views/Menu.xml:30
-resources/views/Menu.xml:32"
-"First name","Prénom",,"resources/domains/Contact.xml:10"
-"Full name","Nom complet",,"resources/domains/Contact.xml:12"
-"Home","Maison",,"resources/views/Contact.xml:39"
-"Invalid","Invalide",,"resources/domains/Email.xml:13"
-"Last name","Nom de famille",,"resources/domains/Contact.xml:11"
-"Max size 4MB.","Taile max : 4MB",,"resources/domains/Contact.xml:20"
-"Mobile","Portable",,"resources/views/Contact.xml:37"
-"My Friends","Mes Amis",,"resources/views/Menu.xml:19
-resources/views/Menu.xml:21"
-"Name","Nom",,"resources/domains/Circle.xml:10
-resources/domains/Company.xml:10
-resources/domains/Country.xml:10
-resources/domains/Title.xml:10
-resources/views/Contact.xml:49"
-"Notes","Notes",,"resources/domains/Company.xml:13
-resources/domains/Contact.xml:21
-resources/views/Company.xml:18
-resources/views/Contact.xml:100"
-"Office","Bureau",,"resources/views/Contact.xml:38"
-"Opted out","Ne pas envoyer",,"resources/domains/Email.xml:12"
-"Other","Autres",,"resources/views/Contact.xml:40"
-"Overview","Général",,"resources/views/Address.xml:17
-resources/views/Circle.xml:12
-resources/views/Company.xml:13
-resources/views/Country.xml:12
-resources/views/Title.xml:11"
-"Parent","Parent",,"resources/domains/Company.xml:11"
-"Personal","Personnel",,"resources/views/Contact.xml:44"
-"Phone","Téléphone",,"resources/domains/Contact.xml:29
-resources/domains/Phone.xml:10"
-"Phones","Téléphones",,"resources/domains/Contact.xml:36"
-"Photo","Photo",,"resources/domains/Contact.xml:20"
-"Primary","Principal",,"resources/domains/Email.xml:11
-resources/domains/Phone.xml:12"
-"State","Etat",,"resources/domains/Address.xml:14"
-"Street","Rue",,"resources/domains/Address.xml:10"
-"Title","Intitulé",,"resources/domains/Contact.xml:9
-resources/views/Menu.xml:75
-resources/views/Title.xml:10"
-"Titles","Intitulés",,"resources/views/Menu.xml:73
-resources/views/Title.xml:5"
-"Type","Type",,"resources/domains/Phone.xml:11"
-"Zip","Code postal",,"resources/domains/Address.xml:13"
+"Address","Adresses",,
+"Address Book","Carnet D'adresses",,
+"Address List","Les Adresses",,
+"Addresses","Adresses",,
+"All Contacts","Les contacts",,
+"Area","Aire",,
+"Business Contacts","Contact Professionnel",,
+"Circle","Cercle",,
+"Circles","Cercles",,
+"City","Ville",,
+"Click Me!","Cliquer ici!",,
+"Code","Code",,
+"Companies","Sociétés",,
+"Company","Société",,
+"Configuration","Configuration",,
+"Contact","Contact",,
+"Contacts","Contacts",,
+"Countries","Les Pays",,
+"Country","Pays",,
+"Date of birth","Date d'anniverssaire",,
+"Email","Email",,
+"Emails","Emails",,
+"Employees","Employés",,
+"Extra","Supplément",,
+"Family Members","Contact Personnel",,
+"First name","Prénom",,
+"Full name","Nom complet",,
+"Home","Maison",,
+"Invalid","Invalide",,
+"Last name","Nom de famille",,
+"Max size 4MB.","Taile max : 4MB",,
+"Mobile","Portable",,
+"My Friends","Mes Amis",,
+"Name","Nom",,
+"Notes","Notes",,
+"Office","Bureau",,
+"Opted out","Ne pas envoyer",,
+"Other","Autres",,
+"Overview","Général",,
+"Parent","Parent",,
+"Personal","Personnel",,
+"Phone","Téléphone",,
+"Phones","Téléphones",,
+"Photo","Photo",,
+"Primary","Principal",,
+"State","Etat",,
+"Street","Rue",,
+"Title","Intitulé",,
+"Titles","Intitulés",,
+"Type","Type",,
+"Zip","Code postal",,
