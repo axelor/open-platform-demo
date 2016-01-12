@@ -9,6 +9,7 @@
     <string name="code" required="true" unique="true" min="2"/>
     <string name="name" required="true" unique="true" min="2"/>
     <string name="color"/>
+    <string name="colorVariants"/>
     <many-to-one name="category" ref="ProductCategory"/>
   </entity>
 

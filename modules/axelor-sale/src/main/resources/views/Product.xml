@@ -26,6 +26,7 @@
       <field name="code" />
       <field name="name" />
       <field name="color" selection="product.color.selection" />
+      <field name="colorVariants" selection="product.color.selection" widget="multi-select" />
       <field name="category" />
     </panel>
   </form>
