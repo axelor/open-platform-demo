@@ -3,7 +3,7 @@
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://axelor.com/xml/ns/object-views http://axelor.com/xml/ns/object-views/object-views_4.0.xsd">
 
-  <menuitem name="menu-contact-book" order="-100" title="Address Book" icon="fa-book"/>
+  <menuitem name="menu-contact-book" order="-100" title="Address Book" icon="fa-book" icon-background="green"/>
 
   <menuitem name="menu-contact-all" parent="menu-contact-book"
     title="All Contacts"
