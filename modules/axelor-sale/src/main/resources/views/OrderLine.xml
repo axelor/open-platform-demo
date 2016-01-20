@@ -16,7 +16,7 @@
       <field name="price" />
       <field name="quantity" />
     </panel>
-    <panel-related field="taxes" editable="true">
+    <panel-related field="taxes">
       <field name="name" />
       <field name="rate" />
     </panel-related>
