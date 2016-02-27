@@ -9,7 +9,7 @@
 
   <entity name="Order" sequential="true">
     <many-to-one name="customer" ref="com.axelor.contact.db.Contact" required="true"/>
-    <string name="name" sequence="sale.order.seq" />
+    <string name="name" sequence="sale.order.seq" readonly="true" />
     <date name="orderDate" required="true"/>
     <date name="createDate" required="true"/>
     <date name="confirmDate" />

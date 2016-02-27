@@ -15,11 +15,11 @@
     onNew="default-order-record"
     onSave="check-order-values,action-sale-order-validate">
     <toolbar>
-      <button name="btnPrint" showIf="id" onClick="print.sale.order" icon="fa-print" />
+      <button name="btnPrint" title="Print" showTitle="false" showIf="id" onClick="print.sale.order" icon="fa-print" />
     </toolbar>
     <panel title="Order Details">
       <field name="name"/>
-      <field name="confirmed"/>
+      <field name="confirmed" widget="boolean-switch"/>
       <field name="customer" readonlyIf="confirmed" form-view="contact-form" grid-view="contact-grid"/>
       <field name="orderDate" readonlyIf="confirmed"/>
       <field name="createDate" readonlyIf="confirmed"/>
