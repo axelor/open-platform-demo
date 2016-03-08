@@ -35,7 +35,7 @@
         <field name="taxes"/>
       </panel-related>
       <panel title="Notes">
-        <field name="notes" showTitle="false" colSpan="12"/>
+        <field name="notes" showTitle="false" colSpan="12" widget="html" />
       </panel>
     </panel-tabs>
     <panel>
