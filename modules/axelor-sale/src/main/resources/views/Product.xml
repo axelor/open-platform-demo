@@ -23,11 +23,19 @@
 
   <form name="product-form" title="Product" model="com.axelor.sale.db.Product">
     <panel title="Overview">
-      <field name="code" />
-      <field name="name" />
-      <field name="color" selection="product.color.selection" />
-      <field name="colorVariants" selection="product.color.selection" widget="multi-select" />
-      <field name="category" />
+      <panel colSpan="3">
+      	<field name="image" showTitle="false" colSpan="12" widget="image"/>
+      </panel>
+      <panel colSpan="9">
+        <field name="code"/>
+        <field name="name"/>
+        <field name="color" selection="product.color.selection"/>
+        <field name="colorVariants" widget="multi-select" selection="product.color.selection"/>
+        <field name="category"/>
+      </panel>
+    </panel>
+    <panel title="Notes">
+    	<field name="notes" showTitle="false" colSpan="12" widget="html" />
     </panel>
   </form>
 
