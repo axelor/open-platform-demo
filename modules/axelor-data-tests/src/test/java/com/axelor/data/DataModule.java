@@ -19,7 +19,11 @@ package com.axelor.data;
 
 import net.sf.ehcache.CacheManager;
 
+import com.axelor.app.AppModule;
+import com.axelor.auth.AuthModule;
 import com.axelor.db.JpaModule;
+import com.axelor.rpc.ObjectMapperProvider;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.inject.AbstractModule;
 
 public class DataModule extends AbstractModule {
@@ -32,7 +36,11 @@ public class DataModule extends AbstractModule {
 			CacheManager.getInstance().shutdown();
 		}
 
+		bind(ObjectMapper.class).toProvider(ObjectMapperProvider.class);
+
 		install(new JpaModule("testUnit", true, true));
+		install(new AuthModule());
+		install(new AppModule());
 
 		configureImport();
 	}

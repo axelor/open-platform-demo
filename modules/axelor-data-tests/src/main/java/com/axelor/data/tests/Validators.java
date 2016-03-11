@@ -15,34 +15,34 @@
  * You should have received a copy of the GNU Affero General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package com.axelor.data.tests
+package com.axelor.data.tests;
 
-import com.google.inject.Inject
-import com.google.inject.Injector
+import java.util.Map;
 
-import com.axelor.db.JPA
-import com.axelor.contact.db.Contact
-import com.axelor.sale.service.SaleOrderService
-import com.axelor.sale.db.Order
+import com.axelor.contact.db.Contact;
+import com.axelor.db.JPA;
+import com.axelor.sale.db.Order;
+import com.axelor.sale.service.SaleOrderService;
+import com.google.inject.Inject;
 
-class Validators {
+public class Validators {
 
 	@Inject
-	SaleOrderService soService
+	private SaleOrderService soService;
 
-	Object validateSaleOrder(Object bean, Map context) {
-		assert bean instanceof Order
-		Order so = (Order) bean
+	public Object validateSaleOrder(Object bean, Map<String, Object> context) {
+		assert bean instanceof Order;
+		Order so = (Order) bean;
 
-		soService.validate(so)
+		soService.validate(so);
 
-		println("Date: $so.orderDate")
-		println("Customer: $so.customer.firstName $so.customer.lastName")
-		println("Items: $so.items.size")
+		System.err.println("Date: " + so.getOrderDate());
+		System.err.println("Customer: " + so.getCustomer().getFullName());
+		System.err.println("Items: " + so.getItems().size());
 
-		int count = JPA.all(Contact.class).count()
-		assert count > 1
+		long count = JPA.all(Contact.class).count();
+		assert count > 1;
 
-		return bean
+		return bean;
 	}
 }

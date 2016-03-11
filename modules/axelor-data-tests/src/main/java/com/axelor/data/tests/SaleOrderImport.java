@@ -15,29 +15,30 @@
  * You should have received a copy of the GNU Affero General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package com.axelor.data.tests
+package com.axelor.data.tests;
+
+import java.util.Map;
 
 import org.joda.time.LocalDate;
 
-import com.axelor.contact.db.Contact
-import com.axelor.db.mapper.types.JodaAdapter.LocalDateAdapter;
+import com.axelor.contact.db.Contact;
 import com.axelor.sale.db.Order;
 import com.axelor.sale.db.OrderLine;
 
-class SaleOrderImport {
+public class SaleOrderImport {
 
 	/**
 	 * This method is called with <code>prepare-context</code> attribute from
 	 * the <code>&lt;input&gt;</code> tag. It prepares the global context.
 	 *
 	 */
-	void createOrder(Map context) {
+	public void createOrder(Map<String, Object> context) {
 
-		Order order = new Order()
-		order.createDate = new LocalDate()
-		order.orderDate = new LocalDate()
+		Order order = new Order();
+		order.setCreateDate(new LocalDate());
+		order.setOrderDate(new LocalDate());
 
-		context.put("_saleOrder", order)
+		context.put("_saleOrder", order);
 	}
 
 	/**
@@ -52,25 +53,22 @@ class SaleOrderImport {
 	 *            the value map that represents the imported data
 	 * @return the bean object to persist (in most cases the same bean object)
 	 */
-	Object updateOrder(Object bean, Map values) {
+	public Object updateOrder(Object bean, Map<String, Object> values) {
 
-		assert bean instanceof OrderLine
-		assert values['_saleOrder'] instanceof Order
-		assert values['_customer'] instanceof Contact
+		assert bean instanceof OrderLine;
+		assert values.get("_saleOrder") instanceof Order;
+		assert values.get("_customer") instanceof Contact;
 
-		Order so = values['_saleOrder']
-		OrderLine line = (OrderLine) bean
-		Contact cust = values['_customer']
+		Order so = (Order) values.get("_saleOrder");
+		OrderLine line = (OrderLine) bean;
+		Contact cust = (Contact) values.get("_customer");
 
-		if (so.customer == null)
-			so.customer = cust
+		if (so.getCustomer() == null) {
+			so.setCustomer(cust);
+		}
+		so.addItem(line);
+		line.setOrder(so);
 
-		if (so.items == null)
-			so.items = []
-
-		so.items.add(line)
-		line.order = so
-
-		return line
+		return line;
 	}
 }
