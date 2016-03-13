@@ -6,6 +6,6 @@ module {
 }
 
 dependencies {
-	testCompile project(":modules:axelor-contact")
-	testCompile project(":modules:axelor-sale")
+	compile project(":modules:axelor-contact")
+	compile project(":modules:axelor-sale")
 }
