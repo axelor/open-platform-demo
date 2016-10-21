@@ -34,14 +34,11 @@ allprojects {
 	targetCompatibility = 1.8
 }
 
+task wrapper(type: Wrapper) {
+	gradleVersion = "3.1"
+}
+
 tomcat {
 	httpPort = project.properties.get("http.port", 8080) as Integer
 	stopPort = 9451
-}
-
-// link adk projects in eclipse
-allprojects {
-	eclipse {
-		adkLinks()
-	}
 }
