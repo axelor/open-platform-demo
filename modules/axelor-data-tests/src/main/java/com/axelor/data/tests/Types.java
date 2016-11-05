@@ -18,14 +18,13 @@
 package com.axelor.data.tests;
 
 import java.math.BigDecimal;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.LocalTime;
+import java.time.ZonedDateTime;
 
 import javax.persistence.Entity;
 import javax.persistence.Table;
-
-import org.joda.time.DateTime;
-import org.joda.time.LocalDate;
-import org.joda.time.LocalDateTime;
-import org.joda.time.LocalTime;
 
 import com.axelor.db.JpaModel;
 import com.google.common.base.MoreObjects;
@@ -40,7 +39,7 @@ public class Types extends JpaModel {
 
 	private LocalDateTime dateTime;
 
-	private DateTime dateTimeTz;
+	private ZonedDateTime dateTimeTz;
 
 	private Boolean active;
 
@@ -72,11 +71,11 @@ public class Types extends JpaModel {
 		this.dateTime = dateTime;
 	}
 
-	public DateTime getDateTimeTz() {
+	public ZonedDateTime getDateTimeTz() {
 		return dateTimeTz;
 	}
 
-	public void setDateTimeTz(DateTime dateTimeTz) {
+	public void setDateTimeTz(ZonedDateTime dateTimeTz) {
 		this.dateTimeTz = dateTimeTz;
 	}
 

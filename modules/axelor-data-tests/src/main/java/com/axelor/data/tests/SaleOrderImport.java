@@ -17,9 +17,8 @@
  */
 package com.axelor.data.tests;
 
+import java.time.LocalDate;
 import java.util.Map;
-
-import org.joda.time.LocalDate;
 
 import com.axelor.contact.db.Contact;
 import com.axelor.sale.db.Order;
@@ -35,8 +34,8 @@ public class SaleOrderImport {
 	public void createOrder(Map<String, Object> context) {
 
 		Order order = new Order();
-		order.setCreateDate(new LocalDate());
-		order.setOrderDate(new LocalDate());
+		order.setCreateDate(LocalDate.now());
+		order.setOrderDate(LocalDate.now());
 
 		context.put("_saleOrder", order);
 	}

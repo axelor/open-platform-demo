@@ -38,7 +38,7 @@
       		<work date="01/11/2014" hours="07:00">Preconditions</work>
       		<work date="02/11/2014" hours="07:00">Functional requirements</work>
       		<work date="03/11/2014" hours="07:00">Operational requirements</work>
-      		<work date="10/11/2014" hours="4:00">Design limitations</work>
+      		<work date="10/11/2014" hours="04:00">Design limitations</work>
       	</works>
       </task>
       <task name="Design" priority="50" user="demo" createDate="28/10/2014 00:00" startDate="13/11/2014 00:00" endDate="28/01/2015 00:00" state="progress" plannedStartDate="13/11/2014 00:00" plannedDuration="480" parentTask="Implementation"> 

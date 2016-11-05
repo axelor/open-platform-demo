@@ -88,7 +88,7 @@
       <bind node="@date" to="_date" adapter="LocalDate"/>
 
       <!-- default value provided with eval expression -->
-      <bind to="_date" eval="new org.joda.time.LocalDate()" if="!_date" />
+      <bind to="_date" eval="java.time.LocalDate.now()" if="!_date" />
 
       <bind to="orderDate" eval="_date" />
       <bind to="createDate" eval="_date" />
