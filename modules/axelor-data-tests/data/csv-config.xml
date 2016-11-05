@@ -34,7 +34,7 @@
     <bind column="date" to="createDate"/>
 
     <!-- default value provided with eval expression -->
-    <bind to="confirmDate" eval="new org.joda.time.LocalDate()"/>
+    <bind to="confirmDate" eval="java.time.LocalDate.now()"/>
 
     <bind to="customer" search="self.email = :email" if="!email.empty">
       <bind column="firstName" to="firstName"/>

@@ -18,9 +18,9 @@
 package com.axelor.sale;
 
 import java.math.BigDecimal;
+import java.time.LocalDate;
 import java.util.Random;
 
-import org.joda.time.LocalDate;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -102,8 +102,8 @@ public class SaleTest {
 
 		Order order = new Order();
 		order.setCustomer(contact);
-		order.setOrderDate(new LocalDate());
-		order.setCreateDate(new LocalDate());
+		order.setOrderDate(LocalDate.now());
+		order.setCreateDate(LocalDate.now());
 
 		OrderLine item1 = new OrderLine();
 		item1.setProduct(p1);

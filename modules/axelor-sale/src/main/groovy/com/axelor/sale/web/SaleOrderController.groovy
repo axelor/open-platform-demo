@@ -17,9 +17,9 @@
  */
 package com.axelor.sale.web
 
-import javax.inject.Inject
+import java.time.LocalDate
 
-import org.joda.time.LocalDate
+import javax.inject.Inject
 
 import com.axelor.db.JpaSupport
 import com.axelor.rpc.ActionRequest
@@ -42,7 +42,7 @@ class SaleOrderController extends JpaSupport {
 		response.setReadonly("confirmDate", readonly)
 		
 		if (context.confirmed && !context.confirmDate) {
-			def now = new LocalDate()
+			def now = LocalDate.now()
 			response.setValues([
 				confirmDate : now
 			])

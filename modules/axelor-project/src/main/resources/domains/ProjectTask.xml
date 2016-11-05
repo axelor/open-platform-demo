@@ -21,11 +21,11 @@
 			return 0;
 		}
 		for(ProjectWork work : workItems) {
-		  org.joda.time.LocalTime time = work.getHours();
-		  result += time.getHourOfDay();
-		  result += time.getMinuteOfHour() / 60.0;
+		  java.time.LocalTime time = work.getHours();
+		  result += time.getHour();
+		  result += time.getMinute() / 60.0;
 		}
-		duration = (double) org.joda.time.Hours.hoursBetween(startDate, endDate).getHours();
+		duration = java.time.temporal.ChronoUnit.HOURS.between(startDate, endDate);
 
 		result = Math.min(100.0, ((result / duration) * 100));
 		return (int) Math.round(result);

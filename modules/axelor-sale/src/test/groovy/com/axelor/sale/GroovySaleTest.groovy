@@ -19,10 +19,11 @@ package com.axelor.sale
 
 import groovy.transform.CompileStatic
 
+import java.time.LocalDate
+
 import javax.inject.Inject
 
-import org.joda.time.LocalDate
-import org.junit.Assert;
+import org.junit.Assert
 import org.junit.Test
 import org.junit.runner.RunWith
 
@@ -103,8 +104,8 @@ class GroovySaleTest extends JpaSupport {
 		
 		def order = new Order(
 			customer: contact,
-			orderDate: new LocalDate(),
-			createDate: new LocalDate())
+			orderDate: LocalDate.now(),
+			createDate: LocalDate.now())
 		
 		def item1 = new OrderLine(
 			product: p1,
