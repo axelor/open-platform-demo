@@ -17,7 +17,7 @@
     WHERE
         YEAR(self.orderDate) = YEAR(current_date)
     GROUP BY
-        _customer,
+        _customer.fullName,
         MONTH(self.orderDate)
     ORDER BY
         month
@@ -40,7 +40,7 @@
     WHERE
         YEAR(self.orderDate) = YEAR(current_date)
     GROUP BY
-        _customer
+        _customer.fullName
     ]]>
     </dataset>
     <category key="customer"/>
