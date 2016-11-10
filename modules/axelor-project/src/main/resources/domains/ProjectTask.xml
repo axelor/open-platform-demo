@@ -40,11 +40,22 @@
     <decimal name="plannedProgress"/>
     <many-to-one name="parentTask" ref="ProjectTask" title="Parent task" />
     <integer name="sequence" title="Sequence" />
-    <many-to-many name="finishToStartTaskSet" ref="ProjectTask" title="Tasks to finish before start"/>
-    <many-to-many name="startToStartTaskSet" ref="ProjectTask" title="Tasks to start before start"/>
-    <many-to-many name="finishToFinishTaskSet" ref="ProjectTask" title="Tasks to finish before finish"/>
-    <many-to-many name="startToFinishaskSet" ref="ProjectTask" title="Tasks to start before finish"/>
-    
+    <many-to-many name="finishToStartTaskSet" ref="ProjectTask" title="Tasks to finish before start"
+    	table="PROJECT_TASK_F2S"
+    	column="from_task_id"
+		column2="to_task_id" />
+    <many-to-many name="startToStartTaskSet" ref="ProjectTask" title="Tasks to start before start"
+    	table="PROJECT_TASK_S2S"
+    	column="from_task_id"
+    	column2="to_task_id" />
+    <many-to-many name="finishToFinishTaskSet" ref="ProjectTask" title="Tasks to finish before finish"
+    	table="PROJECT_TASK_F2F"
+    	column="from_task_id"
+    	column2="to_task_id" />
+    <many-to-many name="startToFinishaskSet" ref="ProjectTask" title="Tasks to start before finish"
+    	table="PROJECT_TASK_S2F"
+    	column="from_task_id"
+    	column2="to_task_id" />
   </entity>
 
 </domain-models>
