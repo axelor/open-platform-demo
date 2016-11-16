@@ -34,10 +34,6 @@ allprojects {
 	targetCompatibility = 1.8
 }
 
-dependencies {
-	compile 'com.oracle:ojdbc7:12.1.0.2'
-}
-
 task wrapper(type: Wrapper) {
 	gradleVersion = "3.1"
 }
