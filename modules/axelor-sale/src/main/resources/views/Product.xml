@@ -19,6 +19,7 @@
     <field name="name" />
     <field name="category" />
     <field name="color" selection="product.color.selection" />
+    <field name="attrs" />
   </grid>
 
   <form name="product-form" title="Product" model="com.axelor.sale.db.Product">
@@ -33,6 +34,9 @@
         <field name="colorVariants" widget="multi-select" selection="product.color.selection"/>
         <field name="category"/>
       </panel>
+    </panel>
+    <panel title="Attributes" itemSpan="12">
+        <field name="attrs" />
     </panel>
     <panel title="Notes">
     	<field name="notes" showTitle="false" colSpan="12" widget="html" />
