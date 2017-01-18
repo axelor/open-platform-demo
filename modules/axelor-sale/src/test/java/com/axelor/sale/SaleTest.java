@@ -32,8 +32,10 @@ import com.axelor.contact.db.Country;
 import com.axelor.contact.db.Email;
 import com.axelor.contact.db.Title;
 import com.axelor.db.JPA;
-import com.axelor.db.Model;
-import com.axelor.db.Query;
+import com.axelor.db.JpaSupport;
+import com.axelor.inject.Beans;
+import com.axelor.meta.db.MetaSequence;
+import com.axelor.meta.db.repo.MetaSequenceRepository;
 import com.axelor.sale.db.Order;
 import com.axelor.sale.db.OrderLine;
 import com.axelor.sale.db.Product;
@@ -43,8 +45,9 @@ import com.google.inject.persist.Transactional;
 
 @RunWith(GuiceRunner.class)
 @GuiceModules({ TestModule.class })
-public class SaleTest {
-
+public class SaleTest extends JpaSupport {
+	
+	static final String SEQUENCE_NAME = "sale.order.seq";
 	static final long MAX_COUNT = 100L;
 
 	Order createSaleOrder() {
@@ -129,10 +132,6 @@ public class SaleTest {
 		}
 	}
 
-	private <T extends Model> Query<T> all(Class<T> klass) {
-		return Query.of(klass);
-	}
-
 	@Transactional
 	void dropData() {
 		all(OrderLine.class).delete();
@@ -145,9 +144,23 @@ public class SaleTest {
 		all(Circle.class).delete();
 		all(Title.class).delete();
 	}
-
+	
+	@Transactional
+	void createSequence() {
+		MetaSequence sequence = new MetaSequence(SEQUENCE_NAME);
+		sequence.setInitial(1L);
+		sequence.setIncrement(1);
+		sequence.setPadding(5);
+		sequence.setPrefix("SO");
+		Beans.get(MetaSequenceRepository.class).save(sequence);
+	}
+	
 	@Test
 	public void test() {
+		if(Beans.get(MetaSequenceRepository.class).findByName(SEQUENCE_NAME) == null) {
+			createSequence();
+		}
+		
 		createData();
 		Assert.assertEquals(MAX_COUNT, all(Order.class).count());
 
