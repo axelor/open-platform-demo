@@ -7,12 +7,12 @@
 
   <entity name="Address" cachable="true">
     <many-to-one name="contact" ref="Contact" required="true" />
-    <string name="street" required="true" max="255" />
-    <string name="area" max="255" />
-    <string name="city" />
+    <string name="street" required="true" max="255" initParam="true"/>
+    <string name="area" max="255" initParam="true"/>
+    <string name="city" initParam="true"/>
     <string name="zip" />
     <string name="state" />
-    <many-to-one name="country" ref="Country" />
+    <many-to-one name="country" ref="Country" initParam="true"/>
   </entity>
 
 </domain-models>
