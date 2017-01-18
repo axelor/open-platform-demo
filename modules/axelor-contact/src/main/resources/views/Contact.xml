@@ -138,10 +138,4 @@
     <call class="com.axelor.contact.web.HelloController" method="about"/>
   </action-method>
 
-  <action-attrs name="action-contact-address-attrs">
-    <attribute name="title" for="addresses.area" expr="Location" if="lastName == null"/>
-    <attribute name="title" for="addresses.area" expr="Area" if="lastName != null"/>
-    <attribute name="hidden" for="addresses.zip" expr="lastName == null"/>
-  </action-attrs>
-
 </object-views>

@@ -19,7 +19,7 @@
     </toolbar>
     <panel title="Order Details">
       <field name="name"/>
-      <field name="confirmed" widget="boolean-switch"/>
+      <field name="confirmed" widget="boolean-switch" onChange="com.axelor.sale.web.SaleOrderController:onConfirm"/>
       <field name="customer" readonlyIf="confirmed" form-view="contact-form" grid-view="contact-grid"/>
       <field name="orderDate" readonlyIf="confirmed"/>
       <field name="createDate" readonlyIf="confirmed"/>
