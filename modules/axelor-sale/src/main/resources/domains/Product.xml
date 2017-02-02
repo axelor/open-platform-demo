@@ -13,7 +13,7 @@
     <many-to-one name="category" ref="ProductCategory"/>
     <one-to-one name="image" ref="com.axelor.meta.db.MetaFile" />
     <string name="notes" large="true" />
-    <string name="attrs" title="Attributes" max="1024" json="true" />
+    <string name="attrs" title="Attributes" json="true" />
   </entity>
 
 </domain-models>
