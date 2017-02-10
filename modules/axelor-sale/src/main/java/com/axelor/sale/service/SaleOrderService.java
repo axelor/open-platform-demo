@@ -1,0 +1,69 @@
+/**
+ * Axelor Business Solutions
+ *
+ * Copyright (C) 2005-2017 Axelor (<http://axelor.com>).
+ *
+ * This program is free software: you can redistribute it and/or  modify
+ * it under the terms of the GNU Affero General Public License, version 3,
+ * as published by the Free Software Foundation.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU Affero General Public License for more details.
+ *
+ * You should have received a copy of the GNU Affero General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ */
+package com.axelor.sale.service;
+
+import java.math.BigDecimal;
+import java.math.RoundingMode;
+
+import javax.validation.ValidationException;
+
+import com.axelor.common.ObjectUtils;
+import com.axelor.sale.db.Order;
+import com.axelor.sale.db.OrderLine;
+import com.axelor.sale.db.Tax;
+
+public class SaleOrderService {
+	
+	public void validate(Order order) {
+		if (order != null && order.getConfirmDate() != null && order.getConfirmDate().isBefore(order.getCreateDate())) {
+			throw new ValidationException("invalid sale order, confirm date is in future");
+		}
+	}
+	
+	public Order calculate(Order order) {
+		
+		BigDecimal amount = BigDecimal.ZERO,
+				taxAmount = BigDecimal.ZERO;
+				
+		if (ObjectUtils.isEmpty(order.getItems())) {
+			return order;
+		}
+		
+		if(!ObjectUtils.isEmpty(order.getItems())) {
+			for (OrderLine item : order.getItems()) {
+				BigDecimal value = item.getPrice().multiply(new BigDecimal(item.getQuantity()));
+				BigDecimal taxValue = BigDecimal.ZERO;
+				
+				if(!ObjectUtils.isEmpty(item.getTaxes())) {
+					for (Tax tax : item.getTaxes()) {
+						taxValue = taxValue.add(tax.getRate().multiply(value));
+					}
+				}
+				
+				amount = amount.add(value);
+				taxAmount = taxAmount.add(taxValue);
+			}
+		}
+
+		order.setAmount(amount.setScale(4, RoundingMode.HALF_UP));
+		order.setTaxAmount(taxAmount.setScale(4, RoundingMode.HALF_UP));
+		order.setTotalAmount(amount.add(taxAmount).setScale(2, RoundingMode.HALF_UP));
+		
+		return order;
+	}
+}

@@ -18,8 +18,8 @@
   <grid name="product-grid" title="Products" model="com.axelor.sale.db.Product">
     <field name="name" />
     <field name="category" />
-    <field name="color" selection="product.color.selection" />
-    <field name="attrs" />
+    <field name="color" />
+	<field name="attrs" />
   </grid>
 
   <form name="product-form" title="Product" model="com.axelor.sale.db.Product">
@@ -30,8 +30,8 @@
       <panel colSpan="9">
         <field name="code"/>
         <field name="name"/>
-        <field name="color" selection="product.color.selection"/>
-        <field name="colorVariants" widget="multi-select" selection="product.color.selection"/>
+        <field name="color"/>
+        <field name="colorVariants" widget="multi-select"/>
         <field name="category"/>
       </panel>
     </panel>

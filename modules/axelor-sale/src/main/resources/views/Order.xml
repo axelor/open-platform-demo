@@ -19,7 +19,7 @@
     </toolbar>
     <panel title="Order Details">
       <field name="name"/>
-      <field name="confirmed" widget="boolean-switch"/>
+      <field name="confirmed" widget="boolean-switch" onChange="com.axelor.sale.web.SaleOrderController:onConfirm"/>
       <field name="customer" readonlyIf="confirmed" form-view="contact-form" grid-view="contact-grid"/>
       <field name="orderDate" readonlyIf="confirmed"/>
       <field name="createDate" readonlyIf="confirmed"/>
@@ -202,7 +202,7 @@
   </action-export>
 
   <action-report name="print.sale.order"
-    design="order.rptdesign"
+    design="Order.rptdesign"
     output="so-${date}${time}"
     format="pdf">
     <param name="orderId" expr="eval: id"/>
