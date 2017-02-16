@@ -77,6 +77,17 @@
       <bind node="@color" to="color" />
       <bind node="@category" to="category" search="self.code = :category"/>
     </bind>
+    
+    <bind node="custom-fields/field" type="com.axelor.meta.db.MetaJsonField"
+      search="self.name = :name AND self.model = :model AND self.modelField = :modelField">
+      <bind node="../@for" to="model" />
+      <bind node="../@on" to="modelField" />
+      <bind node="@name" to="name" />
+      <bind node="@type" to="type" eval="type?:'string'" />
+      <bind node="@target" to="targetModel" />
+      <bind node="@selection" to="selection" />
+      <bind node="@widget" to="widget" />
+    </bind>
 
     <bind node="sale-order" type="com.axelor.sale.db.Order" search="self.customer.emails[].email = :_email" update="false" call="com.axelor.demo.Validators:validateSaleOrder">
    	  <bind node="some" to="notes"/>
