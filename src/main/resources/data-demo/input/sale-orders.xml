@@ -24,6 +24,8 @@
     <field name="seller" type="many-to-one" target="com.axelor.contact.db.Contact" />
   </custom-fields>
 
+  <sequence name="sale.order.seq" padding="5" prefix="SO" />
+
   <sale-order confirmed="F">
     <some>Personal notes</some>
     <customer>
