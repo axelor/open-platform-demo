@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE xml>
+<configuration>
+
+  <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+    <encoder>
+      <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+    </encoder>
+  </appender>
+
+  <logger name="com.axelor" level="debug" />
+  <logger name="org.hibernate.SQL" level="info" />
+  <logger name="org.hibernate.tool.hbm2ddl" level="warn" />
+  <logger name="com.zaxxer.hikari" level="info" />
+
+  <root level="error">
+    <appender-ref ref="STDOUT" />
+  </root>
+</configuration>
