@@ -60,6 +60,12 @@
   
   <input file="sale-orders.xml" root="sale-orders">
   
+    <bind node="sequence" type="com.axelor.meta.db.MetaSequence" search="self.name = :name" update="false">
+      <bind node="@name" to="name" />
+      <bind node="@padding" to="padding" />
+      <bind node="@prefix" to="prefix" />
+    </bind>
+  
     <bind node="tax" type="com.axelor.sale.db.Tax" search="self.code = :code">
       <bind node="@code" to="code" />
       <bind node="@name" to="name" />
