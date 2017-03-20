@@ -64,7 +64,6 @@ public class SaleOrderController extends JpaSupport {
 		response.setValue("totalAmount", order.getTotalAmount());
 	}
 
-	@SuppressWarnings("unchecked")
 	public void reportToday(ActionRequest request, ActionResponse response) {
 		EntityManager em = getEntityManager();
 		Query q1 = em.createQuery(
@@ -98,7 +97,6 @@ public class SaleOrderController extends JpaSupport {
 		response.setData(Lists.newArrayList(data));
 	}
 
-	@SuppressWarnings("unchecked")
 	public void reportMonthly(ActionRequest request, ActionResponse response) {
 		EntityManager em = getEntityManager();
 		Query q1 = em.createQuery(
