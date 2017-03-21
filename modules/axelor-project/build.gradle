@@ -1,9 +1,9 @@
-apply plugin: 'axelor-module'
+apply plugin: 'com.axelor.app-module'
 
-module {
+axelor {
+	title = "Axelor :: Project"
+}
 
-	name "axelor-project"
-	title "Axelor :: Project"
-
-	module "modules:axelor-contact"
+dependencies {
+	compile project(":modules:axelor-contact")
 }
