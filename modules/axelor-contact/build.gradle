@@ -1,7 +1,5 @@
-apply plugin: 'axelor-module'
+apply plugin: 'com.axelor.app-module'
 
-module {
-	name "axelor-contact"
-	title "Axelor :: Contact"
+axelor {
+	title = "Axelor :: Contact"
 }
-

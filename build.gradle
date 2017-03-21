@@ -1,44 +1,41 @@
 buildscript {
-	apply from: "gradle/adk.gradle"
+	apply {
+		from "gradle/repositories.gradle"
+	}
+	ext {
+		axelorVersion = "5.0.0-SNAPSHOT"
+	}
 	dependencies {
-		classpath adkPlugins()
+		classpath "com.axelor:axelor-gradle:${axelorVersion}"
 	}
 }
 
-// find all modules
-def modules = new File('modules').listFiles().findAll { dir ->
-	new File(dir, 'build.gradle').exists() && !dir.name.endsWith('-tests')
-}
+apply plugin: 'eclipse'
+apply plugin: "com.axelor.app"
 
-apply plugin: "axelor-app"
-apply plugin: "groovy"
-
-application {
-
-	name "axelor-demo"
-	title "Axelor :: DEMO"
-
-	version "5.0.0"
-
-	// ADK version required
-	adkVersion "~5.0.0"
-
-	// depends on all modules
-	modules.each { dir ->
-		module "modules:$dir.name"
-	}
+axelor {
+	title = "Axelor :: DEMO"
 }
 
 allprojects {
+	apply plugin: 'eclipse'
+	
+	group = "com.axelor"
+	version = "5.0.0-SNAPSHOT"
+
 	sourceCompatibility = 1.8
 	targetCompatibility = 1.8
 }
 
-task wrapper(type: Wrapper) {
-	gradleVersion = "3.2.1"
+dependencies {
+	// add module dependencies
+	compile project(":modules:axelor-contact")
+	compile project(":modules:axelor-sale")
+	compile project(":modules:axelor-project")
+	compile project(":modules:axelor-custom")
 }
 
-tomcat {
-	httpPort = project.properties.get("http.port", 8080) as Integer
-	stopPort = 9451
+task wrapper(type: Wrapper) {
+	gradleVersion = "3.4.1"
 }
+
