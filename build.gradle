@@ -1,13 +1,20 @@
 buildscript {
-	apply {
-		from "gradle/repositories.gradle"
+	ext.repos = {
+		mavenCentral()
+		mavenLocal()
+		jcenter()
+
+		maven { url 'https://plugins.gradle.org/m2/' }
+		maven { url 'https://repository.axelor.com/nexus/public/' }
 	}
-	ext {
-		axelorVersion = "5.0.0-SNAPSHOT"
-	}
+	repositories repos
 	dependencies {
-		classpath "com.axelor:axelor-gradle:${axelorVersion}"
+		classpath "com.axelor:axelor-gradle:5.0.0-SNAPSHOT"
 	}
+}
+
+allprojects {
+	repositories repos
 }
 
 apply plugin: 'eclipse'
@@ -19,7 +26,7 @@ axelor {
 
 allprojects {
 	apply plugin: 'eclipse'
-	
+
 	group = "com.axelor"
 	version = "5.0.0-SNAPSHOT"
 
@@ -38,4 +45,3 @@ dependencies {
 task wrapper(type: Wrapper) {
 	gradleVersion = "3.4.1"
 }
-
