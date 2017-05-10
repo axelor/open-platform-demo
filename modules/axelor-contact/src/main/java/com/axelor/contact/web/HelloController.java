@@ -68,7 +68,7 @@ public class HelloController {
 	public void about(ActionRequest request, ActionResponse response) {
 		
 		Address address = request.getContext().asType(Address.class);
-		Contact contact = request.getContext().getParentContext().asType(Contact.class);
+		Contact contact = request.getContext().getParent().asType(Contact.class);
 		
 		String name = contact.getFullName();
 		
