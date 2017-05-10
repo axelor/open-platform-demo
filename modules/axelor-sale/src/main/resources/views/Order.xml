@@ -168,8 +168,8 @@
     <field name="title" expr="action:default-title-record"/>
     <field name="firstName" expr="John"/>
     <field name="lastName" expr="Smith"/>
-    <field name="emails" expr="eval: [__repo__.of(Email).create([email: 'john.smith@gmail.com'])]"/>
-    <field name="phones" expr="eval: [__repo__.of(Phone).create([phone: '+330183610313'])]"/>
+    <field name="emails" expr="eval: [__repo__(Email).create([email: 'john.smith@gmail.com'])]"/>
+    <field name="phones" expr="eval: [__repo__(Phone).create([phone: '+330183610313'])]"/>
   </action-record>
 
   <action-record name="default-title-record"
