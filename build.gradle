@@ -10,10 +10,10 @@ application {
 	name "axelor-demo"
 	title "Axelor :: Demo Application"
 	
-	version "3.3.0"
+	version "3.4.0"
 
 	// ADK version required
-	adkVersion "~3.3.0"
+	adkVersion "~3.4.0"
 
 	// depends on all modules
 	modules.each { dir ->
