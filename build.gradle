@@ -18,6 +18,7 @@ allprojects {
 }
 
 apply plugin: 'eclipse'
+apply plugin: 'idea'
 apply plugin: "com.axelor.app"
 
 axelor {
@@ -26,6 +27,7 @@ axelor {
 
 allprojects {
 	apply plugin: 'eclipse'
+	apply plugin: 'idea'
 
 	group = "com.axelor"
 	version = "5.0.0-SNAPSHOT"
