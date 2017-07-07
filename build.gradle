@@ -1,8 +1,8 @@
 buildscript {
 	ext.repos = {
+		jcenter()
 		mavenCentral()
 		mavenLocal()
-		jcenter()
 
 		maven { url 'https://plugins.gradle.org/m2/' }
 		maven { url 'https://repository.axelor.com/nexus/public/' }
