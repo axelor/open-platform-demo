@@ -19,7 +19,7 @@
     <field name="color" selection="product.color.selection" />
     <field name="active" type="boolean" />
     <field name="price" type="decimal" />
-    <field name="quanity" type="integer" />
+    <field name="quantity" type="integer" />
     <field name="date" type="datetime" />
     <field name="seller" type="many-to-one" target="com.axelor.contact.db.Contact" />
   </custom-fields>
