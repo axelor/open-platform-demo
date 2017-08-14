@@ -166,6 +166,8 @@
   
   <input file="projects.xml" root="projects">
   	<bind node="project" type="com.axelor.project.db.Project">
+        <bind to="_base" eval="java.time.LocalDate.of(2014, 11, 11)" />
+        <bind to="_date" eval="java.time.LocalDate.now()" />
   		<bind node="@name" to="name"/>
   		<bind node="@priority" to="priority"/>
   		<bind node="description" to="description"/>
@@ -177,14 +179,14 @@
 	        <bind node="@priority" to="priority"/>
             <bind node="@state" to="state"/>
 	        <bind node="@user" to="user" search="self.code = :user" update="true"/>
-	        <bind node="@createDate" to="createDate" adapter="LocalDateTime"/>
-	        <bind node="@startDate" to="startDate" adapter="LocalDateTime"/>
-	        <bind node="@endDate" to="endDate" adapter="LocalDateTime"/>
-            <bind node="@plannedStartDate" to="plannedStartDate" adapter="LocalDateTime"/>
+	        <bind node="@createDate" to="createDate" adapter="LocalDateTime" eval="createDate?.plus(_base.until(_date))"/>
+	        <bind node="@startDate" to="startDate" adapter="LocalDateTime" eval="startDate?.plus(_base.until(_date))"/>
+	        <bind node="@endDate" to="endDate" adapter="LocalDateTime" eval="endDate?.plus(_base.until(_date))"/>
+            <bind node="@plannedStartDate" to="plannedStartDate" adapter="LocalDateTime" eval="plannedStartDate?.plus(_base.until(_date))"/>
             <bind node="@plannedDuration" to="plannedDuration"/>
             <bind node="@parentTask" to="parentTask" search="self.name = :parentTask" update="true"/>
 	        <bind node="works/work" to="workItems">
-	        	<bind node="@date" to="date" adapter="LocalDate"/>
+	        	<bind node="@date" to="date" adapter="LocalDate" eval="date?.plus(_base.until(_date))"/>
 	        	<bind node="@hours" to="hours" adapter="LocalTime"/>
 	        	<bind node="text()" to="name"/>
 	        </bind>
