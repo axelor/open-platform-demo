@@ -23,7 +23,7 @@
       <field name="customer" readonlyIf="confirmed" form-view="contact-form" grid-view="contact-grid"/>
       <field name="orderDate" readonlyIf="confirmed"/>
       <field name="createDate" readonlyIf="confirmed"/>
-      <field name="confirmDate" requiredIf="confirmed" validIf="confimDate == null || $moment(confirmDate) > $moment(createDate)"/>
+      <field name="confirmDate" requiredIf="confirmed" validIf="confirmDate == null || $moment(confirmDate) >= $moment(createDate)"/>
     </panel>
     <panel-tabs>
       <panel-related field="items" editable="true" readonlyIf="confirmed"
@@ -45,14 +45,14 @@
       </panel>
       <panel colSpan="8" css="order-subtotal" readonly="true">
         <field name="totalAmount" showTitle="false" colSpan="12">
-          <viewer><![CDATA[
+          <viewer depends="amount,taxAmount"><![CDATA[
           <dl class="dl-horizontal">
             <dt x-translate>Amount</dt>
-            <dd>{{record.amount}}</dd>
+            <dd>{{amount}}</dd>
             <dt x-translate>Tax amount</dt>
-            <dd>{{record.taxAmount}}</dd>
+            <dd>{{taxAmount}}</dd>
             <dt class="order-subtotal-total" x-translate>Total amount</dt>
-            <dd class="order-subtotal-total">{{record.totalAmount}}</dd>
+            <dd class="order-subtotal-total">{{totalAmount}}</dd>
           </dl>
           ]]></viewer>
         </field>
