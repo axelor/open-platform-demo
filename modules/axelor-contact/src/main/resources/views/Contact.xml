@@ -59,7 +59,7 @@
     <panel title="Contacts" css="panel-green">
       <field name="emails">
         <viewer><![CDATA[
-        <a href="mailto:{{email}}">{{email}}</a>
+        <a href="mailto:{{record.email}}">{{record.email}}</a>
         ]]></viewer>
         <editor layout="table" x-show-titles="false">
           <field name="email" />
@@ -70,7 +70,7 @@
       </field>
       <field name="phones">
         <viewer><![CDATA[
-        <a href="tel:{{phone}}">{{phone}}</a> <span class="muted" ng-if="phoneType">({{phoneType}})</span>
+        <a href="tel:{{record.phone}}">{{record.phone}}</a> <span class="muted" ng-if="record.phoneType">({{record.phoneType}})</span>
         ]]></viewer>
         <editor layout="table" x-show-titles="false">
           <field name="phoneType" width="100px" selection="phone.type.selection" />
@@ -81,9 +81,9 @@
       <field name="addresses" colSpan="12" css="address-list">
         <viewer><![CDATA[
         <address>
-        {{street}} {{area}}<br>
-        {{city}}, {{state}} - {{zip}}<br>
-        {{country.name}}
+        {{record.street}} {{record.area}}<br>
+        {{record.city}}, {{record.state}} - {{record.zip}}<br>
+        {{record.country.name}}
         </address>
         ]]>
         </viewer>
