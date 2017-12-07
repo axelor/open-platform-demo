@@ -108,8 +108,9 @@
       <bind to="_date" eval="java.time.LocalDate.now()" if="!_date" />
 
       <bind to="orderDate" eval="_date" />
-      <bind to="createDate" eval="_date" />
       <bind to="confirmDate" eval="_date" if="confirmed"/>
+      <bind to="status" eval="'DRAFT'" if="!confirmed"/>
+      <bind to="status" eval="'OPEN'" if="confirmed"/>
 
       <!-- put email in the context -->
       <bind node="customer/email" to="_email"/>

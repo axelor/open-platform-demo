@@ -7,11 +7,18 @@
 
   <sequence name="sale.order.seq" initial="1" increment="1" padding="5" prefix="SO"/>
 
+  <enum name="OrderStatus">
+    <item name="DRAFT" value="draft" />
+    <item name="OPEN" value="open" />
+    <item name="CLOSED" value="closed" />
+    <item name="CANCELED" value="canceled" />
+  </enum>
+  
   <entity name="Order" sequential="true">
     <many-to-one name="customer" ref="com.axelor.contact.db.Contact" required="true"/>
     <string name="name" sequence="sale.order.seq" readonly="true" />
-    <date name="orderDate" required="true"/>
-    <date name="createDate" required="true"/>
+    <enum name="status" ref="OrderStatus"></enum>
+    <date name="orderDate" required="true" />
     <date name="confirmDate" />
     <boolean name="confirmed" />
     <decimal name="amount" precision="20" scale="4"/>
@@ -24,14 +31,14 @@
 
     <track>
       <field name="name" />
-      <field name="createDate" on="CREATE" />
+      <field name="orderDate" on="CREATE" />
       <field name="customer" />
       <field name="confirmed" on="UPDATE" />
       <field name="confirmDate" on="UPDATE" if="confirmed" />
       <field name="totalAmount" />
       <message if="true" on="CREATE">Order created</message>
       <message if="confirmed" on="UPDATE">Order confirmed</message>
-      <message if="!confirmed" tag="important">Draft</message>
+      <message if="status == OrderStatus.DRAFT" tag="important">Draft</message>
       <message if="confirmed" tag="success">Confirmed</message>
       <message if="confirmed &amp;&amp; totalAmount &gt;= 1000" tag="important" fields="confirmed">Important</message>
     </track>

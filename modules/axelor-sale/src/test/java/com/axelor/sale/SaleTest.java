@@ -106,7 +106,6 @@ public class SaleTest extends JpaSupport {
 		Order order = new Order();
 		order.setCustomer(contact);
 		order.setOrderDate(LocalDate.now());
-		order.setCreateDate(LocalDate.now());
 
 		OrderLine item1 = new OrderLine();
 		item1.setProduct(p1);

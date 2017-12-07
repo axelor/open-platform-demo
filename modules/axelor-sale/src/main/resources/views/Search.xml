@@ -35,12 +35,12 @@
     <select model="com.axelor.sale.db.Order" title="Sale Order" orderBy="date,-value">
       <field name="customer.fullName" as="customer"/>
       <field name="items[].product.name" as="product"/>
-      <field name="createDate" as="date"/>
+      <field name="orderDate" as="date"/>
       <field name="amount" as="value"/>
       <where match="any">
         <input name="customer" field="customer.fullName" matchStyle="contains"/>
         <input name="partner" field="customer"/>
-        <input name="date" field="createDate"/>
+        <input name="date" field="orderDate"/>
         <input name="value" field="amount"/>
         <input name="product" field="items[].product"/>
       </where>

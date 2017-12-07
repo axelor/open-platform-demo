@@ -1,7 +1,7 @@
-/**
+/*
  * Axelor Business Solutions
  *
- * Copyright (C) 2005-2016 Axelor (<http://axelor.com>).
+ * Copyright (C) 2005-2017 Axelor (<http://axelor.com>).
  *
  * This program is free software: you can redistribute it and/or  modify
  * it under the terms of the GNU Affero General Public License, version 3,
@@ -19,6 +19,7 @@ package com.axelor.sale.web;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
+import java.time.LocalDate;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -27,12 +28,11 @@ import javax.inject.Inject;
 import javax.persistence.EntityManager;
 import javax.persistence.Query;
 
-import org.joda.time.LocalDate;
-
 import com.axelor.db.JpaSupport;
 import com.axelor.rpc.ActionRequest;
 import com.axelor.rpc.ActionResponse;
 import com.axelor.sale.db.Order;
+import com.axelor.sale.db.OrderStatus;
 import com.axelor.sale.service.SaleOrderService;
 import com.google.common.collect.Lists;
 
@@ -46,14 +46,19 @@ public class SaleOrderController extends JpaSupport {
 		Order order = request.getContext().asType(Order.class);
 		
 		response.setReadonly("orderDate", order.getConfirmed());
-		response.setReadonly("createDate", order.getConfirmed());
 		response.setReadonly("confirmDate", order.getConfirmed());
+
+		if (order.getConfirmed() == Boolean.TRUE && order.getConfirmDate() == null) {
+			response.setValue("confirmDate", LocalDate.now());
+		}
 		
-		if (order.getConfirmed() && order.getConfirmDate() == null) {
-			response.setValue("confirmDate", new LocalDate());
+		if (order.getConfirmed() == Boolean.TRUE) {
+			response.setValue("status", OrderStatus.OPEN);
+		} else if (order.getStatus() == OrderStatus.OPEN) {
+			response.setValue("status", OrderStatus.DRAFT);
 		}
 	}
-	
+
 	public void calculate(ActionRequest request, ActionResponse response) {
 		
 		Order order = request.getContext().asType(Order.class);
