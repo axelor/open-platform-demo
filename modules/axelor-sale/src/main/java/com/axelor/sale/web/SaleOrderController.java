@@ -32,6 +32,7 @@ import com.axelor.db.JpaSupport;
 import com.axelor.rpc.ActionRequest;
 import com.axelor.rpc.ActionResponse;
 import com.axelor.sale.db.Order;
+import com.axelor.sale.db.OrderStatus;
 import com.axelor.sale.service.SaleOrderService;
 import com.google.common.collect.Lists;
 
@@ -45,11 +46,16 @@ public class SaleOrderController extends JpaSupport {
 		Order order = request.getContext().asType(Order.class);
 		
 		response.setReadonly("orderDate", order.getConfirmed());
-		response.setReadonly("createDate", order.getConfirmed());
 		response.setReadonly("confirmDate", order.getConfirmed());
-		
-		if (order.getConfirmed() && order.getConfirmDate() == null) {
+
+		if (order.getConfirmed() == Boolean.TRUE && order.getConfirmDate() == null) {
 			response.setValue("confirmDate", LocalDate.now());
+		}
+		
+		if (order.getConfirmed() == Boolean.TRUE) {
+			response.setValue("status", OrderStatus.OPEN);
+		} else if (order.getStatus() == OrderStatus.OPEN) {
+			response.setValue("status", OrderStatus.DRAFT);
 		}
 	}
 

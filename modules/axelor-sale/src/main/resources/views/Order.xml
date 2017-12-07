@@ -7,8 +7,8 @@
     <field name="name"/>
     <field name="customer"/>
     <field name="orderDate"/>
+    <field name="status"/>
     <field name="totalAmount"/>
-    <field name="confirmed"/>
   </grid>
 
   <form name="order-form" title="Order" model="com.axelor.sale.db.Order"
@@ -19,11 +19,11 @@
     </toolbar>
     <panel title="Order Details">
       <field name="name"/>
-      <field name="confirmed" widget="boolean-switch" onChange="com.axelor.sale.web.SaleOrderController:onConfirm"/>
+      <field name="status" widget="nav-select" readonly="true"/>
       <field name="customer" readonlyIf="confirmed" form-view="contact-form" grid-view="contact-grid"/>
+      <field name="confirmed" widget="boolean-switch" onChange="com.axelor.sale.web.SaleOrderController:onConfirm"/>
       <field name="orderDate" readonlyIf="confirmed"/>
-      <field name="createDate" readonlyIf="confirmed"/>
-      <field name="confirmDate" requiredIf="confirmed" validIf="confirmDate == null || $moment(confirmDate) >= $moment(createDate)"/>
+      <field name="confirmDate" requiredIf="confirmed" validIf="confirmDate == null || $moment(confirmDate) >= $moment(orderDate)"/>
     </panel>
     <panel-tabs>
       <panel-related field="items" editable="true" readonlyIf="confirmed"
@@ -65,7 +65,7 @@
   </form>
 
   <calendar name="sales-timeline" title="Sales Timeline" model="com.axelor.sale.db.Order" editable="false"
-    eventStart="createDate"
+    eventStart="orderDate"
     eventStop="confirmDate"
     eventLength="8"
     colorBy="customer">
@@ -136,7 +136,7 @@
     <field name="customer" expr="action:default-customer-record" if="!(__ref__ instanceof Contact)"/>
     <field name="customer" expr="eval: __ref__" if="__ref__ instanceof Contact"/>
     <field name="orderDate" expr="eval: __date__"/>
-    <field name="createDate" expr="eval: __date__"/>
+    <field name="status" expr="DRAFT" />
     <field name="items" expr="action:default-orderline-record"/>
   </action-record>
 
@@ -180,15 +180,13 @@
   </action-record>
 
   <action-validate name="action-sale-order-validate">
-    <error message="Create Date is in future." if="confirmed &amp;&amp; createDate &gt; __date__"/>
     <error message="Order Date is in future." if="confirmed &amp;&amp; orderDate &gt; __date__"/>
     <alert message="No Sale Order Items. Would you like to continue?" if="confirmed &amp;&amp; !items"/>
   </action-validate>
 
   <action-condition name="check-order-dates">
     <check field="orderDate"/>
-    <check field="createDate"/>
-    <check field="createDate" if="orderDate &gt; createDate" error="Order creation date is in the future."/>
+    <check field="confirmDate" if="confirmDate &amp;&amp; confirmDate &lt; orderDate" error="Confirm date should be after order date."/>
   </action-condition>
 
   <action-condition name="check-order-values">
@@ -202,7 +200,7 @@
   </action-export>
 
   <action-report name="print.sale.order"
-    design="Order.rptdesign"
+    design="order.rptdesign"
     output="so-${date}${time}"
     format="pdf">
     <param name="orderId" expr="eval: id"/>

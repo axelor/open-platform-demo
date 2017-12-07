@@ -6,6 +6,26 @@
   <menuitem name="menu-sales" order="-90"
     title="Sales Management" icon="fa-shopping-cart" icon-background="orange"/>
 
+  <menuitem name="menu-sales-product" parent="menu-sales"
+    title="Products"
+    action="sale.products"/>
+
+  <action-view name="sale.products" model="com.axelor.sale.db.Product" title="Products">
+    <view type="grid"/>
+    <view type="form"/>
+  </action-view>
+  
+  <menuitem name="menu-sales-draft" parent="menu-sales"
+    title="Quotations"
+    action="sale.orders.draft"/>
+
+  <action-view name="sale.orders.draft" model="com.axelor.sale.db.Order" title="Quotations">
+    <view type="grid"/>
+    <view type="form"/>
+    <domain>self.status = :status</domain>
+    <context name="status" expr="DRAFT" />
+  </action-view>
+
   <menuitem name="menu-sales-order" parent="menu-sales"
     title="Sale Orders"
     action="sale.orders"/>
@@ -15,15 +35,6 @@
     <view type="form"/>
     <view type="calendar" name="sales-timeline"/>
     <view-param name="search-filters" value="filter-sales"/>
-  </action-view>
-
-  <menuitem name="menu-sales-product" parent="menu-sales"
-    title="Products"
-    action="sale.products"/>
-
-  <action-view name="sale.products" model="com.axelor.sale.db.Product" title="Products">
-    <view type="grid"/>
-    <view type="form"/>
   </action-view>
 
   <menuitem name="menu-sales-search" parent="menu-sales"

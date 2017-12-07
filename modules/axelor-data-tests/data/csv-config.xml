@@ -31,7 +31,6 @@
     <bind column="confirmed" to="confirmed" eval="confirmed ==~ /^(T|Y|1)$/ ? 'true' : 'false'"/>
 
     <bind column="date" to="orderDate"/>
-    <bind column="date" to="createDate"/>
 
     <!-- default value provided with eval expression -->
     <bind to="confirmDate" eval="java.time.LocalDate.now()"/>
