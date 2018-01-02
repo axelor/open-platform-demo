@@ -34,7 +34,6 @@ public class SaleOrderImport {
 	public void createOrder(Map<String, Object> context) {
 
 		Order order = new Order();
-		order.setCreateDate(LocalDate.now());
 		order.setOrderDate(LocalDate.now());
 
 		context.put("_saleOrder", order);

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<adapter-tests xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!DOCTYPE xml>
+<adapter-tests>
 
   <adapter-test>
     <date>11/12/2013</date>
