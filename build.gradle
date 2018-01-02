@@ -38,10 +38,10 @@ allprojects {
 
 dependencies {
 	// add module dependencies
-	compile project(":modules:axelor-contact")
-	compile project(":modules:axelor-sale")
-	compile project(":modules:axelor-project")
-	compile project(":modules:axelor-custom")
+	compile project(":modules:axelor-demo-contact")
+	compile project(":modules:axelor-demo-sale")
+	compile project(":modules:axelor-demo-project")
+	compile project(":modules:axelor-demo-custom")
 }
 
 task wrapper(type: Wrapper) {

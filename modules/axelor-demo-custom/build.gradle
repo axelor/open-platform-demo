@@ -13,7 +13,7 @@ This is a demo module to provide quick demonstration of removable modules.
 }
 
 dependencies {
-	compile project(":modules:axelor-contact")
-	compile project(":modules:axelor-sale")
+	compile project(":modules:axelor-demo-contact")
+	compile project(":modules:axelor-demo-sale")
 }
 
