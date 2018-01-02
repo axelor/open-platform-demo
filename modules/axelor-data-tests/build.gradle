@@ -1,6 +1,6 @@
 apply plugin: 'com.axelor.app-module'
 
-axelor.module {
+axelor {
 	title = "Axelor :: Data Tests"
 }
 
