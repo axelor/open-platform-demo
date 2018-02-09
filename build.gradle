@@ -3,7 +3,6 @@ buildscript {
 		jcenter()
 		mavenCentral()
 		mavenLocal()
-
 		maven { url 'https://plugins.gradle.org/m2/' }
 		maven { url 'https://repository.axelor.com/nexus/public/' }
 	}
@@ -17,8 +16,8 @@ allprojects {
 	repositories repos
 }
 
-apply plugin: 'eclipse'
 apply plugin: 'idea'
+apply plugin: 'eclipse'
 apply plugin: "com.axelor.app"
 
 axelor {
@@ -26,8 +25,8 @@ axelor {
 }
 
 allprojects {
-	apply plugin: 'eclipse'
 	apply plugin: 'idea'
+	apply plugin: 'eclipse'
 
 	group = "com.axelor"
 	version = "5.0.0-SNAPSHOT"
@@ -44,6 +43,3 @@ dependencies {
 	compile project(":modules:axelor-demo-custom")
 }
 
-task wrapper(type: Wrapper) {
-	gradleVersion = "4.4.1"
-}
