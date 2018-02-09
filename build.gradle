@@ -8,7 +8,7 @@ buildscript {
 	}
 	repositories repos
 	dependencies {
-		classpath "com.axelor:axelor-gradle:5.0.0-SNAPSHOT"
+		classpath "com.axelor:axelor-gradle:5.0.0-rc1"
 	}
 }
 
@@ -29,7 +29,7 @@ allprojects {
 	apply plugin: 'eclipse'
 
 	group = "com.axelor"
-	version = "5.0.0-SNAPSHOT"
+	version = "5.0.0-rc1"
 
 	sourceCompatibility = 1.8
 	targetCompatibility = 1.8
