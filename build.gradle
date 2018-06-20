@@ -6,10 +6,11 @@ buildscript {
 		maven { url 'https://plugins.gradle.org/m2/' }
 		maven { url 'https://repository.axelor.com/nexus/public/' }
 	}
-	ext.axelorVersion = '5.0.0'
+	ext.adkVersion = '5.0.+'
+	ext.appVersion = '5.0.1'
 	repositories repos
 	dependencies {
-		classpath "com.axelor:axelor-gradle:${axelorVersion}"
+		classpath "com.axelor:axelor-gradle:${adkVersion}"
 	}
 }
 
@@ -30,7 +31,7 @@ allprojects {
 	apply plugin: 'eclipse'
 
 	group = "com.axelor"
-	version = "${axelorVersion}"
+	version = "${appVersion}"
 
 	sourceCompatibility = 1.8
 	targetCompatibility = 1.8
@@ -43,4 +44,3 @@ dependencies {
 	compile project(":modules:axelor-demo-project")
 	compile project(":modules:axelor-demo-custom")
 }
-
