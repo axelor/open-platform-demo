@@ -22,6 +22,8 @@ apply plugin: 'idea'
 apply plugin: 'eclipse'
 apply plugin: "com.axelor.app"
 
+apply from: './gradle/style.gradle'
+
 axelor {
 	title = "Axelor :: DEMO"
 }
