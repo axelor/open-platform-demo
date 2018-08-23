@@ -17,36 +17,35 @@
  */
 package com.axelor.data;
 
+import com.axelor.data.csv.CSVImporter;
 import java.io.File;
 import java.io.IOException;
-
 import org.junit.Test;
-
-import com.axelor.data.csv.CSVImporter;
 
 public class CSVDataTest extends AbstractTest {
 
-	@Test
-	public void testDefault() throws IOException {
-		Importer importer = new CSVImporter("data/csv-config.xml", "data/csv");
-		importer.run();
-	}
+  @Test
+  public void testDefault() throws IOException {
+    Importer importer = new CSVImporter("data/csv-config.xml", "data/csv");
+    importer.run();
+  }
 
-	@Test
-	public void testMulti() throws IOException {
-		Importer importer = new CSVImporter("data/csv-multi-config.xml");
-		importer.run(new ImportTask() {
-			@Override
-			public void configure() throws IOException {
-				input("[sale.order]", new File("data/csv-multi/so1.csv"));
-				input("[sale.order]", new File("data/csv-multi/so2.csv"));
-			}
-		});
-	}
+  @Test
+  public void testMulti() throws IOException {
+    Importer importer = new CSVImporter("data/csv-multi-config.xml");
+    importer.run(
+        new ImportTask() {
+          @Override
+          public void configure() throws IOException {
+            input("[sale.order]", new File("data/csv-multi/so1.csv"));
+            input("[sale.order]", new File("data/csv-multi/so2.csv"));
+          }
+        });
+  }
 
-	@Test
-	public void testData() throws IOException {
-		Importer importer = new CSVImporter("data/csv-config-types.xml", "data/csv");
-		importer.run();
-	}
+  @Test
+  public void testData() throws IOException {
+    Importer importer = new CSVImporter("data/csv-config-types.xml", "data/csv");
+    importer.run();
+  }
 }

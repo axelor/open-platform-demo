@@ -14,7 +14,7 @@
     <view type="grid"/>
     <view type="form"/>
   </action-view>
-  
+
   <menuitem name="menu-sales-draft" parent="menu-sales"
     title="Quotations"
     action="sale.orders.draft"/>

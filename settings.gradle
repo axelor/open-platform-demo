@@ -5,4 +5,3 @@ include "modules:axelor-demo-sale"
 include "modules:axelor-demo-project"
 include "modules:axelor-demo-custom"
 include "modules:axelor-demo-data"
-

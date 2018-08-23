@@ -15,7 +15,7 @@
       <bind node="password" to="password" />
     </bind>
   </input>
-  
+
   <input file="contacts.xml" root="address-book">
     <bind node="title" type="com.axelor.contact.db.Title" search="self.code = :code">
       <bind node="@code" to="code" />
@@ -57,33 +57,33 @@
       </bind>
     </bind>
   </input>
-  
+
   <input file="sale-orders.xml" root="sale-orders">
-  
+
     <bind node="sequence" type="com.axelor.meta.db.MetaSequence" search="self.name = :name" update="false">
       <bind node="@name" to="name" />
       <bind node="@padding" to="padding" />
       <bind node="@prefix" to="prefix" />
     </bind>
-  
+
     <bind node="tax" type="com.axelor.sale.db.Tax" search="self.code = :code">
       <bind node="@code" to="code" />
       <bind node="@name" to="name" />
       <bind to="rate" node="text()"/>
     </bind>
-    
+
     <bind node="category" type="com.axelor.sale.db.ProductCategory" search="self.code = :code">
       <bind node="@code" to="code" />
       <bind node="@name" to="name" />
     </bind>
-    
+
     <bind node="product" type="com.axelor.sale.db.Product" search="self.code = :code">
       <bind node="@code" to="code" />
       <bind node="@name" to="name" />
       <bind node="@color" to="color" />
       <bind node="@category" to="category" search="self.code = :category"/>
     </bind>
-    
+
     <bind node="custom-fields/field" type="com.axelor.meta.db.MetaJsonField"
       search="self.name = :name AND self.model = :model AND self.modelField = :modelField">
       <bind node="../@for" to="model" />
@@ -96,8 +96,8 @@
     </bind>
 
     <bind node="sale-order" type="com.axelor.sale.db.Order" search="self.customer.emails[].email = :_email" update="false" call="com.axelor.demo.Validators:validateSaleOrder">
-   	  <bind node="some" to="notes"/>
-    
+       <bind node="some" to="notes"/>
+
       <!-- transform boolean value into 'true' or 'false' -->
       <bind node="@confirmed" to="confirmed" adapter="Boolean"/>
 
@@ -137,7 +137,7 @@
         </bind>
       </bind>
       <!-- END IF -->
-      
+
       <bind node="items/item" to="items">
         <bind node="@quantity" to="quantity" />
         <bind node="@price" to="price" />
@@ -164,41 +164,41 @@
       </bind>
     </bind>
   </input>
-  
+
   <input file="projects.xml" root="projects">
-  	<bind node="project" type="com.axelor.project.db.Project">
+    <bind node="project" type="com.axelor.project.db.Project">
         <bind to="_base" eval="java.time.LocalDate.of(2014, 11, 11)" />
         <bind to="_date" eval="java.time.LocalDate.now()" />
-  		<bind node="@name" to="name"/>
-  		<bind node="@priority" to="priority"/>
-  		<bind node="description" to="description"/>
-  		<bind node="members/member" to="members" search="self.code = :code">
-  			<bind node="text()" to="code"/>
-  		</bind>
-  		<bind node="tasks/task" to="tasks">
-  			<bind node="@name" to="name"/>
-	        <bind node="@priority" to="priority"/>
+      <bind node="@name" to="name"/>
+      <bind node="@priority" to="priority"/>
+      <bind node="description" to="description"/>
+      <bind node="members/member" to="members" search="self.code = :code">
+        <bind node="text()" to="code"/>
+      </bind>
+      <bind node="tasks/task" to="tasks">
+        <bind node="@name" to="name"/>
+          <bind node="@priority" to="priority"/>
             <bind node="@state" to="state"/>
-	        <bind node="@user" to="user" search="self.code = :user" update="true"/>
-	        <bind node="@createDate" to="createDate" adapter="LocalDateTime" eval="createDate?.plus(_base.until(_date))"/>
-	        <bind node="@startDate" to="startDate" adapter="LocalDateTime" eval="startDate?.plus(_base.until(_date))"/>
-	        <bind node="@endDate" to="endDate" adapter="LocalDateTime" eval="endDate?.plus(_base.until(_date))"/>
+          <bind node="@user" to="user" search="self.code = :user" update="true"/>
+          <bind node="@createDate" to="createDate" adapter="LocalDateTime" eval="createDate?.plus(_base.until(_date))"/>
+          <bind node="@startDate" to="startDate" adapter="LocalDateTime" eval="startDate?.plus(_base.until(_date))"/>
+          <bind node="@endDate" to="endDate" adapter="LocalDateTime" eval="endDate?.plus(_base.until(_date))"/>
             <bind node="@plannedStartDate" to="plannedStartDate" adapter="LocalDateTime" eval="plannedStartDate?.plus(_base.until(_date))"/>
             <bind node="@plannedDuration" to="plannedDuration"/>
             <bind node="@parentTask" to="parentTask" search="self.name = :parentTask" update="true"/>
-	        <bind node="works/work" to="workItems">
-	        	<bind node="@date" to="date" adapter="LocalDate" eval="date?.plus(_base.until(_date))"/>
-	        	<bind node="@hours" to="hours" adapter="LocalTime"/>
-	        	<bind node="text()" to="name"/>
-	        </bind>
+          <bind node="works/work" to="workItems">
+            <bind node="@date" to="date" adapter="LocalDate" eval="date?.plus(_base.until(_date))"/>
+            <bind node="@hours" to="hours" adapter="LocalTime"/>
+            <bind node="text()" to="name"/>
+          </bind>
            <bind node="finishToStartTaskSet/task" to="finishToStartTaskSet" search="self.name = :name" update="true">
               <bind node="text()" to="name"/>
            </bind>
            <bind node="startToStartTaskSet/task" to="startToStartTaskSet" search="self.name = :name" update="true">
               <bind node="text()" to="name"/>
            </bind>
-  		</bind>
-  	</bind>
+      </bind>
+    </bind>
   </input>
 
 </xml-inputs>

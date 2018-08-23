@@ -17,24 +17,22 @@
  */
 package com.axelor.app;
 
-import java.io.FileNotFoundException;
-
-import org.junit.Test;
-import org.junit.runner.RunWith;
-
 import com.axelor.data.xml.XMLImporter;
 import com.axelor.test.GuiceModules;
 import com.axelor.test.GuiceRunner;
+import java.io.FileNotFoundException;
+import org.junit.Test;
+import org.junit.runner.RunWith;
 
 @RunWith(GuiceRunner.class)
-@GuiceModules({ MyModule.class })
+@GuiceModules({MyModule.class})
 public class DataTest {
 
-	@Test
-	public void test() throws FileNotFoundException {
-		XMLImporter importer = new XMLImporter(
-				"src/main/resources/data-demo/input-config.xml",
-				"src/main/resources/data-demo/input");
-		importer.run();
-	}
+  @Test
+  public void test() throws FileNotFoundException {
+    XMLImporter importer =
+        new XMLImporter(
+            "src/main/resources/data-demo/input-config.xml", "src/main/resources/data-demo/input");
+    importer.run();
+  }
 }

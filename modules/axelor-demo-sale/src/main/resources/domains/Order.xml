@@ -13,7 +13,7 @@
     <item name="CLOSED" value="closed" />
     <item name="CANCELED" value="canceled" />
   </enum>
-  
+
   <entity name="Order" sequential="true">
     <many-to-one name="customer" ref="com.axelor.contact.db.Contact" required="true"/>
     <string name="name" sequence="sale.order.seq" readonly="true" />

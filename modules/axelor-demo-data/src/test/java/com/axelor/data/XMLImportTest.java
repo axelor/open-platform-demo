@@ -17,42 +17,44 @@
  */
 package com.axelor.data;
 
+import com.axelor.data.xml.XMLImporter;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.nio.charset.Charset;
 import java.util.HashMap;
 import java.util.Map;
-
 import org.junit.Test;
-
-import com.axelor.data.xml.XMLImporter;
 
 public class XMLImportTest extends AbstractTest {
 
-	@Test
-	public void test() throws FileNotFoundException {
-		XMLImporter importer = new XMLImporter("data/xml-config.xml");
-		Map<String, Object> context = new HashMap<>();
+  @Test
+  public void test() throws FileNotFoundException {
+    XMLImporter importer = new XMLImporter("data/xml-config.xml");
+    Map<String, Object> context = new HashMap<>();
 
-		context.put("LOCATION", "FR");
-		context.put("DATE_FORMAT", "dd/MM/yyyy");
+    context.put("LOCATION", "FR");
+    context.put("DATE_FORMAT", "dd/MM/yyyy");
 
-		importer.setContext(context);
+    importer.setContext(context);
 
-		importer.run(new ImportTask(){
+    importer.run(
+        new ImportTask() {
 
-			@Override
-			public void configure() throws IOException {
-				input("contacts.xml", new File("data/xml/contacts.xml"));
-				input("contacts.xml", new File("data/xml/contacts-non-unicode.xml"), Charset.forName("ISO-8859-15"));
-			}
+          @Override
+          public void configure() throws IOException {
+            input("contacts.xml", new File("data/xml/contacts.xml"));
+            input(
+                "contacts.xml",
+                new File("data/xml/contacts-non-unicode.xml"),
+                Charset.forName("ISO-8859-15"));
+          }
 
-			@Override
-			public boolean handle(ImportException exception) {
-				System.err.println("Import error: " + exception);
-				return true;
-			}
-		});
-	}
+          @Override
+          public boolean handle(ImportException exception) {
+            System.err.println("Import error: " + exception);
+            return true;
+          }
+        });
+  }
 }

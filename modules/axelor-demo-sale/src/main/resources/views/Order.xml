@@ -131,7 +131,7 @@
       <domain>self.totalAmount &gt;= 1000</domain>
     </filter>
   </search-filters>
-  
+
   <action-record name="default-order-record" model="com.axelor.sale.db.Order">
     <field name="customer" expr="action:default-customer-record" if="!(__ref__ instanceof Contact)"/>
     <field name="customer" expr="eval: __ref__" if="__ref__ instanceof Contact"/>

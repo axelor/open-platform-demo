@@ -23,25 +23,22 @@ import org.quartz.JobDetail;
 import org.quartz.JobExecutionContext;
 import org.quartz.JobExecutionException;
 
-/**
- * An example {@link Job} class that prints a some messages to the stderr.
- * 
- */
+/** An example {@link Job} class that prints a some messages to the stderr. */
 public class HelloJob implements Job {
 
-	@Override
-	public void execute(JobExecutionContext context) throws JobExecutionException {
-		JobDetail detail = context.getJobDetail();
-		JobDataMap data = context.getJobDetail().getJobDataMap();
+  @Override
+  public void execute(JobExecutionContext context) throws JobExecutionException {
+    JobDetail detail = context.getJobDetail();
+    JobDataMap data = context.getJobDetail().getJobDataMap();
 
-		String name = detail.getKey().getName();
-		String desc = detail.getDescription();
-		
-		System.err.println("Job fired: " + name + " (" + desc + ")");
-		if (data != null && data.size() > 0) {
-			for (String key : data.keySet()) {
-				System.err.println("    " + key + " = " + data.getString(key));
-			}
-		}
-	}
+    String name = detail.getKey().getName();
+    String desc = detail.getDescription();
+
+    System.err.println("Job fired: " + name + " (" + desc + ")");
+    if (data != null && data.size() > 0) {
+      for (String key : data.keySet()) {
+        System.err.println("    " + key + " = " + data.getString(key));
+      }
+    }
+  }
 }

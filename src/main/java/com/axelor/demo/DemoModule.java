@@ -22,8 +22,8 @@ import com.axelor.mail.service.MailService;
 
 public class DemoModule extends AxelorModule {
 
-	@Override
-	protected void configure() {
-		bind(MailService.class).to(DemoMailService.class);
-	}
+  @Override
+  protected void configure() {
+    bind(MailService.class).to(DemoMailService.class);
+  }
 }

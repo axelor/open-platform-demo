@@ -39,7 +39,7 @@
     <option value="Home">Home</option>
     <option value="Other">Other</option>
   </selection>
-  
+
   <form name="contact-form" title="Contact" model="com.axelor.contact.db.Contact" css="panel-blue">
     <panel title="Personal" css="panel-red">
       <panel colSpan="4">

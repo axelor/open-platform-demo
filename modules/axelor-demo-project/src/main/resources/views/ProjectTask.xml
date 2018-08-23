@@ -20,7 +20,7 @@
     <field name="state" />
     <field name="progress" widget="Progress"/>
   </grid>
-  
+
   <form name="project-task-form" title="Project Task" model="com.axelor.project.db.ProjectTask" onNew="project.task.on.new">
     <panel title="Overview">
       <field name="name"/>
@@ -61,11 +61,11 @@
   </form>
 
   <tree name="project-task-tree" title="Project Tasks">
-  
+
     <!-- define tree columns -->
     <column name="title" type="string" />
     <column name="progress" type="integer" />
-  
+
     <!-- define 1st level node -->
     <node model="com.axelor.project.db.Project" onClick="projects.task.open.project">
       <field name="name" as="title" />
@@ -76,9 +76,9 @@
       <field name="name" as="title" />
       <field name="progress" as="progress" />
     </node>
-    
+
   </tree>
-  
+
   <kanban name="project-task-kanban" title="Project Tasks" model="com.axelor.project.db.ProjectTask"
     columnBy="state" sequenceBy="priority" onNew="project.task.kanban.on.new" limit="10">
     <field name="name"/>
@@ -133,7 +133,7 @@
     <field name="createDate" expr="eval: startDate ? startDate : __time__"/>
     <field name="user" expr="eval: __user__"/>
   </action-record>
-  
+
   <action-view name="projects.task.open.project" title="Project" model="com.axelor.project.db.Project">
     <view type="grid" name="project-grid"/>
     <view type="form" name="project-form"/>
@@ -141,7 +141,7 @@
     <context name="project_id" expr="eval: id"/>
     <context name="_showSingle" expr="true"/>
   </action-view>
-  
+
   <action-view name="projects.task.open.task" title="Task" model="com.axelor.project.db.ProjectTask">
     <view type="grid" name="project-task-grid"/>
     <view type="form" name="project-task-form"/>
@@ -165,8 +165,8 @@
     eventLength="1">
     <field name="name" />
   </calendar>
-  
-  <gantt name="project-task-gantt" title="Task Planning" model="com.axelor.project.db.ProjectTask" 
+
+  <gantt name="project-task-gantt" title="Task Planning" model="com.axelor.project.db.ProjectTask"
     taskStart="plannedStartDate"
     taskDuration="plannedDuration"
     taskParent="parentTask"

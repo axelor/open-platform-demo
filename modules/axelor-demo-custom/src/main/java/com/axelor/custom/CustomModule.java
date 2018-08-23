@@ -21,8 +21,6 @@ import com.axelor.app.AxelorModule;
 
 public class CustomModule extends AxelorModule {
 
-	@Override
-	protected void configure() {
-
-	}
+  @Override
+  protected void configure() {}
 }

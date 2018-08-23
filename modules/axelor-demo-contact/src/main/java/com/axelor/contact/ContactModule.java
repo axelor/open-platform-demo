@@ -23,8 +23,8 @@ import com.axelor.contact.service.HelloServiceImpl;
 
 public class ContactModule extends AxelorModule {
 
-	@Override
-	protected void configure() {
-		bind(HelloService.class).to(HelloServiceImpl.class);
-	}
+  @Override
+  protected void configure() {
+    bind(HelloService.class).to(HelloServiceImpl.class);
+  }
 }

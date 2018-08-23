@@ -9,12 +9,12 @@
   <category code="con" name="Computer" />
   <category code="sto" name="Storage" />
   <category code="oth" name="Other" />
-  
+
   <product code="PC1" name="Personal Computer" category="con"/>
   <product code="LAPTOP1" name="Laptop" category="con"/>
   <product code="WIRKEY" name="Wireless Keyboard" category="oth"/>
   <product code="EXT-HDD" name="External Hard disk" category="sto"/>
-  
+
   <custom-fields for="com.axelor.sale.db.Product" on="attrs">
     <field name="color" selection="product.color.selection" />
     <field name="active" type="boolean" />
@@ -72,7 +72,7 @@
       </item>
     </items>
   </sale-order>
-  
+
   <sale-order confirmed="T">
     <customer>
       <firstName>My</firstName>

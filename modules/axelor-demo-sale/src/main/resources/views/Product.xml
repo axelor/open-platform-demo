@@ -25,7 +25,7 @@
   <form name="product-form" title="Product" model="com.axelor.sale.db.Product">
     <panel title="Overview">
       <panel colSpan="3">
-      	<field name="image" showTitle="false" colSpan="12" widget="image"/>
+        <field name="image" showTitle="false" colSpan="12" widget="image"/>
       </panel>
       <panel colSpan="9">
         <field name="code"/>
@@ -39,7 +39,7 @@
         <field name="attrs" />
     </panel>
     <panel title="Notes">
-    	<field name="notes" showTitle="false" colSpan="12" widget="html" />
+      <field name="notes" showTitle="false" colSpan="12" widget="html" />
     </panel>
   </form>
 

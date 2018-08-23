@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <address-book xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  
+
   <title code="mr" name="Mr." />
   <title code="mrs" name="Mrs." />
   <title code="miss" name="Miss" />
@@ -10,7 +10,7 @@
   <circle code="family" name="Family" />
   <circle code="friends" name="Friends" />
   <circle code="business" name="Business" />
-  
+
   <company code="my.co" name="My Company" />
   <company code="axelor.com" name="Axelor SAS" />
   <company code="axelor.co.in" name="Axelor India" parent="axelor.com" />
@@ -23,7 +23,7 @@
   <country code="CH" name="China" />
   <country code="IN" name="India" />
   <country code="BR" name="Brazil" />
-  
+
   <contact title="mr">
     <first-name>John</first-name>
     <last-name>Smith</last-name>

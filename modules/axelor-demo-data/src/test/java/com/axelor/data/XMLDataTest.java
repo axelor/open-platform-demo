@@ -17,23 +17,21 @@
  */
 package com.axelor.data;
 
-import java.io.IOException;
-
-import org.junit.Test;
-
 import com.axelor.data.xml.XMLImporter;
+import java.io.IOException;
+import org.junit.Test;
 
 public class XMLDataTest extends AbstractTest {
 
-	@Test
-	public void testTypes() throws IOException {
-		Importer importer = new XMLImporter("data/xml-config-types.xml", "data/xml");
-		importer.run();
-	}
+  @Test
+  public void testTypes() throws IOException {
+    Importer importer = new XMLImporter("data/xml-config-types.xml", "data/xml");
+    importer.run();
+  }
 
-	@Test
-	public void testDefault() throws IOException {
-		Importer importer = new XMLImporter("data/xml-config.xml", "data/xml");
-		importer.run();
-	}
+  @Test
+  public void testDefault() throws IOException {
+    Importer importer = new XMLImporter("data/xml-config.xml", "data/xml");
+    importer.run();
+  }
 }

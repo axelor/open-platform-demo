@@ -11,7 +11,7 @@
     <string name="lastName" required="true" initParam="true"/>
     <string name="fullName" namecolumn="true" search="firstName,lastName"><![CDATA[
     if (firstName == null && lastName == null)
-    	return null;
+      return null;
     if (title == null)
         return firstName + " " + lastName;
     return title.getName() + " " + firstName + " " + lastName;
@@ -19,13 +19,13 @@
     <date name="dateOfBirth"/>
     <binary name="image" title="Photo" help="Max size 4MB." image="true"/>
     <string name="notes" large="true"/>
-    
+
     <string name="email"><![CDATA[
     if (emails == null || emails.isEmpty()) return null;
     for (Email email : emails) if (email.getPrimary() == Boolean.TRUE) return email.getEmail();
     return emails.get(0).getEmail();
     ]]></string>
-    
+
     <string name="phone"><![CDATA[
     if (phones == null || phones.isEmpty()) return null;
     for (Phone phone : phones) if (phone.getPrimary() == Boolean.TRUE) return phone.getPhone();

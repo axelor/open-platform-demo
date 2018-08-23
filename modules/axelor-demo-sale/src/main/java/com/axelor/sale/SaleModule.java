@@ -23,8 +23,8 @@ import com.axelor.sale.service.HelloServiceSaleImpl;
 
 public class SaleModule extends AxelorModule {
 
-	@Override
-	protected void configure() {
-		bind(HelloServiceImpl.class).to(HelloServiceSaleImpl.class);
-	}
+  @Override
+  protected void configure() {
+    bind(HelloServiceImpl.class).to(HelloServiceSaleImpl.class);
+  }
 }
