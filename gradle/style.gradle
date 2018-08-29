@@ -26,6 +26,8 @@ spotless {
       include '**/*.xml'
       include '**/*.xsd'
       exclude '**/webapp/lib/*'
+      exclude '**/webapp/dist/*'
+      exclude '**/webapp/node_modules/*'
     }
     indentWithSpaces(2)
     trimTrailingWhitespace()
@@ -39,3 +41,5 @@ spotless {
 }
 
 task formatCode(dependsOn: ['licenseFormat', 'spotlessApply'])
+
+build.dependsOn 'spotlessApply'
