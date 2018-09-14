@@ -7,22 +7,22 @@
   These are the default settings.
   -->
 
-  <adapter name="LocalDate" type="com.axelor.data.adapter.JodaAdapter">
+  <adapter name="LocalDate" type="com.axelor.data.adapter.JavaTimeAdapter">
     <option name="type" value="LocalDate"/>
     <option name="format" value="dd/MM/yyyy"/>
   </adapter>
 
-  <adapter name="LocalTime" type="com.axelor.data.adapter.JodaAdapter">
+  <adapter name="LocalTime" type="com.axelor.data.adapter.JavaTimeAdapter">
     <option name="type" value="LocalTime"/>
     <option name="format" value="HH:mm"/>
   </adapter>
 
-  <adapter name="LocalDateTime" type="com.axelor.data.adapter.JodaAdapter">
+  <adapter name="LocalDateTime" type="com.axelor.data.adapter.JavaTimeAdapter">
     <option name="type" value="LocalDateTime"/>
     <option name="format" value="dd/MM/yyyy HH:mm"/>
   </adapter>
 
-  <adapter name="DateTime" type="com.axelor.data.adapter.JodaAdapter">
+  <adapter name="DateTime" type="com.axelor.data.adapter.JavaTimeAdapter">
     <option name="type" value="DateTime"/>
     <option name="format" value="dd/MM/yyyy HH:mm"/>
   </adapter>
