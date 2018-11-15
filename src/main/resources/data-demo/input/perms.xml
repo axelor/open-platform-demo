@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<permissions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+  <permission name="perm.menu.read"
+    object="com.axelor.meta.db.MetaMenu">
+    <can read="true" />
+  </permission>
+
+  <permission name="perm.contact.all"
+    object="com.axelor.contact.db.*">
+    <can create="true" read="true" export="true" />
+  </permission>
+
+  <permission name="perm.contact.my" object="com.axelor.contact.db.*">
+    <can write="true" remove="true" />
+    <domain>self.createdBy = ?</domain>
+    <domain-params>__user__</domain-params>
+  </permission>
+
+</permissions>

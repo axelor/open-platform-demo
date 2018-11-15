@@ -3,12 +3,32 @@
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://axelor.com/xml/ns/data-import http://axelor.com/xml/ns/data-import/data-import_5.0.xsd">
 
+  <input file="perms.xml" root="permissions">
+    <bind node="permission" type="com.axelor.auth.db.Permission" search="self.name = :name" update="false">
+      <bind node="@name" to="name" />
+      <bind node="@object" to="object" />
+      <bind node="can/@create" to="canCreate" />
+      <bind node="can/@read" to="canRead" />
+      <bind node="can/@write" to="canWrite" />
+      <bind node="can/@remove" to="canRemove" />
+      <bind node="can/@export" to="canExport" />
+      <bind node="domain/text()" to="condition"/>
+      <bind node="domain-params/text()" to="conditionParams"/>
+    </bind>
+  </input>
+
   <input file="users.xml" root="users">
-    <bind node="group" type="com.axelor.auth.db.Group" search="self.code = :code">
+    <bind node="group" type="com.axelor.auth.db.Group" search="self.code = :code" update="true">
       <bind node="@code" to="code" />
       <bind node="@name" to="name" />
+      <bind node="permissions/permission" to="permissions" search="self.name = :name">
+        <bind node="@name" to="name" />
+      </bind>
+      <bind node="menus/menu" to="menus" search="self.name = :name">
+        <bind node="@name" to="name" />
+      </bind>
     </bind>
-    <bind node="user" type="com.axelor.auth.db.User" search="self.code = :code" call="com.axelor.auth.AuthService:encrypt">
+    <bind node="user" type="com.axelor.auth.db.User" search="self.code = :code" update="true" call="com.axelor.auth.AuthService:encrypt">
       <bind node="@group" to="group" search="self.code = :group"/>
       <bind node="@code" to="code" />
       <bind node="name" to="name" />
