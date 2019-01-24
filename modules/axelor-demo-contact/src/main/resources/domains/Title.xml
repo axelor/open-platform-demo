@@ -5,7 +5,7 @@
 
   <module name="contact" package="com.axelor.contact.db"/>
 
-  <entity name="Title" cachable="true">
+  <entity name="Title" cacheable="true">
     <string name="code" required="true" unique="true" min="2"/>
     <string name="name" required="true" unique="true" min="2" translatable="true" />
   </entity>

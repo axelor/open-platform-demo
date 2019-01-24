@@ -5,7 +5,7 @@
 
   <module name="project" package="com.axelor.project.db" />
 
-  <entity name="ProjectTask" table="PROJECT_TASK" cachable="true">
+  <entity name="ProjectTask" table="PROJECT_TASK" cacheable="true">
     <string name="name" title="Task Summary" required="true" />
     <string name="notes" multiline="true"/>
     <string name="state" selection="project.task.state.selection" />
