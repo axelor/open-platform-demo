@@ -4,12 +4,12 @@
   <scheduled-job name="hello.job" active="true"
     description="fire on every 10 minutes."
     job="com.axelor.contact.jobs.HelloJob"
-    cron="* 0/10 * * * ?"/>
+    cron="0 0/10 * * * ?"/>
 
   <scheduled-job name="hello.job.with.params" active="true"
     description="fire on every 15 minutes."
     job="com.axelor.contact.jobs.HelloJob"
-    cron="* 0/15 * * * ?">
+    cron="0 0/15 * * * ?">
     <param name="say">Hello!!!</param>
     <param name="again">Hello World!!!</param>
   </scheduled-job>
