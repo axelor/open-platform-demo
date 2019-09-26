@@ -14,22 +14,22 @@ buildscript {
   }
 }
 
+apply plugin: 'idea'
+apply plugin: 'eclipse'
+apply plugin: 'com.axelor.app'
+
+apply from: './gradle/style.gradle'
+
 allprojects {
   repositories repos
 }
-
-apply plugin: 'idea'
-apply plugin: 'eclipse'
-apply plugin: "com.axelor.app"
-
-apply from: './gradle/style.gradle'
 
 axelor {
   title = "Axelor :: DEMO"
 }
 
 allprojects {
-  apply plugin: 'idea'
+  apply plugin: 'idea';
   apply plugin: 'eclipse'
 
   group = "com.axelor"
@@ -41,8 +41,12 @@ allprojects {
 
 dependencies {
   // add module dependencies
-  compile project(":modules:axelor-demo-contact")
-  compile project(":modules:axelor-demo-sale")
-  compile project(":modules:axelor-demo-project")
-  compile project(":modules:axelor-demo-custom")
+  implementation project(":modules:axelor-demo-contact")
+  implementation project(":modules:axelor-demo-sale")
+  implementation project(":modules:axelor-demo-project")
+  implementation project(":modules:axelor-demo-custom")
+}
+
+wrapper {
+  gradleVersion = "5.6.2"
 }
