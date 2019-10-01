@@ -14,15 +14,15 @@ buildscript {
   }
 }
 
+allprojects {
+  repositories repos
+}
+
 apply plugin: 'idea'
 apply plugin: 'eclipse'
 apply plugin: 'com.axelor.app'
 
 apply from: './gradle/style.gradle'
-
-allprojects {
-  repositories repos
-}
 
 axelor {
   title = "Axelor :: DEMO"
