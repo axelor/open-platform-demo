@@ -6,11 +6,11 @@ buildscript {
     maven { url 'https://plugins.gradle.org/m2/' }
     maven { url 'https://repository.axelor.com/nexus/public/' }
   }
-  ext.adkVersion = '5.3.+'
+  ext.platformVersion = '5.3.+'
   ext.appVersion = '5.3.0'
   repositories repos
   dependencies {
-    classpath "com.axelor:axelor-gradle:${adkVersion}"
+    classpath "com.axelor:axelor-gradle:${platformVersion}"
   }
 }
 

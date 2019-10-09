@@ -1,6 +1,6 @@
 # Axelor Demo
 
-Axelor Demo is a simple application showing [Axelor Development Kit](https://github.com/axelor/axelor-development-kit) features.
+Axelor Demo is a simple application showing [Axelor Open Platform](https://github.com/axelor/axelor-open-platform) features.
 
 ## Installation
 
