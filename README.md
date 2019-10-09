@@ -1,6 +1,6 @@
-# Axelor Demo
+# Open Platform Demo
 
-Axelor Demo is a simple application showing [Axelor Open Platform](https://github.com/axelor/axelor-open-platform) features.
+Open Platform Demo is a simple application showing [Axelor Open Platform](https://github.com/axelor/axelor-open-platform) features.
 
 ## Installation
 
@@ -9,13 +9,13 @@ Make sure you have JDK 1.8 and Git installed.
 Clone the latest sources:
 
 ```bash
-$ git clone git@github.com:axelor/axelor-demo.git
+$ git clone git@github.com:axelor/open-platform-demo.git
 ```
 
 and build the project:
 
 ```bash
-$ cd /path/to/axelor-demo
+$ cd /path/to/open-platform-demo
 $ ./gradlew -x test build
 ```
 
@@ -32,7 +32,7 @@ The application should start printing some logs in your terminal window. After f
 ...
 Ready to serve...
 
-Running at http://localhost:8080/axelor-demo
+Running at http://localhost:8080/open-platform-demo
 ```
 
 Launch the browser and open the application url as printed on terminal. Use the default **admin/admin** as the user name and password. You should be in the application.
@@ -54,7 +54,7 @@ The application project can be imported in Eclipse IDE. In order to import the p
 2. Generate eclipse project files like this:
 
     ```bash
-    $ cd /path/to/axelor-demo
+    $ cd /path/to/open-platform-demo
     $ ./gradlew classes copyWebapp cleanEclipse eclipse
     ```
 
@@ -62,4 +62,4 @@ The application project can be imported in Eclipse IDE. In order to import the p
 
     From the eclipse, import the projects using `File -> Import... -> General -> Existing Projects into Workspace` menu. In the import project wizard check the Search for nested projects so that all the submodules are also imported.
 
-You can also run the application inside eclipse using eclipse WTP tools. Create a tomcat8.5 server add the axelor-demo module and run the server.
+You can also run the application inside eclipse using eclipse WTP tools. Create a tomcat8.5 server add the open-platform-demo module and run the server.

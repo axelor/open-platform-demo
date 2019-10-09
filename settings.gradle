@@ -1,4 +1,4 @@
-rootProject.name = 'axelor-demo'
+rootProject.name = 'open-platform-demo'
 
 include "modules:axelor-demo-contact"
 include "modules:axelor-demo-sale"
