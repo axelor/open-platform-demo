@@ -1,7 +1,7 @@
 rootProject.name = 'open-platform-demo'
 
-include "modules:axelor-demo-contact"
-include "modules:axelor-demo-sale"
-include "modules:axelor-demo-project"
-include "modules:axelor-demo-custom"
-include "modules:axelor-demo-data"
+include "modules:demo-contact"
+include "modules:demo-sale"
+include "modules:demo-project"
+include "modules:demo-custom"
+include "modules:demo-data"

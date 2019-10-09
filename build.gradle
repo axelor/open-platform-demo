@@ -41,10 +41,10 @@ allprojects {
 
 dependencies {
   // add module dependencies
-  implementation project(":modules:axelor-demo-contact")
-  implementation project(":modules:axelor-demo-sale")
-  implementation project(":modules:axelor-demo-project")
-  implementation project(":modules:axelor-demo-custom")
+  implementation project(":modules:demo-contact")
+  implementation project(":modules:demo-sale")
+  implementation project(":modules:demo-project")
+  implementation project(":modules:demo-custom")
 }
 
 wrapper {

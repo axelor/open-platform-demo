@@ -13,6 +13,6 @@ This is a demo module to provide quick demonstration of removable modules.
 }
 
 dependencies {
-  api project(":modules:axelor-demo-contact")
-  api project(":modules:axelor-demo-sale")
+  api project(":modules:demo-contact")
+  api project(":modules:demo-sale")
 }
