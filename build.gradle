@@ -56,10 +56,6 @@ dependencies {
   implementation project(":modules:demo-custom")
 }
 
-wrapper {
-  gradleVersion = "5.6.4"
-}
-
 war {
   archiveFileName = 'open-platform-demo.war'
 }
