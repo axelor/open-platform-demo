@@ -50,3 +50,7 @@ dependencies {
 wrapper {
   gradleVersion = "5.6.4"
 }
+
+war {
+  archiveFileName = 'open-platfrom-demo.war'
+}
