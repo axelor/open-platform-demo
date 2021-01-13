@@ -11,19 +11,24 @@
       <field name="customer" type="string" />
       <field name="date" type="date"/>
       <field name="value" type="decimal" />
+      <field name="orderStatus" type="enum" target="com.axelor.sale.db.OrderStatus"/>
     </search-fields>
 
     <result-fields>
-      <field name="customer" type="string"/>
-      <field name="company" type="string"/>
+      <hilite if="value > 100" color="red"/>
+      <field name="customer" type="string">
+        <hilite if="_model == 'com.axelor.contact.db.Contact'" color="brown"/>
+      </field>
       <field name="product" type="string"/>
       <field name="date" type="date"/>
       <field name="value" type="decimal"/>
+      <field name="state" title="Status" type="string"/>
+      <field name="color" type="string"/>
+      <button name="showMeBtn" onClick="action-search-engine-show-me" title="Show me" icon="fa-question-circle"/>
     </result-fields>
 
-    <select model="com.axelor.contact.db.Contact" orderBy="customer">
+    <select model="com.axelor.contact.db.Contact" orderBy="company.name" limit="5">
       <field name="fullName" as="customer"/>
-      <field name="company.name" as="company"/>
       <field name="dateOfBirth" as="date"/>
       <where match="any">
         <input name="customer" field="fullName" matchStyle="contains"/>
@@ -32,21 +37,31 @@
       </where>
     </select>
 
-    <select model="com.axelor.sale.db.Order" title="Sale Order" orderBy="date,-value">
+    <select model="com.axelor.sale.db.Order" title="Sale Order" orderBy="orderDate,-amount" distinct="true">
       <field name="customer.fullName" as="customer"/>
-      <field name="items[].product.name" as="product"/>
+      <field name="items.product.name" as="product"/>
+      <field name="items.product.color" as="color" selection="product.color.selection"/>
       <field name="orderDate" as="date"/>
       <field name="amount" as="value"/>
-      <where match="any">
-        <input name="customer" field="customer.fullName" matchStyle="contains"/>
-        <input name="partner" field="customer"/>
-        <input name="date" field="orderDate"/>
-        <input name="value" field="amount"/>
-        <input name="product" field="items[].product"/>
+      <field name="status" as="state" enum-type="com.axelor.sale.db.OrderStatus"/>
+      <where>
+        <input name="orderStatus" field="status"/>
+        <where match="any">
+          <input name="customer" field="customer.fullName" matchStyle="contains"/>
+          <input name="partner" field="customer"/>
+          <input name="date" field="orderDate"/>
+          <input name="value" field="amount" matchStyle="greaterOrEqual"/>
+          <input name="product" field="items.product"/>
+        </where>
       </where>
     </select>
 
   </search>
+
+  <action-validate name="action-search-engine-show-me">
+    <info message="Hello ${__self__.customer.fullName} from ${_modelTitle}" if="_model == 'com.axelor.sale.db.Order'"/>
+    <info message="Hello ${__self__.fullName} from ${_modelTitle}" if="_model == 'com.axelor.contact.db.Contact'"/>
+  </action-validate>
 
   <!-- Action Menu -->
   <action-menu name="category-1" title="Category 1"/>
