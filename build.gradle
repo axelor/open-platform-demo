@@ -52,5 +52,5 @@ wrapper {
 }
 
 war {
-  archiveFileName = 'open-platfrom-demo.war'
+  archiveFileName = 'open-platform-demo.war'
 }
