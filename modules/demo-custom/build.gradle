@@ -4,12 +4,10 @@ axelor {
   title = "Axelor :: Custom"
 
   description = """\
-Dynamic module demo.
+Customization module demo.
 
-This is a demo module to provide quick demonstration of removable modules.
+This is a demo module to provide quick demonstration of customization modules.
 """
-
-  removable = true
 }
 
 dependencies {
