@@ -175,7 +175,7 @@
     x-finish-to-start="finishToStartTaskSet"
     x-start-to-start="startToStartTaskSet"
     x-finish-to-finish="finishToFinishTaskSet"
-    x-start-to-finish="startToFinishaskSet">
+    x-start-to-finish="startToFinishTaskSet">
     <field name="name" />
     <field name="project" />
     <field name="user" />

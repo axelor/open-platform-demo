@@ -52,7 +52,7 @@
       table="PROJECT_TASK_F2F"
       column="from_task_id"
       column2="to_task_id" />
-    <many-to-many name="startToFinishaskSet" ref="ProjectTask" title="Tasks to start before finish"
+    <many-to-many name="startToFinishTaskSet" ref="ProjectTask" title="Tasks to start before finish"
       table="PROJECT_TASK_S2F"
       column="from_task_id"
       column2="to_task_id" />
