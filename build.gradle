@@ -1,55 +1,45 @@
-buildscript {
-  ext.repos = {
-    mavenCentral() {
-      content {
-        excludeGroup 'com.axelor'
-      }
-    }
-    maven {
-      url 'https://repository.axelor.com/nexus/repository/maven-public/'
-    }
-  }
-  ext.platformVersion = '6.0.+'
-  ext.appVersion = '6.0.0'
-  repositories repos
-  dependencies {
-    classpath "com.axelor:axelor-gradle:${platformVersion}"
-  }
+plugins {
+  id 'com.axelor.app'
+  id 'com.diffplug.spotless'
 }
-
-allprojects {
-  repositories repos
-}
-
-apply plugin: 'idea'
-apply plugin: 'eclipse'
-apply plugin: 'com.axelor.app'
-
-apply from: './gradle/style.gradle'
 
 axelor {
-  title = "Axelor :: DEMO"
+  title = 'Axelor :: DEMO'
 }
 
 allprojects {
-  apply plugin: 'idea';
+  apply plugin: 'idea'
   apply plugin: 'eclipse'
 
-  group = "com.axelor"
-  version = "${appVersion}"
+  group = 'com.axelor'
+  version = '6.0.0'
 
-  sourceCompatibility = 11
-  targetCompatibility = 11
+  java {
+    toolchain {
+      languageVersion = JavaLanguageVersion.of(11)
+    }
+  }
+
+  afterEvaluate {
+    test {
+      useJUnitPlatform()
+      beforeTest { descriptor ->
+        logger.lifecycle('Running: ' + descriptor)
+      }
+    }
+  }
 }
 
 dependencies {
   // add module dependencies
-  implementation project(":modules:demo-contact")
-  implementation project(":modules:demo-sale")
-  implementation project(":modules:demo-project")
-  implementation project(":modules:demo-custom")
+  implementation project(':modules:demo-contact')
+  implementation project(':modules:demo-sale')
+  implementation project(':modules:demo-project')
+  implementation project(':modules:demo-custom')
 }
 
 war {
   archiveFileName = 'open-platform-demo.war'
 }
+
+apply from: 'gradle/style.gradle'

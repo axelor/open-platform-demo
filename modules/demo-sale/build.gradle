@@ -1,4 +1,6 @@
-apply plugin: 'com.axelor.app'
+plugins {
+  id 'com.axelor.app'
+}
 
 axelor {
   title = "Axelor :: Sale"
