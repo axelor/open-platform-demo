@@ -1,10 +1,4 @@
 spotless {
-  java {
-    target fileTree(projectDir) {
-      include '**/*.java'
-    }
-    googleJavaFormat()
-  }
   format 'misc', {
     target fileTree(projectDir) {
       include '**/.gitignore'
@@ -19,6 +13,7 @@ spotless {
       exclude '**/webapp/lib/*'
       exclude '**/webapp/dist/*'
       exclude '**/webapp/node_modules/*'
+      exclude '**/build/*'
     }
     indentWithSpaces(2)
     trimTrailingWhitespace()
@@ -29,6 +24,19 @@ spotless {
     indentWithSpaces(2)
     endWithNewline()
   }
+  java {
+    target fileTree(projectDir) {
+      include '**/*.java'
+    }
+    googleJavaFormat()
+  }
+}
+
+spotlessMisc.dependsOn(spotlessMarkdown)
+
+project.afterEvaluate {
+  tasks.spotlessJava.dependsOn(tasks.spotlessMisc)
+  tasks.spotlessJava.dependsOn(tasks.generateCode)
 }
 
 task formatCode(dependsOn: ['licenseFormat', 'spotlessApply'])
