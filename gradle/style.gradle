@@ -1,44 +1,57 @@
-spotless {
-  format 'misc', {
-    target fileTree(projectDir) {
-      include '**/.gitignore'
-      include '**/*.gradle'
-      include '**/*.adoc'
-      include '**/*.sh'
-      include '**/*.html'
-      include '**/*.js'
-      include '**/*.css'
-      include '**/*.xml'
-      include '**/*.xsd'
-      exclude '**/webapp/lib/*'
-      exclude '**/webapp/dist/*'
-      exclude '**/webapp/node_modules/*'
-      exclude '**/build/*'
-    }
-    indentWithSpaces(2)
-    trimTrailingWhitespace()
-    endWithNewline()
+buildscript {
+  repositories {
+    gradlePluginPortal()
   }
-  format 'markdown', {
-    target '**/*.md'
-    indentWithSpaces(2)
-    endWithNewline()
-  }
-  java {
-    target fileTree(projectDir) {
-      include '**/*.java'
-    }
-    googleJavaFormat()
+  dependencies {
+    classpath "com.diffplug.spotless:spotless-plugin-gradle:5.15.2"
   }
 }
 
-spotlessMisc.dependsOn(spotlessMarkdown)
+allprojects { p ->
 
-project.afterEvaluate {
-  tasks.spotlessJava.dependsOn(tasks.spotlessMisc)
-  tasks.spotlessJava.dependsOn(tasks.generateCode)
+  apply plugin: com.diffplug.gradle.spotless.SpotlessPlugin
+
+  spotless {
+    format 'misc', {
+      target fileTree(projectDir) {
+        include '*.gradle'
+        include 'gradle/*.gradle'
+        include 'src/**/*.html'
+        include 'src/**/*.js'
+        include 'src/**/*.css'
+        include 'src/**/*.xml'
+        include 'src/**/*.xsd'
+        include 'src/**/*.jsp'
+        exclude 'src/**/webapp/lib/*'
+        exclude 'modules/**'
+      }
+      indentWithSpaces(2)
+      trimTrailingWhitespace()
+      endWithNewline()
+    }
+    format 'markdown', {
+      target '**/*.md'
+      indentWithSpaces(2)
+      endWithNewline()
+    }
+    java {
+      target fileTree(projectDir) {
+        include 'src/*/java/**/*.java'
+        if (p.file('src/main/resources/domains').exists()) {
+          include 'build/src-gen/java/**/*.java'
+        }
+      }
+      googleJavaFormat()
+    }
+  }
+
+  if (p.file('src/main/resources/domains').exists()) {
+    p.afterEvaluate {
+      p.spotlessJava.dependsOn(p.generateCode)
+    }
+  }
+
+  build.dependsOn 'spotlessApply'
 }
 
 task formatCode(dependsOn: ['licenseFormat', 'spotlessApply'])
-
-build.dependsOn 'spotlessApply'
