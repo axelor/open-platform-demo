@@ -19,8 +19,8 @@ package com.axelor.data;
 
 import groovy.lang.Binding;
 import groovy.lang.GroovyShell;
-import org.junit.BeforeClass;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.Test;
 
 /** Test the Groovy dynamic script evaluation. */
 public class DataScriptHelperTest {
@@ -29,7 +29,7 @@ public class DataScriptHelperTest {
 
   private DataScriptHelper helper = new DataScriptHelper(100, 1, false);
 
-  @BeforeClass
+  @BeforeAll
   public static void doInit() {
     Binding binding = new Binding();
     binding.setVariable("count", 1000);

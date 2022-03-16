@@ -21,15 +21,15 @@ import com.axelor.db.EntityHelper;
 import com.axelor.db.JPA;
 import com.axelor.meta.db.MetaSequence;
 import com.axelor.meta.db.repo.MetaSequenceRepository;
+import com.axelor.test.GuiceExtension;
 import com.axelor.test.GuiceModules;
-import com.axelor.test.GuiceRunner;
 import javax.inject.Inject;
-import org.junit.Before;
-import org.junit.runner.RunWith;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-@RunWith(GuiceRunner.class)
+@ExtendWith(GuiceExtension.class)
 @GuiceModules(DataModule.class)
 public abstract class AbstractTest {
 
@@ -39,7 +39,7 @@ public abstract class AbstractTest {
 
   private static boolean checked;
 
-  @Before
+  @BeforeEach
   public void ensureSequence() {
 
     if (checked || sequences.findByName("sale.order.seq") != null) {

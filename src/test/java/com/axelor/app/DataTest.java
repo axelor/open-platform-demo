@@ -18,13 +18,13 @@
 package com.axelor.app;
 
 import com.axelor.data.xml.XMLImporter;
+import com.axelor.test.GuiceExtension;
 import com.axelor.test.GuiceModules;
-import com.axelor.test.GuiceRunner;
 import java.io.FileNotFoundException;
-import org.junit.Test;
-import org.junit.runner.RunWith;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
-@RunWith(GuiceRunner.class)
+@ExtendWith(GuiceExtension.class)
 @GuiceModules({MyModule.class})
 public class DataTest {
 

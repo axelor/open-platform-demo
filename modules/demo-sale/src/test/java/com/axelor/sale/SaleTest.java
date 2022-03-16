@@ -17,6 +17,8 @@
  */
 package com.axelor.sale;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 import com.axelor.contact.db.Address;
 import com.axelor.contact.db.Circle;
 import com.axelor.contact.db.Contact;
@@ -31,17 +33,16 @@ import com.axelor.meta.db.repo.MetaSequenceRepository;
 import com.axelor.sale.db.Order;
 import com.axelor.sale.db.OrderLine;
 import com.axelor.sale.db.Product;
+import com.axelor.test.GuiceExtension;
 import com.axelor.test.GuiceModules;
-import com.axelor.test.GuiceRunner;
 import com.google.inject.persist.Transactional;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.Random;
-import org.junit.Assert;
-import org.junit.Test;
-import org.junit.runner.RunWith;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
-@RunWith(GuiceRunner.class)
+@ExtendWith(GuiceExtension.class)
 @GuiceModules({TestModule.class})
 public class SaleTest extends JpaSupport {
 
@@ -159,9 +160,9 @@ public class SaleTest extends JpaSupport {
     }
 
     createData();
-    Assert.assertEquals(MAX_COUNT, all(Order.class).count());
+    assertEquals(MAX_COUNT, all(Order.class).count());
 
     dropData();
-    Assert.assertEquals(0L, all(Order.class).count());
+    assertEquals(0L, all(Order.class).count());
   }
 }

@@ -17,16 +17,17 @@
  */
 package com.axelor.app;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 import com.axelor.contact.db.Contact;
 import com.axelor.contact.service.HelloService;
+import com.axelor.test.GuiceExtension;
 import com.axelor.test.GuiceModules;
-import com.axelor.test.GuiceRunner;
 import javax.inject.Inject;
-import org.junit.Assert;
-import org.junit.Test;
-import org.junit.runner.RunWith;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
-@RunWith(GuiceRunner.class)
+@ExtendWith(GuiceExtension.class)
 @GuiceModules({MyModule.class})
 public class ServiceTest {
 
@@ -42,7 +43,7 @@ public class ServiceTest {
     String said = service.say(contact);
     String hello = service.hello();
 
-    Assert.assertEquals("You are welcome 'John Smith!'", said);
-    Assert.assertEquals("Hello world!!!", hello);
+    assertEquals("You are welcome 'John Smith!'", said);
+    assertEquals("Hello world!!!", hello);
   }
 }

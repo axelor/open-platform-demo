@@ -20,7 +20,7 @@ package com.axelor.data;
 import com.axelor.data.csv.CSVImporter;
 import java.io.File;
 import java.io.IOException;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 public class CSVDataTest extends AbstractTest {
 

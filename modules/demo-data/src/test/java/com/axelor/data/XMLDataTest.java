@@ -19,7 +19,7 @@ package com.axelor.data;
 
 import com.axelor.data.xml.XMLImporter;
 import java.io.IOException;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 public class XMLDataTest extends AbstractTest {
 
