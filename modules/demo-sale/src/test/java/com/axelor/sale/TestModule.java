@@ -25,7 +25,7 @@ public class TestModule extends AbstractModule {
 
   @Override
   protected void configure() {
-    install(new JpaModule("testUnit", true, true));
+    install(new JpaModule("testUnit"));
     install(new AppModule());
   }
 }
