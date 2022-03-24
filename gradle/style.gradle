@@ -44,17 +44,8 @@ allprojects { p ->
     java {
       target fileTree(projectDir) {
         include 'src/*/java/**/*.java'
-        if (p.file('src/main/resources/domains').exists()) {
-          include 'build/src-gen/java/**/*.java'
-        }
       }
       googleJavaFormat()
-    }
-  }
-
-  p.afterEvaluate {
-    if (p.file('src/main/resources/domains').exists()) {
-      p.spotlessJava.mustRunAfter(p.generateCode)
     }
   }
 
