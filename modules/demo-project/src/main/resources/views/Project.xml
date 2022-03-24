@@ -14,7 +14,7 @@
       <field name="priority"/>
       <field name="description"/>
       <field name="parent"/>
-      <field name="members" widget="TagSelect" x-create="code,name,password"/>
+      <field name="members" widget="TagSelect" canEdit="false"/>
     </panel>
     <panel-tabs>
       <panel-related field="tasks" editable="true">
