@@ -8,7 +8,7 @@
 
   <menuitem name="menu-sales-product" parent="menu-sales"
     title="Products"
-    action="sale.products"/>
+    action="sale.products" tag="All" tag-style="info"/>
 
   <action-view name="sale.products" model="com.axelor.sale.db.Product" title="Products">
     <view type="grid"/>
@@ -17,7 +17,7 @@
 
   <menuitem name="menu-sales-draft" parent="menu-sales"
     title="Quotations"
-    action="sale.orders.draft"/>
+    action="sale.orders.draft" tag-get="com.axelor.sale.service.SaleOrderTagsService:countOrdersMenuTag('DRAFT')"/>
 
   <action-view name="sale.orders.draft" model="com.axelor.sale.db.Order" title="Quotations">
     <view type="grid"/>
@@ -28,7 +28,7 @@
 
   <menuitem name="menu-sales-order" parent="menu-sales"
     title="Sale Orders"
-    action="sale.orders"/>
+    action="sale.orders" tag-get="com.axelor.sale.service.SaleOrderTagsService:countOrdersMenuTag()"/>
 
   <action-view name="sale.orders" model="com.axelor.sale.db.Order" title="Sale Orders">
     <view type="grid"/>

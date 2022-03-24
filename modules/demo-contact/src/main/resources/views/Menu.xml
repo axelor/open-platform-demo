@@ -17,7 +17,7 @@
 
   <menuitem name="menu-contact-friends" parent="menu-contact-book"
     title="My Friends"
-    action="contact.friends"/>
+    action="contact.friends" tag-count="true"/>
 
   <action-view name="contact.friends" title="My Friends" model="com.axelor.contact.db.Contact">
     <view type="grid" name="contact-grid"/>
@@ -28,7 +28,7 @@
 
   <menuitem name="menu-contact-family" parent="menu-contact-book"
     title="Family Members"
-    action="contact.family"/>
+    action="contact.family" tag-count="true"/>
 
   <action-view name="contact.family" title="Family Members" model="com.axelor.contact.db.Contact">
     <view type="grid" name="contact-grid"/>
@@ -39,7 +39,7 @@
 
   <menuitem name="menu-contact-business" parent="menu-contact-book"
     title="Business Contacts"
-    action="contact.business"/>
+    action="contact.business" tag-count="true"/>
 
   <action-view name="contact.business" title="Business Contacts" model="com.axelor.contact.db.Contact">
     <view type="grid" name="contact-grid"/>
