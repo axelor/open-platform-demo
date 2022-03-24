@@ -13,7 +13,7 @@
     <field name="country" />
   </grid>
 
-  <form name="address-form" title="Address" cols="2" model="com.axelor.contact.db.Address">
+  <form name="address-form" title="Address" model="com.axelor.contact.db.Address">
     <panel title="Overview">
       <field name="contact" colSpan="12"/>
       <field name="street" />

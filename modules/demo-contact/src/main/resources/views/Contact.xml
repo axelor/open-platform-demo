@@ -22,13 +22,15 @@
         <field name="area"/>
         <field name="city"/>
       </grid>
-      <form cols="4" title="Address">
-        <field name="street"/>
-        <field name="area"/>
-        <field name="city"/>
-        <field name="zip"/>
-        <field name="country"/>
-        <button onClick="action-contact-address-about" title="Click Me!" name="clickMe"/>
+      <form title="Address">
+        <panel>
+          <field name="street"/>
+          <field name="area"/>
+          <field name="city"/>
+          <field name="zip"/>
+          <field name="country"/>
+          <button onClick="action-contact-address-about" title="Click Me!" name="clickMe"/>
+        </panel>
       </form>
     </field>
   </grid>
