@@ -13,28 +13,12 @@
     <field name="progress" widget="Progress" aggregate="sum" />
   </grid>
 
-  <form id="project-form.custom" name="project-form" title="Project" model="com.axelor.project.db.Project">
-    <panel title="Overview">
-      <field name="name"/>
-      <field name="priority"/>
-      <field name="description"/>
-      <field name="parent"/>
-      <field name="members" widget="TagSelect" x-create="code,name,password"/>
-    </panel>
-    <panel-dashlet action="project.tasks.tree.custom"/>
-    <panel-tabs>
-      <panel-related field="tasks" editable="true">
-        <field name="name" />
-        <field name="createDate" />
-        <field name="startDate" />
-        <field name="endDate" />
-        <field name="user" />
-        <field name="priority" />
-      </panel-related>
-      <panel title="Notes">
-        <field name="notes" showTitle="false" colSpan="12"/>
-      </panel>
-    </panel-tabs>
+  <form id="project-form.custom" name="project-form" title="Project" model="com.axelor.project.db.Project" extension="true">
+    <extend target="panel[@title='Overview']">
+      <insert position="after">
+        <panel-dashlet action="project.tasks.tree.custom"/>
+      </insert>
+    </extend>
   </form>
 
   <action-view name="project.tasks.tree.custom" title="Projects">
