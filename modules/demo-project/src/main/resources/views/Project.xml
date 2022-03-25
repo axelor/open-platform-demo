@@ -9,12 +9,15 @@
   </grid>
 
   <form name="project-form" title="Project" model="com.axelor.project.db.Project">
+    <toolbar>
+      <button name="showGantt" onClick="action-view-show-project-gantt" title="Gantt"/>
+    </toolbar>
     <panel title="Overview">
       <field name="name"/>
       <field name="priority"/>
       <field name="description"/>
       <field name="parent"/>
-      <field name="members" widget="TagSelect" canEdit="false"/>
+      <field name="members" widget="TagSelect" canEdit="false" canNew="false"/>
     </panel>
     <panel-tabs>
       <panel-related field="tasks" editable="true">
@@ -30,5 +33,11 @@
       </panel>
     </panel-tabs>
   </form>
+
+  <action-view name="action-view-show-project-gantt" title="Gantt" model="com.axelor.project.db.ProjectTask">
+    <view type="gantt" name="project-task-gantt"/>
+    <domain>self.project.id = :_project_id</domain>
+    <context name="_project_id" expr="eval: id"/>
+  </action-view>
 
 </object-views>

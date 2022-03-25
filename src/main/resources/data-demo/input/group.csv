@@ -1,0 +1,2 @@
+code,name,technicalStaff,menus,permissions
+users,Users,false,menu-contact-book|menu-project,perm.menu.read|perm.user.read|perm.user.my|perm.contact.all|perm.contact.my|perm.project.all

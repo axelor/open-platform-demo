@@ -16,29 +16,35 @@
  * You should have received a copy of the GNU Affero General Public License
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
-package com.axelor.contact.db.repo;
+package com.axelor.demo;
 
-import com.axelor.common.ObjectUtils;
-import com.axelor.contact.db.Contact;
+import com.axelor.inject.Beans;
+import com.axelor.meta.MetaFiles;
+import com.axelor.meta.db.MetaFile;
+import com.axelor.sale.db.Product;
+import java.nio.file.Path;
 import java.util.Map;
 
-public class ContactRepository extends AbstractContactRepository {
+public class ProductImport {
 
-  @Override
-  public Map<String, Object> populate(Map<String, Object> json, Map<String, Object> context) {
-    if (!context.containsKey("json-enhance")) {
-      return json;
-    }
+  private static final String PRODUCT_IMAGES_DIR = "product_images";
+
+  public Object importProduct(Object bean, Map context) {
+    Product product = (Product) bean;
+
+    final Path path = (Path) context.get("__path__");
+
     try {
-      Long id = (Long) json.get("id");
-      Contact contact = find(id);
-      json.put(
-          "address",
-          ObjectUtils.isEmpty(contact.getAddresses()) ? null : contact.getAddresses().get(0));
-      json.put("hasImage", contact.getImage() != null);
+      final Path image =
+          ImportUtils.findByFileName(path.resolve(PRODUCT_IMAGES_DIR), product.getCode());
+      if (image != null && image.toFile().exists()) {
+        final MetaFile metaFile = Beans.get(MetaFiles.class).upload(image.toFile());
+        product.setImage(metaFile);
+      }
     } catch (Exception e) {
+      // ignore
     }
 
-    return json;
+    return product;
   }
 }

@@ -17,8 +17,11 @@
     <integer name="progress">
     <![CDATA[
       double result = 0.0, duration = 0.0;
-    if (workItems == null || startDate == null || endDate == null) {
-      return 0;
+    if ("complete".equals(state)) {
+        return 100;
+      }
+    if (workItems == null || workItems.isEmpty() || startDate == null || endDate == null) {
+      return plannedProgress.intValue();
     }
     for(ProjectWork work : workItems) {
       java.time.LocalTime time = work.getHours();

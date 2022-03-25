@@ -1,0 +1,3 @@
+name,active,description,job,cron,param1,param2
+hello.job,true,"fire on every 10 minutes.",com.axelor.contact.jobs.HelloJob,"0 0/10 * * * ?","",
+hello.job.with.params,true,fire on every 15 minutes.,com.axelor.contact.jobs.HelloJob,"0 0/15 * * * ?",say|Hello!!!,again|Hello World!!!

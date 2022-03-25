@@ -1,0 +1,7 @@
+name,object,domain,domain-params,canCreate,canRead,canWrite,canRemove,canExport
+perm.menu.read,com.axelor.meta.db.MetaMenu,,,,true,,,
+perm.user.read,com.axelor.auth.db.User,,,,true,,,
+perm.user.my,com.axelor.auth.db.User,self.id = ?,__user__,,true,true,,
+perm.contact.all,com.axelor.contact.db.*,,,true,true,,,true
+perm.contact.my,com.axelor.contact.db.*,self.createdBy = ?,__user__,,,true,true,
+perm.project.all,com.axelor.project.db.*,,,true,true,true,,true

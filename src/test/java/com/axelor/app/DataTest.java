@@ -18,10 +18,9 @@
  */
 package com.axelor.app;
 
-import com.axelor.data.xml.XMLImporter;
+import com.axelor.data.csv.CSVImporter;
 import com.axelor.test.GuiceExtension;
 import com.axelor.test.GuiceModules;
-import java.io.FileNotFoundException;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 
@@ -30,9 +29,9 @@ import org.junit.jupiter.api.extension.ExtendWith;
 public class DataTest {
 
   @Test
-  public void test() throws FileNotFoundException {
-    XMLImporter importer =
-        new XMLImporter(
+  public void test() {
+    CSVImporter importer =
+        new CSVImporter(
             "src/main/resources/data-demo/input-config.xml", "src/main/resources/data-demo/input");
     importer.run();
   }

@@ -13,6 +13,7 @@
     <option value="chocolate">Chocolate</option>
     <option value="orange">Orange</option>
     <option value="purple">Purple</option>
+    <option value="pink">Pink</option>
   </selection>
 
   <grid name="product-grid" title="Products" model="com.axelor.sale.db.Product">

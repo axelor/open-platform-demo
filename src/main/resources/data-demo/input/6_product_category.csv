@@ -1,0 +1,9 @@
+code,name,parent.id
+services,Services,
+computers,Computers,
+laptop,Laptops,2
+monitor,Monitors,2
+books,Books,
+home-garden,Home & Garden,
+kitchen-home,Kitchen & Home Appliances,6
+garden-outdoor,Garden & Outdoors,6

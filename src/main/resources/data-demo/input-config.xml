@@ -1,224 +1,189 @@
 <?xml version="1.0"?>
-<xml-inputs xmlns="http://axelor.com/xml/ns/data-import"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<csv-inputs xmlns="http://axelor.com/xml/ns/data-import" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://axelor.com/xml/ns/data-import http://axelor.com/xml/ns/data-import/data-import_6.0.xsd">
 
-  <input file="perms.xml" root="permissions">
-    <bind node="permission" type="com.axelor.auth.db.Permission" search="self.name = :name" update="false">
-      <bind node="@name" to="name" />
-      <bind node="@object" to="object" />
-      <bind node="can/@create" to="canCreate" />
-      <bind node="can/@read" to="canRead" />
-      <bind node="can/@write" to="canWrite" />
-      <bind node="can/@remove" to="canRemove" />
-      <bind node="can/@export" to="canExport" />
-      <bind node="domain/text()" to="condition"/>
-      <bind node="domain-params/text()" to="conditionParams"/>
+  <input file="job.csv" type="com.axelor.meta.db.MetaSchedule" search="self.name = :name">
+    <bind column="name" to="name" />
+    <bind column="active" to="active" />
+    <bind column="description" to="description" />
+    <bind column="job" to="job" />
+    <bind column="cron" to="cron" />
+    <bind to="params" if="param1 != null &amp;&amp; param1.split('\\|').size() &gt; 1">
+      <bind to="name" eval="param1.split('\\|')[0]"/>
+      <bind to="value" eval="param1.split('\\|')[1]" if="param1.split('\\|').size() &gt;= 2"/>
+    </bind>
+    <bind to="params" if="param2 != null &amp;&amp; param2.split('\\|').size() &gt; 1">
+      <bind to="name" eval="param2.split('\\|')[0]"/>
+      <bind to="value" eval="param2.split('\\|')[1]" if="param2.split('\\|').size() &gt;= 2"/>
     </bind>
   </input>
 
-  <input file="users.xml" root="users">
-    <bind node="group" type="com.axelor.auth.db.Group" search="self.code = :code" update="true">
-      <bind node="@code" to="code" />
-      <bind node="@name" to="name" />
-      <bind node="permissions/permission" to="permissions" search="self.name = :name">
-        <bind node="@name" to="name" />
-      </bind>
-      <bind node="menus/menu" to="menus" search="self.name = :name">
-        <bind node="@name" to="name" />
-      </bind>
+  <input file="permission.csv" type="com.axelor.auth.db.Permission" search="self.name = :name">
+    <bind column="code" to="code" />
+    <bind column="name" to="name" />
+    <bind column="domain" to="condition" />
+    <bind column="domain-params" to="conditionParams" />
+    <bind column="canCreate" to="canCreate" />
+    <bind column="canRead" to="canRead" />
+    <bind column="canWrite" to="canWrite" />
+    <bind column="canRemove" to="canRemove" />
+    <bind column="canExport" to="canExport" />
+  </input>
+
+  <input file="group.csv" type="com.axelor.auth.db.Group" search="self.code = :code">
+    <bind column="code" to="code" />
+    <bind column="name" to="name" />
+    <bind column="technicalStaff" to="technicalStaff" />
+    <bind column="menus" to="menus" search="self.name in :menus" eval="menus.split('\\|') as List" if="menus != null"/>
+    <bind column="permissions" to="permissions" search="self.name in :permissions" eval="permissions.split('\\|') as List" if="permissions != null"/>
+  </input>
+
+  <input file="user.csv" type="com.axelor.auth.db.User" search="self.code = :code" call="com.axelor.demo.UserImport:importUser">
+    <bind column="code" to="code" />
+    <bind column="name" to="name" />
+    <bind column="password" to="password" />
+    <bind to="group" update="true" search="self.code = :group_code_"/>
+  </input>
+
+  <input file="1_circle.csv" type="com.axelor.contact.db.Circle" search="self.code = :code">
+    <bind column="code" to="code" />
+    <bind column="name" to="name" />
+  </input>
+
+  <input file="2_company.csv" type="com.axelor.contact.db.Company" search="self.code = :code">
+    <bind column="code" to="code" />
+    <bind column="name" to="name" />
+  </input>
+
+  <input file="3_country.csv" type="com.axelor.contact.db.Country" search="self.code = :code">
+    <bind column="code" to="code" />
+    <bind column="name" to="name" />
+  </input>
+
+  <input file="4_title.csv" type="com.axelor.contact.db.Title" search="self.code = :code">
+    <bind column="code" to="code" />
+    <bind column="name" to="name" />
+  </input>
+
+  <input file="5_contact.csv" type="com.axelor.contact.db.Contact" search="self.firstName = :firstName AND self.lastName = :lastName" call="com.axelor.demo.ContactImport:importContact">
+    <bind column="firstName" to="firstName" />
+    <bind column="lastName" to="lastName" />
+    <bind column="notes" to="notes" />
+    <bind column="dateOfBirth" to="dateOfBirth" />
+    <bind to="company" update="true" search="self.id = :company_id_" if="company_id_"/>
+    <bind to="title" update="true" search="self.id = :title_id_" if="title_id_"/>
+    <bind to="_circles_ids" column="circles[].id"/>
+    <bind to="_circles_ids2" eval="_circles_ids == null ? [0] : _circles_ids.split('\\|') as List"/>
+    <bind to="circles" column="_circles_ids2" search="self.id in :_circles_ids2" if="_circles_ids2 != null &amp;&amp; _circles_ids2.size() &gt; 0" update="true"/>
+    <bind to="_emails_1" column="emails[1].email"/>
+    <bind to="emails" if="_email_1">
+      <bind column="emails[1].email" to="email"/>
+      <bind column="emails[1].primary" to="primary" adapter="Boolean"/>
     </bind>
-    <bind node="user" type="com.axelor.auth.db.User" search="self.code = :code" update="true" call="com.axelor.auth.AuthService:encrypt">
-      <bind node="@group" to="group" search="self.code = :group"/>
-      <bind node="@code" to="code" />
-      <bind node="name" to="name" />
-      <bind node="password" to="password" />
+    <bind to="_emails_2" column="emails[2].email"/>
+    <bind to="emails" if="_emails_2">
+      <bind column="emails[2].email" to="email"/>
+      <bind column="emails[2].primary" to="primary" adapter="Boolean"/>
+    </bind>
+    <bind to="_phones_1" column="phones[1].phone"/>
+    <bind to="phones" if="_phones_1">
+      <bind column="phones[1].phone" to="phone"/>
+      <bind column="phones[1].phoneType" to="phoneType"/>
+      <bind column="phones[1].primary" to="primary" adapter="Boolean"/>
+    </bind>
+    <bind to="_addresses1_street" column="addresses[1].street"/>
+    <bind to="addresses" if="_addresses1_street">
+      <bind column="addresses[1].street" to="street"/>
+      <bind column="addresses[1].zip" to="zip"/>
+      <bind column="addresses[1].city" to="city"/>
+      <bind to="_addresses1_country_id" column="addresses[1].country.id"/>
+      <bind to="country" update="true" search="self.id = :_addresses1_country_id"/>
     </bind>
   </input>
 
-  <input file="contacts.xml" root="address-book">
-    <bind node="title" type="com.axelor.contact.db.Title" search="self.code = :code">
-      <bind node="@code" to="code" />
-      <bind node="@name" to="name" />
-    </bind>
-    <bind node="country" type="com.axelor.contact.db.Country" search="self.code = :code">
-      <bind node="@code" to="code" />
-      <bind node="@name" to="name" />
-    </bind>
-    <bind node="company" type="com.axelor.contact.db.Company" search="self.code = :code">
-      <bind node="@code" to="code" />
-      <bind node="@name" to="name" />
-      <bind to="parent" search="self.code = :parent" />
-    </bind>
-    <bind node="circle" type="com.axelor.contact.db.Circle" search="self.code = :code">
-      <bind node="@code" to="code" />
-      <bind node="@name" to="name" />
-    </bind>
-    <bind node="contact" type="com.axelor.contact.db.Contact" search="self.emails[].email = :_email">
-      <bind node="@title" to="title" search="self.code = :title" />
-      <bind node="first-name" to="firstName" />
-      <bind node="last-name" to="lastName" />
-      <bind node="email" to="_email" /> <!-- context variable -->
-      <bind node="email" to="emails">
-        <bind to="primary" eval="true" />
-        <bind node="text()" to="email" />
-      </bind>
-      <bind node="phone" to="phones">
-        <bind to="primary" eval="true" />
-        <bind to="phoneType" eval="'Mobile'" />
-        <bind node="text()" to="phone" />
-      </bind>
-      <bind node="addresses/address" to="addresses">
-        <bind node="street1" to="street" />
-        <bind node="street2" to="area" />
-        <bind node="city" to="city" />
-        <bind to="country_code" node="country"/>
-        <bind to="country" search="self.code = :country_code"/>
-      </bind>
-    </bind>
+  <input file="6_product_category.csv" type="com.axelor.sale.db.ProductCategory" search="self.code = :code">
+    <bind column="code" to="code" />
+    <bind column="name" to="name" />
+    <bind to="parent" update="true" search="self.id = :parent_id_" if="parent_id_"/>
   </input>
 
-  <input file="sale-orders.xml" root="sale-orders">
-
-    <bind node="sequence" type="com.axelor.meta.db.MetaSequence" search="self.name = :name" update="false">
-      <bind node="@name" to="name" />
-      <bind node="@padding" to="padding" />
-      <bind node="@prefix" to="prefix" />
-    </bind>
-
-    <bind node="tax" type="com.axelor.sale.db.Tax" search="self.code = :code">
-      <bind node="@code" to="code" />
-      <bind node="@name" to="name" />
-      <bind to="rate" node="text()"/>
-    </bind>
-
-    <bind node="category" type="com.axelor.sale.db.ProductCategory" search="self.code = :code">
-      <bind node="@code" to="code" />
-      <bind node="@name" to="name" />
-    </bind>
-
-    <bind node="product" type="com.axelor.sale.db.Product" search="self.code = :code">
-      <bind node="@code" to="code" />
-      <bind node="@name" to="name" />
-      <bind node="@color" to="color" />
-      <bind node="@category" to="category" search="self.code = :category"/>
-    </bind>
-
-    <bind node="custom-fields/field" type="com.axelor.meta.db.MetaJsonField"
-      search="self.name = :name AND self.model = :model AND self.modelField = :modelField">
-      <bind node="../@for" to="model" />
-      <bind node="../@on" to="modelField" />
-      <bind node="@name" to="name" />
-      <bind node="@type" to="type" eval="type?:'string'" />
-      <bind node="@target" to="targetModel" />
-      <bind node="@selection" to="selection" />
-      <bind node="@widget" to="widget" />
-    </bind>
-
-    <bind node="sale-order" type="com.axelor.sale.db.Order" search="self.customer.emails[].email = :_email" update="false" call="com.axelor.demo.Validators:validateSaleOrder">
-       <bind node="some" to="notes"/>
-
-      <!-- transform boolean value into 'true' or 'false' -->
-      <bind node="@confirmed" to="confirmed" adapter="Boolean"/>
-
-      <!-- dummy binding -->
-      <bind node="@date" to="_date" adapter="LocalDate"/>
-
-      <!-- default value provided with eval expression -->
-      <bind to="_date" eval="java.time.LocalDate.now()" if="!_date" />
-
-      <bind to="orderDate" eval="_date" />
-      <bind to="confirmDate" eval="_date" if="confirmed"/>
-      <bind to="status" eval="'DRAFT'" if="!confirmed"/>
-      <bind to="status" eval="'OPEN'" if="confirmed"/>
-
-      <!-- put email in the context -->
-      <bind node="customer/email" to="_email"/>
-
-      <!-- IF email NOT EMPTY -->
-      <bind node="customer" to="customer" search="self.emails[].email = :_email" if="_email" update="false">
-        <bind node="firstName" to="firstName" />
-        <bind node="lastName" to="lastName" />
-        <bind node="email" to="emails">
-          <bind node="text()" to="email" />
-        </bind>
-        <bind node="phone" to="phones">
-          <bind to="primary" eval="true" />
-          <bind to="phoneType" eval="'Mobile'" />
-          <bind node="text()" to="phone" />
-        </bind>
-      </bind>
-      <!-- ELSE -->
-      <bind node="customer" to="customer" if="!_email">
-        <bind node="firstName" to="firstName" />
-        <bind node="lastName" to="lastName" />
-        <bind to="emails">
-          <bind to="email" eval='"${firstName}.${lastName}@gmail.com".toLowerCase()' />
-        </bind>
-      </bind>
-      <!-- END IF -->
-
-      <bind node="items/item" to="items">
-        <bind node="@quantity" to="quantity" />
-        <bind node="@price" to="price" />
-        <bind node="@product" to="product" search="self.code = :product"/>
-        <bind node="taxes/tax" to="taxes" search="self.code = :code">
-          <bind node="@name" to="name" />
-          <bind node="@code" to="code" />
-          <bind node="text()" to="rate" />
-        </bind>
-      </bind>
-    </bind>
+  <input file="7_product.csv" type="com.axelor.sale.db.Product" search="self.code = :code" call="com.axelor.demo.ProductImport:importProduct">
+    <bind column="code" to="code" />
+    <bind column="name" to="name" />
+    <bind column="color" to="color" />
+    <bind column="colorVariants" to="colorVariants" />
+    <bind to="category" update="true" search="self.id = :category_id_" if="category_id_"/>
+    <bind column="notes" to="notes" />
   </input>
 
-  <input file="jobs.xml" root="scheduled-jobs">
-    <bind node="scheduled-job" type="com.axelor.meta.db.MetaSchedule" search="self.name = :name">
-      <bind node="@active" to="active" />
-      <bind node="@name" to="name" />
-      <bind node="@description" to="description" />
-      <bind node="@job" to="job" />
-      <bind node="@cron" to="cron" />
-      <bind node="param" to="params">
-        <bind node="@name" to="name"/>
-        <bind node="text()" to="value"/>
-      </bind>
-    </bind>
+  <input file="8_tax.csv" type="com.axelor.sale.db.Tax" search="self.code = :code">
+    <bind column="code" to="code" />
+    <bind column="name" to="name" />
   </input>
 
-  <input file="projects.xml" root="projects">
-    <bind node="project" type="com.axelor.project.db.Project">
-        <bind to="_base" eval="java.time.LocalDate.of(2014, 11, 11)" />
-        <bind to="_date" eval="java.time.LocalDate.now()" />
-      <bind node="@name" to="name"/>
-      <bind node="@priority" to="priority"/>
-      <bind node="description" to="description"/>
-      <bind node="members/member" to="members" search="self.code = :code">
-        <bind node="text()" to="code"/>
-      </bind>
-      <bind node="tasks/task" to="tasks">
-        <bind node="@name" to="name"/>
-          <bind node="@priority" to="priority"/>
-            <bind node="@state" to="state"/>
-          <bind node="@user" to="user" search="self.code = :user" update="true"/>
-          <bind node="@createDate" to="createDate" adapter="LocalDateTime" eval="createDate?.plus(_base.until(_date))"/>
-          <bind node="@startDate" to="startDate" adapter="LocalDateTime" eval="startDate?.plus(_base.until(_date))"/>
-          <bind node="@endDate" to="endDate" adapter="LocalDateTime" eval="endDate?.plus(_base.until(_date))"/>
-            <bind node="@plannedStartDate" to="plannedStartDate" adapter="LocalDateTime" eval="plannedStartDate?.plus(_base.until(_date))"/>
-            <bind node="@plannedDuration" to="plannedDuration"/>
-            <bind node="@parentTask" to="parentTask" search="self.name = :parentTask" update="true"/>
-          <bind node="works/work" to="workItems">
-            <bind node="@date" to="date" adapter="LocalDate" eval="date?.plus(_base.until(_date))"/>
-            <bind node="@hours" to="hours" adapter="LocalTime"/>
-            <bind node="text()" to="name"/>
-          </bind>
-           <bind node="finishToStartTaskSet/task" to="finishToStartTaskSet" search="self.name = :name" update="true">
-              <bind node="text()" to="name"/>
-           </bind>
-           <bind node="startToStartTaskSet/task" to="startToStartTaskSet" search="self.name = :name" update="true">
-              <bind node="text()" to="name"/>
-           </bind>
-      </bind>
-    </bind>
+  <input file="9_order.csv" type="com.axelor.sale.db.Order" search="self.name = :name">
+    <bind to="customer" update="true" search="self.id = :customer_id_"/>
+    <bind column="name" to="name" />
+    <bind column="status" to="status" />
+    <bind to="orderDate" eval="com.axelor.common.StringUtils.notEmpty(_orderDateGap) ? java.time.LocalDate.now().plusDays(Long.valueOf(_orderDateGap)) : java.time.LocalDate.now()"/>
+    <bind to="confirmDate" eval="com.axelor.common.StringUtils.notEmpty(_confirmDateGap) ? java.time.LocalDate.now().plusDays(Long.valueOf(_confirmDateGap)) : null"/>
+    <bind column="confirmed" to="confirmed" adapter="Boolean"/>
+    <bind column="notes" to="notes" />
   </input>
 
-</xml-inputs>
+  <input file="10_order_line.csv" type="com.axelor.sale.db.OrderLine">
+    <bind to="order" update="true" search="self.id = :order_id_"/>
+    <bind to="product" update="true" search="self.id = :product_id_"/>
+    <bind column="price" to="price" />
+    <bind column="quantity" to="quantity" />
+    <bind column="sequence" to="sequence" />
+    <bind to="_taxes_ids" column="taxes[].id"/>
+    <bind to="_taxes_ids2" eval="_taxes_ids == null ? [0] : _taxes_ids.split('\\|') as List"/>
+    <bind to="taxes" column="_taxes_ids2" search="self.id in :_taxes_ids2" if="_taxes_ids2 != null &amp;&amp; _taxes_ids2.size() &gt; 0" update="true"/>
+  </input>
+
+  <input file="9_order.csv" type="com.axelor.sale.db.Order" search="self.name = :name" update="true" call="com.axelor.demo.Validators:validateSaleOrder"/>
+
+  <input file="11_project.csv" type="com.axelor.project.db.Project">
+    <bind column="name" to="name" />
+    <bind column="description" to="description" />
+    <bind column="notes" to="notes" />
+    <bind column="priority" to="priority" />
+    <bind to="_members_ids" column="members[].id"/>
+    <bind to="_members_ids2" eval="_members_ids == null ? [0] : _members_ids.split('\\|') as List"/>
+    <bind to="members" column="_members_ids2" search="self.id in :_members_ids2" if="_members_ids2 != null &amp;&amp; _members_ids2.size() &gt; 0" update="true"/>
+  </input>
+
+  <input file="12_project_task.csv" type="com.axelor.project.db.ProjectTask">
+    <bind to="_baseDate" eval="java.time.LocalDate.of(2021, 1, 1)" />
+    <bind to="_currentDate" eval="java.time.LocalDate.now()" />
+    <bind column="name" to="name" />
+    <bind to="project" update="true" search="self.id = :project_id_"/>
+    <bind to="user" update="true" search="self.id = :user_id_"/>
+    <bind column="sequence" to="sequence" />
+    <bind column="plannedDuration" to="plannedDuration" />
+    <bind column="plannedProgress" to="plannedProgress" />
+    <bind column="priority" to="priority" />
+    <bind column="state" to="state" />
+    <bind to="plannedStartDate" eval="java.time.LocalDateTime.parse(plannedStartDate)?.plus(_baseDate.until(_currentDate))" if="_baseDate &amp;&amp; _currentDate &amp;&amp; plannedStartDate"/>
+    <bind to="createDate" eval="java.time.LocalDateTime.parse(createDate)?.plus(_baseDate.until(_currentDate))" if="_baseDate &amp;&amp; _currentDate &amp;&amp; createDate"/>
+    <bind to="startDate" eval="java.time.LocalDateTime.parse(startDate)?.plus(_baseDate.until(_currentDate))" if="_baseDate &amp;&amp; _currentDate &amp;&amp; startDate"/>
+    <bind to="endDate" eval="java.time.LocalDateTime.parse(endDate)?.plus(_baseDate.until(_currentDate))" if="_baseDate &amp;&amp; _currentDate &amp;&amp; endDate"/>
+    <bind to="deadlineDate" eval="java.time.LocalDate.parse(deadlineDate)?.plus(_baseDate.until(_currentDate))" if="_baseDate &amp;&amp; _currentDate &amp;&amp; deadlineDate"/>
+    <bind column="notes" to="notes" />
+    <bind to="_finishToStartTaskSet_ids" column="finishToStartTaskSet[].id"/>
+    <bind to="_finishToStartTaskSet_ids2" eval="_finishToStartTaskSet_ids == null ? [0] : _finishToStartTaskSet_ids.split('\\|') as List"/>
+    <bind to="finishToStartTaskSet" column="_finishToStartTaskSet_ids2" search="self.id in :_finishToStartTaskSet_ids2" if="_finishToStartTaskSet_ids2 != null &amp;&amp; _finishToStartTaskSet_ids2.size() &gt; 0" update="true"/>
+    <bind to="parentTask" update="true" search="self.id = :parentTask_id_" if="parentTask_id_"/>
+  </input>
+
+  <input file="13_project_work.csv" type="com.axelor.project.db.ProjectWork">
+    <bind to="_baseDate" eval="java.time.LocalDate.of(2021, 1, 1)" />
+    <bind to="_currentDate" eval="java.time.LocalDate.now()" />
+    <bind column="name" to="name" />
+    <bind to="task" update="true" search="self.id = :task_id_"/>
+    <bind to="date" eval="java.time.LocalDate.parse(date)?.plus(_baseDate.until(_currentDate))" adapter="LocalDate" if="_baseDate &amp;&amp; _currentDate &amp;&amp; date"/>
+    <bind column="hours" to="hours" />
+  </input>
+
+</csv-inputs>
