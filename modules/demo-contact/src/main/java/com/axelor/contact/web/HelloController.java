@@ -24,6 +24,7 @@ import com.axelor.contact.db.Contact;
 import com.axelor.contact.db.Country;
 import com.axelor.contact.db.repo.CountryRepository;
 import com.axelor.contact.service.HelloService;
+import com.axelor.i18n.I18n;
 import com.axelor.inject.Beans;
 import com.axelor.meta.schema.actions.ActionView;
 import com.axelor.meta.schema.actions.ActionView.ActionViewBuilder;
@@ -64,7 +65,7 @@ public class HelloController {
 
     log.info("send greetings to: ${contact.fullName}");
 
-    response.setFlash(message);
+    response.setInfo(message, I18n.get("Greetings"));
   }
 
   public void about(ActionRequest request, ActionResponse response) {
@@ -86,7 +87,7 @@ public class HelloController {
       message = String.format("Welcome '%s'...</br>", name) + message;
     }
 
-    response.setFlash(message);
+    response.setInfo(message);
   }
 
   public void guessEmail(ActionRequest request, ActionResponse response) {

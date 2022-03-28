@@ -42,7 +42,8 @@
     <option value="Other">Other</option>
   </selection>
 
-  <form name="contact-form" title="Contact" model="com.axelor.contact.db.Contact" css="panel-blue">
+  <form name="contact-form" title="Contact" model="com.axelor.contact.db.Contact" css="panel-blue"
+    onSave="action-contact-validate">
     <panel title="Personal" css="panel-red">
       <panel colSpan="4">
         <field name="image" showTitle="false" colSpan="12"/>
@@ -106,6 +107,11 @@
       <field name="createdOn"/>
       <field name="updatedOn"/>
     </panel>
+    <panel title="Actions" sidebar="true" colSpan="1" cols="1">
+      <button name="greet" title="Send Greetings..." onClick="com.axelor.contact.web.HelloController:say"/>
+      <button name="showHomePage" title="Home Page..." onClick="com.axelor.contact.web.HelloController:showHomePage"/>
+      <button name="showCompanyList" title="Company List..." help="Demonstrate how to open new view from action." onClick="com.axelor.contact.web.HelloController:showCompanyList"/>
+    </panel>
     <panel sidebar="true" title="Extra">
       <field name="company"/>
       <field name="circles" widget="TagSelect"/>
@@ -139,5 +145,11 @@
   <action-method name="action-contact-address-about">
     <call class="com.axelor.contact.web.HelloController" method="about"/>
   </action-method>
+
+  <action-validate name="action-contact-validate">
+    <error message="Name is too short." if="eval: firstName?.length() &lt;= 2" title="Invalid data"/>
+    <alert message="Last name is too short. Would you like to continue?"
+           if="eval: lastName?.length() &lt;= 2" title="Too short data" confirm-btn-title="Continue" cancel-btn-title="Abort"/>
+  </action-validate>
 
 </object-views>
