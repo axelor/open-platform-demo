@@ -21,7 +21,7 @@ $ ./gradlew -x test build
 
 This should generate the war package for under build/libs directory. You can test the war by deploying on your tomcat server.
 
-You can also test the application using the embedded tomcat server. First edit the `application.properties` and configure the database to use and then run the following command from the interactive shell.
+You can also test the application using the embedded tomcat server. First edit the `axelor-config.properties` and configure the database to use and then run the following command from the interactive shell.
 
 ```bash
 $ ./gradlew --no-daemon run
