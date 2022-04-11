@@ -32,7 +32,8 @@
     <![CDATA[
     SELECT
         SUM(self.totalAmount) AS amount,
-        _customer.fullName AS customer
+        _customer.fullName AS customer,
+        MIN(_customer.id) AS customerId
     FROM
         Order self
     LEFT JOIN
@@ -45,6 +46,10 @@
     </dataset>
     <category key="customer"/>
     <series key="amount" type="pie"/>
+    <config name="onClick" value="com.axelor.sale.web.SaleOrderController:showCustomerSales"/>
+    <actions>
+      <action name="showTotalSales" title="Aggregate sales" action="com.axelor.sale.web.SaleOrderController:showTotalSales"/>
+    </actions>
   </chart>
 
   <chart name="chart.sales.by.customer" title="Sales by customer">

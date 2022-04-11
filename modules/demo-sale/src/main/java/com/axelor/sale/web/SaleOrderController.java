@@ -18,7 +18,10 @@
  */
 package com.axelor.sale.web;
 
+import com.axelor.common.ObjectUtils;
 import com.axelor.db.JpaSupport;
+import com.axelor.i18n.I18n;
+import com.axelor.meta.schema.actions.ActionView;
 import com.axelor.rpc.ActionRequest;
 import com.axelor.rpc.ActionResponse;
 import com.axelor.sale.db.Order;
@@ -135,5 +138,32 @@ public class SaleOrderController extends JpaSupport {
     data.put("down", total.compareTo(last) == -1);
 
     response.setData(Lists.newArrayList(data));
+  }
+
+  public void showTotalSales(ActionRequest request, ActionResponse response) {
+    List<Map<String, Object>> data =
+        (List<Map<String, Object>>) request.getRawContext().get("_data");
+    if (ObjectUtils.isEmpty(data)) {
+      response.setNotify(I18n.get("No sales"));
+      return;
+    }
+    BigDecimal totalAmount =
+        data.stream()
+            .map(i -> i.get("amount").toString())
+            .map(BigDecimal::new)
+            .reduce(BigDecimal.ZERO, BigDecimal::add);
+    response.setNotify(String.format("%s : %s", I18n.get("Total sales"), totalAmount));
+  }
+
+  public void showCustomerSales(ActionRequest request, ActionResponse response) {
+    Object data = request.getRawContext().get("customerId");
+    if (ObjectUtils.isEmpty(data)) {
+      return;
+    }
+
+    ActionView.ActionViewBuilder builder =
+        ActionView.define("Customer sales").model(Order.class.getName());
+    builder.domain("self.customer.id = " + data);
+    response.setView(builder.map());
   }
 }
