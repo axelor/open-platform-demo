@@ -11,7 +11,7 @@
     </field>
     <field name="lastName"/>
     <field name="email"/>
-    <field name="phone"/>
+    <field name="phone" widget="phone"/>
     <field name="company"/>
     <field name="dateOfBirth">
       <hilite color="danger" strong="true" if="$moment().diff(dateOfBirth, 'years') &lt; 18"/>
@@ -77,7 +77,7 @@
         ]]></viewer>
         <editor layout="table" x-show-titles="false">
           <field name="phoneType" width="100px" selection="phone.type.selection" />
-          <field name="phone" css="border-left-none"/>
+          <field name="phone" css="border-left-none" widget="phone"/>
           <field name="primary" widget="toggle" x-icon="fa-star-o" x-icon-active="fa-star" x-exclusive="true"/>
         </editor>
       </field>
