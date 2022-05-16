@@ -21,18 +21,17 @@ package com.axelor.demo;
 import com.axelor.db.JpaSequence;
 import com.axelor.sale.db.Order;
 import com.axelor.sale.service.SaleOrderService;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import java.lang.invoke.MethodHandles;
 import java.util.Map;
 import javax.inject.Inject;
 import javax.validation.ValidationException;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class Validators {
 
   private static final Logger logger =
-          LoggerFactory.getLogger(MethodHandles.lookup().lookupClass());
+      LoggerFactory.getLogger(MethodHandles.lookup().lookupClass());
 
   @Inject private SaleOrderService service;
 
@@ -42,7 +41,7 @@ public class Validators {
 
     try {
       service.validate(so);
-    } catch(ValidationException e) {
+    } catch (ValidationException e) {
       logger.error("Validation error on SO '{}': {}", so.getName(), e.getMessage());
     }
     service.calculate(so);
@@ -50,5 +49,4 @@ public class Validators {
 
     return so;
   }
-
 }
