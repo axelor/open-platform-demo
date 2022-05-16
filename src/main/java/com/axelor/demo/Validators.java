@@ -18,6 +18,7 @@
  */
 package com.axelor.demo;
 
+import com.axelor.db.JpaSequence;
 import com.axelor.sale.db.Order;
 import com.axelor.sale.service.SaleOrderService;
 import org.slf4j.Logger;
@@ -45,7 +46,9 @@ public class Validators {
       logger.error("Validation error on SO '{}': {}", so.getName(), e.getMessage());
     }
     service.calculate(so);
+    JpaSequence.nextValue("sale.order.seq");
 
     return so;
   }
+
 }
