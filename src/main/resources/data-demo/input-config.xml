@@ -165,11 +165,16 @@
     <bind column="plannedProgress" to="plannedProgress" />
     <bind column="priority" to="priority" />
     <bind column="state" to="state" />
-    <bind to="plannedStartDate" eval="java.time.LocalDateTime.parse(plannedStartDate)?.plus(_baseDate.until(_currentDate))" if="_baseDate &amp;&amp; _currentDate &amp;&amp; plannedStartDate"/>
-    <bind to="createDate" eval="java.time.LocalDateTime.parse(createDate)?.plus(_baseDate.until(_currentDate))" if="_baseDate &amp;&amp; _currentDate &amp;&amp; createDate"/>
-    <bind to="startDate" eval="java.time.LocalDateTime.parse(startDate)?.plus(_baseDate.until(_currentDate))" if="_baseDate &amp;&amp; _currentDate &amp;&amp; startDate"/>
-    <bind to="endDate" eval="java.time.LocalDateTime.parse(endDate)?.plus(_baseDate.until(_currentDate))" if="_baseDate &amp;&amp; _currentDate &amp;&amp; endDate"/>
-    <bind to="deadlineDate" eval="java.time.LocalDate.parse(deadlineDate)?.plus(_baseDate.until(_currentDate))" if="_baseDate &amp;&amp; _currentDate &amp;&amp; deadlineDate"/>
+    <bind to="_plannedStartDate" column="plannedStartDate"/>
+    <bind to="plannedStartDate" eval="java.time.LocalDateTime.parse(_plannedStartDate)?.plus(_baseDate.until(_currentDate))" if="_baseDate &amp;&amp; _currentDate &amp;&amp; _plannedStartDate"/>
+    <bind to="_createDate" column="createDate"/>
+    <bind to="createDate" eval="java.time.LocalDateTime.parse(_createDate)?.plus(_baseDate.until(_currentDate))" if="_baseDate &amp;&amp; _currentDate &amp;&amp; _createDate"/>
+    <bind to="_startDate" column="startDate"/>
+    <bind to="startDate" eval="java.time.LocalDateTime.parse(_startDate)?.plus(_baseDate.until(_currentDate))" if="_baseDate &amp;&amp; _currentDate &amp;&amp; _startDate"/>
+    <bind to="_endDate" column="endDate"/>
+    <bind to="endDate" eval="java.time.LocalDateTime.parse(_endDate)?.plus(_baseDate.until(_currentDate))" if="_baseDate &amp;&amp; _currentDate &amp;&amp; _endDate"/>
+    <bind to="_deadlineDate" column="deadlineDate"/>
+    <bind to="deadlineDate" eval="java.time.LocalDate.parse(_deadlineDate)?.plus(_baseDate.until(_currentDate))" if="_baseDate &amp;&amp; _currentDate &amp;&amp; _deadlineDate"/>
     <bind column="notes" to="notes" />
     <bind to="_finishToStartTaskSet_ids" column="finishToStartTaskSet[].id"/>
     <bind to="_finishToStartTaskSet_ids2" eval="_finishToStartTaskSet_ids == null ? [0] : _finishToStartTaskSet_ids.split('\\|') as List"/>
