@@ -1,0 +1,19 @@
+key,message,language,_context
+Services,Prestations de service,fr,ProductCategory#name
+Computers,Ordinateurs,fr,ProductCategory#name
+Laptops,Ordinateurs portables,fr,ProductCategory#name
+Monitors,Ecrans,fr,ProductCategory#name
+Books,Livres,fr,ProductCategory#name
+Home & Garden,Maison & Jardin,fr,ProductCategory#name
+Kitchen & Home Appliances,Appareils de cuisine et de maison,fr,ProductCategory#name
+Garden & Outdoors,Jardin et extérieur,fr,ProductCategory#name
+Wireless Keyboard,Clavier sans fil,fr,Product#name
+11.6-inch Touchscreen Laptop,"Ordinateur portable à écran tactile de 11,6 pouces",fr,Product#name
+Full HD 15.6 Inch Metal Laptop,"Ordinateur portable en métal Full HD 15,6 pouces",fr,Product#name
+The Universe,L'univers,fr,Product#name
+The Age of AI: And Our Human Future,L'ère de l'IA: et notre avenir humain,fr,Product#name
+Slice Toaster,Grille-pain tranche,fr,Product#name
+Small Combination Microwave Oven & Grill,Petit four à micro-ondes et gril combinés,fr,Product#name
+Multifunctional Food Processor,Robot culinaire multifonctionnel,fr,Product#name
+Outdoor Storage Box,Boîte de rangement extérieure,fr,Product#name
+Patio Lounge Chair,Chaise longue de terrasse,fr,Product#name
