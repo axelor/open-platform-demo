@@ -79,9 +79,9 @@
     <![CDATA[
     <div class="report-data">
       <h1>{{first.total}}</h1>
-      <small>Total sale</small>
+      <small x-translate>Total sale</small>
       <div class="report-percent font-bold pull-right" ng-class="{'text-error': first.down, 'text-success': !first.down}">{{first.percent | number:2}}% <i class="fa" ng-class="{'fa-level-down': first.down, 'fa-level-up': !first.down}"></i></div>
-      <div class="report-tags"><span class="label label-important">Today</span></div>
+      <div class="report-tags"><span class="label label-important" x-translate>Today</span></div>
     </div>
     ]]>
     </template>

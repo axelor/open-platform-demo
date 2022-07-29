@@ -112,9 +112,9 @@
     <![CDATA[
     <div class="report-data">
       <h1>{{first.total}}</h1>
-      <small>Pending tasks</small>
+      <small x-translate>Pending tasks</small>
       <div class="report-percent font-bold text-error pull-right">20% <i class="fa fa-level-down"></i></div>
-      <div class="report-tags"><span class="label label-success">Today</span></div>
+      <div class="report-tags"><span class="label label-success" x-translate>Today</span></div>
     </div>
     ]]>
     </template>
@@ -166,7 +166,7 @@
     <field name="name" />
   </calendar>
 
-  <gantt name="project-task-gantt" title="Task Planning" model="com.axelor.project.db.ProjectTask"
+  <gantt name="project-task-gantt" title="Task planning" model="com.axelor.project.db.ProjectTask"
     taskStart="plannedStartDate"
     taskDuration="plannedDuration"
     taskParent="parentTask"
