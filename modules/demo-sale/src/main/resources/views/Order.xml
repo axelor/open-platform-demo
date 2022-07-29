@@ -48,11 +48,11 @@
           <viewer depends="amount,taxAmount"><![CDATA[
           <dl class="dl-horizontal">
             <dt x-translate>Amount</dt>
-            <dd>{{record.amount}}</dd>
+            <dd>{{$fmt('amount')}}</dd>
             <dt x-translate>Tax amount</dt>
-            <dd>{{record.taxAmount}}</dd>
+            <dd>{{$fmt('taxAmount')}}</dd>
             <dt class="order-subtotal-total" x-translate>Total amount</dt>
-            <dd class="order-subtotal-total">{{record.totalAmount}}</dd>
+            <dd class="order-subtotal-total">{{$fmt('totalAmount')}}</dd>
           </dl>
           ]]></viewer>
         </field>
