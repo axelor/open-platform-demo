@@ -8,6 +8,7 @@
   <entity name="Product" cacheable="true">
     <string name="code" required="true" unique="true" min="2"/>
     <string name="name" required="true" unique="true" min="2" translatable="true"/>
+    <decimal name="price" title="Price" nullable="true" default="" scale="2" precision="20"/>
     <string name="color" selection="product.color.selection"/>
     <string name="colorVariants" selection="product.color.selection"/>
     <many-to-one name="category" ref="ProductCategory"/>

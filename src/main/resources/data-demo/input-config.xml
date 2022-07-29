@@ -110,6 +110,7 @@
   <input file="7_product.csv" type="com.axelor.sale.db.Product" search="self.code = :code" call="com.axelor.demo.ProductImport:importProduct">
     <bind column="code" to="code" />
     <bind column="name" to="name" />
+    <bind column="price" to="price" />
     <bind column="color" to="color" />
     <bind column="colorVariants" to="colorVariants" />
     <bind to="category" update="true" search="self.id = :category_id_" if="category_id_"/>

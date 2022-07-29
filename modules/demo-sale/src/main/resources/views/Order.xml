@@ -29,7 +29,7 @@
       <panel-related field="items" editable="true" readonlyIf="confirmed"
         orderBy="sequence" canMove="true"
         onChange="com.axelor.sale.web.SaleOrderController:calculate">
-        <field name="product"/>
+        <field name="product" onChange="action-order-line-change-product"/>
         <field name="price"/>
         <field name="quantity"/>
         <field name="taxes"/>

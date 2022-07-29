@@ -5,14 +5,14 @@
 
   <grid name="order-line-grid" title="Ordered Items" model="com.axelor.sale.db.OrderLine">
     <field name="order" />
-    <field name="product" />
+    <field name="product" onChange="action-order-line-change-product"/>
     <field name="price" />
     <field name="quantity" />
   </grid>
 
   <form name="order-line-form" title="Ordered Item" model="com.axelor.sale.db.OrderLine">
     <panel title="Overview">
-      <field name="product" colSpan="12" />
+      <field name="product" colSpan="12" onChange="action-order-line-change-product"/>
       <field name="price" />
       <field name="quantity" />
     </panel>
@@ -21,5 +21,9 @@
       <field name="rate" />
     </panel-related>
   </form>
+
+  <action-record name="action-order-line-change-product" model="com.axelor.sale.db.OrderLine">
+    <field name="price" expr="eval: product.price ? product.price : 0.00" if="product"/>
+  </action-record>
 
 </object-views>
