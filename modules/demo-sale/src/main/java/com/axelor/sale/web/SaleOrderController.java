@@ -129,13 +129,15 @@ public class SaleOrderController extends JpaSupport {
     BigDecimal percent = BigDecimal.ZERO;
     if (total.compareTo(BigDecimal.ZERO) == 1) {
       percent =
-          total.subtract(last).multiply(new BigDecimal(100)).divide(total, RoundingMode.HALF_UP);
+          total.subtract(last).divide(total, 4, RoundingMode.HALF_UP);
     }
 
     Map<String, Object> data = new HashMap<>();
     data.put("total", total);
     data.put("percent", percent);
-    data.put("down", total.compareTo(last) == -1);
+    data.put("up", total.compareTo(last) > 0);
+    data.put("tag", I18n.get("Monthly"));
+    data.put("tagCss", "label-success");
 
     response.setData(Lists.newArrayList(data));
   }

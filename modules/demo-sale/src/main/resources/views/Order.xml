@@ -88,16 +88,12 @@
   </custom>
 
   <!-- dashboard box with custom template -->
-  <custom name="report-sales-month" title="Sales this month" css="report-box">
+  <custom name="report-sales-month" title="Sales this month">
     <dataset type="rpc">com.axelor.sale.web.SaleOrderController:reportMonthly</dataset>
     <template>
     <![CDATA[
-    <div class="report-data">
-      <h1>{{first.total}}</h1>
-      <small>Total sale</small>
-      <div class="report-percent font-bold pull-right" ng-class="{'text-error': first.down, 'text-success': !first.down}">{{first.percent | number:2}}% <i class="fa" ng-class="{'fa-level-down': first.down, 'fa-level-up': !first.down}"></i></div>
-      <div class="report-tags"><span class="label label-success">Monthly</span></div>
-    </div>
+    <report-box icon='fa-line-chart' label='Total sales of the month' value='first.total'
+      percent='first.percent' up='first.up' tag='first.tag' tag-css='first.tagCss'/>
     ]]>
     </template>
   </custom>
