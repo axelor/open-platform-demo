@@ -11,12 +11,12 @@
 
   <form id="product-form.ext" name="product-form" title="Product"
     model="com.axelor.sale.db.Product" extension="true">
-    <extend target="panel[@title='Overview']/panel[last()]/field[@name='category']">
+    <extend target="panel[@name='overviewPanel']/panel[last()]/field[@name='category']">
       <insert position="after">
-        <field name="color" widget="NavSelect" selection="product.color.selection" />
+        <field name="colorVariants" widget="multi-select" colSpan="12"/>
       </insert>
     </extend>
-    <extend target="panel[@title='Notes']">
+    <extend target="panel[@name='notesPanel']">
       <insert position="after">
         <panel-stack showIf="color" itemSpan="12">
           <panel title="Page 1" showIf="color == 'black'" />

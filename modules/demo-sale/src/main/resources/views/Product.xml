@@ -25,7 +25,7 @@
   </grid>
 
   <form name="product-form" title="Product" model="com.axelor.sale.db.Product">
-    <panel title="Overview">
+    <panel name="overviewPanel" title="Overview">
       <panel colSpan="3">
         <field name="image" showTitle="false" colSpan="12" widget="image"/>
       </panel>
@@ -34,14 +34,13 @@
         <field name="price"/>
         <field name="code"/>
         <field name="color"/>
-        <field name="colorVariants" widget="multi-select"/>
         <field name="category"/>
       </panel>
     </panel>
     <panel title="Attributes" itemSpan="12">
         <field name="attrs" />
     </panel>
-    <panel title="Notes">
+    <panel name="notesPanel" title="Notes">
       <field name="notes" showTitle="false" colSpan="12" widget="html" />
     </panel>
   </form>
