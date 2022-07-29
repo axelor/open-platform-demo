@@ -54,7 +54,7 @@
           <field name="finishToStartTaskSet" widget="TagSelect" />
           <field name="startToStartTaskSet" widget="TagSelect" />
           <field name="finishToFinishTaskSet" widget="TagSelect" />
-          <field name="startToStartTaskSet" widget="TagSelect" />
+          <field name="startToFinishTaskSet" widget="TagSelect" />
         </panel>
       </panel>
     </panel-tabs>
