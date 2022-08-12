@@ -41,10 +41,6 @@ public class SaleOrderService {
     BigDecimal amount = BigDecimal.ZERO;
     BigDecimal taxAmount = BigDecimal.ZERO;
 
-    if (ObjectUtils.isEmpty(order.getItems())) {
-      return order;
-    }
-
     if (!ObjectUtils.isEmpty(order.getItems())) {
       for (OrderLine item : order.getItems()) {
         BigDecimal value = item.getPrice().multiply(new BigDecimal(item.getQuantity()));
@@ -63,7 +59,7 @@ public class SaleOrderService {
 
     order.setAmount(amount.setScale(4, RoundingMode.HALF_UP));
     order.setTaxAmount(taxAmount.setScale(4, RoundingMode.HALF_UP));
-    order.setTotalAmount(amount.add(taxAmount).setScale(2, RoundingMode.HALF_UP));
+    order.setTotalAmount(amount.add(taxAmount).setScale(4, RoundingMode.HALF_UP));
 
     return order;
   }

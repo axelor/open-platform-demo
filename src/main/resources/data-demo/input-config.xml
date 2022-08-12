@@ -122,6 +122,13 @@
     <bind column="name" to="name" />
   </input>
 
+  <input file="8_currency.csv" type="com.axelor.sale.db.Currency" search="self.code = :code">
+    <bind column="code" to="code" />
+    <bind column="name" to="name" />
+    <bind column="symbol" to="symbol" />
+    <bind column="decimalPlaces" to="decimalPlaces" />
+  </input>
+
   <input file="9_order.csv" type="com.axelor.sale.db.Order" search="self.name = :name">
     <bind to="customer" update="true" search="self.id = :customer_id_"/>
     <bind column="name" to="name" />

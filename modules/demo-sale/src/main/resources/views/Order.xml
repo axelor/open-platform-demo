@@ -8,7 +8,9 @@
     <field name="customer"/>
     <field name="orderDate"/>
     <field name="status"/>
-    <field name="totalAmount"/>
+    <field name="totalAmount" x-scale="currency.decimalPlaces"/>
+    <field name="currency.symbol" width="70px" title="Cur."/>
+    <field name="currency.decimalPlaces" hidden="true"/>
   </grid>
 
   <form name="order-form" title="Order" model="com.axelor.sale.db.Order"
@@ -24,6 +26,7 @@
       <field name="confirmed" widget="boolean-switch" onChange="com.axelor.sale.web.SaleOrderController:onConfirm"/>
       <field name="orderDate" readonlyIf="confirmed"/>
       <field name="confirmDate" requiredIf="confirmed" validIf="confirmDate == null || $moment(confirmDate) >= $moment(orderDate)"/>
+      <field name="currency" readonlyIf="confirmed" form-view="currency-form" grid-view="currency-grid" onChange="com.axelor.sale.web.SaleOrderController:calculate"/>
     </panel>
     <panel-tabs>
       <panel-related field="items" editable="true" readonlyIf="confirmed"
@@ -40,22 +43,28 @@
     </panel-tabs>
     <panel>
       <panel colSpan="4" itemSpan="12">
-        <button name="totalAmount" onClick="check-order-dates,com.axelor.sale.web.SaleOrderController:calculate,save" title="Total amount" icon="fa-bar-chart" widget="info-button" css="btn-primary"/>
+        <button name="totalAmount" onClick="check-order-dates,com.axelor.sale.web.SaleOrderController:calculate,save" title="Total amount" icon="fa-bar-chart" widget="info-button" css="btn-primary" x-scale="currency.decimalPlaces"/>
         <button name="btnExport" title="Export" showIf="id" onClick="export.sale.order"/>
       </panel>
       <panel colSpan="8" css="order-subtotal" readonly="true">
-        <field name="totalAmount" showTitle="false" colSpan="12">
-          <viewer depends="amount,taxAmount"><![CDATA[
-          <dl class="dl-horizontal">
-            <dt x-translate>Amount</dt>
-            <dd>{{$fmt('amount')}}</dd>
-            <dt x-translate>Tax amount</dt>
-            <dd>{{$fmt('taxAmount')}}</dd>
-            <dt class="order-subtotal-total" x-translate>Total amount</dt>
-            <dd class="order-subtotal-total">{{$fmt('totalAmount')}}</dd>
-          </dl>
-          ]]></viewer>
+        <field name="totalAmount" showTitle="false" colSpan="12" x-scale="currency.decimalPlaces">
+          <viewer depends="amount,taxAmount,totalAmount,currency.symbol">
+            <![CDATA[
+              <dl class="dl-horizontal">
+                <dt x-translate>Amount</dt>
+                <dd>{{$fmt('amount')}} {{$fmt('currency.symbol')}}</dd>
+                <dt x-translate>Tax amount</dt>
+                <dd>{{$fmt('taxAmount')}} {{$fmt('currency.symbol')}}</dd>
+                <dt class="order-subtotal-total" x-translate>Total amount</dt>
+                <dd class="order-subtotal-total">{{$fmt('totalAmount')}} {{$fmt('currency.symbol')}}</dd>
+              </dl>
+            ]]>
+          </viewer>
         </field>
+        <field name="amount" hidden="true" x-scale="currency.decimalPlaces"/>
+        <field name="taxAmount" hidden="true" x-scale="currency.decimalPlaces"/>
+        <field name="currency.symbol" hidden="true"/>
+        <field name="currency.decimalPlaces" hidden="true"/>
       </panel>
     </panel>
     <panel-mail>
@@ -133,6 +142,7 @@
     <field name="customer" expr="eval: __ref__" if="__ref__ instanceof Contact"/>
     <field name="orderDate" expr="eval: __date__"/>
     <field name="status" expr="DRAFT" />
+    <field name="currency" expr="eval: __repo__(Currency).findByCode('EUR')" />
     <field name="items" expr="action:default-orderline-record"/>
   </action-record>
 

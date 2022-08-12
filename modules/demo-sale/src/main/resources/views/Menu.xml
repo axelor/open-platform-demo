@@ -65,4 +65,13 @@
     <view type="form"/>
   </action-view>
 
+  <menuitem name="menu-sales-currencies" parent="menu-sales-config"
+            title="All Currencies"
+            action="sale.currencies"/>
+
+  <action-view name="sale.currencies" model="com.axelor.sale.db.Currency" title="Currencies">
+    <view type="grid" name="currency-grid"/>
+    <view type="form" name="currency-form"/>
+  </action-view>
+
 </object-views>

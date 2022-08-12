@@ -1,21 +1,21 @@
-customer.id,name,status,_orderDateGap,_confirmDateGap,confirmed,notes
-1,SO00001,draft,-5,,,Nam sole orto magnitudine angusti gurgitis sed
-1,SO00002,draft,-4,,,Alii summum decus in carruchis solito altioribus
-5,SO00003,closed,-3,,,Alios autem dicere aiunt multo etiam inhumanius
-9,SO00004,closed,-14,,,Quibus occurrere bene pertinax miles explicatis
-15,SO00005,open,-2,-2,TRUE,Constituendi autem sunt qui sint in amicitia fines
-12,SO00006,draft,,,,Saraceni tamen nec amici nobis umquam nec hostes
-18,SO00007,draft,-1,,,"Haec igitur prima lex amicitiae sanciatur, ut ab"
-20,SO00008,open,-1,-1,TRUE,Erat autem diritatis eius hoc quoque indicium nec
-2,SO00009,open,,,FALSE,Post hoc impie perpetratum quod in aliis quoque
-14,SO00010,canceled,-10,,FALSE,Proinde die funestis interrogationibus praestituto
-16,SO00011,canceled,-5,,FALSE,"Etenim si attendere diligenter, existimare vere de"
-13,SO00012,canceled,-9,,,Proinde die funestis interrogationibus praestituto
-10,SO00013,canceled,-1,,,"Eodem tempore Serenianus ex duce, cuius ignavia"
-10,SO00014,open,0,0,TRUE,"Altera sententia est, quae definit amicitiam"
-10,SO00015,open,-35,-35,TRUE,Ex turba vero imae sortis et paupertinae in
-8,SO00016,draft,0,0,TRUE,Ideo urbs venerabilis post superbas efferatarum
-7,SO00017,draft,0,0,TRUE,Horum adventum praedocti speculationibus fidis
-19,SO00018,draft,-1,-1,TRUE,"Proinde concepta rabie saeviore, quam desperatio"
-3,SO00019,draft,-5,-5,TRUE,Haec subinde Constantius audiens et quaedam
-5,SO00020,draft,-2,-1,TRUE,"Intellectum est enim mihi quidem in multis, et"
+customer.id,name,status,_orderDateGap,_confirmDateGap,confirmed,notes,currency.code
+1,SO00001,draft,-5,,,Nam sole orto magnitudine angusti gurgitis sed,EUR
+1,SO00002,draft,-4,,,Alii summum decus in carruchis solito altioribus,EUR
+5,SO00003,closed,-3,,,Alios autem dicere aiunt multo etiam inhumanius,USD
+9,SO00004,closed,-14,,,Quibus occurrere bene pertinax miles explicatis,EUR
+15,SO00005,open,-2,-2,TRUE,Constituendi autem sunt qui sint in amicitia fines,USD
+12,SO00006,draft,,,,Saraceni tamen nec amici nobis umquam nec hostes,JPY
+18,SO00007,draft,-1,,,"Haec igitur prima lex amicitiae sanciatur, ut ab",BHD
+20,SO00008,open,-1,-1,TRUE,Erat autem diritatis eius hoc quoque indicium nec,EUR
+2,SO00009,open,,,FALSE,Post hoc impie perpetratum quod in aliis quoque,EUR
+14,SO00010,canceled,-10,,FALSE,Proinde die funestis interrogationibus praestituto,USD
+16,SO00011,canceled,-5,,FALSE,"Etenim si attendere diligenter, existimare vere de",BHD
+13,SO00012,canceled,-9,,,Proinde die funestis interrogationibus praestituto,USD
+10,SO00013,canceled,-1,,,"Eodem tempore Serenianus ex duce, cuius ignavia",EUR
+10,SO00014,open,0,0,TRUE,"Altera sententia est, quae definit amicitiam",JPY
+10,SO00015,open,-35,-35,TRUE,Ex turba vero imae sortis et paupertinae in,EUR
+8,SO00016,draft,0,0,TRUE,Ideo urbs venerabilis post superbas efferatarum,EUR
+7,SO00017,draft,0,0,TRUE,Horum adventum praedocti speculationibus fidis,EUR
+19,SO00018,draft,-1,-1,TRUE,"Proinde concepta rabie saeviore, quam desperatio",JPY
+3,SO00019,draft,-5,-5,TRUE,Haec subinde Constantius audiens et quaedam,BHD
+5,SO00020,draft,-2,-1,TRUE,"Intellectum est enim mihi quidem in multis, et",EUR
