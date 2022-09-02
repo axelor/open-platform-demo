@@ -4,7 +4,7 @@ Open Platform Demo is a simple application showing [Axelor Open Platform](https:
 
 ## Installation
 
-Make sure you have JDK 1.8 and Git installed.
+Make sure you have JDK 11 and Git installed.
 
 Clone the latest sources:
 
