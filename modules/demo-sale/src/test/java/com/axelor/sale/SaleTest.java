@@ -31,6 +31,7 @@ import com.axelor.db.JpaSupport;
 import com.axelor.inject.Beans;
 import com.axelor.meta.db.MetaSequence;
 import com.axelor.meta.db.repo.MetaSequenceRepository;
+import com.axelor.sale.db.Currency;
 import com.axelor.sale.db.Order;
 import com.axelor.sale.db.OrderLine;
 import com.axelor.sale.db.Product;
@@ -103,9 +104,15 @@ public class SaleTest extends JpaSupport {
     p2.setCode("pc_" + next);
     p2.setName("PC_" + next);
 
+    Currency currency = new Currency();
+    currency.setCode("currency_" + next);
+    currency.setName("CURRENCY_" + next);
+    currency.setSymbol("C" + next);
+
     Order order = new Order();
     order.setCustomer(contact);
     order.setOrderDate(LocalDate.now());
+    order.setCurrency(currency);
 
     OrderLine item1 = new OrderLine();
     item1.setProduct(p1);
@@ -142,6 +149,7 @@ public class SaleTest extends JpaSupport {
     all(Country.class).delete();
     all(Circle.class).delete();
     all(Title.class).delete();
+    all(Currency.class).delete();
   }
 
   @Transactional
