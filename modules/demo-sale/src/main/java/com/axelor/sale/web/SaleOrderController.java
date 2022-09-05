@@ -128,8 +128,7 @@ public class SaleOrderController extends JpaSupport {
 
     BigDecimal percent = BigDecimal.ZERO;
     if (total.compareTo(BigDecimal.ZERO) == 1) {
-      percent =
-          total.subtract(last).divide(total, 4, RoundingMode.HALF_UP);
+      percent = total.subtract(last).divide(total, 4, RoundingMode.HALF_UP);
     }
 
     Map<String, Object> data = new HashMap<>();
