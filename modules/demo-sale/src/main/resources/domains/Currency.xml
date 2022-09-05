@@ -7,7 +7,7 @@
 
   <entity name="Currency" cacheable="true">
     <string name="code" required="true" unique="true"/>
-    <string name="name" required="true" unique="true"/>
+    <string name="name" required="true" unique="true" translatable="true"/>
     <string name="symbol" required="true"/>
     <integer name="decimalPlaces" min="0" default="2"/>
   </entity>
