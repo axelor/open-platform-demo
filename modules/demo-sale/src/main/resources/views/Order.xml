@@ -43,7 +43,7 @@
     </panel-tabs>
     <panel>
       <panel colSpan="4" itemSpan="12">
-        <button name="totalAmount" onClick="check-order-dates,com.axelor.sale.web.SaleOrderController:calculate,save" title="Total amount" icon="fa-bar-chart" widget="info-button" css="btn-primary" x-scale="currency.decimalPlaces"/>
+        <button name="btnTotalAmount" onClick="check-order-dates,com.axelor.sale.web.SaleOrderController:calculate,save" title="Total amount" icon="fa-bar-chart" widget="info-button" x-field="totalAmount" css="btn-primary"/>
         <button name="btnExport" title="Export" showIf="id" onClick="export.sale.order"/>
       </panel>
       <panel colSpan="8" css="order-subtotal" readonly="true">
