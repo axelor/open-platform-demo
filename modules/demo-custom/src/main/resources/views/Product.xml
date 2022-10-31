@@ -4,9 +4,8 @@
   xsi:schemaLocation="http://axelor.com/xml/ns/object-views https://axelor.com/xml/ns/object-views/object-views_6.1.xsd">
 
   <selection id="product.color.selection.custom" name="product.color.selection">
-    <option value="black">Black</option>
-    <option value="white">White</option>
-    <option value="gray">Gray</option>
+    <option value="cyan" color="cyan">Cyan</option>
+    <option value="teal" color="teal">Teal</option>
   </selection>
 
   <form id="product-form.ext" name="product-form" title="Product"

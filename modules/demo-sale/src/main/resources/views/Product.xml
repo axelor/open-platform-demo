@@ -3,24 +3,24 @@
   xsi:schemaLocation="http://axelor.com/xml/ns/object-views https://axelor.com/xml/ns/object-views/object-views_6.1.xsd">
 
   <selection name="product.color.selection">
-    <option value="black">Black</option>
-    <option value="white">White</option>
-    <option value="gray">Gray</option>
-    <option value="red">Red</option>
-    <option value="green">Green</option>
-    <option value="blue">Blue</option>
-    <option value="yellow">Yellow</option>
-    <option value="chocolate">Chocolate</option>
-    <option value="orange">Orange</option>
-    <option value="purple">Purple</option>
-    <option value="pink">Pink</option>
+    <option value="black" color="black ">Black</option>
+    <option value="white" color="white">White</option>
+    <option value="gray" color="grey">Gray</option>
+    <option value="red" color="red">Red</option>
+    <option value="green" color="green">Green</option>
+    <option value="blue" color="blue">Blue</option>
+    <option value="yellow" color="yellow">Yellow</option>
+    <option value="chocolate" color="brown">Brown</option>
+    <option value="orange" color="orange">Orange</option>
+    <option value="purple" color="purple">Purple</option>
+    <option value="pink" color="pink">Pink</option>
   </selection>
 
   <grid name="product-grid" title="Products" model="com.axelor.sale.db.Product">
     <field name="name" />
     <field name="category" />
     <field name="price" />
-    <field name="color"/>
+    <field name="color" widget="SingleSelect"/>
     <field name="attrs"/>
   </grid>
 
@@ -33,7 +33,7 @@
         <field name="name" colSpan="12"/>
         <field name="price"/>
         <field name="code"/>
-        <field name="color"/>
+        <field name="color" widget="SingleSelect"/>
         <field name="category"/>
       </panel>
     </panel>
