@@ -1,0 +1,4 @@
+filterView,name,title,filterCustom,user_id,shared
+filter-sales,amount_>_10000,Amount > 10000,"{""operator"":""and"",""criteria"":[{""fieldName"":""totalAmount"",""operator"":"">="",""value"":""10000""}]}",1,
+act:contact.all,in_familly,In Familly,"{""operator"":""and"",""criteria"":[{""fieldName"":""circles.id"",""operator"":""in"",""value"":[1]}]}",1,true
+act:contact.all,pro_circles,Pro circles,"{""operator"":""and"",""criteria"":[{""fieldName"":""circles.id"",""operator"":""in"",""value"":[6,5,3,4,7]}]}",1,true
