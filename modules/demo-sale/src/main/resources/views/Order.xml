@@ -107,24 +107,6 @@
     </template>
   </custom>
 
-  <!-- dashboard data table with predefined template tag -->
-  <custom name="report-sales-list" title="Some Title">
-    <field name="total" type="decimal" x-scale="2" />
-    <dataset type="jpql" limit="10">
-    <![CDATA[
-    SELECT self.name AS name, c.fullName AS customer, self.totalAmount AS total FROM Order self
-    LEFT join self.customer AS c
-    WHERE YEAR(self.orderDate) = YEAR(current_date)
-    AND MONTH(self.orderDate) = MONTH(current_date)
-    ]]>
-    </dataset>
-    <template>
-    <![CDATA[
-    <report-table data='data' columns='name,customer,total' sums='total'></report-table>
-    ]]>
-    </template>
-  </custom>
-
   <search-filters name="filter-sales" model="com.axelor.sale.db.Order" title="Filter Sale Orders">
     <filter title="Confirmed">
       <domain>self.confirmed = true</domain>
