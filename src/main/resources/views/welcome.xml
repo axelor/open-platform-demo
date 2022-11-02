@@ -10,6 +10,7 @@
     <dashlet action="chart:chart.sales.per.month"/>
     <dashlet action="chart:chart.sales.per.month.pie"/>
     <dashlet colSpan="12" action="sale.orders"/>
+    <dashlet colSpan="12" action="custom:report-top-ten-customers-current-year"/>
   </dashboard>
 
   <action-view name="welcome" title="Welcome!">

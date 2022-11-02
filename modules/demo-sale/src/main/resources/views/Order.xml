@@ -114,6 +114,26 @@
     </template>
   </custom>
 
+  <custom name="report-top-ten-customers-current-year" title="Top ten customers this year">
+    <field name="customerId" hidden="true"/>
+    <field name="customer"/>
+    <field name="total" type="decimal" x-scale="2"/>
+    <dataset type="jpql" limit="10"><![CDATA[
+      SELECT
+        self.customer.id AS customerId,
+        self.customer.fullName AS customer,
+        SUM(self.totalAmount) as total
+      FROM Order self
+      WHERE
+        YEAR(self.orderDate) = YEAR(CURRENT_DATE)
+      GROUP BY customerId, customer
+      ORDER BY total DESC
+    ]]></dataset>
+    <template><![CDATA[
+       <report-table sums='total'/>
+    ]]></template>
+  </custom>
+
   <search-filters name="filter-sales" model="com.axelor.sale.db.Order" title="Filter Sale Orders">
     <filter title="Confirmed">
       <domain>self.confirmed = true</domain>
