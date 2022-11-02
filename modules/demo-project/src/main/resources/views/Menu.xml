@@ -29,11 +29,13 @@
   </action-view>
 
   <action-view name="project.task.my" title="My Tasks" model="com.axelor.project.db.ProjectTask">
-    <view type="grid" name="project-task-grid"/>
+    <view type="grid" name="project-my-task-grid"/>
     <view type="form" name="project-task-form"/>
     <view type="calendar" name="project-task-calendar-my" />
+    <view-param name="details-view" value="true"/>
     <domain>self.user = :currentUser</domain>
     <context name="currentUser" expr="eval: __user__"/>
+    <context name="_xShowMyTasks" expr="eval: true"/>
   </action-view>
 
   <menuitem name="menu-project-tasks-tree" parent="menu-project"
