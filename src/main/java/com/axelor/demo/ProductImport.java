@@ -18,10 +18,13 @@
  */
 package com.axelor.demo;
 
+import com.axelor.dms.db.DMSFile;
+import com.axelor.dms.db.repo.DMSFileRepository;
 import com.axelor.inject.Beans;
 import com.axelor.meta.MetaFiles;
 import com.axelor.meta.db.MetaFile;
 import com.axelor.sale.db.Product;
+import com.axelor.sale.db.repo.ProductRepository;
 import java.nio.file.Path;
 import java.util.Map;
 
@@ -32,11 +35,40 @@ public class ProductImport {
   public Object importProduct(Object bean, Map context) {
     Product product = (Product) bean;
 
-    final Path path = (Path) context.get("__path__");
+    Beans.get(ProductRepository.class).save(product);
 
+    loadImage(product, (Path) context.get("__path__"));
+    loadAttachments(product, (Path) context.get("__path__"));
+
+    return product;
+  }
+
+  private void loadAttachments(Product product, Path basePath) {
+    try {
+      final Path attachment = ImportUtils.findByFileName(basePath.resolve("pdf"), "sample.pdf");
+      if (attachment == null || !attachment.toFile().exists()) {
+        return;
+      }
+
+      final MetaFile metaFile = new MetaFile();
+      metaFile.setFileName("sample_" + product.getCode() + ".pdf");
+      Beans.get(MetaFiles.class).upload(attachment.toFile(), metaFile);
+
+      DMSFile dmsFile = new DMSFile();
+      dmsFile.setMetaFile(metaFile);
+      dmsFile.setFileName(metaFile.getFileName());
+      dmsFile.setRelatedModel(Product.class.getName());
+      dmsFile.setRelatedId(product.getId());
+      Beans.get(DMSFileRepository.class).save(dmsFile);
+    } catch (Exception e) {
+      // ignore
+    }
+  }
+
+  private void loadImage(Product product, Path basePath) {
     try {
       final Path image =
-          ImportUtils.findByFileName(path.resolve(PRODUCT_IMAGES_DIR), product.getCode());
+          ImportUtils.findByFileName(basePath.resolve(PRODUCT_IMAGES_DIR), product.getCode());
       if (image != null && image.toFile().exists()) {
         final MetaFile metaFile = Beans.get(MetaFiles.class).upload(image.toFile());
         product.setImage(metaFile);
@@ -44,7 +76,5 @@ public class ProductImport {
     } catch (Exception e) {
       // ignore
     }
-
-    return product;
   }
 }
