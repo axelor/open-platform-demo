@@ -11,7 +11,7 @@
       <field name="customer" type="string" />
       <field name="date" type="date"/>
       <field name="value" type="decimal" />
-      <field name="orderStatus" type="enum" target="com.axelor.sale.db.OrderStatus"/>
+      <field name="orderStatus" type="string" widget="single-select" selection="order.status.selection"/>
     </search-fields>
 
     <result-fields>
@@ -22,7 +22,7 @@
       <field name="product" type="string"/>
       <field name="date" type="date"/>
       <field name="value" type="decimal"/>
-      <field name="state" title="Status" type="string"/>
+      <field name="state" title="Status" type="string" widget="single-select" selection="order.status.selection"/>
       <field name="color" type="string"/>
       <button name="showMeBtn" onClick="action-search-engine-show-me" title="Show me" icon="fa-question-circle"/>
     </result-fields>
@@ -43,7 +43,7 @@
       <field name="items.product.color" as="color" selection="product.color.selection"/>
       <field name="orderDate" as="date"/>
       <field name="amount" as="value"/>
-      <field name="status" as="state" enum-type="com.axelor.sale.db.OrderStatus"/>
+      <field name="status" as="state"/>
       <where>
         <input name="orderStatus" field="status"/>
         <where match="any">
