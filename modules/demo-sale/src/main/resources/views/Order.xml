@@ -80,6 +80,45 @@
     </panel-mail>
   </form>
 
+  <cards name="order-card" title="Orders" model="com.axelor.sale.db.Order" width="400px">
+    <field name="name"/>
+    <field name="status"/>
+    <field name="customer.fullName"/>
+    <field name="orderDate"/>
+    <field name="amount" x-scale="currency.decimalPlaces"/>
+    <field name="totalAmount" x-scale="currency.decimalPlaces"/>
+    <field name="currency.symbol"/>
+    <field name="currency.decimalPlaces"/>
+    <template>
+      <![CDATA[
+        <div>
+          <div class="span6">
+    	    <strong>{{ name }}</strong>
+    	  </div>
+    	  <div class="span6">
+    	    <span class="tag-select pull-right" style="border: 0;">
+              <span class="label label-primary blue" ng-if="record.status == 'DRAFT'"><span x-translate>Draft</span></span>
+              <span class="label label-primary yellow" ng-if="record.status == 'OPEN'"><span x-translate>Open</span></span>
+              <span class="label label-primary red" ng-if="record.status == 'CANCELED'"><span x-translate>Canceled</span></span>
+              <span class="label label-primary green" ng-if="record.status == 'CLOSED'"><span x-translate>Closed</span></span>
+            </span>
+    	  </div>
+   	    </div>
+   	    <div>
+          <div class="span6">
+            <p><i class="fa fa-users" aria-hidden="true"></i>&nbsp;&nbsp;{{customer.fullName}}</p>
+            <p><i class="fa fa-clock-o" aria-hidden="true"></i>&nbsp;&nbsp;{{$fmt('orderDate')}}</p>
+          </div>
+          <div class="span6">
+            <p><span class="pull-right muted"><span x-translate="">WT</span>:&nbsp;{{$fmt('amount')}} {{$fmt('currency.symbol')}}</span></p>
+            <br/>
+            <p><strong class="pull-right"><span x-translate="">ATI</span>:&nbsp;{{$fmt('totalAmount')}} {{$fmt('currency.symbol')}}</strong></p>
+          </div>
+   	    </div>
+      ]]>
+    </template>
+  </cards>
+
   <calendar name="sales-timeline" title="Sales Timeline" model="com.axelor.sale.db.Order" editable="false"
     eventStart="orderDate"
     eventStop="confirmDate"

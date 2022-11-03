@@ -21,6 +21,7 @@
 
   <action-view name="sale.orders.draft" model="com.axelor.sale.db.Order" title="Quotations">
     <view type="grid"/>
+    <view type="cards"/>
     <view type="form"/>
     <domain>self.status = :status</domain>
     <context name="status" expr="DRAFT" />
@@ -32,6 +33,7 @@
 
   <action-view name="sale.orders" model="com.axelor.sale.db.Order" title="Sale Orders">
     <view type="grid"/>
+    <view type="cards"/>
     <view type="form"/>
     <view type="calendar" name="sales-timeline"/>
     <view-param name="search-filters" value="filter-sales"/>
