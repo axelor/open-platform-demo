@@ -18,7 +18,7 @@
     <field name="project" />
     <field name="priority" />
     <field name="state" />
-    <field name="progress" widget="Progress"/>
+    <field name="progress" widget="Progress" aggregate="avg"/>
   </grid>
 
   <grid name="project-my-task-grid" title="Project Tasks" model="com.axelor.project.db.ProjectTask" groupBy="project">
@@ -27,7 +27,7 @@
     <field name="endDate" />
     <field name="priority" />
     <field name="state" />
-    <field name="progress" widget="Progress"/>
+    <field name="progress" widget="Progress" aggregate="avg"/>
     <field name="project" hidden="true"/>
   </grid>
 
