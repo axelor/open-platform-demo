@@ -57,9 +57,14 @@ public class SaleOrderService {
       }
     }
 
-    order.setAmount(amount.setScale(4, RoundingMode.HALF_UP));
-    order.setTaxAmount(taxAmount.setScale(4, RoundingMode.HALF_UP));
-    order.setTotalAmount(amount.add(taxAmount).setScale(4, RoundingMode.HALF_UP));
+    int decimalPlaces = 2;
+    if (order.getCurrency() != null) {
+      decimalPlaces = order.getCurrency().getDecimalPlaces();
+    }
+
+    order.setAmount(amount.setScale(decimalPlaces, RoundingMode.HALF_UP));
+    order.setTaxAmount(taxAmount.setScale(decimalPlaces, RoundingMode.HALF_UP));
+    order.setTotalAmount(amount.add(taxAmount).setScale(decimalPlaces, RoundingMode.HALF_UP));
 
     return order;
   }
