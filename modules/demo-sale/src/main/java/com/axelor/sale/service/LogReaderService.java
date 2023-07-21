@@ -16,22 +16,16 @@
  * You should have received a copy of the GNU Affero General Public License
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
-package com.axelor.sale;
+package com.axelor.sale.service;
 
-import com.axelor.app.AxelorModule;
-import com.axelor.contact.service.AccessContactQuickMenu;
-import com.axelor.contact.service.HelloServiceImpl;
-import com.axelor.sale.service.AccessSaleQuickMenu;
-import com.axelor.sale.service.HelloServiceSaleImpl;
-import com.axelor.sale.service.LogReaderService;
-import com.axelor.sale.service.LogReaderServiceImpl;
+import java.time.LocalDateTime;
+import java.util.List;
 
-public class SaleModule extends AxelorModule {
+public interface LogReaderService {
 
-  @Override
-  protected void configure() {
-    bind(HelloServiceImpl.class).to(HelloServiceSaleImpl.class);
-    bind(AccessContactQuickMenu.class).to(AccessSaleQuickMenu.class);
-    bind(LogReaderService.class).to(LogReaderServiceImpl.class);
-  }
+   List<String> readLogReaderFilter(
+      String path, int limit, int offset, LocalDateTime startDateTime, LocalDateTime endDateTime);
+
+  public int countTotalLines(
+      String path, int limit, int offset, LocalDateTime startDateTime, LocalDateTime endDateTime);
 }

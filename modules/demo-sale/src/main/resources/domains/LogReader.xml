@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<domain-models xmlns="http://axelor.com/xml/ns/domain-models"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://axelor.com/xml/ns/domain-models https://axelor.com/xml/ns/domain-models/domain-models_6.1.xsd">
+
+  <module name="sale" package="com.axelor.sale.db"/>
+
+  <entity name="LogReader" cacheable="true">
+    <datetime name="startDate" title="Start Date"/>
+    <datetime name="endDate" title="End Date"/>
+    <integer name="noOfLineToLoad" title="Number of line to load" min="10"/>
+    <string name="log" title="Log" readonly="true" large="true"/>
+    <integer name="offSet" default="0"/>
+    </entity>
+
+</domain-models>

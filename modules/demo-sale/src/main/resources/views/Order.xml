@@ -93,18 +93,18 @@
       <![CDATA[
         <div>
           <div class="span6">
-    	    <strong>{{ name }}</strong>
-    	  </div>
-    	  <div class="span6">
-    	    <span class="tag-select pull-right" style="border: 0;">
+          <strong>{{ name }}</strong>
+        </div>
+        <div class="span6">
+          <span class="tag-select pull-right" style="border: 0;">
               <span class="label label-primary blue" ng-if="record.status == 'DRAFT'"><span x-translate>Draft</span></span>
               <span class="label label-primary yellow" ng-if="record.status == 'OPEN'"><span x-translate>Open</span></span>
               <span class="label label-primary red" ng-if="record.status == 'CANCELED'"><span x-translate>Canceled</span></span>
               <span class="label label-primary green" ng-if="record.status == 'CLOSED'"><span x-translate>Closed</span></span>
             </span>
-    	  </div>
-   	    </div>
-   	    <div>
+        </div>
+         </div>
+         <div>
           <div class="span6">
             <p><i class="fa fa-users" aria-hidden="true"></i>&nbsp;&nbsp;{{customer.fullName}}</p>
             <p><i class="fa fa-clock-o" aria-hidden="true"></i>&nbsp;&nbsp;{{$fmt('orderDate')}}</p>
@@ -114,7 +114,7 @@
             <br/>
             <p><strong class="pull-right"><span x-translate="">ATI</span>:&nbsp;{{$fmt('totalAmount')}} {{$fmt('currency.symbol')}}</strong></p>
           </div>
-   	    </div>
+         </div>
       ]]>
     </template>
   </cards>

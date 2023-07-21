@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<object-views xmlns="http://axelor.com/xml/ns/object-views"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://axelor.com/xml/ns/object-views https://axelor.com/xml/ns/object-views/object-views_6.1.xsd">
+
+  <grid name="log-reader-grid" title="Log Reader"  model="com.axelor.sale.db.LogReader">
+    <field name="startDate" />
+    <field name="endDate" />
+  </grid>
+
+  <form name="log-reader-form" title="Log Reader"
+    model="com.axelor.sale.db.LogReader" width="large" onLoad="action-record-log-default-value" >
+    <panel name="mainPanel">
+      <field name="startDate" onChange="action-record-log-default-value" />
+      <field name="endDate" onChange="action-record-log-default-value" />
+      <field name="noOfLineToLoad" colSpan="3"/>
+      <button name="loadBtn" title="Load" colSpan="3" onClick="save,action-log-reader-check-onClick,save" />
+      <button name="clearBtn" title="Clear" colSpan="3" onClick="action-record-log-default-value"/>
+      <field name="offSet" hidden="true"/>
+    </panel>
+    <panel name="logGroupPanel" title="Log">
+      <field name="log" colSpan="12" widget="code-editor" showTitle="false"/>
+    </panel>
+  </form>
+
+   <action-method name="action-log-batch-data-load">
+      <call class="com.axelor.sale.web.LogReaderController" method="setFileLog"/>
+    </action-method>
+
+    <action-record name="action-record-log-default-value" model="com.axelor.sale.db.LogReader">
+     <field name="offSet" expr="0"/>
+      <field name="log" expr=" "/>
+    </action-record>
+
+    <action-validate name="action-check-log-dates">
+    <info message="Log date should be proper ."  if="startDate &gt; endDate"/>
+    </action-validate>
+
+  <action-group name="action-log-reader-check-onClick">
+  <action name="action-log-batch-data-load"/>
+  <action name="action-check-log-dates"/>
+  </action-group>
+
+</object-views>
