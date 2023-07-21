@@ -1,0 +1,93 @@
+diff --git a/modules/demo-sale/src/main/java/com/axelor/sale/SaleModule.java b/modules/demo-sale/src/main/java/com/axelor/sale/SaleModule.java
+index 7fa74da..6c8b43f 100644
+--- a/modules/demo-sale/src/main/java/com/axelor/sale/SaleModule.java
++++ b/modules/demo-sale/src/main/java/com/axelor/sale/SaleModule.java
+@@ -23,6 +23,8 @@ import com.axelor.contact.service.AccessContactQuickMenu;
+ import com.axelor.contact.service.HelloServiceImpl;
+ import com.axelor.sale.service.AccessSaleQuickMenu;
+ import com.axelor.sale.service.HelloServiceSaleImpl;
++import com.axelor.sale.service.LogReaderService;
++import com.axelor.sale.service.LogReaderServiceImpl;
+ 
+ public class SaleModule extends AxelorModule {
+ 
+@@ -30,5 +32,6 @@ public class SaleModule extends AxelorModule {
+   protected void configure() {
+     bind(HelloServiceImpl.class).to(HelloServiceSaleImpl.class);
+     bind(AccessContactQuickMenu.class).to(AccessSaleQuickMenu.class);
++    bind(LogReaderService.class).to(LogReaderServiceImpl.class);
+   }
+ }
+diff --git a/modules/demo-sale/src/main/resources/views/Currency.xml b/modules/demo-sale/src/main/resources/views/Currency.xml
+index 43dbb0f..4490744 100644
+--- a/modules/demo-sale/src/main/resources/views/Currency.xml
++++ b/modules/demo-sale/src/main/resources/views/Currency.xml
+@@ -1,5 +1,6 @@
+ <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+-<object-views xmlns="http://axelor.com/xml/ns/object-views" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
++<object-views xmlns="http://axelor.com/xml/ns/object-views"
++  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   xsi:schemaLocation="http://axelor.com/xml/ns/object-views https://axelor.com/xml/ns/object-views/object-views_6.1.xsd">
+ 
+   <grid name="currency-grid" title="Currencies" model="com.axelor.sale.db.Currency">
+diff --git a/modules/demo-sale/src/main/resources/views/Menu.xml b/modules/demo-sale/src/main/resources/views/Menu.xml
+index d87a3b8..e4247e4 100644
+--- a/modules/demo-sale/src/main/resources/views/Menu.xml
++++ b/modules/demo-sale/src/main/resources/views/Menu.xml
+@@ -47,6 +47,17 @@
+     <view type="search" name="sale-order-search"/>
+   </action-view>
+ 
++  <menuitem name="menu-logreader" parent="menu-sales"
++    title="Log Reader"
++    action="log.reader"/>
++
++  <action-view name="log.reader" model="com.axelor.sale.db.LogReader" title="Log Reader">
++        <view type="grid"/>
++     <view type="form"/>
++  </action-view>
++
++
++
+   <menuitem name="menu-sales-config" parent="menu-sales" title="Configuration"/>
+ 
+   <menuitem name="menu-sales-product-category" parent="menu-sales-config"
+diff --git a/modules/demo-sale/src/main/resources/views/Order.xml b/modules/demo-sale/src/main/resources/views/Order.xml
+index fc84b25..0c9ae22 100644
+--- a/modules/demo-sale/src/main/resources/views/Order.xml
++++ b/modules/demo-sale/src/main/resources/views/Order.xml
+@@ -93,18 +93,18 @@
+       <![CDATA[
+         <div>
+           <div class="span6">
+-    	    <strong>{{ name }}</strong>
+-    	  </div>
+-    	  <div class="span6">
+-    	    <span class="tag-select pull-right" style="border: 0;">
++          <strong>{{ name }}</strong>
++        </div>
++        <div class="span6">
++          <span class="tag-select pull-right" style="border: 0;">
+               <span class="label label-primary blue" ng-if="record.status == 'DRAFT'"><span x-translate>Draft</span></span>
+               <span class="label label-primary yellow" ng-if="record.status == 'OPEN'"><span x-translate>Open</span></span>
+               <span class="label label-primary red" ng-if="record.status == 'CANCELED'"><span x-translate>Canceled</span></span>
+               <span class="label label-primary green" ng-if="record.status == 'CLOSED'"><span x-translate>Closed</span></span>
+             </span>
+-    	  </div>
+-   	    </div>
+-   	    <div>
++        </div>
++         </div>
++         <div>
+           <div class="span6">
+             <p><i class="fa fa-users" aria-hidden="true"></i>&nbsp;&nbsp;{{customer.fullName}}</p>
+             <p><i class="fa fa-clock-o" aria-hidden="true"></i>&nbsp;&nbsp;{{$fmt('orderDate')}}</p>
+@@ -114,7 +114,7 @@
+             <br/>
+             <p><strong class="pull-right"><span x-translate="">ATI</span>:&nbsp;{{$fmt('totalAmount')}} {{$fmt('currency.symbol')}}</strong></p>
+           </div>
+-   	    </div>
++         </div>
+       ]]>
+     </template>
+   </cards>

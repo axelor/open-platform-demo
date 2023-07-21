@@ -47,6 +47,17 @@
     <view type="search" name="sale-order-search"/>
   </action-view>
 
+  <menuitem name="menu-logreader" parent="menu-sales"
+    title="Log Reader"
+    action="log.reader"/>
+
+  <action-view name="log.reader" model="com.axelor.sale.db.LogReader" title="Log Reader">
+        <view type="grid"/>
+     <view type="form"/>
+  </action-view>
+
+
+
   <menuitem name="menu-sales-config" parent="menu-sales" title="Configuration"/>
 
   <menuitem name="menu-sales-product-category" parent="menu-sales-config"
