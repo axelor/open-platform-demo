@@ -19,13 +19,12 @@ allprojects {
     }
   }
 
-  configurations {
-    // Remove Junit4, only keep Junit5 provided by AOP
-    testImplementation.exclude group: 'junit', module: 'junit'
-    testImplementation.exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
-  }
-
   afterEvaluate {
+    configurations {
+      // Remove Junit4, only keep Junit5 provided by AOP
+      testImplementation.exclude group: 'junit', module: 'junit'
+      testImplementation.exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
+    }
     test {
       useJUnitPlatform()
       beforeTest { descriptor ->
