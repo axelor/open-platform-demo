@@ -171,7 +171,26 @@
     eventStart="startDate"
     eventStop="endDate"
     eventLength="1">
+
+    <hilite if="state === 'todo'" styles="outline" />
+    <hilite if="state === 'progress'" styles="stripe" />
+    <hilite if="state === 'complete'" styles="strike" />
+    <hilite if="$moment().isAfter(endDate ?? startDate)" styles="fade" />
+
     <field name="name" />
+    <field name="state" />
+    <field name="user" />
+
+    <template>
+      <![CDATA[
+      <>
+        <Box d="flex" alignItems="center" justifyContent="end">
+          <Image src={$image('user', 'image')} height="24px" />
+          <Box>{$fmt("user")}</Box>
+        </Box>
+      </>
+      ]]>
+    </template>
   </calendar>
 
   <calendar name="project-task-calendar-my" title="My Tasks" model="com.axelor.project.db.ProjectTask"

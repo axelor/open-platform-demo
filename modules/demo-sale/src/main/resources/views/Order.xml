@@ -124,7 +124,34 @@
     eventStop="confirmDate"
     eventLength="8"
     colorBy="customer">
+
+    <hilite if="status === 'DRAFT'" styles="outline" />
+    <hilite if="status === 'OPEN'" styles="stripe" />
+    <hilite if="status === 'CLOSED'" styles="fill" />
+    <hilite if="status === 'CANCELED'" styles="outline,strike" />
+
     <field name="name" />
+    <field name="status" />
+
+    <template>
+      <![CDATA[
+      <>
+        <Box d="flex" justifyContent="end">
+          <Badge bg={
+              {
+                "DRAfT": "primary",
+                "OPEN": "warning",
+                "CLOSED": "success",
+                "CANCELED": "danger",
+              }[status] ?? "primary"
+            }
+          >
+            {$fmt("status")}
+          </Badge>
+        </Box>
+      </>
+      ]]>
+    </template>
   </calendar>
 
   <!-- dashboard box with custom template -->
