@@ -9,7 +9,8 @@ Kitchen & Home Appliances,Appareils de cuisine et de maison,fr,ProductCategory#n
 Garden & Outdoors,Jardin et extérieur,fr,ProductCategory#name
 Wireless Keyboard,Clavier sans fil,fr,Product#name
 11.6-inch Touchscreen Laptop,"Ordinateur portable à écran tactile de 11,6 pouces",fr,Product#name
-Full HD 15.6 Inch Metal Laptop,"Ordinateur portable en métal Full HD 15,6 pouces",fr,Product#name
+Full HD 15.6 Inch Aluminum-Body Laptop,"Ordinateur portable en aluminium Full HD 15,6 pouces",fr,Product#name
+Full HD 15.6 Inch Aluminum-Body Laptop,"Full HD 15.6 Inch Aluminium-Body Laptop",en-GB,Product#name
 The Universe,L'univers,fr,Product#name
 The Age of AI: And Our Human Future,L'ère de l'IA: et notre avenir humain,fr,Product#name
 Slice Toaster,Grille-pain tranche,fr,Product#name
@@ -19,5 +20,6 @@ Outdoor Storage Box,Boîte de rangement extérieure,fr,Product#name
 Patio Lounge Chair,Chaise longue de terrasse,fr,Product#name
 Euro,Euro,fr,Currency#name
 US Dollar,Dollar US,fr,Currency#name
+Pound Sterling,Livre Sterling,fr,Currency#name
 Japanese Yen,Yen Japonais,fr,Currency#name
 Bahraini Dinar,Dinar Bahreïni,fr,Currency#name

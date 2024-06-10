@@ -10,7 +10,7 @@
     <string name="street" required="true" max="255" initParam="true"/>
     <string name="area" max="255" initParam="true"/>
     <string name="city" initParam="true"/>
-    <string name="zip" />
+    <string name="zip" title="Zip code"/>
     <string name="state" />
     <many-to-one name="country" ref="Country" initParam="true"/>
   </entity>

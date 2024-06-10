@@ -199,7 +199,7 @@
     <bind column="hours" to="hours" />
   </input>
 
-  <input file="values_translations.csv" type="com.axelor.meta.db.MetaTranslation" search="self.key = :key">
+  <input file="values_translations.csv" type="com.axelor.meta.db.MetaTranslation" search="self.key = :key AND self.language = :language">
     <bind column="key" to="key" eval="'value:' + key"/>
     <bind column="language" to="language" />
     <bind column="message" to="message" />
