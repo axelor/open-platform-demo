@@ -1,0 +1,4 @@
+"key","message","comment","context"
+"<h3>Welcome to the demo app</h3>","<h3>Bienvenue sur l'app de démo</h3>",application.sign-in.title,
+"<div style=""width: 100%; text-align: left;"">&#x2754; Demo App is based on <a href=""https://github.com/axelor/axelor-open-platform"">Axelor Open Platform</a> <br/>&#x1F440; Need info ? Browse the <a href=""https://docs.axelor.com/adk"">documentation</a></div>","<div style=""width: 100%; text-align: left;"">&#x2754; L'app de démo est basé sur <a href=""https://github.com/axelor/axelor-open-platform"">Axelor Open Platform</a> <br/>&#x1F440; Plus d'info ? Parcourez la <a href=""https://docs.axelor.com/adk"">documentation</a></div>",application.sign-in.footer,
+Copyright (c) {year} Axelor. All Rights Reserved.,Copyright (c) {year} Axelor. Tous droits réservés.,application.copyright,
