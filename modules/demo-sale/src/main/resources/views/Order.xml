@@ -12,7 +12,7 @@
 
   <grid name="order-grid" title="Orders" model="com.axelor.sale.db.Order">
     <field name="name"/>
-    <field name="customer"/>
+    <field name="customer" x-image-field="image"/>
     <field name="orderDate"/>
     <field name="status" widget="single-select" selection="order.status.selection"/>
     <field name="totalAmount" x-scale="currency.decimalPlaces" aggregate="sum"/>
@@ -29,7 +29,7 @@
     <panel title="Order Details">
       <field name="name"/>
       <field name="status" widget="nav-select" readonly="true"/>
-      <field name="customer" readonlyIf="confirmed" form-view="contact-form" grid-view="contact-grid"/>
+      <field name="customer" readonlyIf="confirmed" form-view="contact-form" grid-view="contact-grid" x-image-field="image"/>
       <field name="confirmed" widget="boolean-switch" onChange="com.axelor.sale.web.SaleOrderController:onConfirm"/>
       <field name="orderDate" readonlyIf="confirmed"/>
       <field name="confirmDate" requiredIf="confirmed" validIf="confirmDate == null || $moment(confirmDate) >= $moment(orderDate)"/>
@@ -39,7 +39,7 @@
       <panel-related field="items" editable="true" readonlyIf="confirmed"
         orderBy="sequence" canMove="true"
         onChange="com.axelor.sale.web.SaleOrderController:calculate">
-        <field name="product" onChange="action-order-line-change-product"/>
+        <field name="product" onChange="action-order-line-change-product" x-image-field="image"/>
         <field name="price"/>
         <field name="quantity"/>
         <field name="taxes"/>

@@ -17,7 +17,7 @@
       <field name="priority"/>
       <field name="description"/>
       <field name="parent"/>
-      <field name="members" widget="TagSelect" canEdit="false" canNew="false"/>
+      <field name="members" widget="TagSelect" canEdit="false" canNew="false" x-image-field="image"/>
     </panel>
     <panel-tabs>
       <panel-related field="tasks" editable="true">
