@@ -9,6 +9,7 @@
     <string name="code" required="true" unique="true" min="2"/>
     <string name="name" required="true" unique="true" min="2"/>
     <string name="website"/>
+    <one-to-one name="signature" ref="com.axelor.meta.db.MetaFile" />
     <many-to-one name="parent" ref="Company"/>
     <one-to-many name="employees" ref="Contact" mappedBy="company" />
     <string name="notes" multiline="true"/>

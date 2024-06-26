@@ -16,6 +16,7 @@
       <field name="code"/>
       <field name="parent" domain="self.code != :code"/>
       <field name="website" widget="url"/>
+      <field name="signature" widget="drawing"/>
     </panel>
     <panel title="Notes">
       <field name="notes" showTitle="false" colSpan="12"/>
