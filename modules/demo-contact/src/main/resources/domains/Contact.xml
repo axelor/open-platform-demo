@@ -18,6 +18,7 @@
     ]]></string>
     <date name="dateOfBirth"/>
     <binary name="image" title="Photo" help="Max size 4MB." image="true"/>
+    <integer name="fidelity"/>
     <string name="notes" large="true"/>
 
     <string name="email"><![CDATA[
@@ -38,7 +39,7 @@
     <one-to-many name="addresses" ref="Address" mappedBy="contact"/>
     <many-to-many name="circles" ref="Circle" />
     <many-to-one name="company" ref="Company" massUpdate="true"/>
-
+    
     <finder-method name="findByName" using="fullName" />
     <finder-method name="findByEmail" using="String:email" filter="self.emails[].email = :email" />
   </entity>
