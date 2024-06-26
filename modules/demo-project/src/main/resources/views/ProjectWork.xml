@@ -6,14 +6,14 @@
   <grid name="project-work-grid" title="Project Work" model="com.axelor.project.db.ProjectWork" editable="true">
     <field name="name" />
     <field name="date" />
-    <field name="hours" />
+    <field name="hours" widget="Duration"/>
   </grid>
 
   <form name="project-work-form" title="Project Work" model="com.axelor.project.db.ProjectWork" width="mini">
     <panel title="Overview">
       <field name="name" />
       <field name="date" />
-      <field name="hours" />
+      <field name="hours" widget="Duration"/>
     </panel>
   </form>
 
