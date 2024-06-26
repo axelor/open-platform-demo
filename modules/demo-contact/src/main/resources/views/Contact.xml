@@ -47,7 +47,7 @@
     <panel title="Personal" css="panel-red">
       <panel colSpan="4">
         <field name="image" showTitle="false" colSpan="12"/>
-        <field name="fidelity" widget="Rating"/>
+        <field name="fidelity" widget="Rating" colSpan="12"/>
       </panel>
       <panel colSpan="8">
         <field name="fullName" title="Name" readonly="false" colSpan="12">
@@ -105,8 +105,8 @@
       <field name="notes" showTitle="false" colSpan="12"/>
     </panel>
     <panel sidebar="true">
-      <field name="createdOn"/>
-      <field name="updatedOn"/>
+      <field name="createdOn" widget="RelativeTime"/>
+      <field name="updatedOn" widget="RelativeTime"/>
     </panel>
     <panel title="Actions" sidebar="true" colSpan="1" cols="1">
       <button name="greet" title="Send Greetings..." onClick="com.axelor.contact.web.HelloController:say"/>
