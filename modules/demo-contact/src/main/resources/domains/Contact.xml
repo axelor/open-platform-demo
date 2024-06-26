@@ -19,6 +19,7 @@
     <date name="dateOfBirth"/>
     <binary name="image" title="Photo" help="Max size 4MB." image="true"/>
     <integer name="fidelity"/>
+    <string name="profession"/>
     <string name="notes" large="true"/>
 
     <string name="email"><![CDATA[
