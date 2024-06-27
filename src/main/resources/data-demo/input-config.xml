@@ -53,6 +53,7 @@
   <input file="2_company.csv" type="com.axelor.contact.db.Company" search="self.code = :code">
     <bind column="code" to="code" />
     <bind column="name" to="name" />
+    <bind column="website" to="website" />
   </input>
 
   <input file="3_country.csv" type="com.axelor.contact.db.Country" search="self.code = :code">
@@ -70,6 +71,8 @@
     <bind column="lastName" to="lastName" />
     <bind column="notes" to="notes" />
     <bind column="dateOfBirth" to="dateOfBirth" />
+    <bind column="fidelity" to="fidelity"/>
+    <bind column="profession" to="profession"/>
     <bind to="company" update="true" search="self.id = :company_id_" if="company_id_"/>
     <bind to="title" update="true" search="self.id = :title_id_" if="title_id_"/>
     <bind to="_circles_ids" column="circles[].id"/>
