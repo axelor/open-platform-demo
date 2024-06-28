@@ -50,7 +50,7 @@
     <bind column="name" to="name" />
   </input>
 
-  <input file="2_company.csv" type="com.axelor.contact.db.Company" search="self.code = :code">
+  <input file="2_company.csv" type="com.axelor.contact.db.Company" search="self.code = :code" call="com.axelor.demo.CompanyImport:importCompany">
     <bind column="code" to="code" />
     <bind column="name" to="name" />
     <bind column="website" to="website" />

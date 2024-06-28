@@ -25,12 +25,16 @@ import com.axelor.meta.MetaFiles;
 import com.axelor.meta.db.MetaFile;
 import com.axelor.sale.db.Product;
 import com.axelor.sale.db.repo.ProductRepository;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
 import java.nio.file.Path;
 import java.util.Map;
 
 public class ProductImport {
 
   private static final String PRODUCT_IMAGES_DIR = "product_images";
+  private static final String PRODUCT_SHEETS_DIR = "product_sheets";
 
   public Object importProduct(Object bean, Map context) {
     Product product = (Product) bean;
@@ -39,6 +43,7 @@ public class ProductImport {
 
     loadImage(product, (Path) context.get("__path__"));
     loadAttachments(product, (Path) context.get("__path__"));
+    loadProductSheet(product, (Path) context.get("__path__"));
 
     return product;
   }
@@ -76,5 +81,30 @@ public class ProductImport {
     } catch (Exception e) {
       // ignore
     }
+  }
+
+  private void loadProductSheet(Product product, Path basePath) {
+    try {
+      final Path productSheet =
+          ImportUtils.findByFileName(basePath.resolve(PRODUCT_SHEETS_DIR), product.getCode());
+      if (productSheet != null && productSheet.toFile().exists()) {
+        product.setProductSheet(readFileToBytes(productSheet));
+      }
+    } catch (Exception e) {
+      // ignore
+    }
+  }
+
+  @SuppressWarnings("ResultOfMethodCallIgnored")
+  private byte[] readFileToBytes(Path path) throws IOException {
+
+    File file = path.toFile();
+    byte[] bytes = new byte[(int) file.length()];
+
+    try (FileInputStream fis = new FileInputStream(file)) {
+      fis.read(bytes);
+    }
+
+    return bytes;
   }
 }
