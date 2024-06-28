@@ -43,9 +43,13 @@
   </selection>
 
   <selection name="business.sector.selection">
-    <option value="IT" icon="code">IT</option>
-    <option value="Logistics" icon="truck">Logistics</option>
-    <option value="Real-estate" icon="building">Real estate</option>
+    <option value="agriculture" icon="agriculture">Agriculture</option>
+    <option value="education" icon="school">Education</option>
+    <option value="finance" icon="finance">Finance</option>
+    <option value="health" icon="health_and_safety">Health</option>
+    <option value="logistics" icon="truck">Logistics &amp; Transport</option>
+    <option value="manufacturing" icon="factory">Manufacturing</option>
+    <option value="technology" icon="code">Technology</option>
   </selection>
 
   <form name="contact-form" title="Contact" model="com.axelor.contact.db.Contact" css="panel-blue"
@@ -122,7 +126,7 @@
     <panel sidebar="true" title="Extra">
       <field name="company"/>
       <field name="circles" widget="TagSelect"/>
-      <field name="profession" selection="business.sector.selection" widget="ImageSelect"/>
+      <field name="businessSector" widget="ImageSelect"/>
     </panel>
   </form>
 
