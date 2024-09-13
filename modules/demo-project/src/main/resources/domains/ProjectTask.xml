@@ -44,6 +44,7 @@
     <decimal name="plannedDuration"/>
     <decimal name="plannedProgress"/>
     <many-to-one name="parentTask" ref="ProjectTask" title="Parent task" />
+    <one-to-many ref="ProjectTask" name="subTasks" title="Sub-tasks" mappedBy="parentTask"/>
     <integer name="sequence" title="Sequence" />
     <many-to-many name="finishToStartTaskSet" ref="ProjectTask" title="Tasks to finish before start"
       table="PROJECT_TASK_F2S"

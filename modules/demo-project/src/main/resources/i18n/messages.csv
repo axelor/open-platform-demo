@@ -1,4 +1,5 @@
 "key","message","comment","context"
+"Add sub-task",,,
 "All Projects",,,
 "All Tasks",,,
 "All Tasks (tree)",,,
@@ -36,6 +37,7 @@
 "Sequence",,,
 "Start date",,,
 "State",,,
+"Sub-tasks",,,
 "Task",,,
 "Task Summary",,,
 "Task planning",,,

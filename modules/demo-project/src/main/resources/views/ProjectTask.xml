@@ -39,8 +39,10 @@
       <field name="priority"/>
       <field name="createDate"/>
       <field name="deadlineDate"/>
-      <field name="startDate"/>
-      <field name="endDate"/>
+      <field name="startDate" validIf="!startDate || $moment(startDate) &lt;= $moment(endDate)"
+        onChange="com.axelor.project.web.ProjectController:computeSubTasks"/>
+      <field name="endDate" validIf="!endDate || $moment(startDate) &lt;= $moment(endDate)"
+        onChange="com.axelor.project.web.ProjectController:computeSubTasks"/>
       <field name="project"/>
       <field name="user" hidden="true" showIf="!_xShowMyTasks"/>
       <field name="parentTask"/>
@@ -49,6 +51,23 @@
       <field name="progress" widget="Progress"/>
     </panel>
     <panel-tabs>
+      <panel-related field="subTasks"
+        orderBy="startDate"
+        editable="true"
+        widget="tree-grid"
+        x-tree-field-title="Add sub-task"
+        x-tree-field="subTasks"
+        onNew="project.task.on.new,project.task.default.attrs"
+        onLoad="project.task.default.attrs"
+        onChange="com.axelor.project.web.ProjectController:computeSubTasksTree">
+        <field name="name" />
+        <field name="createDate" hidden="true" />
+        <field name="user" hidden="true" />
+        <field name="priority" />
+        <field name="startDate" validIf="!startDate || $moment(startDate) &lt;= $moment(endDate)" />
+        <field name="endDate" validIf="!endDate || $moment(startDate) &lt;= $moment(endDate)" />
+        <field name="parentTask" hidden="true"/>
+      </panel-related>
       <panel-related field="workItems" editable="true">
         <field name="name"/>
         <field name="date"/>
