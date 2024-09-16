@@ -126,7 +126,7 @@
     <hilite color="warning" if="progress > 0" />
     <template><![CDATA[
       <>
-        <strong>{name}</strong>
+        <strong>{$fmt('name')}</strong>
         <Box>{notes}</Box>
         {startDate && (
           <Box d="flex" alignItems="end" justifyContent="space-between">

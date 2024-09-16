@@ -68,3 +68,54 @@ Climate Pledge Friendly,Engagement climatique favorable,fr,ProductExtraOptions#n
 3 years warranty,Garantie 3 ans,fr,ProductExtraOptions#name
 Used - Like new,Occasion - Comme neuf,fr,ProductExtraOptions#name
 Used - Good,Occasion - Bon état,fr,ProductExtraOptions#name
+Deliverables List,Liste des livrables,fr,ProjectTask#name
+Project Boundaries,Limites du projet,fr,ProjectTask#name
+Stakeholder Interviews,Entretiens avec les parties prenantes,fr,ProjectTask#name
+Prototyping,Prototypage,fr,ProjectTask#name
+User Flow,Flux utilisateur,fr,ProjectTask#name
+Database Integration,Intégration de la base de données,fr,ProjectTask#name
+API Implementation,Implémentation de l'API,fr,ProjectTask#name
+Integration,Intégration,fr,ProjectTask#name
+Component Development,Développement des composants,fr,ProjectTask#name
+Documentation,Documentation,fr,ProjectTask#name
+Endpoint Definition,Définition des points d'accès,fr,ProjectTask#name
+Indexing,Indexation,fr,ProjectTask#name
+Table Design,Conception des tables,fr,ProjectTask#namen
+User Feedback,Retour des utilisateurs,fr,ProjectTask#name
+Performance Monitoring,Surveillance des performances,fr,ProjectTask#name
+Competitor Analysis,Analyse de la concurrence,fr,ProjectTask#name
+Market Research,Étude de marché,fr,ProjectTask#name
+Launch,Lancement,fr,ProjectTask#name
+Post Launch,Après le lancement,fr,ProjectTask#name
+Analysis,Analyse,fr,ProjectTask#name
+Integration Testing,Tests d'intégration,fr,ProjectTask#name
+Unit Testing,Tests unitaires,fr,ProjectTask#name
+Completion,Achèvement,fr,ProjectTask#name
+Testing,Tests,fr,ProjectTask#name
+Scope Definition,Définition du périmètre,fr,ProjectTask#name
+Requirements Gathering,Collecte des exigences,fr,ProjectTask#name
+UX Design,Conception UX,fr,ProjectTask#name
+Backend,Backend,fr,ProjectTask#name
+Frontend,Frontend,fr,ProjectTask#name
+API Design,Conception de l'API,fr,ProjectTask#name
+Database Schema,Schéma de la base de données,fr,ProjectTask#name
+Definition,Définition,fr,ProjectTask#name
+Development,Développement,fr,ProjectTask#name
+Data Design,Conception des données,fr,ProjectTask#name
+Design,Conception,fr,ProjectTask#name
+Publish,Publier,fr,ProjectTask#name
+Preconditions,Préconditions,fr,ProjectWork#name
+Functional requirements,Exigences fonctionnelles,fr,ProjectWork#name
+Operational requirements,Exigences opérationnelles,fr,ProjectWork#name
+Design limitations,Limitations de conception,fr,ProjectWork#name
+Reviewed,Passé en revue,fr,ProjectWork#name
+Site trees,Arborescences du site,fr,ProjectWork#name
+HTML screen designs,Conceptions d'écrans HTML,fr,ProjectWork#name
+UML schemas,Schémas UML,fr,ProjectWork#name
+Prototypes,Prototypes,fr,ProjectWork#name
+Interactive prototype v1,Prototype interactif v1,fr,ProjectWork#name
+User testing session 1,Session de test utilisateur 1,fr,ProjectWork#name
+Prototype iterations,Itérations du prototype,fr,ProjectWork#name
+Interactive prototype v2,Prototype interactif v2,fr,ProjectWork#name
+User testing session 2,Session de test utilisateur 2,fr,ProjectWork#name
+Final prototype revisions,Révisions finales du prototype,fr,ProjectWork#name
