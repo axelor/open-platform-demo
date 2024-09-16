@@ -209,7 +209,7 @@
     <bind to="members" column="_members_ids2" search="self.id in :_members_ids2" if="_members_ids2 != null &amp;&amp; _members_ids2.size() &gt; 0" update="true"/>
   </input>
 
-  <input file="12_project_task.csv" type="com.axelor.project.db.ProjectTask">
+  <input file="12_project_task.csv" type="com.axelor.project.db.ProjectTask" call="com.axelor.demo.ProjectImport:importTask">
     <bind to="_baseDate" eval="java.time.LocalDate.of(2021, 1, 1)" />
     <bind to="_currentDate" eval="java.time.LocalDate.now()" />
     <bind column="name" to="name" />

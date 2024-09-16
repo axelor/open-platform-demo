@@ -1,12 +1,18 @@
-name,task.id,date,hours
-Preconditions,6,2021-01-27,04:00:00
-Functional requirements,6,2021-01-28,07:00:00
-Operational requirements,6,2021-01-29,07:00:00
-Design limitations,6,2021-01-30,07:00:00
-Reviewed,8,2021-01-29,09:00:00
-Site trees,8,2021-02-01,09:00:00
-Site trees,8,2021-02-02,09:00:00
-HTML screen designs,8,2021-02-03,09:00:00
-HTML screen designs,8,2021-02-04,09:00:00
-UML schemas,8,2021-02-08,09:00:00
-Prototypes,8,2021-02-13,09:00:00
+name,task.name,date,hours
+Preconditions,"Definition",2021-01-27,04:00:00
+Functional requirements,"Definition",2021-01-28,07:00:00
+Operational requirements,"Definition",2021-01-29,07:00:00
+Design limitations,"Definition",2021-01-30,07:00:00
+Reviewed,"UX Design",2021-01-29,09:00:00
+Site trees,"UX Design",2021-02-01,09:00:00
+Site trees,"UX Design",2021-02-02,09:00:00
+HTML screen designs,"UX Design",2021-02-03,09:00:00
+HTML screen designs,"UX Design",2021-02-04,09:00:00
+UML schemas,"UX Design",2021-02-08,09:00:00
+Prototypes,"UX Design",2021-02-13,09:00:00
+Interactive prototype v1,"Prototyping",2021-01-27,09:00:00
+User testing session 1,"Prototyping",2021-01-27,04:00:00
+Prototype iterations,"Prototyping",2021-01-28,07:00:00
+Interactive prototype v2,"Prototyping",2021-01-29,09:00:00
+User testing session 2,"Prototyping",2021-01-29,04:00:00
+Final prototype revisions,"Prototyping",2021-01-30,06:00:00
