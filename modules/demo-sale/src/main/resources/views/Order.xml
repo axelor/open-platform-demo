@@ -33,7 +33,7 @@
       <field name="confirmed" widget="boolean-switch" onChange="com.axelor.sale.web.SaleOrderController:onConfirm"/>
       <field name="orderDate" readonlyIf="confirmed"/>
       <field name="confirmDate" requiredIf="confirmed" validIf="confirmDate == null || $moment(confirmDate) >= $moment(orderDate)"/>
-      <field name="currency" readonlyIf="confirmed" form-view="currency-form" grid-view="currency-grid" onChange="com.axelor.sale.web.SaleOrderController:calculate"/>
+      <field name="currency" readonlyIf="confirmed" onChange="com.axelor.sale.web.SaleOrderController:calculate" form-view="currency-form" grid-view="currency-grid" colSpan="12" />
     </panel>
     <panel-tabs>
       <panel-related field="items" editable="true" readonlyIf="confirmed"

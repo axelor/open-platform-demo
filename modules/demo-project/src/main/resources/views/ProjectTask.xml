@@ -45,7 +45,7 @@
       <field name="user" hidden="true" showIf="!_xShowMyTasks"/>
       <field name="parentTask"/>
       <field name="sequence"/>
-      <field name="state" />
+      <field name="state" widget="Stepper" />
       <field name="progress" widget="Progress"/>
     </panel>
     <panel-tabs>

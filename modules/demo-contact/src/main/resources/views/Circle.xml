@@ -6,12 +6,14 @@
   <grid name="circle-grid" title="Circles" model="com.axelor.contact.db.Circle">
     <field name="name" />
     <field name="code" />
+    <field name="color" widget="ColorPicker"/>
   </grid>
 
   <form name="circle-form" title="Circle" model="com.axelor.contact.db.Circle" width="mini">
     <panel title="Overview" itemSpan="12">
       <field name="code" />
       <field name="name" />
+      <field name="color" widget="ColorPicker"/>
     </panel>
   </form>
 
