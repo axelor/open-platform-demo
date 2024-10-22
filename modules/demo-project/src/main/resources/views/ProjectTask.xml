@@ -57,6 +57,8 @@
         widget="tree-grid"
         x-tree-field-title="Add sub-task"
         x-tree-field="subTasks"
+        x-expand-all="subTasks,workItems"
+        summary-view="project-task-work-items-form"
         onNew="project.task.on.new,project.task.default.attrs"
         onLoad="project.task.default.attrs"
         onChange="com.axelor.project.web.ProjectController:computeSubTasksTree">
@@ -89,6 +91,14 @@
         </panel>
       </panel>
     </panel-tabs>
+  </form>
+
+  <form name="project-task-work-items-form" title="Work items" model="com.axelor.project.db.ProjectTask">
+    <panel-related field="workItems" showIf="workItems.length || !$readonly()">
+      <field name="name"/>
+      <field name="date"/>
+      <field name="hours"/>
+    </panel-related>
   </form>
 
   <tree name="project-task-tree" title="Project Tasks">
