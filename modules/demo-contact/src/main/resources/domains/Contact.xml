@@ -40,7 +40,7 @@
     <one-to-many name="addresses" ref="Address" mappedBy="contact"/>
     <many-to-many name="circles" ref="Circle" />
     <many-to-one name="company" ref="Company" massUpdate="true"/>
-    
+
     <finder-method name="findByName" using="fullName" />
     <finder-method name="findByEmail" using="String:email" filter="self.emails[].email = :email" />
   </entity>

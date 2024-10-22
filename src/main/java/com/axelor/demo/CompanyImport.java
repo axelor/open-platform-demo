@@ -1,7 +1,7 @@
 /*
  * Axelor Business Solutions
  *
- * Copyright (C) 2005-2023 Axelor (<http://axelor.com>).
+ * Copyright (C) 2005-2024 Axelor (<http://axelor.com>).
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Affero General Public License as
@@ -18,13 +18,11 @@
  */
 package com.axelor.demo;
 
-import com.axelor.dms.db.DMSFile;
-import com.axelor.dms.db.repo.DMSFileRepository;
+import com.axelor.contact.db.Company;
+import com.axelor.contact.db.repo.CompanyRepository;
 import com.axelor.inject.Beans;
 import com.axelor.meta.MetaFiles;
 import com.axelor.meta.db.MetaFile;
-import com.axelor.contact.db.Company;
-import com.axelor.contact.db.repo.CompanyRepository;
 import java.nio.file.Path;
 import java.util.Map;
 
