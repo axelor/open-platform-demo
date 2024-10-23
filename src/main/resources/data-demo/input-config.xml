@@ -242,7 +242,8 @@
     <bind to="_currentDate" eval="java.time.LocalDate.now()" />
     <bind column="name" to="name" />
     <bind to="task" update="true" search="self.id = :task_id_"/>
-    <bind to="date" eval="java.time.LocalDate.parse(date)?.plus(_baseDate.until(_currentDate))" adapter="LocalDate" if="_baseDate &amp;&amp; _currentDate &amp;&amp; date"/>
+    <bind to="_date" column="date"/>
+    <bind to="date" eval="java.time.LocalDate.parse(_date)?.plus(_baseDate.until(_currentDate))" adapter="LocalDate" if="_baseDate &amp;&amp; _currentDate &amp;&amp; _date"/>
     <bind column="hours" to="hours" />
   </input>
 
