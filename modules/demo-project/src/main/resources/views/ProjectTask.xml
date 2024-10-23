@@ -21,6 +21,19 @@
     <field name="progress" widget="Progress" aggregate="avg"/>
   </grid>
 
+  <grid name="project-task-tree-grid" title="Project Tasks" model="com.axelor.project.db.ProjectTask"
+      widget="tree-grid" x-tree-field="subTasks" summary-view="project-task-work-items-form">
+    <field name="name" />
+    <field name="createDate" />
+    <field name="startDate" />
+    <field name="endDate" />
+    <field name="user" />
+    <field name="project" />
+    <field name="priority" />
+    <field name="state" />
+    <field name="progress" widget="Progress" aggregate="avg"/>
+  </grid>
+
   <grid name="project-my-task-grid" title="Project Tasks" model="com.axelor.project.db.ProjectTask" groupBy="project">
     <field name="name" />
     <field name="startDate" />
