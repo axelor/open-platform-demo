@@ -26,6 +26,7 @@
     <view type="kanban" name="project-task-kanban"/>
     <view type="form" name="project-task-form"/>
     <view type="calendar" name="project-task-calendar" />
+    <domain>self.parentTask IS NULL</domain>
   </action-view>
 
   <action-view name="project.task.my" title="My Tasks" model="com.axelor.project.db.ProjectTask">
