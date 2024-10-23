@@ -70,7 +70,7 @@
         <field name="endDate" validIf="!endDate || $moment(startDate) &lt;= $moment(endDate)" />
         <field name="parentTask" hidden="true"/>
       </panel-related>
-      <panel-related field="workItems" editable="true">
+      <panel-related field="workItems" editable="true" orderBy="date">
         <field name="name"/>
         <field name="date"/>
         <field name="hours"/>
@@ -94,7 +94,7 @@
   </form>
 
   <form name="project-task-work-items-form" title="Work items" model="com.axelor.project.db.ProjectTask">
-    <panel-related field="workItems" showIf="workItems.length || !$readonly()">
+    <panel-related field="workItems" orderBy="date" showIf="workItems.length || !$readonly()">
       <field name="name"/>
       <field name="date"/>
       <field name="hours"/>
