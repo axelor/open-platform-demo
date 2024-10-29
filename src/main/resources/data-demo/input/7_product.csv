@@ -1,11 +1,50 @@
-code,name,color,colorVariants,category.id,notes,price
-wireless-keyboard,Wireless Keyboard,black,,2,"Slim Wireless Keyboard and Mouse Set, 2.4G Cordless",170.99
-laptop-touchscreen,11.6-inch Touchscreen Laptop,gray,"red,black",3,"With an 11.6-inch HD screen and slim, lightweight frame, the laptop offers an ultra-compact, portable solution for email, browsing and more. ",120.15
-laptop-aluminum,Full HD 15.6 Inch Aluminum-Body Laptop,chocolate,,3,"The slim and lightweight laptop now features diamond-cut edges and textured finishes, and is available in 3 distinct colors that have been chosen to reflect your personality.",199.99
-the-universe,The Universe,,,5,"We once thought of our Earth as unique, but we have now discovered thousands of alien planets, and that’s barely a fraction of the worlds that are out there. And there are more stars in the Universe than grains of sand on every planet in the Solar System.",20.00
-the-age-of-ai,The Age of AI: And Our Human Future,,,5,An AI learned to win chess by making moves human grand masters had never conceived. Another AI discovered a new antibiotic by analysing molecular properties human scientists did not understand.,30.50
-slice-toaster,Slice Toaster,black,"pink,red,green",7,Frozen setting - no need to de-frost your bread first for ease and convenience,86.00
-microwave,Small Combination Microwave Oven & Grill,white,"green,blue",7,"Slimline design, 27L - Larger turntable (34cm)",99.99
-food-processor,Multifunctional Food Processor,teal,,7,"Multifunctional Food Processor: Includes 11 attachments, own Topchef food processor, means you get blender, chopper, citrus juicer, knead dough machine, mixer, etc. It meets your most demands of cooking preparation, save time and money.",""
-storage-box,Outdoor Storage Box,yellow,gray,8,"Ideal outdoor storage box for garden tools and equipment, furniture cushions and accessories",""
-LOUNGECHAIR,Patio Lounge Chair,black,gray,8,Tough and durable powder coated steel frame with anti corrosion coating guarantees a long life outside,87.21
+code,name,color,colorVariants,category.id,notes,price,type
+wireless-keyboard,Wireless Keyboard,black,,2,"Slim Wireless Keyboard and Mouse Set, 2.4G Cordless",170.99,product
+laptop-touchscreen,11.6-inch Touchscreen Laptop,gray,"red,black",3,"With an 11.6-inch HD screen and slim, lightweight frame, the laptop offers an ultra-compact, portable solution for email, browsing and more. ",120.15,product
+laptop-aluminum,Full HD 15.6 Inch Aluminum-Body Laptop,chocolate,,3,"The slim and lightweight laptop now features diamond-cut edges and textured finishes, and is available in 3 distinct colors that have been chosen to reflect your personality.",199.99,product
+the-universe,The Universe,,,5,"We once thought of our Earth as unique, but we have now discovered thousands of alien planets, and that’s barely a fraction of the worlds that are out there. And there are more stars in the Universe than grains of sand on every planet in the Solar System.",20.00,product
+the-age-of-ai,The Age of AI: And Our Human Future,,,5,An AI learned to win chess by making moves human grand masters had never conceived. Another AI discovered a new antibiotic by analysing molecular properties human scientists did not understand.,30.50,product
+slice-toaster,Slice Toaster,black,"pink,red,green",7,Frozen setting - no need to de-frost your bread first for ease and convenience,86.00,product
+microwave,Small Combination Microwave Oven & Grill,white,"green,blue",7,"Slimline design, 27L - Larger turntable (34cm)",99.99,product
+food-processor,Multifunctional Food Processor,teal,,7,"Multifunctional Food Processor: Includes 11 attachments, own Topchef food processor, means you get blender, chopper, citrus juicer, knead dough machine, mixer, etc. It meets your most demands of cooking preparation, save time and money.","",product
+storage-box,Outdoor Storage Box,yellow,gray,8,"Ideal outdoor storage box for garden tools and equipment, furniture cushions and accessories","",product
+LOUNGECHAIR,Patio Lounge Chair,black,gray,8,Tough and durable powder coated steel frame with anti corrosion coating guarantees a long life outside,87.21,product
+mechanical-keyboard,Mechanical Gaming Keyboard,black,"white",2,"RGB backlighting with customizable colors, designed for gamers with responsive keys.",150.99,product
+gaming-laptop,17.3-inch Gaming Laptop,black,,3,"High-performance gaming laptop with a large and beautiful screen.",2499.99,product
+ergonomic-chair,Ergonomic Office Chair,black,"blue,gray,white",6,"Breathable mesh back, adjustable lumbar support, and reclining function.",199.99,product
+led-monitor,27-inch LED Monitor,black,"white,gray",4,"Full HD resolution with anti-glare coating and built-in speakers.",180.25,product
+bluetooth-speaker,Portable Bluetooth Speaker,black,"teal,blue,green",6,"Waterproof design with 10-hour battery life, ideal for outdoor use.",45.99,product
+refrigerator,Double-Door Refrigerator,gray,"white,black",7,"Energy-efficient refrigerator with frost-free technology and 350L capacity.",599.99,product
+garden-hose,Expandable Garden Hose,green,"yellow,blue",8,"Durable, lightweight, and kink-free garden hose with brass fittings.",34.99,product
+air-fryer,Digital Air Fryer,black,"purple,white",7,"Oil-less air fryer with digital controls and 5L capacity.",89.99,product
+book-shelf,Adjustable Wooden Book Shelf,chocolate,"white,gray",6,"Stylish and durable, ideal for living rooms and home offices.",75.99,product
+vacuum-cleaner,Cordless Vacuum Cleaner,yellow,"black,blue",7,"Lightweight, high-suction power with multiple attachments for versatile cleaning.",199.00,product
+grill-set,Portable BBQ Grill Set,gray,"orange,red",8,"BBQ grill with stainless steel utensils included.",149.99,product
+tool-kit,Home Repair Tool Kit,red,,8,"Complete 150-piece tool set for household repairs and DIY projects.",60.00,product
+blender,High-Speed Blender,red,"gray,pink",7,"Powerful blender with 8-speed settings, perfect for smoothies and shakes.",99.99,product
+window-cleaner,Automatic Window Cleaner,gray,"white,black",6,"Robotic window cleaner with remote control and auto-detection of edges.",149.99,product
+garden-shed,Metal Garden Shed,green,"gray,black,red",8,"Spacious garden shed for outdoor storage, weather-resistant steel construction.",499.99,product
+cutting-board,Bamboo Cutting Board,chocolate,,7,"Durable and eco-friendly bamboo cutting board, easy to clean.",19.50,product
+car-battery-charger,Portable Car Battery Charger,blue,,6,"Compact charger with multiple charging modes for all vehicle types.",89.00,product
+ice-maker,Countertop Ice Maker,white,"black,gray",7,"Produces up to 12kg of ice per day, compact and easy to use.",135.99,product
+fitness-tracker,Fitness Tracker Watch,black,"blue,red",6,"Tracks heart rate, sleep patterns, steps, and calories burned. Water-resistant.",59.99,product
+wireless-mouse,Wireless Ergonomic Mouse,gray,"black,white",2,"Comfortable design with adjustable DPI and long battery life.",29.99,product
+smart-lightbulb,Smart LED Light Bulb,white,,6,"Wi-Fi enabled light bulb with adjustable brightness and color.",19.99,product
+camping-tent,4-Person Camping Tent,yellow,"blue,gray",8,"Waterproof, windproof camping tent with quick setup.",120.00,product
+power-bank,Portable Power Bank,cyan,"red,blue,white",6,"10,000mAh power bank with dual USB ports and fast charging.",24.99,product
+coffee-maker,Single Serve Coffee Maker,black,"white,red",7,"Compact coffee machine compatible with single-serve pods.",49.99,product
+usb-hub,7-Port USB Hub,black,"white,gray,blue",2,"Supports multiple USB devices with fast data transfer.",17.99,product
+water-bottle,Stainless Steel Water Bottle,cyan,"pink,green,red,blue,orange,yellow,black",6,"Insulated bottle keeps drinks cold for 24 hours or hot for 12 hours.",25.99,product
+gaming-headset,Noise-Canceling Gaming Headset,black,"red,blue",2,"Over-ear gaming headset with 7.1 surround sound and noise-canceling mic.",69.99,product
+desk-lamp,LED Desk Lamp,red,"black,white,gray",6,"Dimmable LED desk lamp with adjustable arm and touch control.",35.99,product
+smart-doorbell,Smart Video Doorbell,white,"black,gray",6,"Wi-Fi video doorbell with motion detection and two-way audio.",99.99,product
+air-purifier,Air Purifier,white,"gray,black",6,"Compact air purifier with 4-stage filtration and quiet operation.",149.99,product
+electric-kettle,Stainless Steel Electric Kettle,gray,"white,red",7,"1.7L cordless electric kettle with automatic shut-off and boil-dry protection.",45.99,product
+lawn-mower,Cordless Electric Lawn Mower,orange,"black,teal",8,"Battery-powered lawn mower with adjustable cutting heights.",299.99,product
+cordless-drill,Cordless Power Drill,yellow,"blue,black,gray",8,"18V cordless drill with rechargeable battery and multiple speed settings.",89.99,product
+ultrabook-laptop,14-inch Ultrabook Laptop,gray,black,3,"Lightweight ultrabook with 512GB SSD and powerful processor, ideal for business.",899.99,product
+gaming-desktop,High-Performance Gaming Desktop,black,,2,"Custom-built gaming PC with RGB lighting, liquid cooling, and 32GB RAM.",1500.00,product
+quantum-computing,Quantum Computing for Beginners,,,5,"An introductory guide to quantum computing, explaining fundamental concepts in a simple way.",35.00,product
+artificial-minds,Artificial Minds: How AI is Reshaping the World,,,5,"Explores the impact of artificial intelligence on society and future possibilities.",24.99,product
+journey-to-titan,Journey to Titan,,,5,"A science fiction novel exploring humanity's first mission to Saturn's moon, Titan.",19.99,product
+laptop-gamer-pro,16-inch Gamer Pro Laptop,black,"red,green",3,"High-end gaming laptop with 144Hz display, ray tracing GPU, and RGB keyboard.",2100.00,product

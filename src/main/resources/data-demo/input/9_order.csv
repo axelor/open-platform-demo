@@ -19,3 +19,23 @@ customer.id,name,status,_orderDateGap,_confirmDateGap,confirmed,notes,currency.c
 19,SO00018,draft,-1,-1,TRUE,"Proinde concepta rabie saeviore, quam desperatio",JPY
 3,SO00019,draft,-5,-5,TRUE,Haec subinde Constantius audiens et quaedam,BHD
 5,SO00020,draft,-2,-1,TRUE,"Intellectum est enim mihi quidem in multis, et",EUR
+20,SO00021,draft,-6,,,,EUR
+21,SO00022,draft,-4,,,,EUR
+15,SO00023,closed,-3,,,,USD
+19,SO00024,closed,-10,,,,EUR
+15,SO00025,open,-7,-2,TRUE,Constituendi autem sunt qui sint in amicitia fines,USD
+22,SO00026,draft,,,,Saraceni tamen nec amici nobis umquam nec hostes,JPY
+28,SO00027,draft,-1,,,"Haec igitur prima lex amicitiae sanciatur, ut ab",BHD
+27,SO00028,open,-1,-1,TRUE,Erat autem diritatis eius hoc quoque indicium nec,EUR
+1,SO00029,open,,,FALSE,Post hoc impie perpetratum quod in aliis quoque,EUR
+34,SO00030,canceled,-10,,FALSE,Proinde die funestis interrogationibus praestituto,USD
+36,SO00031,canceled,-5,,FALSE,"Etenim si attendere diligenter, existimare vere de",BHD
+23,SO00032,canceled,-9,,,Proinde die funestis interrogationibus praestituto,USD
+30,SO00033,canceled,-2,,,"Eodem tempore Serenianus ex duce, cuius ignavia",EUR
+30,SO00034,open,0,0,TRUE,"Altera sententia est, quae definit amicitiam",JPY
+22,SO00035,open,-10,-10,FALSE,Ex turba vero imae sortis et paupertinae in,EUR
+10,SO00036,draft,-4,-4,FALSE,Ideo urbs venerabilis post superbas efferatarum,EUR
+20,SO00037,draft,0,0,,Horum adventum praedocti speculationibus fidis,EUR
+1,SO00038,draft,-3,-3,,"Proinde concepta rabie saeviore, quam desperatio",JPY
+36,SO00039,draft,-6,-6,TRUE,Haec subinde Constantius audiens et quaedam,BHD
+31,SO00040,draft,-2,-1,TRUE,"Intellectum est enim mihi quidem in multis, et",EUR
