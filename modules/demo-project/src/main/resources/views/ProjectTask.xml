@@ -104,12 +104,18 @@
     <hilite color="info" if="progress >= 50" />
     <hilite color="warning" if="progress > 0" />
     <template><![CDATA[
-    <h4>{{name}}</h4>
-    <img ng-if="user" ng-src="{{$image('user', 'image')}}">
-    <div class="card-body">{{notes}}</div>
-    <div class="card-footer">
-      <i class='fa fa-clock-o'></i> <span ng-if="startDate">{{$moment(startDate).format('LLL')}}</span>
-    </div>
+      <>
+        <strong>{name}</strong>
+        <Box>{notes}</Box>
+        {startDate && (
+          <Box d="flex" alignItems="end" justifyContent="space-between">
+            <Box d="flex" mt={2} style={{ fontSize: "0.85rem", color: "grey", gap: "0.25rem" }}>
+              <Icon icon='clock' fontSize="0.85rem" /> {$moment(startDate).format('LLL')}
+            </Box>
+            {user && <Image src={$image('user', 'image')} style={{ width: "1.5rem", height: "1.5rem" }} />}
+          </Box>
+        )}
+      </>
     ]]></template>
   </kanban>
 
@@ -122,12 +128,7 @@
     </dataset>
     <template>
     <![CDATA[
-    <div class="report-data">
-      <h1>{{first.total}}</h1>
-      <small x-translate>Pending tasks</small>
-      <div class="report-percent font-bold text-error pull-right">20% <i class="fa fa-level-down"></i></div>
-      <div class="report-tags"><span class="label label-success" x-translate>Today</span></div>
-    </div>
+    <report-box label='Pending tasks' value='first.total' percent='0.2' up='false' />
     ]]>
     </template>
   </custom>

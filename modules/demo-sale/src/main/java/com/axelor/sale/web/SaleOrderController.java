@@ -102,6 +102,8 @@ public class SaleOrderController extends JpaSupport {
     data.put("total", total);
     data.put("percent", percent);
     data.put("down", total.compareTo(last) == -1);
+    data.put("tag", I18n.get("Today"));
+    data.put("tagCss", "label-important");
 
     response.setData(Lists.newArrayList(data));
   }
