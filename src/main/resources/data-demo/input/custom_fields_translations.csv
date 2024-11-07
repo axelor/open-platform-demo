@@ -1,0 +1,7 @@
+key,message,language,_context
+Weight (kg),Poids (kg),fr,Product#attrs#weight
+Dimensions,Dimensions,fr,Product#attrs#dimensions
+Brand,Marque,fr,Product#attrs#brand
+Extra Options,Options supplémentaires,fr,Product#attrs#extraOptions
+Product Extra Options,Opts supp. produits,fr,ProductExtraOptions#title
+Product extra opts,Produits opts supp.,fr,ProductExtraOptions#menu#title

@@ -45,6 +45,31 @@
     <bind to="group" update="true" search="self.code = :group_code_"/>
   </input>
 
+  <input file="0_json_models.csv" type="com.axelor.meta.db.MetaJsonModel">
+    <bind column="name" to="name" />
+    <bind column="title" to="title" />
+    <bind column="menuTitle" to="menuTitle" />
+    <bind to="menuParent" eval="__repo__(MetaMenu).findByName(menu_parent)" if="menu_parent"/>
+  </input>
+
+  <input file="0_custom_fields.csv" type="com.axelor.meta.db.MetaJsonField">
+    <bind column="name" to="name" />
+    <bind column="type" to="type" />
+    <bind column="sequence" to="sequence" />
+    <bind column="tracked" to="tracked" />
+    <bind column="widget" to="widget" />
+    <bind column="hidden" to="hidden" />
+    <bind to="model" eval="__repo__(MetaModel).findByName(modelName).fullName" if="modelName"/>
+    <bind to="modelField" column="modelField"/>
+    <bind to="jsonModel" update="true" search="self.name = :jsonModelName" if="jsonModelName"/>
+    <bind to="targetJsonModel" update="true" search="self.name = :targetJsonModelName" if="targetJsonModelName"/>
+  </input>
+
+  <!-- second pass to call repository -->
+  <input file="0_json_models.csv" type="com.axelor.meta.db.MetaJsonModel" search="self.name = :name" call="com.axelor.demo.CustomModelImport:importCustomModel">
+    <bind column="name" to="name" />
+  </input>
+
   <input file="1_circle.csv" type="com.axelor.contact.db.Circle" search="self.code = :code">
     <bind column="code" to="code" />
     <bind column="name" to="name" />
@@ -108,6 +133,11 @@
     <bind column="code" to="code" />
     <bind column="name" to="name" />
     <bind to="parent" update="true" search="self.id = :parent_id_" if="parent_id_"/>
+  </input>
+
+  <input file="7_product_extra_options.csv" type="com.axelor.meta.db.MetaJsonRecord" search="self.jsonModel = :jsonModel AND self.name = :name" call="com.axelor.demo.CustomModelImport:importProductExtraOptions">
+    <bind column="name" to="name" />
+    <bind column="jsonModel" to="jsonModel" />
   </input>
 
   <input file="7_product.csv" type="com.axelor.sale.db.Product" search="self.code = :code" call="com.axelor.demo.ProductImport:importProduct">
@@ -204,6 +234,12 @@
 
   <input file="values_translations.csv" type="com.axelor.meta.db.MetaTranslation" search="self.key = :key AND self.language = :language">
     <bind column="key" to="key" eval="'value:' + key"/>
+    <bind column="language" to="language" />
+    <bind column="message" to="message" />
+  </input>
+
+  <input file="custom_fields_translations.csv" type="com.axelor.meta.db.MetaTranslation" search="self.key = :key AND self.language = :language">
+    <bind column="key" to="key"/>
     <bind column="language" to="language" />
     <bind column="message" to="message" />
   </input>

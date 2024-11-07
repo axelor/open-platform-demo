@@ -18,18 +18,28 @@
  */
 package com.axelor.demo;
 
+import com.axelor.common.ObjectUtils;
+import com.axelor.db.mapper.Adapter;
 import com.axelor.dms.db.DMSFile;
 import com.axelor.dms.db.repo.DMSFileRepository;
 import com.axelor.inject.Beans;
 import com.axelor.meta.MetaFiles;
 import com.axelor.meta.db.MetaFile;
+import com.axelor.meta.db.repo.MetaJsonRecordRepository;
 import com.axelor.sale.db.Product;
 import com.axelor.sale.db.repo.ProductRepository;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.math.BigDecimal;
 import java.nio.file.Path;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 public class ProductImport {
 
@@ -41,11 +51,72 @@ public class ProductImport {
 
     Beans.get(ProductRepository.class).save(product);
 
+    fillCustomFields(product, context);
     loadImage(product, (Path) context.get("__path__"));
     loadAttachments(product, (Path) context.get("__path__"));
     loadProductSheet(product, (Path) context.get("__path__"));
 
     return product;
+  }
+
+  private void fillCustomFields(Product product, Map context) {
+    final Map<String, Object> map = new HashMap<>();
+
+    if (ObjectUtils.notEmpty(context.get("attrs_weight"))) {
+      map.put("weight", Adapter.adapt(context.get("attrs_weight"), BigDecimal.class, null, null));
+    }
+    if (ObjectUtils.notEmpty(context.get("attrs_dimensions"))) {
+      map.put("dimensions", context.get("attrs_dimensions"));
+    }
+    if (ObjectUtils.notEmpty(context.get("attrs_brand"))) {
+      map.put("Brand", context.get("attrs_brand"));
+    }
+    if (ObjectUtils.notEmpty(context.get("attrs_extra_options"))) {
+      List<Map<String, Object>> attrsExtraOptions =
+          extraExtraOptions((String) context.get("attrs_extra_options"));
+      if (ObjectUtils.notEmpty(attrsExtraOptions)) {
+        map.put("extraOptions", attrsExtraOptions);
+      }
+    }
+
+    if (ObjectUtils.isEmpty(map)) {
+      return;
+    }
+
+    try {
+      product.setAttrs(Beans.get(ObjectMapper.class).writeValueAsString(map));
+    } catch (JsonProcessingException e) {
+      // ignore
+    }
+  }
+
+  private List<Map<String, Object>> extraExtraOptions(String attrsExtraOptions) {
+    if (ObjectUtils.isEmpty(attrsExtraOptions)) {
+      return null;
+    }
+
+    List<String> filters = new ArrayList<>();
+    Map<String, Object> params = new HashMap<>();
+    int count = 0;
+    for (String importId : attrsExtraOptions.split("\\|")) {
+      filters.add("self.attrs.importId = :import" + count);
+      params.put("import" + count, importId);
+      count++;
+    }
+
+    return Beans.get(MetaJsonRecordRepository.class)
+        .all()
+        .filter(String.join(" OR ", filters))
+        .bind(params)
+        .fetch()
+        .stream()
+        .map(
+            metaJsonRecord -> {
+              final Map<String, Object> map = new HashMap<>();
+              map.put("id", metaJsonRecord.getId());
+              return map;
+            })
+        .collect(Collectors.toList());
   }
 
   private void loadAttachments(Product product, Path basePath) {

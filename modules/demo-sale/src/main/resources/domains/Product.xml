@@ -22,6 +22,12 @@
     <binary name="productSheet" />
     <string name="notes" large="true" />
     <string name="attrs" title="Attributes" json="true" />
+    <track>
+      <field name="price"/>
+      <field name="code"/>
+      <field name="name"/>
+      <message tag="info" if="true" on="CREATE">Product created</message>
+    </track>
   </entity>
 
 </domain-models>

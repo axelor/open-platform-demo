@@ -45,6 +45,9 @@
     <panel name="notesPanel" title="Notes">
       <field name="notes" showTitle="false" colSpan="12" widget="html" />
     </panel>
+    <panel-mail>
+      <mail-messages/>
+    </panel-mail>
   </form>
 
 </object-views>
