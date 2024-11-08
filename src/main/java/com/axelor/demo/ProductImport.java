@@ -69,7 +69,7 @@ public class ProductImport {
       map.put("dimensions", context.get("attrs_dimensions"));
     }
     if (ObjectUtils.notEmpty(context.get("attrs_brand"))) {
-      map.put("Brand", context.get("attrs_brand"));
+      map.put("brand", context.get("attrs_brand"));
     }
     if (ObjectUtils.notEmpty(context.get("attrs_extra_options"))) {
       List<Map<String, Object>> attrsExtraOptions =
