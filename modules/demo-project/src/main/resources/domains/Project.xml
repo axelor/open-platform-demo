@@ -5,7 +5,7 @@
 
   <module name="project" package="com.axelor.project.db" />
 
-  <entity name="Project" cacheable="true">
+  <entity name="Project">
     <string name="name" required="true" unique="true" translatable="true" />
     <string name="description" translatable="true" />
     <string name="notes" multiline="true" />

@@ -5,7 +5,7 @@
 
   <module name="contact" package="com.axelor.contact.db" />
 
-  <entity name="Phone" cacheable="true">
+  <entity name="Phone">
     <many-to-one name="contact" ref="Contact" required="true" />
     <string name="phone" required="true" namecolumn="true" />
     <string name="phoneType" title="Type" />

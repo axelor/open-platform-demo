@@ -5,7 +5,7 @@
 
   <module name="project" package="com.axelor.project.db" />
 
-  <entity name="ProjectWork" table="PROJECT_WORK" cacheable="true">
+  <entity name="ProjectWork" table="PROJECT_WORK">
     <string name="name" required="true" />
     <date name="date" required="true" column="work_date" />
     <time name="hours" title="Time Spent" column="work_hours" />
