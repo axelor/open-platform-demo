@@ -22,6 +22,7 @@
     <binary name="productSheet" />
     <string name="notes" large="true" />
     <string name="attrs" title="Attributes" json="true" />
+    <string name="gtin" />
     <track>
       <field name="price"/>
       <field name="code"/>

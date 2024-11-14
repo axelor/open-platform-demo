@@ -46,6 +46,7 @@
             </>
           ]]></viewer>
         </field>
+        <field name="gtin" widget="Barcode" colSpan="12" showTitle="false" x-bar-width="1.5" height="50" x-barcode-format="EAN13" readonly="true" showIf="type == 'PRODUCT' &amp;&amp; gtin != null"/>
       </panel>
       <panel colSpan="9">
         <field name="name" colSpan="12"/>
@@ -54,6 +55,7 @@
         <field name="color" widget="SingleSelect"/>
         <field name="category"/>
         <field name="type" widget="SwitchSelect"/>
+        <field name="gtin" showIf="type == 'PRODUCT'"/>
       </panel>
     </panel>
     <panel title="Attributes" itemSpan="12">
