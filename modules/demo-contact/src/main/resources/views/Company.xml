@@ -15,7 +15,15 @@
       <field name="name"/>
       <field name="code"/>
       <field name="parent" domain="self.code != :code"/>
-      <field name="website" widget="url"/>
+      <field name="website" widget="url">
+        <viewer>
+          <![CDATA[
+            <>
+              {website && <QrCode value={website} />}
+            </>
+          ]]>
+        </viewer>
+      </field>
       <field name="signature" widget="drawing"/>
     </panel>
     <panel title="Notes">
