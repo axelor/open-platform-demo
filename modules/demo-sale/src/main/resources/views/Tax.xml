@@ -11,7 +11,7 @@
     <panel title="Overview" itemSpan="12">
       <field name="code" />
       <field name="name" />
-      <field name="rate" widget="Slider" x-step="0.0025" min="0" max="1" x-show-title="false"/>
+      <field name="rate" widget="Slider" x-step="0.0025" min="0" max="1"/>
     </panel>
   </form>
 
