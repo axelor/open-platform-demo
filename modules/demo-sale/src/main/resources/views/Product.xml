@@ -24,11 +24,13 @@
     <field name="attrs"/>
   </grid>
 
-  <form name="product-form" title="Product" model="com.axelor.sale.db.Product">
+  <form name="product-form" title="Product" model="com.axelor.sale.db.Product"
+    onLoad="com.axelor.sale.web.ProductController:fetchTotalSales">
     <panel name="overviewPanel" title="Overview">
       <panel colSpan="3">
         <field name="image" showTitle="false" colSpan="12" widget="image"/>
         <field name="productSheet" widget="Binary" colSpan="12"/>
+        <button name="$btnTotalSales" hidden="true" showIf="$btnTotalSales" title="Total sales" icon="query_stats" onClick="action-product-show-sales" widget="info-button" colSpan="10"/>
       </panel>
       <panel colSpan="9">
         <field name="name" colSpan="12"/>
