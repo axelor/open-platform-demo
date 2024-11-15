@@ -3,7 +3,7 @@
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://axelor.com/xml/ns/object-views https://axelor.com/xml/ns/object-views/object-views_7.2.xsd">
 
-  <menuitem name="menu-project" order="-80" title="Project Management" icon="fa-tasks" icon-background="violet"/>
+  <menuitem name="menu-project" order="-80" title="Project Management" icon="list-task" icon-background="violet"/>
 
   <menuitem name="menu-project-all" parent="menu-project"
     title="All Projects"

@@ -79,9 +79,9 @@
         ]]></viewer>
         <editor layout="table" x-show-titles="false">
           <field name="email" />
-          <field name="primary" widget="toggle" x-icon="fa-star-o" x-icon-active="fa-star" x-exclusive="true" />
-          <field name="optOut" widget="toggle" x-icon="fa-ban" />
-          <field name="invalid" widget="toggle" x-icon="fa-exclamation-circle" />
+          <field name="primary" widget="toggle" x-icon="star" x-icon-active="star-fill" x-exclusive="true" />
+          <field name="optOut" widget="toggle" x-icon="ban" />
+          <field name="invalid" widget="toggle" x-icon="exclamation-circle-fill" />
         </editor>
       </field>
       <field name="phones">
@@ -93,7 +93,7 @@
         <editor layout="table" x-show-titles="false">
           <field name="phoneType" width="100px" selection="phone.type.selection" />
           <field name="phone" css="border-left-none" widget="phone"/>
-          <field name="primary" widget="toggle" x-icon="fa-star-o" x-icon-active="fa-star" x-exclusive="true"/>
+          <field name="primary" widget="toggle" x-icon="star" x-icon-active="star-fill" x-exclusive="true"/>
         </editor>
       </field>
       <field name="addresses" colSpan="12" css="address-list">

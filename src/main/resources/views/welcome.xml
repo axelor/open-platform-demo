@@ -18,7 +18,7 @@
   </action-view>
 
   <menuitem name="menu-dashboards" order="-101"
-    title="Dashboards" icon="fa-dashboard" icon-background="blue"/>
+    title="Dashboards" icon="speedometer" icon-background="blue"/>
 
   <menuitem name="menu-welcome" parent="menu-dashboards"
     title="Welcome!" action="welcome"/>

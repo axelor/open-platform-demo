@@ -25,7 +25,7 @@
     onSave="check-order-values,action-sale-order-validate">
     <toolbar>
       <button name="btnPrint" title="Print" showTitle="false" showIf="id" onClick="print.sale.order"
-        icon="fa-print" />
+        icon="printer" />
     </toolbar>
     <panel title="Order Details">
       <field name="name" />
@@ -58,7 +58,7 @@
       <panel colSpan="4" itemSpan="12">
         <button name="btnTotalAmount"
           onClick="check-order-dates,com.axelor.sale.web.SaleOrderController:calculate,save"
-          title="Total amount" icon="fa-bar-chart" widget="info-button" x-field="totalAmount"
+          title="Total amount" icon="bar-chart" widget="info-button" x-field="totalAmount"
           css="btn-primary" />
         <button name="btnExport" title="Export" showIf="id" onClick="export.sale.order" />
       </panel>
@@ -177,7 +177,7 @@
     <dataset type="rpc">com.axelor.sale.web.SaleOrderController:reportMonthly</dataset>
     <template>
     <![CDATA[
-    <report-box icon='fa-line-chart' label='Total sales of the month' value='first.total'
+    <report-box icon='graph-up-arrow' label='Total sales of the month' value='first.total'
       percent='first.percent' up='first.up' tag='first.tag' tag-css='first.tagCss'/>
     ]]>
     </template>
