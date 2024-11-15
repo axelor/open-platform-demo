@@ -21,7 +21,6 @@ package com.axelor.sale.web;
 import com.axelor.db.JPA;
 import com.axelor.rpc.ActionRequest;
 import com.axelor.rpc.ActionResponse;
-import java.math.BigDecimal;
 import java.time.LocalDate;
 
 public class ProductController {
@@ -34,19 +33,19 @@ public class ProductController {
       return;
     }
 
-    BigDecimal sales =
+    Long sales =
         JPA.em()
             .createQuery(
-                "SELECT sum(self.quantity * self.price) "
+                "SELECT sum(self.quantity) "
                     + "FROM OrderLine self "
                     + "LEFT JOIN self.order as o "
                     + "LEFT JOIN self.product as p "
                     + "WHERE p.id = :productId AND o.confirmed IS TRUE AND YEAR(o.orderDate) = :year",
-                BigDecimal.class)
+                Long.class)
             .setParameter("productId", productId)
             .setParameter("year", LocalDate.now().getYear())
             .getSingleResult();
 
-    response.setValue("$btnTotalSales", sales == null ? BigDecimal.ZERO : sales);
+    response.setValue("totalSales", sales == null ? 0 : sales);
   }
 }

@@ -30,7 +30,22 @@
       <panel colSpan="3">
         <field name="image" showTitle="false" colSpan="12" widget="image"/>
         <field name="productSheet" widget="Binary" colSpan="12"/>
-        <button name="$btnTotalSales" hidden="true" showIf="$btnTotalSales" title="Total sales" icon="query_stats" onClick="action-product-show-sales" widget="info-button" colSpan="10"/>
+        <field name="totalSales" hidden="true" showIf="totalSales" x-dirty="false" colSpan="10" readonly="true" showTitle="false" type="integer">
+          <viewer><![CDATA[
+            <>
+              <Button d="flex" gap={8} flexGrow={1} alignItems="center" variant="primary"
+                style={{ color: "var(--bs-btn-bg)", backgroundColor: "var(--ax-panel-bg)", cursor: "inherit", width: "100%" }}>
+                <Icon icon="query_stats" d="inline-flex" fontSize="2rem"/>
+                <Box d="flex" flexDirection="column" textAlign="start" >
+                  <Box style={{ fontSize: "1.25rem", fontWeight: 600, whiteSpace: "nowrap" }}>
+                    {$fmt("totalSales")} <span x-translate="true">units</span>
+                  </Box>
+                  <span style={{ fontSize: "0.875rem", fontWeight: 400 }} x-translate="true">Total sales</span>
+                </Box>
+              </Button>
+            </>
+          ]]></viewer>
+        </field>
       </panel>
       <panel colSpan="9">
         <field name="name" colSpan="12"/>
