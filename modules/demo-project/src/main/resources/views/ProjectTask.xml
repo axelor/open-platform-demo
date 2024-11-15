@@ -77,7 +77,7 @@
     <!-- define tree columns -->
     <column name="title" type="string" />
     <column name="progress" type="integer" />
-    <column name="taskState" widget="ImageSelect"/>
+    <column name="taskState" widget="ImageSelect" title="State"/>
 
     <!-- define 1st level node -->
     <node model="com.axelor.project.db.Project" onClick="projects.task.open.project">
