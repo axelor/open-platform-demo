@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<object-views xmlns="http://axelor.com/xml/ns/object-views"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://axelor.com/xml/ns/object-views https://axelor.com/xml/ns/object-views/object-views_7.2.xsd">
+
+  <form name="user-info-form" title="User" model="com.axelor.auth.db.User" readonlyIf="true"
+    canEdit="false" canNew="false" canDelete="false" canCopy="false" canAttach="false" canArchive="false" canSave="false">
+    <panel>
+      <panel name="leftPanel" colSpan="2" itemSpan="12">
+        <field name="image" showTitle="false" />
+      </panel>
+      <panel name="rightPanel" colSpan="10" itemSpan="12">
+        <field name="name" showTitle="false">
+          <viewer><![CDATA[
+          <>
+            <Box as="h4">{name}</Box>
+          </>
+        ]]></viewer>
+        </field>
+        <field name="email" widget="Email" showIf="email"/>
+      </panel>
+    </panel>
+  </form>
+
+</object-views>
