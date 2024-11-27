@@ -130,7 +130,7 @@
     </dataset>
     <template>
     <![CDATA[
-    <report-box label='Pending tasks' value='first.total' percent='0.2' up='false' />
+    <report-box label='Pending tasks' value='first.total'/>
     ]]>
     </template>
   </custom>
