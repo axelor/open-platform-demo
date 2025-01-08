@@ -1,7 +1,7 @@
-name,modelName,modelField,jsonModelName,targetJsonModelName,type,title,sequence,tracked,widget,hidden,widgetAttrs
-name,MetaJsonRecord,attrs,ProductExtraOptions,,string,Nom,,,,,"{""translatable"":""true""}"
-weight,Product,attrs,,,decimal,Weight (kg),1,true,,,"{""nullable"":""true"", ""colSpan"": ""4""}"
-dimensions,Product,attrs,,,string,Dimensions,2,true,,,"{""colSpan"": ""4""}"
-brand,Product,attrs,,,string,Brand,3,true,,,"{""colSpan"": ""4""}"
-extraOptions,Product,attrs,"",ProductExtraOptions,json-many-to-many,Extra Options,4,false,TagSelect,,"{""colSpan"": ""12""}"
-importId,MetaJsonRecord,attrs,ProductExtraOptions,,integer,,,,,true,
+name,modelName,modelField,jsonModelName,targetJsonModelName,type,title,sequence,tracked,widget,hidden,widgetAttrs,visibleInGrid
+name,MetaJsonRecord,attrs,ProductExtraOptions,,string,Nom,,,,,"{""translatable"":""true""}",true
+weight,Product,attrs,,,decimal,Weight (kg),1,true,,,"{""nullable"":""true"", ""colSpan"": ""4""}",
+dimensions,Product,attrs,,,string,Dimensions,2,true,,,"{""colSpan"": ""4""}",
+brand,Product,attrs,,,string,Brand,3,true,,,"{""colSpan"": ""4""}",
+extraOptions,Product,attrs,"",ProductExtraOptions,json-many-to-many,Extra Options,4,false,TagSelect,,"{""colSpan"": ""12""}",
+importId,MetaJsonRecord,attrs,ProductExtraOptions,,integer,,,,,true,,
