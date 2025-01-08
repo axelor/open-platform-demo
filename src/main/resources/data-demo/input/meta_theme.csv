@@ -1,0 +1,26 @@
+name,isSelectable,label,content
+B&G,true,Blue & Green,"{
+  ""palette"": {
+    ""primary"": ""#3ECF8E"",
+    ""body_color"": ""#010165"",
+    ""secondary"": ""#010165""
+  },
+  ""components"": {
+    ""Input"": {
+      ""border_width"": ""1px"",
+      ""border"": {
+        ""radius"": ""0.375rem""
+      },
+      ""focus"": {
+        ""border_width"": ""1px""
+      },
+      ""invalid"": {
+        ""border_width"": ""1px""
+      },
+      ""invalid_focus"": {
+        ""border_width"": ""1px""
+      },
+      ""padding"": ""unset""
+    }
+  }
+}"

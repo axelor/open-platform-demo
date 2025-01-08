@@ -2,6 +2,13 @@
 <csv-inputs xmlns="http://axelor.com/xml/ns/data-import" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://axelor.com/xml/ns/data-import https://axelor.com/xml/ns/data-import/data-import_7.3.xsd">
 
+  <input file="meta_theme.csv" type="com.axelor.meta.db.MetaTheme" search="self.name = :name">
+    <bind column="name" to="name" />
+    <bind column="isSelectable" to="isSelectable" />
+    <bind column="label" to="label" />
+    <bind column="content" to="content" />
+  </input>
+
   <input file="job.csv" type="com.axelor.meta.db.MetaSchedule" search="self.name = :name">
     <bind column="name" to="name" />
     <bind column="active" to="active" />
@@ -42,6 +49,7 @@
     <bind column="code" to="code" />
     <bind column="name" to="name" />
     <bind column="password" to="password" />
+    <bind to="theme" eval="__repo__(MetaTheme).findByName(theme)?.get(0)?.id" if="theme"/>
     <bind to="group" update="true" search="self.code = :group_code_"/>
   </input>
 
