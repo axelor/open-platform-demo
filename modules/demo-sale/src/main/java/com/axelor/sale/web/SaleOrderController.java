@@ -103,7 +103,7 @@ public class SaleOrderController extends JpaSupport {
     data.put("percent", percent);
     data.put("down", total.compareTo(last) == -1);
     data.put("tag", I18n.get("Today"));
-    data.put("tagCss", "label-important");
+    data.put("tagCss", "label-bg-important");
 
     response.setData(Lists.newArrayList(data));
   }
@@ -138,7 +138,7 @@ public class SaleOrderController extends JpaSupport {
     data.put("percent", percent);
     data.put("up", total.compareTo(last) > 0);
     data.put("tag", I18n.get("Monthly"));
-    data.put("tagCss", "label-success");
+    data.put("tagCss", "label-bg-success");
 
     response.setData(Lists.newArrayList(data));
   }
