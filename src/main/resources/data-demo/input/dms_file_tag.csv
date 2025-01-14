@@ -1,0 +1,7 @@
+code,name,style
+confidential,Confidential,label-bg-warning
+public,Public,label-bg-success
+internal,Internal,label-bg-important
+draf,Draf,label-bg-inverse
+final,Final,label-bg-info
+partners,Partners,

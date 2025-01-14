@@ -9,6 +9,12 @@
     <bind column="content" to="content" />
   </input>
 
+  <input file="dms_file_tag.csv" type="com.axelor.dms.db.DMSFileTag" search="self.code = :code">
+    <bind column="code" to="code" />
+    <bind column="name" to="name" />
+    <bind column="style" to="style" />
+  </input>
+
   <input file="job.csv" type="com.axelor.meta.db.MetaSchedule" search="self.name = :name">
     <bind column="name" to="name" />
     <bind column="active" to="active" />
