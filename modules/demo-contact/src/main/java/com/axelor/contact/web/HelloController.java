@@ -130,7 +130,11 @@ public class HelloController {
 
   public void showHomePage(ActionRequest request, ActionResponse response) {
 
-    response.setView(ActionView.define("Axelor.com").add("html", "http://www.axelor.com/").map());
+    response.setView(
+        ActionView.define("Axelor.com")
+            .param("target", "_blank")
+            .add("html", "https://www.axelor.com/")
+            .map());
   }
 
   public void showCompanyList(ActionRequest request, ActionResponse response) {
