@@ -8,11 +8,28 @@
     <field name="parent" />
   </grid>
 
-  <form name="product-category-form" title="Product Category" model="com.axelor.sale.db.ProductCategory" width="mini">
+  <form name="product-category-form" title="Product Category" model="com.axelor.sale.db.ProductCategory">
     <panel title="Overview">
       <field name="code" />
       <field name="name" />
       <field name="parent" domain="self.code != :code" />
     </panel>
+    <panel-dashlet action="sale.productCategory.products" x-show-bars="true" canEdit="true"/>
   </form>
+
+  <action-view name="sale.productCategory.products" model="com.axelor.sale.db.Product" title="Related products">
+  <view type="grid" name="product-grid-toolbar"/>
+    <view type="form"/>
+    <domain>self.category = :_categoryId</domain>
+    <context name="_categoryId" expr="eval: id"/>
+  </action-view>
+
+  <grid name="product-grid-toolbar" title="Products" model="com.axelor.sale.db.Product" editable="true">
+    <toolbar>
+      <button name="displayTreeBtn" title="Display tree" onClick="com.axelor.sale.web.ProductCategoryController:displayTree"/>
+    </toolbar>
+    <field name="name" />
+    <field name="price" />
+  </grid>
+
 </object-views>

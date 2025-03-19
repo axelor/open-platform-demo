@@ -11,7 +11,7 @@
     action="sale.products" tag="All" tag-style="info"/>
 
   <action-view name="sale.products" model="com.axelor.sale.db.Product" title="Products">
-    <view type="grid"/>
+    <view type="grid" name="product-grid"/>
     <view type="form"/>
   </action-view>
 
