@@ -48,7 +48,7 @@
         <field name="product" onChange="action-order-line-change-product" x-image-field="image" />
         <field name="price" />
         <field name="quantity" />
-        <field name="taxes" />
+        <field name="taxes" widget="TagSelect" />
       </panel-related>
       <panel title="Notes">
         <field name="notes" showTitle="false" colSpan="12" widget="html" />
