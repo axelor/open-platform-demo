@@ -11,7 +11,7 @@ allprojects {
   apply plugin: 'eclipse'
 
   group = 'com.axelor'
-  version = '7.3.0'
+  version = '7.4.0'
 
   java {
     toolchain {
