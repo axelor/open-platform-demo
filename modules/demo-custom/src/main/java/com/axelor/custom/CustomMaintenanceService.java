@@ -18,13 +18,18 @@
  */
 package com.axelor.custom;
 
-import com.axelor.app.AxelorModule;
+import com.axelor.auth.AuthUtils;
+import com.axelor.auth.db.User;
 import com.axelor.web.service.MaintenanceService;
+import javax.servlet.http.HttpServletRequest;
 
-public class CustomModule extends AxelorModule {
+public class CustomMaintenanceService implements MaintenanceService {
 
   @Override
-  protected void configure() {
-    bind(MaintenanceService.class).to(CustomMaintenanceService.class);
+  public boolean isMaintenanceMode(User user, HttpServletRequest httpRequest) {
+    return user != null
+        && !AuthUtils.isAdmin(user)
+        && user.getGroup() != null
+        && user.getGroup().getEnableMaintenanceMode();
   }
 }
