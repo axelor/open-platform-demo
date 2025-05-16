@@ -28,7 +28,7 @@ import org.quartz.JobExecutionException;
 public class HelloJob implements Job {
 
   @Override
-  public void execute(JobExecutionContext context) throws JobExecutionException {
+  public void execute(JobExecutionContext context) {
     JobDetail detail = context.getJobDetail();
     JobDataMap data = context.getJobDetail().getJobDataMap();
 

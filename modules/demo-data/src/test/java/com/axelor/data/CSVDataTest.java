@@ -26,13 +26,13 @@ import org.junit.jupiter.api.Test;
 public class CSVDataTest extends AbstractTest {
 
   @Test
-  public void testDefault() throws IOException {
+  public void testDefault() {
     Importer importer = new CSVImporter("data/csv-config.xml", "data/csv");
     importer.run();
   }
 
   @Test
-  public void testMulti() throws IOException {
+  public void testMulti() {
     Importer importer = new CSVImporter("data/csv-multi-config.xml");
     importer.run(
         new ImportTask() {
@@ -45,7 +45,7 @@ public class CSVDataTest extends AbstractTest {
   }
 
   @Test
-  public void testData() throws IOException {
+  public void testData() {
     Importer importer = new CSVImporter("data/csv-config-types.xml", "data/csv");
     importer.run();
   }
