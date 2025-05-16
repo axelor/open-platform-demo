@@ -82,15 +82,15 @@ public class DemoEventLogger {
   }
 
   public void onPreAction(@Observes PreAction event) {
-    log.trace("PRE ACTION: " + event.getName());
+    log.trace("PRE ACTION: {}", event.getName());
   }
 
   public void onPostAction(@Observes PostAction event) {
-    log.trace("POST ACTION: " + event.getName());
+    log.trace("POST ACTION: {}", event.getName());
   }
 
   public void onPostActionCall(
       @Observes @Named("com.axelor.sale.web.SaleOrderController:calculate") PostAction event) {
-    log.trace("POST CALCULATE: " + event.getResult());
+    log.trace("POST CALCULATE: {}", event.getResult());
   }
 }
