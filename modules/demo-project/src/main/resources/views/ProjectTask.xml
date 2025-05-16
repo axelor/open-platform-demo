@@ -215,7 +215,7 @@
     colorBy="user"
     eventStart="startDate"
     eventStop="endDate"
-    eventLength="1">
+  >
 
     <hilite if="state === 'todo'" styles="outline" />
     <hilite if="state === 'progress'" styles="stripe" />
@@ -242,7 +242,7 @@
     colorBy="project"
     eventStart="startDate"
     eventStop="endDate"
-    eventLength="1">
+  >
     <field name="name" />
   </calendar>
 
