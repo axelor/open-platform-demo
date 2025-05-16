@@ -36,7 +36,7 @@ public class HelloJob implements Job {
     String desc = detail.getDescription();
 
     System.err.println("Job fired: " + name + " (" + desc + ")");
-    if (data != null && data.size() > 0) {
+    if (data != null && !data.isEmpty()) {
       for (String key : data.keySet()) {
         System.err.println("    " + key + " = " + data.getString(key));
       }
