@@ -28,7 +28,7 @@ public class ImportUtils {
   public ImportUtils() {}
 
   public static Path findByFileName(Path path, String fileName) throws IOException {
-    Path result = null;
+    Path result;
     try (Stream<Path> pathStream =
         Files.find(
             path,
