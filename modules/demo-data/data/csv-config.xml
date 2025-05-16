@@ -9,14 +9,14 @@
   <input file="contacts.csv" type="com.axelor.contact.db.Contact"/>
 
   <input file="titles.csv" type="com.axelor.contact.db.Title" search="self.code = :code" update="true">
-    <bind to="code" column="code"></bind>
-    <bind to="name" column="name" if-empty="true"></bind>
+    <bind to="code" column="code"/>
+    <bind to="name" column="name" if-empty="true"/>
   </input>
 
   <input file="titles-no-header.csv" type="com.axelor.contact.db.Title" search="self.code = :code" update="true">
   <header>code,name</header>
-    <bind to="code" column="code"></bind>
-    <bind to="name" column="name" if-empty="true"></bind>
+    <bind to="code" column="code"/>
+    <bind to="name" column="name" if-empty="true"/>
   </input>
 
   <input file="contacts-update.csv" type="com.axelor.contact.db.Contact" separator="\t"
