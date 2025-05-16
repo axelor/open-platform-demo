@@ -26,9 +26,9 @@ import java.time.LocalDate;
 public class ProductController {
 
   public void fetchTotalSales(ActionRequest request, ActionResponse response) {
-    Long productId;
+    long productId;
     try {
-      productId = Long.valueOf(request.getContext().get("id").toString());
+      productId = Long.parseLong(request.getContext().get("id").toString());
     } catch (Exception e) {
       return;
     }
