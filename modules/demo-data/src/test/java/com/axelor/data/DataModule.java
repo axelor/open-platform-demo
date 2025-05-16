@@ -34,9 +34,5 @@ public class DataModule extends AbstractModule {
     install(new JpaModule("testUnit"));
     install(new AuthModule());
     install(new AppModule());
-
-    configureImport();
   }
-
-  protected void configureImport() {}
 }
