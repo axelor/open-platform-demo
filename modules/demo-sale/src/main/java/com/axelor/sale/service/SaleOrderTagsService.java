@@ -38,7 +38,7 @@ public class SaleOrderTagsService {
 
   @CallMethod
   public String countOrdersMenuTag(String status) {
-    OrderStatus orderStatus = null;
+    OrderStatus orderStatus;
     try {
       orderStatus = OrderStatus.valueOf(status);
     } catch (Exception e) {

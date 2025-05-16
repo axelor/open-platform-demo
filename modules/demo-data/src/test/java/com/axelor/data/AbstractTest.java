@@ -55,12 +55,6 @@ public abstract class AbstractTest {
     seq.setPadding(5);
 
     JPA.runInTransaction(
-        new Runnable() {
-
-          @Override
-          public void run() {
-            sequences.save(seq);
-          }
-        });
+            () -> sequences.save(seq));
   }
 }

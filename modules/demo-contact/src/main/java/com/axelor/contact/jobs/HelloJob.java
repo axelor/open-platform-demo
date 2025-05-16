@@ -28,7 +28,7 @@ import org.quartz.JobExecutionException;
 public class HelloJob implements Job {
 
   @Override
-  public void execute(JobExecutionContext context) throws JobExecutionException {
+  public void execute(JobExecutionContext context) {
     JobDetail detail = context.getJobDetail();
     JobDataMap data = context.getJobDetail().getJobDataMap();
 
@@ -36,7 +36,7 @@ public class HelloJob implements Job {
     String desc = detail.getDescription();
 
     System.err.println("Job fired: " + name + " (" + desc + ")");
-    if (data != null && data.size() > 0) {
+    if (data != null && !data.isEmpty()) {
       for (String key : data.keySet()) {
         System.err.println("    " + key + " = " + data.getString(key));
       }

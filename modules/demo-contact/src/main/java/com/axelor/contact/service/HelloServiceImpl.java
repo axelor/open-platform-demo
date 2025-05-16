@@ -24,7 +24,7 @@ import org.slf4j.LoggerFactory;
 
 public class HelloServiceImpl implements HelloService {
 
-  protected Logger log = LoggerFactory.getLogger(getClass());
+  protected final Logger log = LoggerFactory.getLogger(getClass());
 
   @Override
   public String say(Contact contact) {

@@ -25,13 +25,13 @@ import org.junit.jupiter.api.Test;
 public class XMLDataTest extends AbstractTest {
 
   @Test
-  public void testTypes() throws IOException {
+  public void testTypes() {
     Importer importer = new XMLImporter("data/xml-config-types.xml", "data/xml");
     importer.run();
   }
 
   @Test
-  public void testDefault() throws IOException {
+  public void testDefault() {
     Importer importer = new XMLImporter("data/xml-config.xml", "data/xml");
     importer.run();
   }

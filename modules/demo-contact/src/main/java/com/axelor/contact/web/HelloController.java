@@ -40,7 +40,7 @@ import org.slf4j.LoggerFactory;
 
 public class HelloController {
 
-  protected Logger log = LoggerFactory.getLogger(getClass());
+  protected final Logger log = LoggerFactory.getLogger(getClass());
 
   @Inject private HelloService service;
 

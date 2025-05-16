@@ -11,7 +11,7 @@ allprojects { p ->
 
   // 'modules' directory is shown as a project : need to be excluded
   if (!p.buildFile.exists()) {
-    return;
+    return
   }
 
   apply plugin: com.diffplug.gradle.spotless.SpotlessPlugin

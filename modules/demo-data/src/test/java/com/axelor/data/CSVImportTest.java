@@ -51,8 +51,8 @@ public class CSVImportTest extends AbstractTest {
 
           @Override
           public void imported(Integer total, Integer success) {
-            log.info("Record (total): " + total);
-            log.info("Record (success): " + success);
+            log.info("Record (total): {}", total);
+            log.info("Record (success): {}", success);
           }
 
           @Override
@@ -70,13 +70,13 @@ public class CSVImportTest extends AbstractTest {
 
           @Override
           public boolean handle(ImportException exception) {
-            log.error("Import error : " + exception);
+            log.error("Import error : {}", String.valueOf(exception));
             return false;
           }
 
           @Override
           public boolean handle(IOException e) {
-            log.error("IOException error : " + e);
+            log.error("IOException error : {}", String.valueOf(e));
             return true;
           }
         });

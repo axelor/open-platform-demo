@@ -30,7 +30,7 @@ import org.junit.jupiter.api.Test;
 public class XMLImportTest extends AbstractTest {
 
   @Test
-  public void test() throws FileNotFoundException {
+  public void test() {
     XMLImporter importer = new XMLImporter("data/xml-config.xml");
     Map<String, Object> context = new HashMap<>();
 
