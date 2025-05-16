@@ -28,7 +28,7 @@ public class DataScriptHelperTest {
 
   private static final int MAX_COUNT = 1000;
 
-  private DataScriptHelper helper = new DataScriptHelper(100, 1, false);
+  private final DataScriptHelper helper = new DataScriptHelper(100, 1, false);
 
   @BeforeAll
   public static void doInit() {
