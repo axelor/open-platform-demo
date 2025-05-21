@@ -20,7 +20,6 @@ package com.axelor.data;
 
 import com.axelor.data.xml.XMLImporter;
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.nio.charset.Charset;
 import java.util.HashMap;

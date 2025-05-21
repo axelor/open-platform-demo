@@ -22,7 +22,6 @@ import org.quartz.Job;
 import org.quartz.JobDataMap;
 import org.quartz.JobDetail;
 import org.quartz.JobExecutionContext;
-import org.quartz.JobExecutionException;
 
 /** An example {@link Job} class that prints a some messages to the stderr. */
 public class HelloJob implements Job {

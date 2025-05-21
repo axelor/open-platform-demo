@@ -54,7 +54,6 @@ public abstract class AbstractTest {
     seq.setPrefix("SO");
     seq.setPadding(5);
 
-    JPA.runInTransaction(
-            () -> sequences.save(seq));
+    JPA.runInTransaction(() -> sequences.save(seq));
   }
 }
