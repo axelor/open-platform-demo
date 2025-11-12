@@ -1,5 +1,14 @@
 plugins {
   id 'com.axelor.app'
+  id 'com.github.node-gradle.node' version '7.1.0'
+}
+
+repositories {
+  mavenCentral()
+}
+
+ext {
+  myHomeAppDir = 'my-home'
 }
 
 axelor {
@@ -41,4 +50,54 @@ war {
   archiveFileName = 'open-platform-demo.war'
 }
 
+i18n {
+  extraSources = ["${myHomeAppDir}/src"]
+}
+
 apply from: 'gradle/style.gradle'
+
+////
+// My home app
+////
+
+node {
+  version = '22.21.1'
+  pnpmVersion = '10.24.0'
+  download = true
+  nodeProjectDir = file("${myHomeAppDir}")
+}
+
+tasks.register('buildMyHomeApp', PnpmTask) {
+  def frontDist = file("${myHomeAppDir}/dist")
+  outputs.dir(frontDist)
+
+  // the up-to-date doesn't work as the plugin is used two times : here in root project
+  // and when using aop includeBuild to built the main front.
+
+  // Instead, build my-home application if the dist doesn't exist or if the task is invoked explicitly
+  onlyIf {
+    boolean outputExists = frontDist.exists() && frontDist.list()?.length > 0
+    boolean isExplicitlyRequested = gradle.startParameter.taskNames.any { requestedTask ->
+      requestedTask == name || requestedTask == path
+    }
+    return isExplicitlyRequested || !outputExists
+  }
+
+  dependsOn 'pnpmInstall'
+  args = ['run', 'build']
+}
+
+clean {
+  delete "${myHomeAppDir}/dist"
+  delete "${myHomeAppDir}/node_modules"
+}
+
+tasks.register("copyMyHomeApp", Copy) {
+  dependsOn 'buildMyHomeApp'
+  from tasks.named('buildMyHomeApp').get().outputs
+  into layout.buildDirectory.dir("webapp/${myHomeAppDir}")
+}
+
+tasks.named("copyWebapp") {
+  dependsOn 'copyMyHomeApp'
+}

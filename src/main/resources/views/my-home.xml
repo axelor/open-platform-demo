@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<object-views xmlns="http://axelor.com/xml/ns/object-views"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://axelor.com/xml/ns/object-views https://axelor.com/xml/ns/object-views/object-views_8.0.xsd">
+
+  <action-view name="my.home.app" title="Sale Order Dashboard">
+    <view name="my-home/" type="html" />
+  </action-view>
+
+  <menuitem name="menu-my-home" title="Sale Order Dashboard" action="my.home.app" icon="local_mall" parent="menu-sales" />
+
+</object-views>

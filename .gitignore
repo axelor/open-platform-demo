@@ -46,3 +46,6 @@ hs_err_pid*
 # JavaScript
 node_modules
 
+# EXCEPTION: don't ignore my-home/.env
+!my-home/.env
+my-home/dist
