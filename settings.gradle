@@ -3,7 +3,7 @@ pluginManagement {
     mavenCentral()
   }
   plugins {
-    id 'com.axelor.app' version '8.0.+'
+    id 'com.axelor.app' version '8.1.+'
   }
 }
 
