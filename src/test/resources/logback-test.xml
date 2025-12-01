@@ -10,7 +10,7 @@
 
   <logger name="com.axelor" level="debug" />
   <logger name="org.hibernate.SQL" level="info" />
-  <logger name="org.hibernate.tool.hbm2ddl" level="warn" />
+  <logger name="org.hibernate.tool.schema" level="info" />
   <logger name="com.zaxxer.hikari" level="info" />
 
   <root level="error">
