@@ -131,7 +131,7 @@
     </panel>
     <panel sidebar="true" title="Extra">
       <field name="company"/>
-      <field name="circles" widget="TagSelect" x-color-field="color"/>
+      <field name="circles" widget="Tags" x-color-field="color"/>
       <field name="businessSector" widget="ImageSelect"/>
     </panel>
   </form>

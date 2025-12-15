@@ -97,10 +97,10 @@
         <field name="plannedProgress"/>
         <spacer/>
         <panel title="Linked project tasks" colSpan="12">
-          <field name="finishToStartTaskSet" widget="TagSelect" />
-          <field name="startToStartTaskSet" widget="TagSelect" />
-          <field name="finishToFinishTaskSet" widget="TagSelect" />
-          <field name="startToFinishTaskSet" widget="TagSelect" />
+          <field name="finishToStartTaskSet" widget="Tags" />
+          <field name="startToStartTaskSet" widget="Tags" />
+          <field name="finishToFinishTaskSet" widget="Tags" />
+          <field name="startToFinishTaskSet" widget="Tags" />
         </panel>
       </panel>
     </panel-tabs>
