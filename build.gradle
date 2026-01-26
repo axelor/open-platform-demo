@@ -3,10 +3,6 @@ plugins {
   id 'com.github.node-gradle.node' version '7.1.0'
 }
 
-repositories {
-  mavenCentral()
-}
-
 ext {
   myHomeAppDir = 'my-home'
 }
@@ -65,6 +61,9 @@ node {
   pnpmVersion = '10.24.0'
   download = true
   nodeProjectDir = file("${myHomeAppDir}")
+  // Set distBaseUrl to null to prevent the Node plugin from injecting its own repository.
+  // Else is bypass the centralized repository declarations (settings.gradle)
+  distBaseUrl = null
 }
 
 tasks.register('buildMyHomeApp', PnpmTask) {
