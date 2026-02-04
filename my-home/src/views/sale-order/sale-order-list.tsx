@@ -163,7 +163,7 @@ function FooterRowRenderer(props: GridRowProps) {
   );
 
   return (
-    <Box textAlign="end">
+    <Box textAlign="end" pb={2} pt={2} style={{ backgroundColor: "var(--ax-panel-header-bg)" }}>
       <Box as="span" position="absolute" style={{ left: 10 }} fontWeight="bold">
         {i18n.get("Selected Total Amount")}
       </Box>
