@@ -7,6 +7,8 @@ package com.axelor.sale.web;
 import com.axelor.db.JPA;
 import com.axelor.rpc.ActionRequest;
 import com.axelor.rpc.ActionResponse;
+import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.time.LocalDate;
 
 public class ProductController {
@@ -33,5 +35,21 @@ public class ProductController {
             .getSingleResult();
 
     response.setValue("totalSales", sales == null ? 0 : sales);
+  }
+
+  public void fetchSummary(ActionRequest request, ActionResponse response) {
+    var globalAvgPrice =
+        JPA.em()
+            .createQuery(
+                """
+                SELECT AVG(self.price)
+                FROM Product self
+                WHERE self.price IS NOT NULL
+                """,
+                Double.class)
+            .getSingleResult();
+
+    response.setValue(
+        "globalAvgPrice", BigDecimal.valueOf(globalAvgPrice).setScale(2, RoundingMode.HALF_UP));
   }
 }

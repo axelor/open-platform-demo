@@ -25,6 +25,13 @@
     <field name="price" />
     <field name="color" widget="SingleSelect"/>
     <field name="attrs"/>
+    <summary-bar>
+      <field name="price" title="Selected price sum" aggregate="sum" on="selection" />
+      <field name="price" title="Average price on page" aggregate="avg" on="page" align="end" />
+      <call action="com.axelor.sale.web.ProductController:fetchSummary">
+        <field name="globalAvgPrice" title="Global average price" type="decimal" align="end" />
+      </call>
+    </summary-bar>
   </grid>
 
   <action-report name="print.products"
