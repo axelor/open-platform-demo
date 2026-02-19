@@ -64,13 +64,13 @@ e2e/
 - Edit `playwright.config.ts` to change test settings (browser, base URL, timeouts, etc).
 - Add new test files in the `tests/` directory.
 - Use Playwright’s CLI for advanced options:  
-	`npx playwright --help`
+  `npx playwright --help`
 
 ## Troubleshooting
 
 - If browsers are missing, run:  
-	`pnpm exec playwright install`
+  `pnpm exec playwright install`
 - For debugging, use:  
-	`pnpm test --debug`
+  `pnpm test --debug`
 - For trace viewer:  
-	`pnpm exec playwright show-trace test-results/<trace-folder>`
+  `pnpm exec playwright show-trace test-results/<trace-folder>`
