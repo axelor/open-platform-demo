@@ -15,8 +15,8 @@
     <field name="customer" x-image-field="image" />
     <field name="orderDate" />
     <field name="status" widget="single-select" selection="order.status.selection" />
-    <field name="totalAmount" x-scale="currency.decimalPlaces" aggregate="sum" />
-    <field name="currency.symbol" width="70px" title="Cur." />
+    <field name="totalAmount" x-scale="currency.decimalPlaces" aggregate="sum" x-currency="currency.symbol"/>
+    <field name="currency.symbol" width="70px" title="Cur." hidden="true"/>
     <field name="currency.decimalPlaces" hidden="true" />
   </grid>
 
