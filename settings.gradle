@@ -4,7 +4,7 @@ pluginManagement {
     gradlePluginPortal()
   }
   plugins {
-    id 'com.axelor.app' version '8.1.+'
+    id 'com.axelor.app' version '8.2.+'
   }
 }
 
