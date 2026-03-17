@@ -14,6 +14,7 @@ import java.util.Map;
 public class ContactImport {
 
   private static final String CONTACT_IMAGES_DIR = "contact_images";
+  private static final String CONTACT_IDDOCUMENTS_DIR = "contact_iddocuments";
 
   public Object importContact(Object bean, Map context) {
     Contact contact = (Contact) bean;
@@ -27,6 +28,18 @@ public class ContactImport {
               String.join("-", contact.getFirstName(), contact.getLastName()));
       if (image != null && image.toFile().exists()) {
         contact.setImage(readFileToBytes(image));
+      }
+    } catch (Exception e) {
+      // ignore
+    }
+
+    try {
+      final Path doc =
+          ImportUtils.findByFileName(
+              path.resolve(CONTACT_IDDOCUMENTS_DIR),
+              String.join("-", contact.getFirstName(), contact.getLastName()));
+      if (doc != null && doc.toFile().exists()) {
+        contact.setIdDocument(readFileToBytes(doc));
       }
     } catch (Exception e) {
       // ignore

@@ -41,6 +41,9 @@
     <many-to-many name="circles" ref="Circle" />
     <many-to-one name="company" ref="Company" massUpdate="true"/>
 
+    <string name="bankAccountNumber" title="Bank account number" encrypted="true" copy="false"/>
+    <binary name="idDocument" title="ID document" encrypted="true" copy="false"/>
+
     <finder-method name="findByName" using="fullName" />
     <finder-method name="findByEmail" using="String:email" filter="self.emails[].email = :email" />
 

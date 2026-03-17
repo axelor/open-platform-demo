@@ -133,6 +133,8 @@
       <field name="company"/>
       <field name="circles" widget="Tags" x-color-field="color"/>
       <field name="businessSector" widget="ImageSelect"/>
+      <field name="bankAccountNumber"/>
+      <field name="idDocument"/>
     </panel>
   </form>
 

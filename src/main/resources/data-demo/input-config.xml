@@ -112,6 +112,7 @@
     <bind column="dateOfBirth" to="dateOfBirth" />
     <bind column="fidelity" to="fidelity"/>
     <bind column="businessSector" to="businessSector"/>
+    <bind column="bankAccountNumber" to="bankAccountNumber"/>
     <bind to="company" update="true" search="self.id = :company_id_" if="company_id_"/>
     <bind to="title" update="true" search="self.id = :title_id_" if="title_id_"/>
     <bind to="_circles_ids" column="circles[].id"/>
