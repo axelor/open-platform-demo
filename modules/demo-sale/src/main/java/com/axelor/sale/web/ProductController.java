@@ -49,7 +49,9 @@ public class ProductController {
                 Double.class)
             .getSingleResult();
 
-    response.setValue(
-        "globalAvgPrice", BigDecimal.valueOf(globalAvgPrice).setScale(2, RoundingMode.HALF_UP));
+    if (globalAvgPrice != null) {
+      response.setValue(
+          "globalAvgPrice", BigDecimal.valueOf(globalAvgPrice).setScale(2, RoundingMode.HALF_UP));
+    }
   }
 }
