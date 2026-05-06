@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<object-views xmlns="http://axelor.com/xml/ns/object-views"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://axelor.com/xml/ns/object-views https://axelor.com/xml/ns/object-views/object-views_8.2.xsd">
+
+  <grid name="vehicles-grid" title="Vehicles" model="com.axelor.meta.db.MetaJsonRecord" x-json-model="Vehicle">
+    <field name="attrs" x-json-model="Vehicle"/>
+  </grid>
+
+  <cards name="vehicles-card" title="Vehicles" model="com.axelor.meta.db.MetaJsonRecord" x-json-model="Vehicle">
+    <field name="attrs"/>
+    <template><![CDATA[
+    <>
+      <Box d="grid" gridTemplateColumns="30% 70%" gap="12">
+        <Box>
+          <Image src={$image('attrs.image', 'content')} w={100} maxW={100} style={{ objectFit: "cover", borderRadius: "8px" }}></Image>
+        </Box>
+        <Box d="flex" flexDirection="column" gap="6" style={{ fontSize: "0.85rem" }}>
+          <Box d="flex" justifyContent="space-between" alignItems="center">
+            <Box as="strong" fontSize={5}>{$get('attrs.name')}</Box>
+            <Badge bg={
+              $get('attrs.status') === 'available' ? 'success' :
+              $get('attrs.status') === 'rented' ? 'warning' :
+              $get('attrs.status') === 'maintenance' ? 'info' : 'secondary'
+            }>{_t($get('attrs.status'))}</Badge>
+          </Box>
+          <Box color="secondary">
+            {$get('attrs.brand')} {$get('attrs.model')} · {$get('attrs.year')}
+          </Box>
+          <Box d="flex" alignItems="center">
+            <Box as={Icon} me={1} icon="card-text" />{$get('attrs.licensePlate')}
+          </Box>
+          <Box d="flex" flexWrap="wrap" gap="12">
+            <Box as="span" d="flex" alignItems="center"><Box as={Icon} me={1} icon="people-fill" />{$get('attrs.seats')}</Box>
+            <Box as="span" d="flex" alignItems="center"><Box as={Icon} me={1} icon="fuel-pump-fill" />{$get('attrs.fuelType')}</Box>
+            <Box as="span" d="flex" alignItems="center"><Box as={Icon} me={1} icon="gear-fill" />{$get('attrs.transmission')}</Box>
+            <Box as="span" d="flex" alignItems="center"><Box as={Icon} me={1} icon="speedometer2" />{$get('attrs.mileage')} km</Box>
+          </Box>
+          <Box d="flex" justifyContent="space-between" alignItems="center" mt={1} style={{ fontSize: "0.8rem" }}>
+            <Box color="secondary">{_t($get('attrs.category'))}</Box>
+            <Box>
+              <Box as="strong" color="primary">{$fmt('attrs.dailyRate')}</Box>
+              <Box as="span" color="secondary">/day</Box>
+            </Box>
+          </Box>
+        </Box>
+      </Box>
+    </>
+    ]]></template>
+  </cards>
+
+  <form name="vehicles-form" title="Vehicle" model="com.axelor.meta.db.MetaJsonRecord" x-json-model="Vehicle">
+    <panel name="headerPanel" showFrame="false">
+      <panel name="leftPanel" colSpan="3" itemSpan="12">
+        <field name="attrs.image" showTitle="false" colSpan="12"/>
+      </panel>
+      <panel name="rightPanel" colSpan="9" itemSpan="12">
+        <field name="attrs.name" showTitle="false" colSpan="12">
+          <viewer><![CDATA[
+          <>
+            <Box as="h3">{$get('name')}</Box>
+          </>
+          ]]></viewer>
+        </field>
+        <field name="attrs.licensePlate" showTitle="false" colSpan="12">
+          <viewer><![CDATA[
+          <>
+            <Box color="secondary">
+              {$get('licensePlate')}
+            </Box>
+          </>
+          ]]></viewer>
+        </field>
+        <field name="attrs.status" showTitle="false" colSpan="12" widget="single-select" x-color-field="status">
+          <viewer><![CDATA[
+          <>
+            <Badge bg={
+              $get('status') === 'available' ? 'success' :
+              $get('status') === 'rented' ? 'warning' :
+              $get('status') === 'maintenance' ? 'info' : 'secondary'
+            }>{_t($get('status'))}</Badge>
+          </>
+          ]]></viewer>
+        </field>
+      </panel>
+    </panel>
+
+    <panel-tabs>
+      <panel name="informationsPanel" title="Informations">
+
+        <panel name="identityPanel" colSpan="6" itemSpan="12">
+          <separator title="Identification"/>
+          <field name="attrs.brand"/>
+          <field name="attrs.model"/>
+          <field name="attrs.category"/>
+          <field name="attrs.year"/>
+          <field name="attrs.color"/>
+        </panel>
+
+        <panel name="specsPanel" colSpan="6" itemSpan="12">
+          <separator title="Specifications"/>
+          <field name="attrs.seats"/>
+          <field name="attrs.fuelType"/>
+          <field name="attrs.transmission"/>
+          <field name="attrs.mileage"/>
+        </panel>
+
+      </panel>
+
+      <panel name="commercialPanel" title="Commercial">
+        <field name="attrs.agency"/>
+        <field name="attrs.dailyRate"/>
+        <field name="attrs.purchaseDate"/>
+        <field name="attrs.purchasePrice"/>
+      </panel>
+
+      <panel name="notesPanel" title="Notes">
+        <field name="attrs.notes" showTitle="false" colSpan="12"/>
+      </panel>
+
+    </panel-tabs>
+
+    <panel-mail>
+      <mail-messages/>
+      <mail-followers/>
+    </panel-mail>
+  </form>
+
+  <kanban  name="vehicles-kanban" title="Vehicles" model="com.axelor.meta.db.MetaJsonRecord" x-json-model="Vehicle" columnBy="attrs.status" sequenceBy="attrs.sequence">
+    <field name="attrs"/>
+    <template><![CDATA[
+    <>
+      <Box d="grid" gridTemplateColumns="20% 80%" gap="12">
+        <Box>
+          <Image src={$image('attrs.image', 'content')} w={100} maxW={100} style={{ objectFit: "cover", borderRadius: "8px" }}></Image>
+        </Box>
+        <Box d="flex" flexDirection="column" gap="6" style={{ fontSize: "0.85rem" }} pe={1}>
+          <Box d="flex" justifyContent="space-between" alignItems="center">
+            <Box as="strong" fontSize={5}>{$get('attrs.name')}</Box>
+            <Badge me={1} bg={
+              $get('attrs.status') === 'available' ? 'success' :
+              $get('attrs.status') === 'rented' ? 'warning' :
+              $get('attrs.status') === 'maintenance' ? 'info' : 'secondary'
+            } style={{ textOverflow: 'ellipsis', overflow: 'hidden' }}>{_t($get('attrs.status'))}</Badge>
+          </Box>
+          <Box color="secondary">
+            {$get('attrs.brand')} {$get('attrs.model')} · {$get('attrs.year')}
+          </Box>
+          <Box d="flex" alignItems="center">
+            <Box as={Icon} me={1} icon="card-text" />{$get('attrs.licensePlate')}
+          </Box>
+          <Box d="flex" flexWrap="wrap" gap="12">
+            <Box as="span" d="flex" alignItems="center"><Box as={Icon} me={1} icon="people-fill" />{$get('attrs.seats')}</Box>
+            <Box as="span" d="flex" alignItems="center"><Box as={Icon} me={1} icon="fuel-pump-fill" />{$get('attrs.fuelType')}</Box>
+            <Box as="span" d="flex" alignItems="center"><Box as={Icon} me={1} icon="gear-fill" />{$get('attrs.transmission')}</Box>
+            <Box as="span" d="flex" alignItems="center"><Box as={Icon} me={1} icon="speedometer2" />{$get('attrs.mileage')} km</Box>
+          </Box>
+          <Box d="flex" justifyContent="space-between" alignItems="center" mt={1} style={{ fontSize: "0.8rem" }}>
+            <Box color="secondary">{_t($get('attrs.category'))}</Box>
+            <Box me={1}>
+              <Box as="strong" color="primary">{$fmt('attrs.dailyRate')}</Box>
+              <Box as="span" color="secondary">/day</Box>
+            </Box>
+          </Box>
+        </Box>
+      </Box>
+    </>
+    ]]></template>
+  </kanban>
+
+</object-views>

@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<object-views xmlns="http://axelor.com/xml/ns/object-views"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://axelor.com/xml/ns/object-views https://axelor.com/xml/ns/object-views/object-views_8.2.xsd">
+
+  <grid name="agency-grid" title="Agencies" model="com.axelor.meta.db.MetaJsonRecord" x-json-model="Agency">
+    <field name="attrs" x-json-model="Agency"/>
+  </grid>
+
+  <form name="agency-form" title="Agency" model="com.axelor.meta.db.MetaJsonRecord" x-json-model="Agency">
+    <panel name="headerPanel" showFrame="false">
+      <field name="attrs.name" showTitle="false" colSpan="9">
+        <viewer><![CDATA[
+        <>
+          <Box as="h3">{$get('name')}</Box>
+        </>
+        ]]></viewer>
+      </field>
+      <field name="attrs.code" showTitle="false" colSpan="3">
+        <viewer><![CDATA[
+        <>
+          <Box d="flex" justifyContent="flex-end">
+            <Badge bg="secondary">{$get('code')}</Badge>
+          </Box>
+        </>
+        ]]></viewer>
+      </field>
+    </panel>
+
+    <panel name="contactPanel" title="Contact">
+      <field name="attrs.city"/>
+      <field name="attrs.phone"/>
+      <field name="attrs.email"/>
+      <field name="attrs.openingHours"/>
+      <field name="attrs.address" colSpan="12"/>
+      <field name="attrs.manager"/>
+    </panel>
+
+    <panel-mail>
+      <mail-messages/>
+      <mail-followers/>
+    </panel-mail>
+  </form>
+
+  <tree name="fleet-tree" title="Fleet tree">
+
+    <column name="name" type="string" title="Name"/>
+    <column name="info" type="string" title="Info"/>
+    <column name="status" type="string" title="Status"/>
+
+    <!-- Level 1: Agencies -->
+    <node model="com.axelor.meta.db.MetaJsonRecord" x-json-model="Agency" onClick="action-fleet-tree-open-agency" orderBy="attrs.name">
+      <field as="name" name="attrs.name"/>
+      <field as="info" name="attrs.city"/>
+    </node>
+
+    <!-- Level 2: Vehicles linked to the agency -->
+    <node model="com.axelor.meta.db.MetaJsonRecord" x-json-model="Vehicle" parent="agency" onClick="action-fleet-tree-open-vehicle" orderBy="attrs.name">
+      <field as="name" name="attrs.name"/>
+      <field as="info" name="attrs.licensePlate"/>
+      <field as="status" name="attrs.status" selection="rental.vehicle.status.select"/>
+    </node>
+
+    <!-- Level 3: Rental agreements linked to the vehicle -->
+    <node model="com.axelor.meta.db.MetaJsonRecord" x-json-model="RentalAgreement" parent="vehicle" onClick="action-fleet-tree-open-rental" orderBy="attrs.status">
+      <field as="name" name="attrs.name"/>
+      <field as="info" name="attrs.customer"/>
+      <field as="status" name="attrs.status" selection="rental.agreement.status.select"/>
+    </node>
+
+  </tree>
+
+  <action-view name="action-fleet-tree-open-agency" title="Agency" model="com.axelor.meta.db.MetaJsonRecord">
+    <view type="grid" name="agency-grid"/>
+    <view type="form" name="agency-form"/>
+    <domain>self.jsonModel = :jsonModel</domain>
+    <context name="_showRecord" expr="eval: id"/>
+    <context name="jsonModel" expr="Agency"/>
+  </action-view>
+
+  <action-view name="action-fleet-tree-open-vehicle" title="Vehicle" model="com.axelor.meta.db.MetaJsonRecord">
+    <view type="grid" name="vehicles-grid"/>
+    <view type="form" name="vehicles-form"/>
+    <domain>self.jsonModel = :jsonModel</domain>
+    <context name="_showRecord" expr="eval: id"/>
+    <context name="jsonModel" expr="Vehicle"/>
+  </action-view>
+
+  <action-view name="action-fleet-tree-open-rental" title="Rental Agreement" model="com.axelor.meta.db.MetaJsonRecord">
+    <view type="grid" name="rental-agreement-grid"/>
+    <view type="form" name="rental-agreement-form"/>
+    <domain>self.jsonModel = :jsonModel</domain>
+    <context name="_showRecord" expr="eval: id"/>
+    <context name="jsonModel" expr="RentalAgreement"/>
+  </action-view>
+
+</object-views>

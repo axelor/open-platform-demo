@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<object-views xmlns="http://axelor.com/xml/ns/object-views"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://axelor.com/xml/ns/object-views https://axelor.com/xml/ns/object-views/object-views_8.2.xsd">
+
+  <selection name="rental.vehicle.category.select">
+    <option value="economy">Economy</option>
+    <option value="compact">Compact</option>
+    <option value="sedan">Sedan</option>
+    <option value="suv">SUV</option>
+    <option value="luxury">Luxury</option>
+    <option value="van">Van</option>
+  </selection>
+
+  <selection name="rental.vehicle.fuel.select">
+    <option value="gasoline">Gasoline</option>
+    <option value="diesel">Diesel</option>
+    <option value="hybrid">Hybrid</option>
+    <option value="electric">Electric</option>
+  </selection>
+
+  <selection name="rental.vehicle.transmission.select">
+    <option value="manual">Manual</option>
+    <option value="automatic">Automatic</option>
+  </selection>
+
+  <selection name="rental.vehicle.status.select">
+    <option value="available" color="success">Available</option>
+    <option value="rented" color="primary">Rented</option>
+    <option value="maintenance" color="warning">Maintenance</option>
+    <option value="retired" color="secondary">Retired</option>
+  </selection>
+
+  <selection name="rental.agreement.status.select">
+    <option value="draft" color="secondary">Draft</option>
+    <option value="confirmed" color="info">Confirmed</option>
+    <option value="in-progress" color="primary">In progress</option>
+    <option value="returned" color="success">Returned</option>
+    <option value="cancelled" color="danger">Cancelled</option>
+  </selection>
+
+</object-views>

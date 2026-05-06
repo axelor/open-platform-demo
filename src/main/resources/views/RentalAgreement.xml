@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<object-views xmlns="http://axelor.com/xml/ns/object-views"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://axelor.com/xml/ns/object-views https://axelor.com/xml/ns/object-views/object-views_8.2.xsd">
+
+  <grid name="rental-agreement-grid" title="Rental Agreements" model="com.axelor.meta.db.MetaJsonRecord" x-json-model="RentalAgreement">
+    <field name="attrs" x-json-model="RentalAgreement"/>
+  </grid>
+
+  <form name="rental-agreement-form" title="Rental Agreement" model="com.axelor.meta.db.MetaJsonRecord" x-json-model="RentalAgreement">
+    <panel name="headerPanel" showFrame="false">
+      <field name="attrs.name" showTitle="false" colSpan="9">
+        <viewer><![CDATA[
+        <>
+          <Box as="h3">{$get('name')}</Box>
+        </>
+        ]]></viewer>
+      </field>
+      <field name="attrs.status" showTitle="false" colSpan="3">
+        <viewer><![CDATA[
+        <>
+          <Box d="flex" justifyContent="flex-end">
+            <Badge bg={
+              $get('status') === 'confirmed' ? 'success' :
+              $get('status') === 'in-progress' ? 'warning' :
+              $get('status') === 'returned' ? 'info' :
+              $get('status') === 'cancelled' ? 'danger' : 'secondary'
+            }>{_t($get('status'))}</Badge>
+          </Box>
+        </>
+        ]]></viewer>
+      </field>
+    </panel>
+
+    <panel name="partiesPanel" title="Parties &amp; Vehicle">
+      <field name="attrs.customer"/>
+      <field name="attrs.vehicle"/>
+    </panel>
+
+    <panel name="rentalPanel" title="Rental Period">
+      <field name="attrs.startDate"/>
+      <field name="attrs.endDate"/>
+      <field name="attrs.pickupLocation"/>
+      <field name="attrs.returnLocation"/>
+      <field name="attrs.estimatedDays"/>
+    </panel>
+
+    <panel name="mileagePanel" title="Mileage">
+      <field name="attrs.startMileage"/>
+      <field name="attrs.endMileage"/>
+    </panel>
+
+    <panel name="pricingPanel" title="Pricing">
+      <field name="attrs.dailyRate"/>
+      <field name="attrs.deposit"/>
+      <field name="attrs.totalAmount"/>
+    </panel>
+
+    <panel name="extrasPanel" title="Extras">
+      <field name="attrs.extras" showTitle="false" colSpan="12"/>
+    </panel>
+
+    <panel name="notesPanel" title="Notes">
+      <field name="attrs.notes" showTitle="false" colSpan="12"/>
+    </panel>
+    <panel-mail>
+      <mail-messages/>
+      <mail-followers/>
+    </panel-mail>
+  </form>
+  
+  <calendar name="rental-agreement-calendar" title="Rental Agreements"  model="com.axelor.meta.db.MetaJsonRecord" x-json-model="RentalAgreement" eventStart="attrs.startDate" eventStop="attrs.endDate" colorBy="attrs.vehicle">
+    <hilite if="$get('attrs.status') == 'draft'" styles="stripe"/>
+    <hilite if="$get('attrs.status') == 'cancelled'" styles="strike"/>
+    <field name="name"/>
+    <field name="attrs"/>
+    <template><![CDATA[
+      <>
+        <Box d="flex" justifyContent="space-between" alignItems="center" mb={2}>
+          <Box d="flex" alignItems="center" g={1}>
+            <Icon icon="person-fill"/>
+            {$get('attrs.customer.fullName')}
+          </Box>
+          <Badge bg={
+          $get('attrs.status') === 'confirmed' ? 'success' :
+          $get('attrs.status') === 'in-progress' ? 'warning' :
+          $get('attrs.status') === 'returned' ? 'info' :
+          $get('attrs.status') === 'cancelled' ? 'danger' : 'secondary'
+          }>{_t($get('attrs.status'))}</Badge>
+        </Box>
+
+        <Box d="flex" alignItems="center" g={1} mb={2}>
+          <Icon icon="car-front-fill"/>
+          {$get('attrs.vehicle.name')}
+        </Box>
+
+        <Box d="flex" alignItems="center" g={1}>
+          <Icon icon="geo-alt-fill"/>
+          {$get('attrs.pickupLocation')}{$get('attrs.returnLocation') && $get('attrs.returnLocation') !== $get('attrs.pickupLocation') ? ' → ' + $get('attrs.returnLocation') : ''}
+        </Box>
+
+        <Box d="flex" justifyContent="space-between" alignItems="center" mt={2} pt={2} borderTop={true}>
+          <Box as="span" color="secondary" style={{ fontSize: "0.85rem" }}>{$get('attrs.estimatedDays')} {_t('day(s)')}</Box>
+          <Box as="strong" color="pimary">{$fmt('attrs.totalAmount')}</Box>
+        </Box>
+      </>
+    ]]></template>
+  </calendar>
+
+</object-views>

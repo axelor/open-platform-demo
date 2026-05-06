@@ -1,0 +1,51 @@
+jsonModel,name,licensePlate,brand,model,category,year,color,seats,fuelType,transmission,mileage,dailyRate,status,purchaseDate,purchasePrice,notes,sequence,importId,agency
+Vehicle,Tesla Model 3,AB-123-CD,Tesla,Model 3,sedan,2023,White,5,electric,automatic,25000,95.00,available,2023-06-15,45000.00,Premium electric sedan with autopilot,1,1,PAR-CDG
+Vehicle,Renault Clio,FR-456-GH,Renault,Clio,compact,2022,Red,5,gasoline,manual,38000,45.00,available,2022-03-10,18000.00,Reliable city car,2,2,PAR-CDG
+Vehicle,Volkswagen Tiguan,BE-789-IJ,Volkswagen,Tiguan,suv,2024,Blue,5,diesel,automatic,12000,85.00,rented,2024-01-20,38000.00,Family SUV with all-wheel drive,3,3,BRU-MID
+Vehicle,Toyota Yaris,ES-321-KL,Toyota,Yaris,economy,2023,Silver,5,hybrid,automatic,18000,50.00,available,2023-09-05,22000.00,Hybrid economy with low fuel consumption,4,4,MAD-ATO
+Vehicle,BMW Serie 5,DE-654-MN,BMW,Serie 5,luxury,2024,Black,5,hybrid,automatic,8000,150.00,available,2024-02-14,65000.00,Executive sedan with leather interior,5,5,BER-MIT
+Vehicle,Mercedes V-Class,IT-987-OP,Mercedes-Benz,V-Class,van,2023,Grey,8,diesel,automatic,31000,120.00,maintenance,2023-04-22,58000.00,8-seater van scheduled for service,6,6,MAD-ATO
+Vehicle,Peugeot 208,FR-111-AA,Peugeot,208,compact,2023,White,5,gasoline,manual,22000,42.00,available,2023-07-01,17500.00,Small efficient hatchback,7,7,PAR-CDG
+Vehicle,Ford Transit,GB-222-BB,Ford,Transit,van,2022,White,9,diesel,manual,55000,95.00,retired,2022-01-15,32000.00,Cargo van being phased out,8,8,BER-MIT
+Vehicle,Citroën C3,FR-OR1-CR,Citroën,C3,compact,2022,White,5,gasoline,manual,28000,40.00,available,2022-05-12,17500.00,City compact for short rentals,9,9,PAR-ORY
+Vehicle,Audi A3,FR-OR2-A3,Audi,A3,sedan,2023,Black,5,hybrid,automatic,15000,75.00,available,2023-04-18,32000.00,Comfortable hybrid sedan,10,10,PAR-ORY
+Vehicle,Renault Trafic,FR-OR3-TR,Renault,Trafic,van,2022,White,9,diesel,manual,42000,90.00,rented,2022-06-08,29000.00,9-seater for group transfers,11,11,PAR-ORY
+Vehicle,Peugeot 3008,FR-GD1-30,Peugeot,3008,suv,2024,Grey,5,hybrid,automatic,9000,80.00,available,2024-01-15,36000.00,Recent SUV with panoramic roof,12,12,PAR-GDL
+Vehicle,Fiat 500,FR-GD2-FI,Fiat,500,economy,2023,Red,4,gasoline,manual,16000,38.00,available,2023-08-22,15500.00,Iconic city car,13,13,PAR-GDL
+Vehicle,Renault Megane,FR-LY1-MG,Renault,Megane,compact,2023,Blue,5,gasoline,automatic,18000,55.00,available,2023-05-10,21000.00,Comfortable compact,14,14,LYO-PDX
+Vehicle,Tesla Model Y,FR-LY2-MY,Tesla,Model Y,suv,2024,White,5,electric,automatic,11000,110.00,rented,2024-03-05,52000.00,All-electric SUV with long range,15,15,LYO-PDX
+Vehicle,Citroën Berlingo,FR-MR1-BG,Citroën,Berlingo,van,2022,Grey,5,diesel,manual,46000,80.00,available,2022-04-30,26000.00,Family van with sliding doors,16,16,MAR-STC
+Vehicle,Peugeot 508,FR-MR2-50,Peugeot,508,sedan,2023,Black,5,diesel,automatic,21000,95.00,available,2023-02-14,38000.00,Executive sedan,17,17,MAR-STC
+Vehicle,Mercedes Class A,FR-NC1-MA,Mercedes-Benz,Class A,compact,2023,Silver,5,gasoline,automatic,17000,70.00,available,2023-07-08,28000.00,Premium compact,18,18,NCE-AP
+Vehicle,Audi Q3,FR-NC2-Q3,Audi,Q3,suv,2022,White,5,diesel,automatic,32000,90.00,maintenance,2022-09-14,34000.00,SUV in scheduled service,19,19,NCE-AP
+Vehicle,Renault Captur,FR-BD1-CP,Renault,Captur,suv,2023,Orange,5,gasoline,manual,19000,65.00,available,2023-06-20,24000.00,Crossover for city or country,20,20,BOD-CTR
+Vehicle,Hyundai i20,FR-BD2-I2,Hyundai,i20,economy,2023,Blue,5,gasoline,manual,21000,40.00,available,2023-09-12,16000.00,Reliable city economy,21,21,BOD-CTR
+Vehicle,Dacia Sandero,FR-TL1-SD,Dacia,Sandero,economy,2022,White,5,gasoline,manual,35000,35.00,available,2022-07-04,13500.00,Budget-friendly daily driver,22,22,TLS-BLG
+Vehicle,Volkswagen Polo,FR-TL2-PL,Volkswagen,Polo,compact,2023,Grey,5,gasoline,manual,16000,45.00,available,2023-03-25,18500.00,Solid German compact,23,23,TLS-BLG
+Vehicle,Mercedes Class C,BE-BX1-MC,Mercedes-Benz,Class C,sedan,2024,Black,5,diesel,automatic,9500,110.00,available,2024-01-30,42000.00,Premium executive sedan,24,24,BRU-MID
+Vehicle,Opel Corsa,BE-BX2-OP,Opel,Corsa,economy,2020,Red,5,gasoline,manual,72000,38.00,retired,2020-04-15,15000.00,High-mileage unit being retired,25,25,BRU-MID
+Vehicle,Audi A4,BE-BA1-A4,Audi,A4,sedan,2023,Grey,5,hybrid,automatic,20000,100.00,rented,2023-05-22,40000.00,Refined business sedan,26,26,BRU-AP
+Vehicle,Volkswagen Caddy,BE-BA2-CD,Volkswagen,Caddy,van,2022,White,5,diesel,manual,38000,80.00,available,2022-08-10,25000.00,Compact utility van,27,27,BRU-AP
+Vehicle,Seat Ibiza,ES-MA1-IB,Seat,Ibiza,compact,2023,Red,5,gasoline,manual,17000,42.00,available,2023-07-25,17000.00,Spanish compact favourite,28,28,MAD-ATO
+Vehicle,Audi Q5,ES-MB1-Q5,Audi,Q5,suv,2023,Black,5,diesel,automatic,22000,110.00,rented,2023-04-14,46000.00,Premium SUV in active rental,29,29,MAD-BAR
+Vehicle,BMW Serie 3,ES-MB2-B3,BMW,Serie 3,sedan,2024,White,5,hybrid,automatic,8500,105.00,available,2024-02-28,41000.00,Sport sedan with hybrid drivetrain,30,30,MAD-BAR
+Vehicle,Tesla Model S,ES-MB3-MS,Tesla,Model S,luxury,2024,Black,5,electric,automatic,7000,200.00,available,2024-03-18,90000.00,Flagship luxury electric,31,31,MAD-BAR
+Vehicle,Seat Leon,ES-BC1-LN,Seat,Leon,compact,2023,Grey,5,gasoline,manual,19000,50.00,available,2023-06-12,19000.00,Sporty Spanish compact,32,32,BCN-SAN
+Vehicle,Volkswagen Passat,ES-BC2-PS,Volkswagen,Passat,sedan,2023,Blue,5,diesel,automatic,24000,90.00,available,2023-03-08,34000.00,Comfortable family sedan,33,33,BCN-SAN
+Vehicle,Mercedes EQA,DE-BM1-EQ,Mercedes-Benz,EQA,suv,2024,White,5,electric,automatic,10000,95.00,available,2024-02-05,48000.00,Compact electric SUV,34,34,BER-MIT
+Vehicle,BMW X3,DE-BT1-X3,BMW,X3,suv,2023,Black,5,diesel,automatic,18000,115.00,available,2023-04-22,48000.00,Premium mid-size SUV,35,35,BER-TGL
+Vehicle,Audi A6,DE-BT2-A6,Audi,A6,luxury,2023,Grey,5,hybrid,automatic,16000,160.00,maintenance,2023-05-30,68000.00,Executive luxury under service,36,36,BER-TGL
+Vehicle,Volkswagen Golf,DE-MU1-GF,Volkswagen,Golf,compact,2023,White,5,gasoline,manual,15000,50.00,available,2023-04-08,22000.00,Iconic German compact,37,37,MUC-HBF
+Vehicle,BMW Serie 1,DE-MU2-B1,BMW,Serie 1,compact,2023,Red,5,gasoline,automatic,16000,65.00,available,2023-06-18,28000.00,Sporty premium compact,38,38,MUC-HBF
+Vehicle,Mercedes Class E,DE-FR1-ME,Mercedes-Benz,Class E,luxury,2024,Black,5,hybrid,automatic,9000,170.00,rented,2024-01-10,72000.00,Executive luxury sedan in active rental,39,39,FRA-AP
+Vehicle,Audi A8,DE-FR2-A8,Audi,A8,luxury,2024,Black,5,hybrid,automatic,7000,200.00,available,2024-02-22,95000.00,Flagship luxury,40,40,FRA-AP
+Vehicle,Volkswagen ID.4,DE-FR3-ID,Volkswagen,ID.4,suv,2024,Blue,5,electric,automatic,8000,95.00,available,2024-01-25,46000.00,Electric family SUV,41,41,FRA-AP
+Vehicle,Mercedes Sprinter,DE-FR4-SP,Mercedes-Benz,Sprinter,van,2020,White,9,diesel,manual,95000,110.00,retired,2020-03-10,40000.00,High-mileage van being phased out,42,42,FRA-AP
+Vehicle,Fiat Panda,IT-RM1-PD,Fiat,Panda,economy,2022,White,5,gasoline,manual,29000,35.00,available,2022-08-18,13000.00,Compact city runabout,43,43,ROM-TER
+Vehicle,Alfa Romeo Giulia,IT-RM2-GU,Alfa Romeo,Giulia,sedan,2023,Red,5,diesel,automatic,20000,95.00,available,2023-05-04,42000.00,Italian sport sedan,44,44,ROM-TER
+Vehicle,Fiat Tipo,IT-MI1-TP,Fiat,Tipo,compact,2023,Grey,5,gasoline,manual,17000,45.00,rented,2023-09-15,17500.00,Practical compact in active rental,45,45,MIL-CEN
+Vehicle,Maserati Ghibli,IT-MI2-GB,Maserati,Ghibli,luxury,2023,Black,5,gasoline,automatic,14000,220.00,maintenance,2023-04-30,85000.00,Italian luxury under service,46,46,MIL-CEN
+Vehicle,Mini Cooper,GB-LH1-MC,Mini,Cooper,compact,2023,Green,4,gasoline,automatic,18000,65.00,available,2023-07-12,28000.00,British icon compact,47,47,LON-LHR
+Vehicle,Land Rover Discovery,GB-LH2-LR,Land Rover,Discovery,suv,2024,Silver,7,diesel,automatic,11000,130.00,available,2024-02-14,68000.00,Premium 7-seater SUV,48,48,LON-LHR
+Vehicle,Jaguar XE,GB-LH3-JX,Jaguar,XE,sedan,2023,Black,5,hybrid,automatic,19000,110.00,rented,2023-06-25,44000.00,British executive sedan in active rental,49,49,LON-LHR
+Vehicle,Vauxhall Vivaro,GB-LH4-VV,Vauxhall,Vivaro,van,2020,White,9,diesel,manual,82000,95.00,retired,2020-05-20,28000.00,Aging cargo van being phased out,50,50,LON-LHR

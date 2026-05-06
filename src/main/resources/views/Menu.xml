@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<object-views xmlns="http://axelor.com/xml/ns/object-views"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://axelor.com/xml/ns/object-views https://axelor.com/xml/ns/object-views/object-views_8.2.xsd">
+
+  <menuitem name="menu-vehicles" order="-70"
+            title="Vehicles" icon="car-front" icon-background="indigo"/>
+
+  <menuitem name="menu-vehicles-vehicles" parent="menu-vehicles"
+            title="Vehicles"
+            action="vehicles.vehicles"/>
+
+  <action-view name="vehicles.vehicles" model="com.axelor.meta.db.MetaJsonRecord" title="Vehicles">
+    <view type="grid" name="vehicles-grid"/>
+    <view type="form" name="vehicles-form"/>
+    <view type="cards" name="vehicles-card"/>
+    <view type="kanban" name="vehicles-kanban"/>
+    <domain>self.jsonModel = :jsonModel</domain>
+    <context name="jsonModel" expr="Vehicle"/>
+  </action-view>
+
+  <menuitem name="menu-vehicles-rental-agreement" parent="menu-vehicles"
+            title="Rental agreements"
+            action="vehicles.rental.agreement"/>
+
+  <action-view name="vehicles.rental.agreement" model="com.axelor.meta.db.MetaJsonRecord" title="Rental agreements">
+    <view type="grid" name="rental-agreement-grid"/>
+    <view type="form" name="rental-agreement-form"/>
+    <view type="calendar" name="rental-agreement-calendar"/>
+    <domain>self.jsonModel = :jsonModel</domain>
+    <context name="jsonModel" expr="RentalAgreement"/>
+  </action-view>
+
+  <menuitem name="menu-vehicles-agency" parent="menu-vehicles"
+            title="Agencies"
+            action="vehicles.agency"/>
+
+  <action-view name="vehicles.agency" model="com.axelor.meta.db.MetaJsonRecord" title="Agencies">
+    <view type="grid" name="agency-grid"/>
+    <view type="form" name="agency-form"/>
+    <domain>self.jsonModel = :jsonModel</domain>
+    <context name="jsonModel" expr="Agency"/>
+  </action-view>
+
+  <menuitem name="menu-vehicles-fleet-tree" parent="menu-vehicles"
+            title="Fleet tree"
+            action="vehicles.fleet.tree"/>
+
+  <action-view name="vehicles.fleet.tree" model="com.axelor.meta.db.MetaJsonRecord" title="Fleet tree">
+    <view type="tree" name="fleet-tree"/>
+    <context name="jsonModel" expr="Agency"/>
+  </action-view>
+
+</object-views>

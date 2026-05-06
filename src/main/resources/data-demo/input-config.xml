@@ -63,6 +63,7 @@
     <bind column="name" to="name" />
     <bind column="title" to="title" />
     <bind column="menuTitle" to="menuTitle" />
+    <bind column="isDelegated" to="isDelegated" />
     <bind to="menuParent" eval="__repo__(MetaMenu).findByName(menu_parent)" if="menu_parent"/>
   </input>
 
@@ -246,6 +247,85 @@
     <bind to="_date" column="date"/>
     <bind to="date" eval="java.time.LocalDate.parse(_date)?.plus(_baseDate.until(_currentDate))" adapter="LocalDate" if="_baseDate &amp;&amp; _currentDate &amp;&amp; _date"/>
     <bind column="hours" to="hours" />
+  </input>
+
+  <input file="14_rental_extra.csv" json-model="RentalExtra"
+         search="self.name = :name"
+         call="com.axelor.demo.CustomModelImport:saveMetaJsonRecord">
+    <bind column="name" to="$attrs.name"/>
+    <bind column="price" to="$attrs.price" adapter="BigDecimal"/>
+    <bind column="importId" to="$attrs.importId" adapter="Integer"/>
+  </input>
+
+  <input file="14_agency.csv" json-model="Agency"
+         search="self.name = :name"
+         call="com.axelor.demo.CustomModelImport:saveMetaJsonRecord">
+    <bind column="name" to="$attrs.name"/>
+    <bind column="code" to="$attrs.code"/>
+    <bind column="city" to="$attrs.city"/>
+    <bind column="phone" to="$attrs.phone"/>
+    <bind column="email" to="$attrs.email"/>
+    <bind column="openingHours" to="$attrs.openingHours"/>
+    <bind column="address" to="$attrs.address"/>
+    <bind column="importId" to="$attrs.importId" adapter="Integer"/>
+    <bind to="$attrs.manager"
+          search="self.firstName = :managerFirstName AND self.lastName = :managerLastName"
+          if="managerFirstName != null"/>
+  </input>
+
+  <input file="15_vehicle.csv" json-model="Vehicle"
+         search="self.name = :name"
+         call="com.axelor.demo.CustomModelImport:importVehicle">
+    <bind column="name" to="$attrs.name"/>
+    <bind column="licensePlate" to="$attrs.licensePlate"/>
+    <bind column="brand" to="$attrs.brand"/>
+    <bind column="model" to="$attrs.model"/>
+    <bind column="category" to="$attrs.category"/>
+    <bind column="year" to="$attrs.year" adapter="Integer"/>
+    <bind column="color" to="$attrs.color"/>
+    <bind column="seats" to="$attrs.seats" adapter="Integer"/>
+    <bind column="fuelType" to="$attrs.fuelType"/>
+    <bind column="transmission" to="$attrs.transmission"/>
+    <bind column="mileage" to="$attrs.mileage" adapter="Integer"/>
+    <bind column="dailyRate" to="$attrs.dailyRate" adapter="BigDecimal"/>
+    <bind column="status" to="$attrs.status"/>
+    <bind column="purchaseDate" to="$attrs.purchaseDate"/>
+    <bind column="purchasePrice" to="$attrs.purchasePrice" adapter="BigDecimal"/>
+    <bind column="notes" to="$attrs.notes"/>
+    <bind column="importId" to="$attrs.importId" adapter="Integer"/>
+    <bind to="$attrs.agency"
+          search="self.jsonModel = 'Agency' AND json_extract(self.attrs, 'code') = :agency"
+          if="agency != null"/>
+  </input>
+
+  <input file="16_rental_agreement.csv" json-model="RentalAgreement"
+         search="self.name = :name"
+         call="com.axelor.demo.CustomModelImport:saveMetaJsonRecord">
+    <bind column="name" to="$attrs.name"/>
+    <bind column="status" to="$attrs.status"/>
+    <bind column="startDate" to="$attrs.startDate"/>
+    <bind column="endDate" to="$attrs.endDate"/>
+    <bind column="pickupLocation" to="$attrs.pickupLocation"/>
+    <bind column="returnLocation" to="$attrs.returnLocation"/>
+    <bind column="dailyRate" to="$attrs.dailyRate" adapter="BigDecimal"/>
+    <bind column="estimatedDays" to="$attrs.estimatedDays" adapter="Integer"/>
+    <bind column="totalAmount" to="$attrs.totalAmount" adapter="BigDecimal"/>
+    <bind column="deposit" to="$attrs.deposit" adapter="BigDecimal"/>
+    <bind column="startMileage" to="$attrs.startMileage" adapter="Integer"/>
+    <bind column="endMileage" to="$attrs.endMileage" adapter="Integer"/>
+    <bind column="notes" to="$attrs.notes"/>
+    <bind column="importId" to="$attrs.importId" adapter="Integer"/>
+    <bind to="$attrs.customer"
+          search="self.firstName = :customerFirstName AND self.lastName = :customerLastName"
+          if="customerFirstName != null"/>
+    <bind to="$attrs.vehicle"
+          search="self.jsonModel = 'Vehicle' AND self.name = :vehicleName"
+          if="vehicleName != null"/>
+    <bind to="_extras_list" eval="extraNames?.split('\\|') as List" if="extraNames != null"/>
+    <bind to="$attrs.extras"
+          search="self.jsonModel = 'RentalExtra' AND self.name in :_extras_list"
+          if="_extras_list != null &amp;&amp; _extras_list.size() &gt; 0"
+          update="true"/>
   </input>
 
   <input file="values_translations.csv" type="com.axelor.meta.db.MetaTranslation" search="self.key = :key AND self.language = :language">

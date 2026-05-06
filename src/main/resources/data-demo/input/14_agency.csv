@@ -1,0 +1,21 @@
+name,code,city,phone,email,openingHours,address,managerFirstName,managerLastName,importId
+Paris CDG,PAR-CDG,Paris,+33 1 48 62 12 12,paris.cdg@rental.demo,Mon-Sun 06:00-23:00,"Terminal 2E, Aéroport Charles de Gaulle, 95700 Roissy-en-France",Fredrick,Brandt,1
+Brussels Midi,BRU-MID,Brussels,+32 2 555 22 11,brussels.midi@rental.demo,Mon-Fri 07:00-21:00 / Sat-Sun 08:00-20:00,"Rue de France 2, 1060 Saint-Gilles",Samina,Wright,2
+Madrid Atocha,MAD-ATO,Madrid,+34 91 528 14 25,madrid.atocha@rental.demo,Mon-Sun 06:30-22:30,"Plaza del Emperador Carlos V, 28045 Madrid",Marjorie,Marshall,3
+Berlin Mitte,BER-MIT,Berlin,+49 30 5544 7788,berlin.mitte@rental.demo,Mon-Fri 07:30-20:00 / Sat 09:00-18:00,"Friedrichstraße 142, 10117 Berlin",Violet,Hines,4
+Paris Orly,PAR-ORY,Paris,+33 1 70 36 12 12,paris.orly@rental.demo,Mon-Sun 06:00-23:00,"Aérogare Sud, 94390 Orly",Rivka,Booth,5
+Paris Gare-de-Lyon,PAR-GDL,Paris,+33 1 53 33 60 60,paris.gdl@rental.demo,Mon-Sat 07:00-21:00,"Place Louis-Armand, 75012 Paris",Benn,Lucero,6
+Lyon Part-Dieu,LYO-PDX,Lyon,+33 4 72 84 50 50,lyon.partdieu@rental.demo,Mon-Sat 07:00-20:30,"5 Place Charles Béraudier, 69003 Lyon",Sidrah,Hobbs,7
+Marseille Saint-Charles,MAR-STC,Marseille,+33 4 91 08 84 30,marseille.stcharles@rental.demo,Mon-Sat 06:30-21:00,"Square Narvik, 13001 Marseille",Lucille,Gilbert,8
+Nice Airport,NCE-AP,Nice,+33 4 89 88 98 28,nice.airport@rental.demo,Mon-Sun 06:00-23:30,"Terminal 2, 06281 Nice",Betty,Russell,9
+Bordeaux Centre,BOD-CTR,Bordeaux,+33 5 56 92 19 39,bordeaux.centre@rental.demo,Mon-Sat 08:00-19:30,"Cours du 30 Juillet, 33000 Bordeaux",Daniele,Garcia,10
+Toulouse Blagnac,TLS-BLG,Toulouse,+33 5 61 93 41 14,toulouse.blagnac@rental.demo,Mon-Sun 06:30-22:30,"Aéroport Toulouse-Blagnac, 31700 Blagnac",Disney,Leonard,11
+Brussels Airport,BRU-AP,Brussels,+32 2 753 20 60,brussels.airport@rental.demo,Mon-Sun 06:00-23:00,"Brussels Airport, 1930 Zaventem",Olivier,Martinez,12
+Madrid Barajas,MAD-BAR,Madrid,+34 91 393 72 32,madrid.barajas@rental.demo,Mon-Sun 06:00-24:00,"Aeropuerto Adolfo Suárez Madrid-Barajas, 28042 Madrid",Vienna,Robert,13
+Barcelona Sants,BCN-SAN,Barcelona,+34 93 490 84 01,barcelona.sants@rental.demo,Mon-Sat 07:00-21:00,"Plaça dels Països Catalans, 08014 Barcelona",Charee,Jacques,14
+Berlin Tegel,BER-TGL,Berlin,+49 30 4101 2315,berlin.tegel@rental.demo,Mon-Sat 07:00-20:00,"Saatwinkler Damm 42, 13405 Berlin",Norbert,Dupont,15
+Munich Hauptbahnhof,MUC-HBF,Munich,+49 89 5454 9301,munich.hbf@rental.demo,Mon-Sat 06:30-21:30,"Bahnhofplatz 2, 80335 München",Jeana,Salomon,16
+Frankfurt Airport,FRA-AP,Frankfurt,+49 69 6973 0234,frankfurt.airport@rental.demo,Mon-Sun 06:00-24:00,"Hugo-Eckener-Ring, 60549 Frankfurt am Main",Sherilyn,Dennis,17
+Rome Termini,ROM-TER,Rome,+39 06 488 6213,rome.termini@rental.demo,Mon-Sat 07:00-21:00,"Piazza dei Cinquecento 1, 00185 Roma",Thomas,Sydney,18
+Milan Centrale,MIL-CEN,Milan,+39 02 6671 3422,milan.centrale@rental.demo,Mon-Sat 07:00-21:00,"Piazza Duca d'Aosta 1, 20124 Milano",Jenina,Abraham,19
+London Heathrow,LON-LHR,London,+44 20 8897 0811,london.heathrow@rental.demo,Mon-Sun 06:00-24:00,"Heathrow Airport, Hounslow TW6",David,Joy,20

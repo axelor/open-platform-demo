@@ -1,2 +1,6 @@
-name,title,menuTitle,menu_parent
-ProductExtraOptions,Product Extra Options,Product extra opts,menu-sales-config
+name,title,menuTitle,menu_parent,isDelegated
+ProductExtraOptions,Product Extra Options,Product extra opts,menu-sales-config,
+Vehicle,Vehicle,Vehicles,menu-vehicles,true
+RentalAgreement,Rental Agreement,Rental Agreements,menu-vehicles,true
+RentalExtra,Rental Opts,Rental Opts,menu-vehicles,
+Agency,Agency,Agencies,menu-vehicles,true
