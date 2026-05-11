@@ -115,7 +115,7 @@ export function SaleOrderList() {
           className={styles.panel}
         >
           {currencies.length > 0 && (
-            <Box mb={2}>
+            <Box m={2}>
               <Select
                 placeholder={i18n.get("Select currency")}
                 options={currencies}
