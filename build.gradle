@@ -58,7 +58,7 @@ apply from: 'gradle/style.gradle'
 
 node {
   version = '24.13.1'
-  pnpmVersion = '10.29.3'
+  pnpmVersion = '10.33.4'
   download = true
   nodeProjectDir = file("${myHomeAppDir}")
   // Set distBaseUrl to null to prevent the Node plugin from injecting its own repository.
