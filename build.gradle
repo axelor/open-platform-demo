@@ -57,7 +57,7 @@ apply from: 'gradle/style.gradle'
 ////
 
 node {
-  version = '24.13.1'
+  version = '24.21.0'
   pnpmVersion = '11.28.5'
   download = true
   nodeProjectDir = file("${myHomeAppDir}")
