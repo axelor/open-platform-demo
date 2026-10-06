@@ -3,6 +3,8 @@ allowBuilds:
 
 minimumReleaseAgeExclude:
   - '@axelor/ui'
+  - '@typescript-eslint/*'
+  - 'typescript-eslint'
 
 peerDependencyRules:
   ignoreMissing:
