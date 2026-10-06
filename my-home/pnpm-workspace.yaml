@@ -5,6 +5,7 @@ minimumReleaseAgeExclude:
   - '@axelor/ui'
   - '@typescript-eslint/*'
   - 'typescript-eslint'
+  - 'vite'
 
 peerDependencyRules:
   ignoreMissing:

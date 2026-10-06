@@ -21,7 +21,7 @@ export default defineConfig({
       },
       {
         find: /^@\/(.*)/,
-        replacement: path.join(__dirname, "src", "$1"),
+        replacement: path.join(import.meta.dirname, "src", "$1"),
       },
     ],
   },
