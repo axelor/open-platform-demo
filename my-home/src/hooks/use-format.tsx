@@ -11,7 +11,7 @@ export function useFormatNumber() {
         minimumFractionDigits: decimalPlaces,
         maximumFractionDigits: decimalPlaces,
       }).format(Number(number)),
-    [lang]
+    [lang],
   );
 }
 
@@ -26,6 +26,6 @@ export function useFormatDate() {
         month: "2-digit",
         day: "2-digit",
       }).format(new Date(date)),
-    [lang]
+    [lang],
   );
 }

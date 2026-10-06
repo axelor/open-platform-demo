@@ -13,7 +13,7 @@ type HttpInterceptorArgs = {
 
 type HttpInterceptor = (
   args: HttpInterceptorArgs,
-  next: () => Promise<any>
+  next: () => Promise<any>,
 ) => Promise<any>;
 
 const baseURL = process.env.NODE_ENV === "production" ? "./../" : "./";
@@ -30,7 +30,7 @@ function makeURL(path: string | string[]) {
 
 async function intercept(
   args: HttpInterceptorArgs,
-  cb: () => Promise<Response>
+  cb: () => Promise<Response>,
 ) {
   let index = -1;
   const stack: HttpInterceptor[] = [...interceptors];
@@ -47,7 +47,7 @@ async function intercept(
 async function $request(
   input: RequestInfo | URL,
   init?: RequestInit,
-  options?: RequestOptions
+  options?: RequestOptions,
 ) {
   const args: HttpInterceptorArgs = { input, init, options };
   return intercept(args, () => fetch(args.input, args.init));
@@ -65,7 +65,7 @@ function $use(interceptor: HttpInterceptor) {
 
 const readCookie = (name: string) => {
   const match = document.cookie.match(
-    new RegExp("(^|;\\s*)(" + name + ")=([^;]*)")
+    new RegExp("(^|;\\s*)(" + name + ")=([^;]*)"),
   );
   return match ? decodeURIComponent(match[3]) : null;
 };

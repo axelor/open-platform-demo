@@ -36,7 +36,7 @@ export function SaleOrderList() {
   const [records, setRecords] = useState<DataRecord[]>([]);
   const [currencies, setCurrencies] = useState<Currency[]>([]);
   const [selectedCurrency, setSelectedCurrency] = useState<Currency | null>(
-    null
+    null,
   );
   const setSelectedRecords = useSetAtom(selectedRecordsAtom);
 
@@ -79,7 +79,7 @@ export function SaleOrderList() {
           isNaN(val) ? "" : formatNumber(val),
       },
     ],
-    [formatDate, formatNumber]
+    [formatDate, formatNumber],
   );
 
   useEffect(() => {
@@ -89,7 +89,7 @@ export function SaleOrderList() {
 
       // Set EUR as default if available
       const eurCurrency = fetchedCurrencies.find(
-        (currency) => currency.code === "EUR"
+        (currency) => currency.code === "EUR",
       );
       setSelectedCurrency(eurCurrency ?? fetchedCurrencies[0] ?? null);
     })();
@@ -99,11 +99,11 @@ export function SaleOrderList() {
   useEffect(() => {
     const sortBy = orderBy?.length
       ? orderBy.map((sortColumn) =>
-          sortColumn.order === "desc" ? `-${sortColumn.name}` : sortColumn.name
+          sortColumn.order === "desc" ? `-${sortColumn.name}` : sortColumn.name,
         )
       : null;
     searchSalerOrders({ sortBy, currencyCode: selectedCurrency?.code }).then(
-      (_records) => setRecords(_records ?? [])
+      (_records) => setRecords(_records ?? []),
     );
   }, [orderBy, selectedCurrency]);
 
@@ -143,7 +143,7 @@ export function SaleOrderList() {
             aggregationType="all"
             onRowSelectionChange={(selectedRows) => {
               setSelectedRecords(
-                records.filter((_, index) => selectedRows.includes(index))
+                records.filter((_, index) => selectedRows.includes(index)),
               );
             }}
             footerRowRenderer={FooterRowRenderer}
@@ -159,11 +159,16 @@ function FooterRowRenderer(props: GridRowProps) {
   const selectedRecords = useAtomValue(selectedRecordsAtom);
   const totalAmount = selectedRecords.reduce(
     (acc, row) => acc + Number(row.totalAmount),
-    0
+    0,
   );
 
   return (
-    <Box textAlign="end" pb={2} pt={2} style={{ backgroundColor: "var(--ax-panel-header-bg)" }}>
+    <Box
+      textAlign="end"
+      pb={2}
+      pt={2}
+      style={{ backgroundColor: "var(--ax-panel-header-bg)" }}
+    >
       <Box as="span" position="absolute" style={{ left: 10 }} fontWeight="bold">
         {i18n.get("Selected Total Amount")}
       </Box>

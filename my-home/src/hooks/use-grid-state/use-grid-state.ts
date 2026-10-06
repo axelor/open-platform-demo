@@ -3,7 +3,7 @@ import { produce } from "immer";
 import { type GridState, type GridStateHandler } from "@axelor/ui/grid";
 
 export function useGridState(
-  initState?: Partial<GridState>
+  initState?: Partial<GridState>,
 ): [GridState, (state: GridState | GridStateHandler) => void] {
   const [state, setState] = React.useState<GridState>({
     columns: [],
@@ -12,8 +12,9 @@ export function useGridState(
   });
 
   const setMutableState = React.useCallback(
-    (_state: GridState | GridStateHandler) => setState(produce(_state as any) as any),
-    [setState]
+    (_state: GridState | GridStateHandler) =>
+      setState(produce(_state as any) as any),
+    [setState],
   );
 
   return [state, setMutableState];

@@ -36,7 +36,7 @@ export function useAppData() {
                 options: {},
                 info,
               }
-            : null
+            : null,
         );
       });
     }

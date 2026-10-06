@@ -17,5 +17,5 @@ export default mergeConfig(
       sourcemap: true,
       minify: false,
     },
-  })
+  }),
 );
