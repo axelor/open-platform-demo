@@ -1,5 +1,9 @@
 allowBuilds:
   esbuild: true
+
+minimumReleaseAgeExclude:
+  - '@axelor/ui'
+
 peerDependencyRules:
   ignoreMissing:
     - '@eslint/*'
