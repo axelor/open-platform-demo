@@ -27,5 +27,35 @@ export default defineConfig({
   },
   build: {
     target: ["es2022"],
+    rolldownOptions: {
+      checks: {
+        // Don't report plugin timings (mostly CSS processing of @axelor/ui styles)
+        bundlerTimings: false,
+      },
+      output: {
+        codeSplitting: {
+          // Keep @axelor/ui dependencies in the "lib" chunk instead of pulling them into "axelor-ui"
+          includeDependenciesRecursively: false,
+          minSize: 100000, // 100KB global minimum chunk size to avoid small artifacts
+          groups: [
+            {
+              name: "react",
+              test: /[\\/]node_modules[\\/](react|react-dom|scheduler)[\\/]/,
+              priority: 20,
+            },
+            {
+              name: "axelor-ui",
+              test: /[\\/]node_modules[\\/]@axelor[\\/]ui[\\/]/,
+              priority: 15,
+            },
+            {
+              name: "lib",
+              test: /[\\/]node_modules[\\/]/,
+              priority: 10,
+            },
+          ],
+        },
+      },
+    },
   },
 });
